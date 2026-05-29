@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopify App Development Services | StoreCartify</title>
+<link rel="icon" type="image/x-icon" href="store-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #004c3f;
+    --green-light: #006654;
+    --green-dim: rgba(0,76,63,0.08);
+    --green-border: rgba(0,76,63,0.25);
+    --yellow: #FFC001;
+    --yellow-dim: rgba(255,192,1,0.15);
+    --dark: #1a1a1a;
+    --body-bg: #fbf7ed;
+    --white: #ffffff;
+    --text: #333333;
+    --muted: #666666;
+    --light-border: #e5e0d4;
+    --card-bg: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--body-bg);
+    color: var(--text);
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+    background: var(--body-bg);
+    border-bottom: 1px solid var(--light-border);
+    padding: 14px 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Nunito Sans', sans-serif; font-weight: 900;
+    font-size: 1.4rem; color: var(--green); text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .logo span { color: var(--yellow); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { color: var(--text); text-decoration: none; font-size: .9rem; font-weight: 600; transition: color .2s; }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta {
+    background: var(--green); color: var(--white);
+    font-weight: 700; font-size: .88rem;
+    padding: 10px 22px; border-radius: 9rem; text-decoration: none;
+    transition: background .2s, transform .15s;
+  }
+  .nav-cta:hover { background: var(--green-light); transform: translateY(-1px); }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 60px;
+    padding: 120px 5vw 80px;
+    background: var(--green);
+    position: relative; overflow: hidden;
+  }
+  .hero-bg-dots {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.07) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,192,1,0.18); border: 1px solid rgba(255,192,1,0.4);
+    color: var(--yellow); font-size: .78rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 100px; margin-bottom: 24px;
+    animation: fadeUp .5s ease both;
+  }
+  .hero-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--yellow); animation: pulse 1.8s ease infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.5)} }
+
+  h1 {
+    font-family: 'Nunito Sans', sans-serif; font-weight: 900;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    line-height: 1.1; letter-spacing: -0.02em;
+    color: var(--white); margin-bottom: 20px;
+    animation: fadeUp .6s .1s ease both;
+  }
+  h1 em { font-style: normal; color: var(--yellow); }
+  .hero p {
+    font-size: 1.05rem; color: rgba(255,255,255,0.8);
+    font-weight: 400; margin-bottom: 36px;
+    animation: fadeUp .6s .2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    animation: fadeUp .6s .3s ease both;
+  }
+  .btn-primary {
+    background: var(--yellow); color: var(--dark);
+    font-weight: 800; font-size: .95rem;
+    padding: 14px 28px; border-radius: 9rem;
+    text-decoration: none; transition: all .2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: #ffcc33; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,192,1,.35); }
+  .btn-ghost {
+    background: transparent; color: var(--white);
+    font-weight: 700; font-size: .95rem;
+    padding: 14px 28px; border-radius: 9rem;
+    text-decoration: none; border: 2px solid rgba(255,255,255,.4);
+    transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,.8); background: rgba(255,255,255,0.08); }
+
+  .trust-row {
+    display: flex; align-items: center; gap: 16px; margin-top: 28px;
+    animation: fadeUp .6s .4s ease both;
+  }
+  .trust-row span { font-size: .82rem; color: rgba(255,255,255,0.65); }
+  .check-item { display: flex; align-items: center; gap: 5px; }
+  .check-item svg { width:14px; height:14px; fill: var(--yellow); flex-shrink: 0; }
+
+  /* Hero form card */
+  .hero-form-card {
+    background: var(--white); border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+    position: relative; z-index: 1;
+    animation: fadeUp .7s .15s ease both;
+  }
+  .hero-form-card h4 {
+    font-size: 1.05rem; font-weight: 800; color: var(--green);
+    margin-bottom: 6px;
+  }
+  .hero-form-card p { font-size: .82rem; color: var(--muted); margin-bottom: 24px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: .78rem; font-weight: 700; color: var(--text); margin-bottom: 5px; letter-spacing: .03em; }
+  .form-group input, .form-group textarea {
+    width: 100%; padding: 11px 14px;
+    border: 1.5px solid var(--light-border);
+    border-radius: 8px; font-family: inherit; font-size: .9rem;
+    color: var(--text); background: #fafaf8;
+    transition: border-color .2s;
+    outline: none;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--green); background: #fff; }
+  .form-group textarea { height: 90px; resize: none; }
+  .form-submit {
+    width: 100%; background: var(--green); color: var(--white);
+    font-family: inherit; font-weight: 800; font-size: 1rem;
+    padding: 14px; border: none; border-radius: 9rem; cursor: pointer;
+    transition: background .2s, transform .15s;
+    margin-top: 4px;
+  }
+  .form-submit:hover { background: var(--green-light); transform: translateY(-1px); }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar {
+    background: var(--yellow);
+    padding: 28px 5vw;
+    display: flex; justify-content: center; gap: 0;
+  }
+  .stat-item {
+    flex: 1; text-align: center; padding: 0 20px;
+    border-right: 1px solid rgba(0,0,0,0.12);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Nunito Sans', sans-serif; font-weight: 900;
+    font-size: 2.2rem; color: var(--green); letter-spacing: -0.03em; line-height: 1;
+  }
+  .stat-label { font-size: .8rem; font-weight: 700; color: rgba(0,0,0,0.6); margin-top: 4px; text-transform: uppercase; letter-spacing: .05em; }
+
+  /* ===== SECTION COMMONS ===== */
+  section { padding: 88px 5vw; }
+  .section-tag {
+    font-size: .75rem; font-weight: 800; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--green);
+    display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  }
+  .section-tag::before { content:''; width:28px; height:2px; background:var(--yellow); border-radius:2px; }
+  h2 {
+    font-family: 'Nunito Sans', sans-serif; font-weight: 900;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    letter-spacing: -0.025em; line-height: 1.15; color: var(--dark); margin-bottom: 14px;
+  }
+  h2 em { font-style: normal; color: var(--green); }
+  .section-sub { color: var(--muted); max-width: 520px; font-size: 1rem; margin-bottom: 52px; }
+
+  /* ===== SERVICES ===== */
+  .services { background: var(--white); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .svc-card {
+    border: 1.5px solid var(--light-border);
+    border-radius: 16px; padding: 32px 28px;
+    transition: all .25s; cursor: default;
+    background: var(--white);
+  }
+  .svc-card:hover {
+    border-color: var(--green);
+    box-shadow: 0 8px 32px rgba(0,76,63,.1);
+    transform: translateY(-3px);
+  }
+  .svc-icon {
+    width: 50px; height: 50px; border-radius: 12px;
+    background: var(--green-dim); border: 1.5px solid var(--green-border);
+    display: grid; place-items: center; margin-bottom: 20px;
+  }
+  .svc-icon svg { width: 22px; height: 22px; stroke: var(--green); fill: none; stroke-width: 2; }
+  .svc-card h3 {
+    font-family: 'Nunito Sans', sans-serif; font-weight: 800;
+    font-size: 1.05rem; color: var(--dark); margin-bottom: 8px;
+  }
+  .svc-card p { color: var(--muted); font-size: .88rem; line-height: 1.7; }
+
+  /* ===== PRICING ===== */
+  .pricing { background: var(--body-bg); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .price-card {
+    background: var(--white); border: 1.5px solid var(--light-border);
+    border-radius: 18px; padding: 36px 28px;
+    transition: all .25s; position: relative; overflow: hidden;
+  }
+  .price-card.featured {
+    background: var(--green); border-color: var(--green);
+    transform: scale(1.03);
+  }
+  .price-card.featured * { color: rgba(255,255,255,0.9) !important; }
+  .price-card.featured h3 { color: var(--white) !important; }
+  .price-card.featured .price-amount { color: var(--yellow) !important; }
+  .price-card:hover:not(.featured) { border-color: var(--green); box-shadow: 0 8px 32px rgba(0,76,63,.1); }
+  .price-label { font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .price-card.featured .price-label { color: rgba(255,255,255,0.6) !important; }
+  .price-amount {
+    font-family: 'Nunito Sans', sans-serif; font-weight: 900;
+    font-size: 2.6rem; color: var(--green); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px;
+  }
+  .price-period { font-size: .8rem; color: var(--muted); margin-bottom: 24px; }
+  .price-card h3 { font-weight: 800; font-size: 1rem; color: var(--dark); margin-bottom: 16px; }
+  .price-features { list-style: none; margin-bottom: 28px; }
+  .price-features li {
+    font-size: .88rem; color: var(--muted); padding: 8px 0;
+    border-bottom: 1px solid var(--light-border);
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .price-card.featured .price-features li { border-color: rgba(255,255,255,0.15) !important; }
+  .price-features li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+  .price-card.featured .price-features li::before { color: var(--yellow) !important; }
+  .btn-price {
+    display: block; text-align: center; padding: 13px;
+    border-radius: 9rem; font-weight: 800; font-size: .9rem;
+    text-decoration: none; transition: all .2s;
+    background: var(--green); color: var(--white);
+  }
+  .price-card.featured .btn-price { background: var(--yellow); color: var(--dark); }
+  .btn-price:hover { opacity: .9; transform: translateY(-1px); }
+
+  /* ===== PROCESS ===== */
+  .process { background: var(--green); }
+  .process .section-tag { color: var(--yellow); }
+  .process .section-tag::before { background: var(--yellow); }
+  .process h2 { color: var(--white); }
+  .process .section-sub { color: rgba(255,255,255,0.65); }
+  .steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+  .step {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 36px 32px; transition: background .2s;
+  }
+  .step:hover { background: rgba(255,255,255,0.09); }
+  .step-num {
+    font-family: 'Nunito Sans', sans-serif; font-weight: 900;
+    font-size: 3rem; color: rgba(255,192,1,0.3); line-height: 1; margin-bottom: 16px;
+  }
+  .step h3 { font-family: 'Nunito Sans', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--white); margin-bottom: 8px; }
+  .step p { font-size: .9rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+  /* ===== WHY US ===== */
+  .why { background: var(--white); }
+  .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .why-card {
+    border: 1.5px solid var(--light-border); border-radius: 14px;
+    padding: 28px 24px; transition: all .25s;
+  }
+  .why-card:hover { border-color: var(--green); box-shadow: 0 6px 24px rgba(0,76,63,.08); }
+  .why-icon {
+    width: 40px; height: 40px; background: var(--yellow-dim);
+    border-radius: 10px; display: grid; place-items: center; margin-bottom: 16px;
+    font-size: 1.1rem;
+  }
+  .why-card h3 { font-weight: 800; font-size: 1rem; color: var(--dark); margin-bottom: 8px; }
+  .why-card p { font-size: .86rem; color: var(--muted); line-height: 1.7; }
+
+  /* ===== APPS ===== */
+  .apps { background: var(--body-bg); }
+  .apps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .app-card {
+    background: var(--white); border: 1.5px solid var(--light-border);
+    border-radius: 14px; padding: 22px 20px;
+    display: flex; align-items: flex-start; gap: 14px;
+    transition: all .2s;
+  }
+  .app-card:hover { border-color: var(--green); box-shadow: 0 4px 20px rgba(0,76,63,.08); transform: translateY(-2px); }
+  .app-logo {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: var(--green-dim); border: 1.5px solid var(--green-border);
+    display: grid; place-items: center; flex-shrink: 0;
+    font-size: 1.4rem;
+  }
+  .app-info h4 { font-weight: 800; font-size: .92rem; color: var(--dark); margin-bottom: 3px; }
+  .app-rating { font-size: .75rem; color: var(--green); font-weight: 700; }
+  .app-desc { font-size: .78rem; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials { background: var(--green); }
+  .testimonials .section-tag { color: var(--yellow); }
+  .testimonials .section-tag::before { background: var(--yellow); }
+  .testimonials h2 { color: var(--white); }
+  .testi-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .testi-card {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 16px; padding: 32px 28px; position: relative;
+  }
+  .testi-card::before {
+    content: '"'; position: absolute; top: 16px; right: 24px;
+    font-family: 'Nunito Sans', sans-serif; font-size: 5rem; font-weight: 900;
+    color: var(--yellow); opacity: .3; line-height: .8;
+  }
+  .stars { color: var(--yellow); font-size: .85rem; letter-spacing: 2px; margin-bottom: 14px; }
+  .testi-text { font-size: .93rem; color: rgba(255,255,255,0.8); line-height: 1.75; font-style: italic; font-weight: 300; margin-bottom: 22px; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--yellow); display: grid; place-items: center;
+    font-weight: 900; font-size: .9rem; color: var(--dark); flex-shrink: 0;
+  }
+  .testi-name { font-weight: 800; font-size: .88rem; color: var(--white); }
+  .testi-role { font-size: .75rem; color: rgba(255,255,255,0.5); }
+
+  /* ===== TECH STACK ===== */
+  .tech { background: var(--white); }
+  .tech-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1.5px solid var(--light-border); border-radius: 16px; overflow: hidden; }
+  .tech-group { padding: 32px 36px; border-right: 1.5px solid var(--light-border); border-bottom: 1.5px solid var(--light-border); }
+  .tech-group:nth-child(even) { border-right: none; }
+  .tech-group:nth-last-child(-n+2) { border-bottom: none; }
+  .tech-group-label { font-size: .73rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .tech-group-label::before { content:''; width:20px; height:2px; background: var(--yellow); border-radius:2px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    background: var(--body-bg); border: 1.5px solid var(--light-border);
+    border-radius: 8px; padding: 9px 16px; font-size: .85rem;
+    font-weight: 700; color: var(--text); transition: all .2s; cursor: default;
+  }
+  .pill:hover { border-color: var(--green); color: var(--green); background: var(--green-dim); }
+
+  /* ===== FAQ ===== */
+  .faq { background: var(--body-bg); }
+  .faq-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .faq-list { width: 100%; }
+  .faq-item { border-bottom: 1.5px solid var(--light-border); }
+  .faq-q {
+    width: 100%; background: none; border: none; text-align: left;
+    padding: 20px 0; cursor: pointer;
+    font-family: inherit; font-size: .95rem; font-weight: 700; color: var(--dark);
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq-q:hover { color: var(--green); }
+  .faq-icon { font-size: 1.1rem; color: var(--green); flex-shrink: 0; transition: transform .25s; }
+  .faq-a { display: none; padding-bottom: 18px; font-size: .9rem; color: var(--muted); line-height: 1.7; }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-cta-panel {
+    background: var(--green); border-radius: 20px; padding: 48px 40px;
+    position: sticky; top: 100px;
+  }
+  .faq-cta-panel h3 { font-family: 'Nunito Sans', sans-serif; font-weight: 900; font-size: 1.6rem; color: var(--white); margin-bottom: 14px; line-height: 1.2; }
+  .faq-cta-panel h3 em { font-style: normal; color: var(--yellow); }
+  .faq-cta-panel p { color: rgba(255,255,255,0.7); font-size: .9rem; margin-bottom: 28px; line-height: 1.7; }
+  .faq-cta-panel ul { list-style: none; margin-bottom: 32px; }
+  .faq-cta-panel ul li { font-size: .88rem; color: rgba(255,255,255,0.8); padding: 7px 0; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .faq-cta-panel ul li::before { content:'✓'; color: var(--yellow); font-weight: 900; flex-shrink:0; }
+  .faq-cta-panel ul li:last-child { border-bottom: none; }
+  .faq-cta-panel a { display: block; text-align: center; background: var(--yellow); color: var(--dark); font-weight: 800; font-size: .95rem; padding: 14px; border-radius: 9rem; text-decoration: none; transition: all .2s; }
+  .faq-cta-panel a:hover { background: #ffcc33; transform: translateY(-1px); }
+
+  /* ===== CONTACT SECTION ===== */
+  .contact-section {
+    background: var(--white);
+    padding: 88px 5vw;
+    border-top: 1.5px solid var(--light-border);
+  }
+  .contact-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+  }
+  .contact-left .section-tag { margin-bottom: 12px; }
+  .contact-left h2 { margin-bottom: 16px; }
+  .contact-sub { color: var(--muted); font-size: .98rem; line-height: 1.75; margin-bottom: 32px; }
+  .contact-trust { list-style: none; margin-bottom: 40px; }
+  .contact-trust li {
+    font-size: .9rem; font-weight: 600; color: var(--text);
+    padding: 10px 0; border-bottom: 1px solid var(--light-border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .contact-trust li:last-child { border-bottom: none; }
+  .ctick {
+    width: 22px; height: 22px; background: var(--green); color: var(--white);
+    border-radius: 50%; display: grid; place-items: center;
+    font-size: .72rem; font-weight: 900; flex-shrink: 0;
+  }
+  .contact-stats { display: flex; gap: 0; border: 1.5px solid var(--light-border); border-radius: 14px; overflow: hidden; }
+  .cs-item { flex: 1; text-align: center; padding: 20px 12px; border-right: 1.5px solid var(--light-border); background: var(--body-bg); }
+  .cs-item:last-child { border-right: none; }
+  .cs-num { font-family: 'Nunito Sans', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--green); letter-spacing: -0.03em; line-height: 1; }
+  .cs-label { font-size: .72rem; font-weight: 700; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: .05em; }
+
+  .contact-form-card {
+    background: var(--body-bg); border-radius: 20px; padding: 28px 28px;
+    border: 1.5px solid var(--light-border);
+    box-shadow: 0 8px 40px rgba(0,76,63,.07);
+  }
+  .contact-form-card h4 {
+    font-size: .92rem; font-weight: 800; color: var(--green);
+    margin-bottom: 16px; line-height: 1.4;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-group { margin-bottom: 10px; }
+  .form-group label { display: block; font-size: .74rem; font-weight: 700; color: var(--text); margin-bottom: 4px; letter-spacing: .03em; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 9px 12px;
+    border: 1.5px solid var(--light-border);
+    border-radius: 8px; font-family: inherit; font-size: .87rem;
+    color: var(--text); background: var(--white);
+    transition: border-color .2s; outline: none; appearance: none;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--green); background: #fff; }
+  .form-group textarea { height: 80px; resize: none; }
+  .form-submit {
+    width: 100%; background: var(--green); color: var(--white);
+    font-family: inherit; font-weight: 800; font-size: .95rem;
+    padding: 13px; border: none; border-radius: 9rem; cursor: pointer;
+    transition: background .2s, transform .15s; margin-top: 6px;
+  }
+  .form-submit:hover { background: var(--green-light); transform: translateY(-1px); }
+  .form-note { font-size: .73rem; color: var(--muted); text-align: center; margin-top: 8px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--green); color: rgba(255,255,255,0.8);
+    padding: 60px 5vw 24px;
+    display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 48px;
+  }
+  .footer-logo { font-family: 'Nunito Sans', sans-serif; font-weight: 900; font-size: 1.3rem; color: var(--white); margin-bottom: 12px; }
+  .footer-logo span { color: var(--yellow); }
+  .footer-brand p { font-size: .85rem; line-height: 1.7; color: rgba(255,255,255,0.6); }
+  .footer-col h4 { font-weight: 800; font-size: .85rem; color: var(--white); margin-bottom: 16px; letter-spacing: .04em; }
+  .footer-col a { display: block; font-size: .83rem; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 8px; transition: color .2s; }
+  .footer-col a:hover { color: var(--yellow); }
+  .footer-bottom {
+    background: var(--green); border-top: 1px solid rgba(255,255,255,.12);
+    padding: 20px 5vw; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 8px;
+  }
+  .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,0.45); }
+  .disclaimer { font-size: .72rem; color: rgba(255,255,255,0.4); max-width: 500px; }
+
+  /* ===== SCROLLING LOGOS ===== */
+  .logos-strip { background: var(--white); padding: 28px 0; border-bottom: 1.5px solid var(--light-border); overflow: hidden; }
+  .logos-strip p { text-align: center; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+  .logo-track { display: flex; gap: 56px; animation: scrollLogo 25s linear infinite; width: max-content; }
+  .logo-track span { color: var(--muted); font-family: 'Nunito Sans', sans-serif; font-weight: 800; font-size: 1rem; white-space: nowrap; opacity: .5; transition: opacity .2s; }
+  .logo-track span:hover { opacity: 1; }
+  @keyframes scrollLogo { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-form-card { max-width: 480px; }
+    .services-grid, .pricing-grid, .why-grid, .apps-grid, footer { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .tech-inner { grid-template-columns: 1fr; }
+    .tech-group:nth-child(even) { border-right: none; }
+    .tech-group:nth-last-child(-n+2) { border-bottom: 1.5px solid var(--light-border); }
+    .tech-group:last-child { border-bottom: none; }
+    .faq-layout { grid-template-columns: 1fr; }
+    .faq-cta-panel { position: static; }
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .stats-bar { flex-wrap: wrap; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,.1); padding: 12px 0; }
+    .stat-item:last-child { border-bottom: none; }
+    .services-grid, .pricing-grid, .why-grid, .apps-grid { grid-template-columns: 1fr; }
+    .pricing-grid .price-card.featured { transform: scale(1); }
+    footer { grid-template-columns: 1fr 1fr; }
+    .contact-form-card { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Store<span>Cartify</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#apps">Our Apps</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Free Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">✦ Shopify Partner Agency</div>
+    <h1>Custom <em>Shopify App</em> Development Services</h1>
+    <p>Enhance your eCommerce presence with our expertise. We've developed and launched 75+ Shopify Apps and 1,500+ custom stores — seamlessly approved by Shopify.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">📞 Book a 30-Min Call</a>
+      <a href="#services" class="btn-ghost">Explore Services</a>
+    </div>
+    <div class="trust-row">
+      <div class="check-item">
+        <svg viewBox="0 0 20 20"><path d="M16.7 5.3l-8.4 8.4-4-4 1.4-1.4 2.6 2.6 7-7 1.4 1.4z"/></svg>
+        <span>100% Confidential</span>
+      </div>
+      <div class="check-item">
+        <svg viewBox="0 0 20 20"><path d="M16.7 5.3l-8.4 8.4-4-4 1.4-1.4 2.6 2.6 7-7 1.4 1.4z"/></svg>
+        <span>We sign NDA</span>
+      </div>
+      <div class="check-item">
+        <svg viewBox="0 0 20 20"><path d="M16.7 5.3l-8.4 8.4-4-4 1.4-1.4 2.6 2.6 7-7 1.4 1.4z"/></svg>
+        <span>If not happy, no invoice</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-form-card">
+    <h4>Let's Discuss Your Project</h4>
+    <p>Fill in the form — we'll get back to you within 24 hours.</p>
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" placeholder="John Smith">
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" placeholder="john@company.com">
+    </div>
+    <div class="form-group">
+      <label>Company Name</label>
+      <input type="text" placeholder="Your Company">
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea placeholder="Tell us about your project..."></textarea>
+    </div>
+    <button class="form-submit">Get A Free Quote →</button>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">75+</div>
+    <div class="stat-label">Shopify Apps Built</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">1,500+</div>
+    <div class="stat-label">Stores Delivered</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">14+</div>
+    <div class="stat-label">Years Experience</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">250+</div>
+    <div class="stat-label">Team Members</div>
+  </div>
+</div>
+
+<!-- LOGOS -->
+<div class="logos-strip">
+  <p>Trusted by brands worldwide</p>
+  <div class="logo-track">
+    <span>Softwarekeep</span><span>Forester Beauty</span><span>Personal Comfort</span><span>Vanhunks</span><span>JoyVIVA</span><span>Gymshark</span><span>Allbirds</span><span>True Classic</span>
+    <span>Softwarekeep</span><span>Forester Beauty</span><span>Personal Comfort</span><span>Vanhunks</span><span>JoyVIVA</span><span>Gymshark</span><span>Allbirds</span><span>True Classic</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="section-tag">What We Build</div>
+  <h2>Our Shopify App Development <em>Services</em></h2>
+  <p class="section-sub">End-to-end custom Shopify app development — from idea to App Store listing.</p>
+  <div class="services-grid">
+
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Custom App Development</h3>
+      <p>Bespoke Shopify apps tailored to your specific business needs. Our custom solutions enhance store functionality and improve user experience.</p>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>App Integration Services</h3>
+      <p>Seamlessly integrate your Shopify store with CRM systems, accounting software, payment gateways, ERPs, and more.</p>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Performance Optimization</h3>
+      <p>Our Shopify apps are optimized for speed and efficiency, ensuring they run smoothly and enhance overall store performance.</p>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <h3>UX/UI Design</h3>
+      <p>User-friendly interfaces built to Shopify's Polaris design system — easy navigation, engaging visuals, satisfying experience.</p>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Security & Compliance</h3>
+      <p>Apps developed with the latest security protocols, ensuring data safety and compliance with all Shopify regulations and standards.</p>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <h3>Ongoing Support & Maintenance</h3>
+      <p>Continuous support including updates, bug fixes, and assistance to ensure your app remains efficient and effective.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing">
+  <div class="section-tag">Transparent Pricing</div>
+  <h2>Easy, Transparent Pricing <em>As Per Your Need</em></h2>
+  <p class="section-sub">No hidden fees. Choose a model that works for your business.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-label">Hourly</div>
+      <div class="price-amount">$20</div>
+      <div class="price-period">per hour</div>
+      <h3>For Flexible Engagements</h3>
+      <ul class="price-features">
+        <li>Rockstar programmers with 3–8 years experience</li>
+        <li>Ideal for ongoing enhancements or issue resolution</li>
+        <li>Pay only for hours worked</li>
+        <li>Transparent reporting & oversight</li>
+      </ul>
+      <a href="#contact" class="btn-price">Get Started</a>
+    </div>
+
+    <div class="price-card featured">
+      <div class="price-label">Monthly Retainer</div>
+      <div class="price-amount">$2,996</div>
+      <div class="price-period">per month · 160 hours</div>
+      <h3>For Growing Teams</h3>
+      <ul class="price-features">
+        <li>Dedicated Shopify app programmers</li>
+        <li>3–8 years of app programming experience</li>
+        <li>If not happy — no invoice</li>
+        <li>Onsite or remote support available</li>
+      </ul>
+      <a href="#contact" class="btn-price">Get Started</a>
+    </div>
+
+    <div class="price-card">
+      <div class="price-label">Enterprise</div>
+      <div class="price-amount" style="font-size:1.8rem;">Custom</div>
+      <div class="price-period">tailored to your needs</div>
+      <h3>For Large Organizations</h3>
+      <ul class="price-features">
+        <li>Advanced Shopify App development</li>
+        <li>Custom team composition</li>
+        <li>Dedicated project management</li>
+        <li>SLA-backed support & maintenance</li>
+      </ul>
+      <a href="#contact" class="btn-price">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process">
+  <div class="section-tag">How We Work</div>
+  <h2>Our Development <em>Process</em></h2>
+  <p class="section-sub">A streamlined, transparent workflow designed to keep you in the loop at every stage.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Discovery & Scoping</h3>
+      <p>We deep-dive into your requirements, business goals, and technical constraints to deliver a detailed project scope, timeline, and fixed-cost estimate.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Architecture & Design</h3>
+      <p>Our team designs the app architecture, database schema, and UX flows — aligned with Shopify's design system before any code is written.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Agile Development</h3>
+      <p>Two-week sprints with working demos at every milestone. You test early, give feedback, and shape the product in real time.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>QA & Shopify Review</h3>
+      <p>Rigorous testing across merchants, themes, and edge cases. We handle the full Shopify App Store submission and address review feedback fast.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <h3>Launch & Support</h3>
+      <p>Go live with confidence. We monitor performance post-launch and offer retainer-based maintenance, updates, and feature additions as you scale.</p>
+    </div>
+    <div class="step" style="display:flex; align-items:center; justify-content:center; text-align:center;">
+      <div>
+        <p style="color:rgba(255,255,255,0.7); font-size:1rem; margin-bottom:24px;">Ready to start your Shopify app project?</p>
+        <a href="#contact" class="btn-primary" style="display:inline-flex;">📞 Book a Discovery Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS BUILT -->
+<section id="apps" class="apps">
+  <div class="section-tag">Our Portfolio</div>
+  <h2>Shopify Apps Built <em>By Us</em></h2>
+  <p class="section-sub">Live on the Shopify App Store — built, launched, and maintained by our team.</p>
+  <div class="apps-grid">
+    <div class="app-card">
+      <div class="app-logo">🖼️</div>
+      <div class="app-info">
+        <h4>Easy Variant Images</h4>
+        <div class="app-rating">★★★★★ 5.0 (63) · 21-day free trial</div>
+        <div class="app-desc">Assign Multiple Images to Variants. Boost Conversions.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-logo">🌍</div>
+      <div class="app-info">
+        <h4>GeoIP Country Redirect</h4>
+        <div class="app-rating">★★★★★ 4.7 (112) · 15-day free trial</div>
+        <div class="app-desc">Redirect and Block Visitors based on Geolocation.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-logo">🎨</div>
+      <div class="app-info">
+        <h4>EVS ‑ Easy Variation Swatches</h4>
+        <div class="app-rating">★★★★★ 5.0 (10) · 21-day free trial</div>
+        <div class="app-desc">Display Product Variants as Image, Color, Button Swatches.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-logo">➕</div>
+      <div class="app-info">
+        <h4>EPA ‑ Easy Product Addons</h4>
+        <div class="app-rating">★★★★★ 4.9 (324) · 21-day free trial</div>
+        <div class="app-desc">Display related products & accessories on product page.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-logo">📦</div>
+      <div class="app-info">
+        <h4>Easy Returns Management System</h4>
+        <div class="app-rating">★★★★★ 4.8 (42) · 30-day free trial</div>
+        <div class="app-desc">Handle Return Requests & send Prepaid Shipping Labels.</div>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-logo">📅</div>
+      <div class="app-info">
+        <h4>ODD ‑ Order Delivery Date</h4>
+        <div class="app-rating">★★★ 3.2 (12) · 21-day free trial</div>
+        <div class="app-desc">Allow customers to select order delivery date on cart page.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="section-tag">Why StoreCartify</div>
+  <h2>Why Hire Shopify App Developers <em>From Us?</em></h2>
+  <p class="section-sub">We're Shopify specialists — not generalists. Here's what sets us apart.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🏆</div>
+      <h3>Expertise & Experience</h3>
+      <p>Our seasoned developers have deep understanding of the Shopify platform and align your app with the latest eCommerce trends.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <h3>Customized Solutions</h3>
+      <p>We prioritize understanding your unique business needs to create apps tailored to fit your specific requirements.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">✅</div>
+      <h3>Quality & Reliability</h3>
+      <p>Rigorous testing ensures reliability, seamless performance, and a bug-free experience for your Shopify store.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⚡</div>
+      <h3>Cutting-Edge Technology</h3>
+      <p>We employ modern tools and techniques ensuring your Shopify app is not only current but also future-ready.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <h3>Timely Delivery & Support</h3>
+      <p>We deliver on schedule without compromising quality. Post-launch, we offer robust support and maintenance.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💰</div>
+      <h3>Competitive Pricing</h3>
+      <p>Balancing top-notch service with cost-effectiveness — you get the best value without sacrificing quality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-tag">Client Stories</div>
+  <h2 style="color:var(--white);">Hundreds of <em style="color:var(--yellow);">Happy Customers</em></h2>
+  <p class="section-sub" style="color:rgba(255,255,255,0.6); margin-bottom:48px;">Don't take our word for it — here's what our clients say.</p>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Nikita and team have been great in updating and solving some issues on our website. Their response time and communication has been on point for the entire project. I would highly recommend working with the StoreCartify team."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">PG</div>
+        <div>
+          <div class="testi-name">Paul Grasso</div>
+          <div class="testi-role">Paul Labrecque</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"The team and Akash have been instrumental in enhancing our website. Their unwavering commitment to promptly address and solve any challenges demonstrates their exceptional problem-solving capabilities."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">BB</div>
+        <div>
+          <div class="testi-name">Bailey Beykirch</div>
+          <div class="testi-role">Kenz</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"The StoreCartify Team excelled in assisting our transition from Magento 1.0 to Shopify, ensuring minimal disruption to our daily operations. Their expertise in managing complex migrations is exceptional."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">JK</div>
+        <div>
+          <div class="testi-name">Jack</div>
+          <div class="testi-role">Personal Comfort Bed</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"I sincerely thank the entire StoreCartify team for being so easy to work with and for the meticulous attention to detail throughout the entire project. You have made this transition such a smooth and pleasant experience!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">DA</div>
+        <div>
+          <div class="testi-name">Deigh-Anna</div>
+          <div class="testi-role">JoyVIVA Team</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech">
+  <div class="section-tag">Technology</div>
+  <h2>Tech Stack We <em>Master</em></h2>
+  <p class="section-sub">Modern, battle-tested technologies to ship production-grade Shopify apps.</p>
+  <div class="tech-inner">
+    <div class="tech-group">
+      <div class="tech-group-label">Frontend</div>
+      <div class="pills">
+        <span class="pill">React</span><span class="pill">Hydrogen</span><span class="pill">Remix</span><span class="pill">Polaris UI</span><span class="pill">TypeScript</span><span class="pill">Next.js</span>
+      </div>
+    </div>
+    <div class="tech-group">
+      <div class="tech-group-label">Backend</div>
+      <div class="pills">
+        <span class="pill">Node.js</span><span class="pill">Ruby on Rails</span><span class="pill">Go</span><span class="pill">GraphQL</span><span class="pill">REST APIs</span><span class="pill">Webhooks</span>
+      </div>
+    </div>
+    <div class="tech-group">
+      <div class="tech-group-label">Infrastructure</div>
+      <div class="pills">
+        <span class="pill">AWS</span><span class="pill">Vercel</span><span class="pill">Cloudflare</span><span class="pill">PostgreSQL</span><span class="pill">Redis</span><span class="pill">Docker</span><span class="pill">CI/CD</span>
+      </div>
+    </div>
+    <div class="tech-group">
+      <div class="tech-group-label">Shopify Specific</div>
+      <div class="pills">
+        <span class="pill">Shopify CLI</span><span class="pill">Shopify Functions</span><span class="pill">Theme Extensions</span><span class="pill">Storefront API</span><span class="pill">Admin API</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="section-tag">FAQ</div>
+  <h2>Frequently Asked <em>Questions</em></h2>
+  <p class="section-sub">Everything you need to know about our Shopify App Development Services.</p>
+  <div class="faq-layout">
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What expertise can I expect from a Shopify App Developer?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Our Shopify App Developers are skilled in custom app creation, integration, UI/UX design, performance optimization, and security compliance. They are experienced in the latest Shopify technologies and eCommerce trends.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How does the hiring process work?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">The process begins with understanding your project requirements. We then match you with a developer or team that best fits your needs. You can interview and select who you feel is the right fit before work begins.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I hire a developer for both short-term and long-term projects?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Absolutely. Our flexible hiring models allow you to engage a Shopify App Developer for both short-term and long-term projects, depending on your requirements.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What are the billing options?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We offer two billing options: project-based for fixed-price contracts and hourly for flexible, ongoing projects. We also offer monthly retainers for teams needing dedicated resources.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What happens if I'm not satisfied with the work?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We strive for complete client satisfaction. If you are not satisfied with the work, we will address your concerns promptly and make necessary adjustments — including changing the developer if needed. If you're not happy, you will not be invoiced.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I hire a developer for app maintenance and updates?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes, our developers are available for ongoing maintenance and updates to ensure your Shopify app remains up-to-date and performs optimally as Shopify's platform evolves.</div>
+      </div>
+
+    </div>
+
+    <div class="faq-cta-panel">
+      <h3>Still have <em>questions?</em></h3>
+      <p>Our Shopify experts are ready to walk you through the entire process and answer any specific questions about your project.</p>
+      <ul>
+        <li>100% Confidential — we sign NDA</li>
+        <li>Free 30-minute discovery call</li>
+        <li>No invoice if you're not happy</li>
+        <li>Dedicated developer assigned</li>
+        <li>Onsite or remote support</li>
+      </ul>
+      <a href="#contact">📞 Book a Free Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + CONTACT FORM -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+
+    <!-- Left: Text + trust signals -->
+    <div class="contact-left">
+      <div class="section-tag">Get In Touch</div>
+      <h2>Ready to Launch Your <em>Shopify App?</em></h2>
+      <p class="contact-sub">Tell us your idea. We'll scope it, price it, and build it — on time and on budget. Fill in the form and we'll get back to you within 24 hours.</p>
+
+      <ul class="contact-trust">
+        <li><span class="ctick">✓</span> 100% Confidential — we sign NDA</li>
+        <li><span class="ctick">✓</span> Free 30-minute discovery call</li>
+        <li><span class="ctick">✓</span> No invoice if you're not happy</li>
+        <li><span class="ctick">✓</span> Dedicated developer assigned to you</li>
+        <li><span class="ctick">✓</span> Onsite or remote support available</li>
+      </ul>
+
+      <div class="contact-stats">
+        <div class="cs-item">
+          <div class="cs-num">75+</div>
+          <div class="cs-label">Apps Built</div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-num">1,500+</div>
+          <div class="cs-label">Stores Delivered</div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-num">14+</div>
+          <div class="cs-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="contact-form-wrap">
+      <div class="contact-form-card">
+        <h4>Please message us so we can discuss your project in detail.</h4>
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="John Smith">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" placeholder="john@company.com">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+1 (555) 000-0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Company Name</label>
+          <input type="text" placeholder="Your Company">
+        </div>
+        <div class="form-group">
+          <label>What are you looking to build? *</label>
+          <select>
+            <option value="" disabled selected>Select a service</option>
+            <option>Custom Shopify App Development</option>
+            <option>App Store Listing</option>
+            <option>Theme Extension Development</option>
+            <option>Third-Party Integrations</option>
+            <option>App Maintenance & Support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea placeholder="Describe your project, timeline, and any specific requirements..."></textarea>
+        </div>
+        <button class="form-submit">Get A Free Quote →</button>
+        <p class="form-note">
+          <svg viewBox="0 0 20 20" style="width:13px;height:13px;fill:var(--green);vertical-align:middle;margin-right:4px;"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zm-1-5h2v2H9v-2zm0-6h2v4H9V5z"/></svg>
+          We typically respond within a few hours during business days.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="footer-logo">Store<span>Cartify</span></div>
+    <p>Get a professionally designed Shopify app to build trust with your customers and grow your business.</p>
+    <p style="margin-top:12px; font-size:.82rem;">+1 818-335-6585 (USA)<br>600 N Broad Street, Suite 5 #3449,<br>Middletown, DE 19709, United States</p>
+  </div>
+  <div class="footer-col">
+    <h4>Services</h4>
+    <a href="#">Custom App Development</a>
+    <a href="#">App Store Listing</a>
+    <a href="#">Theme Extensions</a>
+    <a href="#">Headless Commerce</a>
+    <a href="#">API Integrations</a>
+    <a href="#">App Maintenance</a>
+  </div>
+  <div class="footer-col">
+    <h4>Company</h4>
+    <a href="#">How We Work</a>
+    <a href="#">About Us</a>
+    <a href="#">Our Clients</a>
+    <a href="#">Case Studies</a>
+    <a href="#">Careers</a>
+  </div>
+  <div class="footer-col">
+    <h4>Get in Touch</h4>
+    <a href="#">hello@storecartify.com</a>
+    <a href="#">+1 818-335-6585</a>
+    <a href="#">Schedule a Call</a>
+    <a href="#">Contact Us</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 StoreCartify (A Brand of EbizON). All rights reserved.</p>
+  <p class="disclaimer">Disclaimer: StoreCartify is not affiliated with Shopify. All Shopify trademarks are the property of Shopify Inc.</p>
+</div>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>
