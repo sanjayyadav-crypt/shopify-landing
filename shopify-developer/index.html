@@ -1181,6 +1181,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       align-items: center;
       gap: 12px;
     }
+    .testi-author .anna{
+      background-color: white;
+    }
 
     .testi-avatar {
       width: 44px;
@@ -1940,11 +1943,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .nav-links {
         display: none;
       }
-
+.logo img {
+        width: 150px;
+        height: auto;
+      }
       .stats-bar {
         flex-wrap: wrap;
       }
@@ -1954,11 +1960,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         border-bottom: 1px solid rgba(0, 0, 0, .1);
         padding: 12px 0;
       }
+      .stat-item .stat-num {
+        font-size: 1.5rem;
+      }
+      .stat-item .stat-label {
+        font-size: .65rem;
+      }
 
       .stat-item:last-child {
         border-bottom: none;
+        display: none;
       }
-
+      .mig-cta-right{
+        width: 100%;
+      }
+      .mid-cta-card{
+        padding: 28px 20px;
+      }
+      .mid-cta-right .mid-cta-stat-num{
+        font-size: 1.6rem;
+      }
+      .mid-cta-right .mid-cta-stat-label{
+        font-size: .65rem;
+      }
       .dev-grid,
       .pricing-grid,
       .why-grid,
@@ -1977,6 +2001,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .steps-grid {
         grid-template-columns: 1fr;
       }
+    }
+    @media (max-width: 1900px) {
+     .hero{
+      padding-top: 180px;
+     }
     }
   </style>
 </head>
@@ -2628,7 +2657,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           meticulous attention to detail throughout the project. You have made this transition such a smooth and
           pleasant experience!"</p>
         <div class="testi-author">
-          <div class="testi-avatar">
+          <div class="testi-avatar anna">
             <img src="../assets/JoyViva98.png" alt="Deigh-Anna from JoyVIVA Wellness">
           </div>
           <div>
