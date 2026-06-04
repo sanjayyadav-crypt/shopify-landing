@@ -58,7 +58,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ===== NAV ===== */
     nav {
-      position: fixed;
+      /* position: fixed; */
       top: 0;
       left: 0;
       width: 100%;
@@ -124,12 +124,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ===== HERO ===== */
     .hero {
-      min-height: 92vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 60px;
-      padding: 120px 5vw 80px;
+      padding: 60px 80px;
       background: var(--body-bg);
       position: relative;
       overflow: hidden;
@@ -437,18 +436,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* ===== LOGOS ===== */
     .logos-strip {
       background: var(--white);
-      padding: 28px 0;
       border-bottom: 1.5px solid var(--light-border);
       overflow: hidden;
+      background: var(--green);   
+      padding: 60px 0px;
+    }
+    .logos-strip img{
+      width: auto;
+      display: block;
+      margin: 20px auto;
     }
 
     .logos-strip p {
       text-align: center;
-      font-size: .72rem;
+      font-size: 45px;
       font-weight: 800;
       letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
+      
+      color: white;
       margin-bottom: 20px;
     }
 
@@ -1999,15 +2004,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         grid-template-columns: 1fr 1fr;
       }
 
+  
+
       .steps-grid {
         grid-template-columns: 1fr;
       }
     }
-    @media (max-width: 1900px) {
-     .hero{
-      padding-top: 180px;
-     }
-    }
+    
   </style>
 </head>
 
@@ -2128,13 +2131,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- LOGOS -->
   <div class="logos-strip">
-    <p>Trusted by brands worldwide</p>
-    <div class="logo-track">
-      <span>Softwarekeep</span><span>Forester Beauty</span><span>Personal
-        Comfort</span><span>Vanhunks</span><span>JoyVIVA</span><span>Emma</span><span>Americord</span><span>Sokolin</span>
-      <span>Softwarekeep</span><span>Forester Beauty</span><span>Personal
-        Comfort</span><span>Vanhunks</span><span>JoyVIVA</span><span>Emma</span><span>Americord</span><span>Sokolin</span>
-    </div>
+    <p>Trusted By Brands Worldwide</p>
+    <img src="../assets/clients.png" alt="Client Logos" class="client-logos">
   </div>
 
   <!-- DEVELOPER TYPES -->
@@ -2512,7 +2510,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h4>Softwarekeep</h4>
           <p>Full eCommerce migration, performance optimization, and SEO retention — resulting in a faster,
             higher-converting Shopify store.</p>
-          <a href="https://softwarekeep.com" target="_blank" class="port-link">Visit Store →</a>
+          <a href="https://softwarekeep.com"  rel="nofollow noreferrer" target="_blank" class="port-link">Visit Store →</a>
         </div>
       </div>
 
@@ -2527,7 +2525,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h4>Forester Beauty</h4>
           <p>Custom Shopify store with premium UX, product discovery features, and seamless checkout — built for
             beauty-conscious customers.</p>
-          <a href="https://www.foresterbeauty.com" target="_blank" class="port-link">Visit Store →</a>
+          <a href="https://www.foresterbeauty.com" rel="nofollow noreferrer" target="_blank" class="port-link">Visit Store →</a>
         </div>
       </div>
 
@@ -2542,7 +2540,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h4>Personal Comfort Bed</h4>
           <p>Complex Magento 1.0 to Shopify migration with complete product catalog, customer accounts, and SEO ranking
             preservation.</p>
-          <a href="https://personalcomfortbed.com" target="_blank" class="port-link">Visit Store →</a>
+          <a href="https://personalcomfortbed.com" rel="nofollow noreferrer" target="_blank" class="port-link">Visit Store →</a>
         </div>
       </div>
 
@@ -2557,7 +2555,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h4>Vanhunks Outdoor</h4>
           <p>Custom Shopify store with advanced product filtering, multi-currency support, and optimized mobile
             experience for global shoppers.</p>
-          <a href="https://www.vanhunksoutdoor.co.za" target="_blank" class="port-link">Visit Store →</a>
+          <a href="https://www.vanhunksoutdoor.co.za" rel="nofollow noreferrer" target="_blank" class="port-link">Visit Store →</a>
         </div>
       </div>
 
@@ -2572,7 +2570,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h4>JoyVIVA</h4>
           <p>WooCommerce to Shopify migration with full product catalog, past orders, customer accounts, and SEO ranking
             retention.</p>
-          <a href="https://joyviva.ca" target="_blank" class="port-link">Visit Store →</a>
+          <a href="https://joyviva.ca" rel="nofollow noreferrer" target="_blank" class="port-link">Visit Store →</a>
         </div>
       </div>
 
