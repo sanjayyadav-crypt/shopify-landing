@@ -57,6 +57,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 1.4rem; color: var(--green); text-decoration: none;
     letter-spacing: -0.02em;
   }
+  .logo img {
+    width: 300px; height: auto;
+  }
   .logo span { color: var(--yellow); }
   .nav-links { display: flex; gap: 28px; list-style: none; }
   .nav-links a { color: var(--text); text-decoration: none; font-size: .9rem; font-weight: 600; transition: color .2s; }
@@ -516,7 +519,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .contact-inner { grid-template-columns: 1fr; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    .logo img{
+      width: 150px !important;
+    }
     .nav-links { display: none; }
     .stats-bar { flex-wrap: wrap; }
     .stat-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,.1); padding: 12px 0; }
@@ -532,6 +538,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .price-card h3 { font-size: .92rem; }
     .price-features li { font-size: .82rem; }
   }
+  @media (max-width: 2400px) {
+   .logo img{
+    width: 200px;
+   }
+   .hero{
+    padding-top:150px;  
+   }
+  }
 </style>
 </head>
 <body>
@@ -543,7 +557,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">Store<span>Cartify</span></a>
+  <a href="#" class="logo">
+    <img src="../assets/storecartify-logo.webp" alt="">
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#pricing">Pricing</a></li>
