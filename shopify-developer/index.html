@@ -1897,11 +1897,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .steps-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      .logos-strip img {
+        width: 100%;
+      }
     }
 
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
+        padding: 60px 5vw 40px;
+      }
+      .logos-strip p{
+        font-size: 25px;
       }
 
       .dev-grid,
@@ -2003,14 +2010,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       footer {
         grid-template-columns: 1fr 1fr;
       }
-
-  
+      .logos-strip{
+        padding: 40px 5vw;
+      }
+      .logos-strip img{
+        margin: 0px auto;
+        
+       }
 
       .steps-grid {
         grid-template-columns: 1fr;
       }
     }
-    
+    @media(min-width: 1200px){
+      .hero {
+        padding: 80px 5vw 60px;
+      }
+      .logos-strip img{
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
@@ -2133,6 +2152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="logos-strip">
     <p>Trusted By Brands Worldwide</p>
     <img src="../assets/clients.png" alt="Client Logos" class="client-logos">
+    <img src="../assets/client-mobile.png" alt="Client Logos" class="client-logos-mobile">
   </div>
 
   <!-- DEVELOPER TYPES -->
@@ -2905,6 +2925,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.getElementById("hidden-source-2").value = utmSource;
   document.getElementById("hidden-campaign-2").value = utmCampaign;
   document.getElementById("hidden-landing-page-2").value = landingPage;
+     });
+
+     const mobileImg = document.querySelector('.client-logos-mobile');
+     const desktopImg = document.querySelector('.client-logos');
+     if(window.innerWidth > 768){
+      mobileImg.style.display = 'none';
+      desktopImg.style.display = 'block';
+     } else {
+      mobileImg.style.display = 'block';
+      desktopImg.style.display = 'none';
+     }
 
   </script>
 
