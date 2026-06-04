@@ -183,6 +183,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     flex: 1; text-align: center; padding: 0 20px;
     border-right: 1px solid rgba(0,0,0,0.12);
   }
+  .stat-item .stat-num {
+    font-size: 1.5rem;
+  }
+  .stat-item .stat-label {
+    font-size: .65rem;
+  }
   .stat-item:last-child { border-right: none; }
   .stat-num {
     font-family: 'Nunito Sans', sans-serif; font-weight: 900;
@@ -519,6 +525,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .pricing-grid .price-card.featured { transform: scale(1); }
     footer { grid-template-columns: 1fr 1fr; }
     .contact-form-card { padding: 28px 20px; }
+  }
+  @media (max-width: 1024px) {
+    .hero-actions { flex-direction: column; gap: 12px; }
+    .hero-form-card { width: 100%; max-width: none; }
+    .price-card h3 { font-size: .92rem; }
+    .price-features li { font-size: .82rem; }
   }
 </style>
 </head>
