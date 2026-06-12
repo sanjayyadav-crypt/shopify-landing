@@ -1,0 +1,2566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W9TG9P5S');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Development Agency | StoreCartify</title>
+  <meta name="description"
+    content="StoreCartify is a leading Shopify development agency. We build, migrate, and scale Shopify stores for brands worldwide. 1,500+ stores delivered, 250+ expert developers.">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="../assets/store-icon.png">
+  <style>
+    :root {
+      --green: #004c3f;
+      --green-light: #006654;
+      --green-dim: rgba(0, 76, 63, 0.08);
+      --green-border: rgba(0, 76, 63, 0.25);
+      --yellow: #FFC001;
+      --yellow-dim: rgba(255, 192, 1, 0.15);
+      --dark: #1a1a1a;
+      --body-bg: #fbf7ed;
+      --white: #ffffff;
+      --text: #333333;
+      --muted: #666666;
+      --light-border: #e5e0d4;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--body-bg);
+      color: var(--text);
+      font-family: 'Nunito Sans', -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--body-bg);
+      border-bottom: 1px solid var(--light-border);
+      padding: 14px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      text-decoration: none;
+      width: 300px;
+    }
+    .logo img{
+      width: 100%;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-cta {
+      background: var(--green);
+      color: var(--white);
+      font-weight: 700;
+      font-size: .88rem;
+      padding: 10px 22px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--green-light);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      padding: 120px 5vw 80px;
+      background: var(--body-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-dots {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: radial-gradient(rgba(0, 76, 63, 0.06) 1.5px, transparent 1.5px);
+      background-size: 28px 28px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 76, 63, 0.08);
+      border: 1px solid rgba(0, 76, 63, 0.2);
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      animation: fadeUp .5s ease both;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 1.8s ease infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(1.5)
+      }
+    }
+
+    h1 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+      margin-bottom: 20px;
+      animation: fadeUp .6s .1s ease both;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 36px;
+      animation: fadeUp .6s .2s ease both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp .6s .3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 76, 63, .2);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--green);
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      border: 2px solid var(--green);
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-ghost:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+      animation: fadeUp .6s .4s ease both;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .check-item svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--green);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .check-item span {
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* HERO FORM */
+    .hero-form-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 1;
+      animation: fadeUp .7s .15s ease both;
+    }
+
+    .hero-form-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .hero-form-card>p {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .74rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: .03em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1.5px solid var(--light-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .87rem;
+      color: var(--text);
+      background: #fafaf8;
+      transition: border-color .2s;
+      outline: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--green);
+      background: #fff;
+    }
+
+    .form-group textarea {
+      height: 80px;
+      resize: none;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      font-family: inherit;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 13px;
+      border: none;
+      border-radius: 9rem;
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 4px;
+    }
+
+    .form-submit:hover {
+      background: var(--green-light);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      font-size: .72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--light-border);
+      padding: 28px 5vw;
+      display: flex;
+      justify-content: center;
+    }
+
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 20px;
+      border-right: 1px solid var(--light-border);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--green);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    /* LOGOS */
+    .logos-strip {
+      background: var(--green);
+      padding: 28px 0;
+      border-bottom: 1.5px solid var(--light-border);
+      overflow: hidden;
+    }
+    .logos-strip img{
+      display: block;
+      margin: 0px auto;
+    }
+    .logos-strip .mobile-img{
+      display: none;
+    }
+
+    .logos-strip p {
+      text-align: center;
+      font-size: 45px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .logo-track {
+      display: flex;
+      gap: 56px;
+      animation: scrollLogo 25s linear infinite;
+      width: max-content;
+    }
+
+    .logo-track span {
+      color: var(--muted);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      white-space: nowrap;
+      opacity: .5;
+    }
+
+    @keyframes scrollLogo {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* SECTION COMMONS */
+    section {
+      padding: 88px 5vw;
+    }
+
+    .section-tag {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .section-tag::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    h2 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 14px;
+    }
+
+    h2 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 1rem;
+      margin-bottom: 52px;
+    }
+
+    /* SERVICES */
+    .services {
+      background: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .svc-card {
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: all .25s;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--light-border);
+      transition: background .25s;
+    }
+
+    .svc-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 8px 32px rgba(0, 76, 63, .1);
+      transform: translateY(-3px);
+    }
+
+    .svc-card:hover::before {
+      background: var(--green);
+    }
+
+    .svc-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--green-dim);
+      border: 1.5px solid var(--green-border);
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+
+    .svc-card h3 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .svc-card p {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .svc-tag {
+      display: inline-block;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    /* PROCESS */
+    .process {
+      background: var(--body-bg);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(to right, var(--green), var(--yellow));
+      z-index: 0;
+    }
+
+    .proc-step {
+      text-align: center;
+      padding: 0 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .proc-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      border: 3px solid var(--body-bg);
+      box-shadow: 0 4px 16px rgba(0, 76, 63, .2);
+    }
+
+    .proc-step h4 {
+      font-weight: 800;
+      font-size: .9rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .proc-step p {
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* WHY US */
+    .why {
+      background: var(--white);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .why-card {
+      border: 1.5px solid var(--light-border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      transition: all .25s;
+      background: var(--body-bg);
+    }
+
+    .why-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 6px 24px rgba(0, 76, 63, .08);
+      transform: translateY(-2px);
+      background: var(--white);
+    }
+
+    .why-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--yellow-dim);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .why-card h3 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      font-size: .86rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* EXPERTISE TWO COL */
+    .expertise {
+      background: var(--body-bg);
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .exp-list {
+      list-style: none;
+    }
+
+    .exp-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+    }
+
+    .exp-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .exp-text h4 {
+      font-weight: 800;
+      font-size: .95rem;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .exp-text p {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .exp-visual {
+      background: var(--white);
+      border: 1.5px solid var(--light-border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .exp-visual-label {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .skill-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .skill-name {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .skill-bar {
+      height: 6px;
+      background: var(--light-border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: var(--green);
+      border-radius: 10px;
+    }
+
+    /* RESULTS / CASE STUDIES */
+    .results {
+      background: var(--white);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .result-card {
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all .3s;
+    }
+
+    .result-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 10px 36px rgba(0, 76, 63, .12);
+      transform: translateY(-4px);
+    }
+
+    .result-header {
+      padding: 28px 28px 20px;
+      background: var(--body-bg);
+      border-bottom: 1.5px solid var(--light-border);
+    }
+
+    .result-client {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .result-header h4 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .result-metrics {
+      display: flex;
+      gap: 16px;
+    }
+
+    .metric {
+      text-align: center;
+    }
+
+    .metric-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .metric-label {
+      font-size: .65rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .result-body {
+      padding: 20px 28px 24px;
+    }
+
+    .result-body p {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .result-tag {
+      display: inline-block;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* TECH STACK */
+    .tech {
+      background: var(--body-bg);
+    }
+
+    .tech-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .tech-group {
+      padding: 32px 36px;
+      border-right: 1.5px solid var(--light-border);
+      border-bottom: 1.5px solid var(--light-border);
+    }
+
+    .tech-group:nth-child(even) {
+      border-right: none;
+    }
+
+    .tech-group:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .tech-group-label {
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tech-group-label::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      background: var(--body-bg);
+      border: 1.5px solid var(--light-border);
+      border-radius: 8px;
+      padding: 9px 16px;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--text);
+      transition: all .2s;
+      cursor: default;
+    }
+
+    .pill:hover {
+      border-color: var(--green);
+      color: var(--green);
+      background: var(--green-dim);
+    }
+
+    /* MID CTA */
+    .mid-cta {
+      background: var(--green);
+      padding: 80px 5vw;
+    }
+
+    .mid-cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .mid-cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgb(212, 212, 212);
+      border: 1px solid rgba(0, 76, 63, 0.2);
+      color: var(--green);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .mid-cta-heading {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .mid-cta-sub {
+      font-size: .98rem;
+      color: var(--white);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .mid-cta-list {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .mid-cta-list li {
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--white);
+      padding: 8px 0;
+      border-bottom: 1px solid white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mid-cta-list li:last-child {
+      border-bottom: none;
+    }
+
+    .mid-cta-tick {
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .7rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .mid-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .mid-cta-btn-primary {
+      background: var(--white);
+      color: var(--green);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mid-cta-btn-primary:hover {
+      background: transparent;
+      color: var(--white);
+      transform: translateY(-1px);
+      border: 2px solid white;
+
+    }
+
+    .mid-cta-btn-ghost {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      border: 2px solid white;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+
+    .mid-cta-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+    }
+
+    .mid-cta-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mid-cta-stat {
+      text-align: center;
+      padding: 16px 8px;
+      border-right: 1px solid var(--light-border);
+    }
+
+    .mid-cta-stat:last-child {
+      border-right: none;
+    }
+
+    .mid-cta-stat-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.9rem;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .mid-cta-stat-label {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .mid-cta-divider {
+      height: 1px;
+      background: var(--light-border);
+      margin: 28px 0;
+    }
+
+    .mid-cta-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .mid-cta-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .mid-cta-trust-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green-dim);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--body-bg);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .testi-card {
+      background: var(--white);
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      position: relative;
+      transition: all .25s;
+    }
+
+    .testi-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 6px 24px rgba(0, 76, 63, .08);
+    }
+
+    .testi-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--green);
+      opacity: .1;
+      line-height: .8;
+    }
+
+    .stars {
+      color: var(--yellow);
+      font-size: .85rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .testi-text {
+      font-size: .93rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 22px;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-weight: 800;
+      font-size: .88rem;
+      color: var(--dark);
+    }
+
+    .testi-role {
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--white);
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .faq-item {
+      border-bottom: 1.5px solid var(--light-border);
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 20px 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-q:hover {
+      color: var(--green);
+    }
+
+    .faq-icon {
+      font-size: 1.1rem;
+      color: var(--green);
+      flex-shrink: 0;
+      transition: transform .25s;
+    }
+
+    .faq-a {
+      display: none;
+      padding-bottom: 18px;
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-a {
+      display: block;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-cta-panel {
+      background: var(--green);
+      border-radius: 20px;
+      padding: 40px 36px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .faq-cta-panel h3 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .faq-cta-panel h3 em {
+      font-style: normal;
+      color: var(--white);
+    }
+
+    .faq-cta-panel p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: .88rem;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .faq-cta-panel ul {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .faq-cta-panel ul li {
+      font-size: .86rem;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 7px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .faq-cta-panel ul li::before {
+      content: '✓';
+      color: var(--white);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .faq-cta-panel ul li:last-child {
+      border-bottom: none;
+    }
+
+    .faq-cta-btn {
+      display: block;
+      text-align: center;
+      background: var(--white);
+      color: var(--dark);
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--white);
+      padding: 88px 5vw;
+      border-top: 1.5px solid var(--light-border);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-sub {
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .contact-trust {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .contact-trust li {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--light-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-trust li:last-child {
+      border-bottom: none;
+    }
+
+    .ctick {
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .72rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .contact-stats {
+      display: flex;
+      gap: 0;
+      border: 1.5px solid var(--light-border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .cs-item {
+      flex: 1;
+      text-align: center;
+      padding: 18px 12px;
+      border-right: 1.5px solid var(--light-border);
+      background: var(--body-bg);
+    }
+
+    .cs-item:last-child {
+      border-right: none;
+    }
+
+    .cs-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.7rem;
+      color: var(--green);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .cs-label {
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .contact-form-card {
+      background: var(--body-bg);
+      border-radius: 20px;
+      padding: 28px;
+      border: 1.5px solid var(--light-border);
+      box-shadow: 0 8px 40px rgba(0, 76, 63, .07);
+    }
+
+    .contact-form-card h4 {
+      font-size: .92rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .cf-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .cf-group {
+      margin-bottom: 10px;
+    }
+
+    .cf-group label {
+      display: block;
+      font-size: .74rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: .03em;
+    }
+
+    .cf-group input,
+    .cf-group textarea,
+    .cf-group select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1.5px solid var(--light-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .87rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color .2s;
+      outline: none;
+      appearance: none;
+    }
+
+    .cf-group input:focus,
+    .cf-group textarea:focus,
+    .cf-group select:focus {
+      border-color: var(--green);
+    }
+
+    .cf-group textarea {
+      height: 80px;
+      resize: none;
+    }
+
+    .cf-submit {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      font-family: inherit;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 13px;
+      border: none;
+      border-radius: 9rem;
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 6px;
+    }
+
+    .cf-submit:hover {
+      background: var(--green-light);
+      transform: translateY(-1px);
+    }
+
+    .cf-note {
+      font-size: .73rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--green);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 60px 5vw 24px;
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .footer-logo {
+      margin-bottom: 12px;
+      width: 300px;
+    }
+    .footer-logo img{
+      width: 100%;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-logo span {
+      color: var(--yellow);
+    }
+
+    .footer-brand p {
+      font-size: .85rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer-col h4 {
+      font-weight: 800;
+      font-size: .85rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: .04em;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: .83rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: color .2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--yellow);
+    }
+
+    .footer-bottom {
+      background: var(--green);
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      padding: 20px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-bottom p {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .disclaimer {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, 0.35);
+      max-width: 480px;
+      text-align: right;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero h1{
+        font-size: 25px;
+      }
+      nav .logo{
+        width: 160px;
+      }
+      .logos-strip p{
+        font-size: 25px;
+        text-align: left;
+        margin-left: 20px;
+      }
+      .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display:block;
+      }
+      .stats-bar{
+        flex-wrap: wrap;
+        
+      }
+    
+      .stats-bar .stat-item:last-child{
+        display: none;
+      }
+      .stat-item .stat-num{
+        font-size: 25px;
+      }
+      .stat-item .stat-label{
+        font-size: 12px;
+      }
+      .mid-cta-card{
+        max-width: 90%;
+      }
+      .services-grid,
+      .why-grid,
+      .results-grid,
+      footer {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .testi-grid,
+      .exp-grid,
+      .contact-inner,
+      .faq-layout,
+      .mid-cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-group:nth-child(even) {
+        border-right: none;
+      }
+
+      .tech-group:nth-last-child(-n+2) {
+        border-bottom: 1.5px solid var(--light-border);
+      }
+
+      .tech-group:last-child {
+        border-bottom: none;
+      }
+
+      .faq-cta-panel {
+        position: static;
+      }
+
+      .cf-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+
+      .stats-bar {
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--light-border);
+        padding: 12px 0;
+      }
+
+      .stat-item:last-child {
+        border-bottom: none;
+      }
+
+      .services-grid,
+      .why-grid,
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      footer {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9TG9P5S" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://storecartify.com" class="logo">
+      <img src="../assets/storecartify-logo.webp" alt="">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Free Quote</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-dots"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">✦ Shopify Development Agency</div>
+      <h1>The <em>Shopify Development Agency</em> Behind 1,500+ Growing Stores</h1>
+      <p>StoreCartify is a full-service Shopify development agency trusted by brands worldwide. From custom store builds
+        to complex migrations, app development, and ongoing growth — we do it all.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">🚀 Start Your Project</a>
+        <a href="#results" class="btn-ghost">See Our Work</a>
+      </div>
+      <div class="trust-row">
+        <div class="check-item"><svg viewBox="0 0 16 16">
+            <path d="M13.5 2.5l-7 9-4-4" />
+          </svg><span>Shopify Plus Partner</span></div>
+        <div class="check-item"><svg viewBox="0 0 16 16">
+            <path d="M13.5 2.5l-7 9-4-4" />
+          </svg><span>250+ Developers</span></div>
+        <div class="check-item"><svg viewBox="0 0 16 16">
+            <path d="M13.5 2.5l-7 9-4-4" />
+          </svg><span>98% Client Satisfaction</span></div>
+      </div>
+    </div>
+   <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
+      data-drip-embedded-form="330315483" id="drip-ef-330315483">
+      <h4>Tell us what you need</h4>
+      <p>We'll match you with the right Shopify developer within 24 hours.</p>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="John Smith" id="drip-full-name" name="fields[full_name]" value="">
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@company.com" id="drip-email" name="fields[email]" value="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" placeholder="Your Company" id="drip-company-name" name="fields[company_name]" value="">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Briefly describe your project or requirements..." id="drip-message"
+          name="fields[message]"></textarea>
+      </div>
+
+      <input type="hidden" id="hidden-source" name="fields[utm_source]" value="">
+      <input type="hidden" id="hidden-campaign" name="fields[utm_campaign]" value="">
+      <input type="hidden" id="hidden-landing-page" name="fields[landing_page]" value="">
+
+
+      <input type="submit" value="Get A Free Quote →" data-drip-attribute="sign-up-button" class="form-submit"
+        class="form-submit">
+      <p class="form-note">🔒 Your information is 100% confidential.</p>
+    </form>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">1,500+</div>
+      <div class="stat-label">Stores Delivered</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">250+</div>
+      <div class="stat-label">Expert Developers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">75+</div>
+      <div class="stat-label">Shopify Apps Built</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Satisfaction Rate</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+
+  <!-- LOGO STRIP -->
+  <div class="logos-strip">
+    <p>Trusted By Brands WorldWide</p>
+    <div style="overflow:hidden">
+      <div class="clients-logo">
+        <img src="../assets/clients.png" alt="" class="desktop-img">
+        <img src="../assets/client-mobile.png" alt="" class="mobile-img">
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="section-tag">What We Do</div>
+    <h2>Full-Service <em>Shopify Development</em> Agency</h2>
+    <p class="section-sub">From day-one store builds to enterprise Shopify Plus solutions — our agency covers every
+      aspect of your Shopify journey.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🏗️</div>
+        <h3>Custom Shopify Store Development</h3>
+        <p>We design and build Shopify stores from scratch — tailored to your brand, optimized for conversions, and
+          built to scale from day one.</p>
+        <span class="svc-tag">Theme Dev · UX Design · Launch</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔄</div>
+        <h3>Platform Migration to Shopify</h3>
+        <p>Migrate from WooCommerce, Magento, BigCommerce, or any other platform to Shopify — with zero data loss and
+          full SEO ranking preservation.</p>
+        <span class="svc-tag">WooCommerce · Magento · BigCommerce</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🎨</div>
+        <h3>Custom Theme Development</h3>
+        <p>Pixel-perfect custom Shopify themes built with Liquid, HTML, CSS, and JavaScript — unique designs that stand
+          out and convert.</p>
+        <span class="svc-tag">Liquid · Dawn · Custom Sections</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📱</div>
+        <h3>Shopify App Development</h3>
+        <p>Custom private or public Shopify apps — from variant managers to subscription tools and loyalty programs —
+          built for the Shopify App Store.</p>
+        <span class="svc-tag">Node.js · React · Polaris · REST API</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">⚡</div>
+        <h3>Shopify Plus Development</h3>
+        <p>Enterprise-grade Shopify Plus builds with advanced checkout customization, B2B features, multistore setups,
+          and Scripts API.</p>
+        <span class="svc-tag">Checkout Extensions · B2B · Scripts</span>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🚀</div>
+        <h3>Headless & Hydrogen Development</h3>
+        <p>Blazing-fast headless Shopify storefronts built with Hydrogen and Remix — delivering world-class performance
+          and flexibility.</p>
+        <span class="svc-tag">Hydrogen · Remix · Storefront API</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Discuss Your Project →</a>
+      <a href="#process" class="btn-ghost">See How We Work</a>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="process">
+    <div class="section-tag">Our Process</div>
+    <h2>How We Build Your <em>Shopify Store</em></h2>
+    <p class="section-sub">A proven 5-step agency process that takes your project from idea to a live,
+      revenue-generating Shopify store.</p>
+    <div class="process-steps">
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <h4>Discovery Call</h4>
+        <p>We learn your brand, goals, tech stack, and timeline — then propose the right approach.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <h4>Strategy & Scoping</h4>
+        <p>Detailed project scope, wireframes, and a clear timeline with milestones and deliverables.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <h4>Design & Build</h4>
+        <p>Our developers build your store with daily updates and a staging preview for your feedback.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <h4>QA & Testing</h4>
+        <p>Cross-device and cross-browser testing, performance audits, and full checkout QA before launch.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">05</div>
+        <h4>Launch & Support</h4>
+        <p>Smooth go-live, post-launch monitoring, and ongoing support to keep your store growing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="why">
+    <div class="section-tag">Why StoreCartify</div>
+    <h2>Why Choose Us as Your <em>Shopify Development Agency?</em></h2>
+    <p class="section-sub">We're not a freelance marketplace. We're a full-service agency with in-house developers,
+      designers, and strategists who've built 1,500+ Shopify stores.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏆</div>
+        <h3>Certified Shopify Partner</h3>
+        <p>Official Shopify Partner agency with direct access to Shopify support, beta features, and the Partner
+          Dashboard for your store.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">👥</div>
+        <h3>In-House Team, Not Freelancers</h3>
+        <p>All 250+ developers are vetted, trained, and managed in-house — no outsourcing to unknown freelancers, ever.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Fast Turnaround</h3>
+        <p>Most projects kick off within 48 hours of agreement. We work in sprints so you see real progress every week.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <h3>NDA & IP Protection</h3>
+        <p>We sign NDAs before any work begins and ensure full IP transfer to you on project completion. Your code is
+          yours.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h3>Transparent Pricing</h3>
+        <p>No surprise invoices. Fixed-price projects or flexible monthly retainers — you choose what works for your
+          budget.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔁</div>
+        <h3>Long-Term Partnership</h3>
+        <p>We don't just build and disappear. Over 70% of our clients stay with us for ongoing development and store
+          growth support.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Start Risk-Free Today</a>
+      <a href="#faq" class="btn-ghost">Read FAQ</a>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="expertise">
+    <div class="section-tag">Our Expertise</div>
+    <h2>Agency-Grade <em>Shopify Expertise</em></h2>
+    <p class="section-sub">Every service area is covered by dedicated specialists — not generalists trying to do
+      everything.</p>
+    <div class="exp-grid">
+      <ul class="exp-list">
+        <li class="exp-item">
+          <div class="exp-icon">🎨</div>
+          <div class="exp-text">
+            <h4>UI/UX & Conversion Design</h4>
+            <p>We combine data-driven UX with stunning design to build stores that convert visitors into buyers — not
+              just look good.</p>
+          </div>
+        </li>
+        <li class="exp-item">
+          <div class="exp-icon">⚙️</div>
+          <div class="exp-text">
+            <h4>Shopify Liquid & Theme Customization</h4>
+            <p>Deep Liquid expertise for custom sections, metafields, dynamic content, and theme architecture that
+              scales.</p>
+          </div>
+        </li>
+        <li class="exp-item">
+          <div class="exp-icon">🔌</div>
+          <div class="exp-text">
+            <h4>Third-Party Integrations</h4>
+            <p>Klaviyo, ReCharge, Gorgias, Yotpo, Loop Returns, ShipBob — we integrate any tool your store needs
+              seamlessly.</p>
+          </div>
+        </li>
+        <li class="exp-item">
+          <div class="exp-icon">📊</div>
+          <div class="exp-text">
+            <h4>Performance & SEO Optimization</h4>
+            <p>Core Web Vitals optimization, schema markup, technical SEO, and page speed audits to drive organic
+              traffic and rankings.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="exp-visual">
+        <div class="exp-visual-label">Agency Skill Benchmarks</div>
+        <div class="skill-row">
+          <div class="skill-name"><span>Shopify Theme Development</span><span>98%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:98%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-name"><span>Shopify App Development</span><span>95%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:95%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-name"><span>Platform Migration</span><span>97%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:97%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-name"><span>Shopify Plus & B2B</span><span>92%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:92%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-name"><span>Headless / Hydrogen</span><span>89%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:89%"></div>
+          </div>
+        </div>
+        <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--light-border);">
+          <div style="font-size:.8rem;color:var(--muted);margin-bottom:4px;">Average Project Delivery Time</div>
+          <div style="font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:2rem;color:var(--green);">3–6 Weeks
+          </div>
+          <div style="font-size:.78rem;color:var(--muted);">from kickoff to live store launch</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section class="mid-cta">
+    <div class="mid-cta-inner">
+      <div>
+        <div class="mid-cta-badge">✦ Shopify Partner Agency</div>
+        <h2 class="mid-cta-heading">Ready to work with a Shopify development agency that delivers?</h2>
+        <p class="mid-cta-sub">Join 1,500+ brands who've built and scaled their Shopify stores with StoreCartify. Get a
+          free project consultation — no obligation, no pressure.</p>
+        <ul class="mid-cta-list">
+          <li><span class="mid-cta-tick">✓</span> Project scoped and quoted within 24 hours</li>
+          <li><span class="mid-cta-tick">✓</span> Dedicated project manager from day one</li>
+          <li><span class="mid-cta-tick">✓</span> NDA signed before work begins</li>
+          <li><span class="mid-cta-tick">✓</span> Not happy with the work? You don't pay.</li>
+        </ul>
+        <div class="mid-cta-actions">
+          <a href="#contact" class="mid-cta-btn-primary">📞 Get a Free Quote</a>
+          <a href="#results" class="mid-cta-btn-ghost">See Case Studies →</a>
+        </div>
+      </div>
+      <div class="mid-cta-card">
+        <div class="mid-cta-stat-row">
+          <div class="mid-cta-stat">
+            <div class="mid-cta-stat-num">1,500+</div>
+            <div class="mid-cta-stat-label">Stores Built</div>
+          </div>
+          <div class="mid-cta-stat">
+            <div class="mid-cta-stat-num">250+</div>
+            <div class="mid-cta-stat-label">Developers</div>
+          </div>
+          <div class="mid-cta-stat">
+            <div class="mid-cta-stat-num">98%</div>
+            <div class="mid-cta-stat-label">Satisfaction</div>
+          </div>
+        </div>
+        <div class="mid-cta-divider"></div>
+        <div class="mid-cta-trust">
+          <div class="mid-cta-trust-item">
+            <div class="mid-cta-trust-icon">🛡️</div><span>NDA signed before we start</span>
+          </div>
+          <div class="mid-cta-trust-item">
+            <div class="mid-cta-trust-icon">💰</div><span>No invoice if you're not satisfied</span>
+          </div>
+          <div class="mid-cta-trust-item">
+            <div class="mid-cta-trust-icon">⚡</div><span>Project kickoff within 48 hours</span>
+          </div>
+          <div class="mid-cta-trust-item">
+            <div class="mid-cta-trust-icon">🔁</div><span>Ongoing support available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="results">
+    <div class="section-tag">Client Results</div>
+    <h2>What Our Agency Has <em>Delivered</em></h2>
+    <p class="section-sub">Real results from real Shopify projects — not just screenshots, but measurable business
+      outcomes.</p>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-header">
+          <div class="result-client">Softwarekeep · IT Software</div>
+          <h4>Shopify Migration & Performance Optimization</h4>
+          <div class="result-metrics">
+            <div class="metric">
+              <div class="metric-num">+63%</div>
+              <div class="metric-label">Conversion Rate</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">2.1s</div>
+              <div class="metric-label">Page Load Time</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+40%</div>
+              <div class="metric-label">Organic Traffic</div>
+            </div>
+          </div>
+        </div>
+        <div class="result-body">
+          <p>Full eCommerce platform migration to Shopify with custom theme development, SEO preservation, and a
+            complete performance overhaul — resulting in dramatically faster load times and higher conversions.</p>
+          <span class="result-tag">Migration · Theme Dev · SEO</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-header">
+          <div class="result-client">Personal Comfort Bed · Retail</div>
+          <h4>Magento 1.0 to Shopify Migration</h4>
+          <div class="result-metrics">
+            <div class="metric">
+              <div class="metric-num">100%</div>
+              <div class="metric-label">Data Preserved</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+28%</div>
+              <div class="metric-label">Revenue Growth</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">0%</div>
+              <div class="metric-label">SEO Loss</div>
+            </div>
+          </div>
+        </div>
+        <div class="result-body">
+          <p>Complex Magento 1.0 to Shopify migration with 10,000+ product SKUs, full customer account data, order
+            history, and complete SEO URL structure preserved — launched without a single ranking drop.</p>
+          <span class="result-tag">Magento · Migration · SEO</span>
+        </div>
+      </div>
+      <div class="result-card">
+        <div class="result-header">
+          <div class="result-client">Vanhunks Outdoor · Sports</div>
+          <h4>Custom Shopify Store Build</h4>
+          <div class="result-metrics">
+            <div class="metric">
+              <div class="metric-num">+85%</div>
+              <div class="metric-label">Mobile Revenue</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">14+</div>
+              <div class="metric-label">Countries Served</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+52%</div>
+              <div class="metric-label">AOV Increase</div>
+            </div>
+          </div>
+        </div>
+        <div class="result-body">
+          <p>Custom Shopify store with advanced product filtering, multi-currency and multi-language support, and a
+            mobile-first UX overhaul — driving major revenue gains in new international markets.</p>
+          <span class="result-tag">Custom Build · Multi-Currency · Mobile</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="tech">
+    <div class="section-tag">Technology</div>
+    <h2>Our Agency's <em>Tech Stack</em></h2>
+    <p class="section-sub">We work with the full Shopify ecosystem plus the best tools in eCommerce — so your store is
+      built on a foundation that lasts.</p>
+    <div class="tech-inner">
+      <div class="tech-group">
+        <div class="tech-group-label">Shopify Platform</div>
+        <div class="pills">
+          <span class="pill">Shopify</span><span class="pill">Shopify Plus</span><span class="pill">Shopify
+            POS</span><span class="pill">Hydrogen</span><span class="pill">Remix</span><span class="pill">Oxygen</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <div class="tech-group-label">Frontend Development</div>
+        <div class="pills">
+          <span class="pill">Liquid</span><span class="pill">React</span><span class="pill">JavaScript</span><span
+            class="pill">HTML/CSS</span><span class="pill">Alpine.js</span><span class="pill">Tailwind</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <div class="tech-group-label">App Development</div>
+        <div class="pills">
+          <span class="pill">Node.js</span><span class="pill">Polaris</span><span class="pill">REST API</span><span
+            class="pill">GraphQL</span><span class="pill">Webhooks</span><span class="pill">Metafields</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <div class="tech-group-label">Integrations & Tools</div>
+        <div class="pills">
+          <span class="pill">Klaviyo</span><span class="pill">ReCharge</span><span class="pill">Gorgias</span><span
+            class="pill">Yotpo</span><span class="pill">Loop Returns</span><span class="pill">ShipBob</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-tag">Client Reviews</div>
+    <h2>What Brands Say About <em>Our Agency</em></h2>
+    <p class="section-sub">Don't take our word for it — here's what store owners and brand teams say after working with
+      StoreCartify.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"StoreCartify is hands down the best Shopify development agency we've worked with. They
+          migrated our entire Magento store to Shopify in 6 weeks — not a single product or order was lost, and our
+          Google rankings actually improved."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MR</div>
+          <div>
+            <div class="testi-name">Michael R.</div>
+            <div class="testi-role">CEO, Personal Comfort Bed</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"We went from a basic Shopify theme to a fully custom store in under 5 weeks. The
+          StoreCartify team understood our brand vision immediately and delivered something that genuinely looks
+          world-class. Our conversion rate went up 63%."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JL</div>
+          <div>
+            <div class="testi-name">Jessica L.</div>
+            <div class="testi-role">Head of eCommerce, Softwarekeep</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"The Shopify app they built for us is live on the Shopify App Store and has over 2,000
+          installs. Communication was excellent throughout and the code quality was outstanding. We've extended our
+          engagement for 3 more apps."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div>
+            <div class="testi-name">Alex K.</div>
+            <div class="testi-role">Founder, SaaS Startup</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"We launched in 14 countries with multi-currency, multi-language support, and advanced
+          product filters — all in one project. StoreCartify made what felt like an impossible timeline very achievable.
+          Our mobile revenue is up 85%."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">TP</div>
+          <div>
+            <div class="testi-name">Tom P.</div>
+            <div class="testi-role">Director, Vanhunks Outdoor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="section-tag">FAQ</div>
+    <h2>Questions About Our <em>Shopify Agency</em></h2>
+    <div class="faq-layout">
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q">What makes StoreCartify different from other Shopify agencies? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">We're a fully in-house agency — no outsourcing to freelancers. Every developer is vetted,
+            trained, and managed by us. We also offer a satisfaction guarantee: if you're not happy with the work, you
+            don't pay. Most agencies don't do that.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does a Shopify store build take? <span class="faq-icon">+</span></button>
+          <div class="faq-a">A standard custom Shopify store typically takes 3–6 weeks from kickoff to launch. Complex
+            projects involving migrations, custom apps, or Shopify Plus setups can take 6–12 weeks. We'll give you a
+            realistic timeline in our initial scoping call.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you work with Shopify Plus merchants? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — we have dedicated Shopify Plus specialists who handle enterprise-grade builds
+            including custom checkout extensions, B2B portals, Script Editor, Flow automation, and multi-store setups.
+            We've delivered 100+ Shopify Plus projects.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you migrate my existing store to Shopify? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Absolutely. We've migrated stores from WooCommerce, Magento 1 & 2, BigCommerce, PrestaShop,
+            Volusion, and custom platforms. We migrate products, customers, orders, and SEO URLs — with zero downtime
+            during the transition.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What does your agency charge for Shopify development? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Pricing depends on scope. A standard store build typically starts from $2,500. Migrations
+            from $1,500. Custom app development from $3,000. Shopify Plus projects from $5,000. We also offer monthly
+            retainers for ongoing development support. Get a free quote for your specific project.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you offer post-launch support? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — all projects include 30 days of free post-launch support. After that, we offer
+            flexible monthly retainer plans starting from $500/month for ongoing development, updates, and growth
+            support. Over 70% of our clients stay on retainer after launch.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is my project and IP kept confidential? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Always. We sign an NDA before any work or information sharing begins. Upon project
+            completion, all code, designs, and assets are fully transferred to you. We never reuse or repurpose client
+            code or designs for other projects.</div>
+        </div>
+      </div>
+      <div class="faq-cta-panel">
+        <h3>Still have questions?<br><em>Let's talk.</em></h3>
+        <p>Book a free 30-minute consultation with one of our Shopify experts. No sales pitch — just honest advice for
+          your project.</p>
+        <ul>
+          <li>Free project assessment</li>
+          <li>Clear scope & timeline estimate</li>
+          <li>No obligation to proceed</li>
+          <li>NDA available on request</li>
+        </ul>
+        <a href="#contact" class="faq-cta-btn">📞 Book a Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <div class="section-tag">Get In Touch</div>
+        <h2>Start Your Shopify <em>Project Today</em></h2>
+        <p class="contact-sub">Tell us about your project and we'll get back to you within 24 hours with a free
+          consultation and project estimate. No obligation, no pressure.</p>
+        <ul class="contact-trust">
+          <li><span class="ctick">✓</span> Free consultation & project scoping</li>
+          <li><span class="ctick">✓</span> Detailed quote within 24 hours</li>
+          <li><span class="ctick">✓</span> NDA signed before we start</li>
+          <li><span class="ctick">✓</span> Dedicated project manager assigned</li>
+          <li><span class="ctick">✓</span> 30-day post-launch support included</li>
+        </ul>
+        <div class="contact-stats">
+          <div class="cs-item">
+            <div class="cs-num">1,500+</div>
+            <div class="cs-label">Stores Built</div>
+          </div>
+          <div class="cs-item">
+            <div class="cs-num">98%</div>
+            <div class="cs-label">Satisfaction</div>
+          </div>
+          <div class="cs-item">
+            <div class="cs-num">24hr</div>
+            <div class="cs-label">Response Time</div>
+          </div>
+        </div>
+      </div>
+    <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
+      data-drip-embedded-form="330315483" id="drip-ef-330315483">
+      <h4>Tell us what you need</h4>
+      <p>We'll match you with the right Shopify developer within 24 hours.</p>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="John Smith" id="drip-full-name" name="fields[full_name]" value="">
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@company.com" id="drip-email" name="fields[email]" value="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" placeholder="Your Company" id="drip-company-name" name="fields[company_name]" value="">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Briefly describe your project or requirements..." id="drip-message"
+          name="fields[message]"></textarea>
+      </div>
+
+      <input type="hidden" id="hidden-source-2" name="fields[utm_source]" value="">
+      <input type="hidden" id="hidden-campaign-2" name="fields[utm_campaign]" value="">
+      <input type="hidden" id="hidden-landing-page-2" name="fields[landing_page]" value="">
+
+
+      <input type="submit" value="Get A Free Quote →" data-drip-attribute="sign-up-button" class="form-submit"
+        class="form-submit">
+      <p class="form-note">🔒 Your information is 100% confidential.</p>
+    </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="../assets/storecartify-logo.webp" alt="">
+      </div>
+      <p>A full-service Shopify development agency trusted by 1,500+ brands worldwide. We build, migrate, and scale
+        Shopify stores that grow revenue.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">Shopify Store Development</a>
+      <a href="#">Platform Migration</a>
+      <a href="#">Custom Theme Development</a>
+      <a href="#">Shopify App Development</a>
+      <a href="#">Shopify Plus Development</a>
+      <a href="#">Headless / Hydrogen</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About StoreCartify</a>
+      <a href="#">Our Portfolio</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Shopify Blog</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+12137291257" >+1 213-729-1257</a>
+      <a href="#">storecartify.com</a>
+      <a href="#">Book a Free Call</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>© 2025 StoreCartify. All rights reserved. A Shopify Partner Agency.</p>
+    <p class="disclaimer">StoreCartify is an independent Shopify Partner agency and is not affiliated with or endorsed
+      by Shopify Inc.</p>
+  </div>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+         document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+
+  // UTM Fields
+  const utmSource = params.get("utm_source") || "";
+  const utmCampaign = params.get("utm_campaign") || "";
+
+  // Landing Page
+  const landingPage = window.location.href;
+
+  // Set UTM + landing page fields right away
+  document.getElementById("hidden-source").value = utmSource;
+  document.getElementById("hidden-campaign").value = utmCampaign;
+  document.getElementById("hidden-landing-page").value = landingPage;
+
+  // Also set them for the second form
+  document.getElementById("hidden-source-2").value = utmSource;
+  document.getElementById("hidden-campaign-2").value = utmCampaign;
+  document.getElementById("hidden-landing-page-2").value = landingPage;
+     });
+
+  </script>
+</body>
+
+</html>
