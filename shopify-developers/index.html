@@ -490,49 +490,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="form-row">
             <div class="form-field">
               <label>Full Name *</label>
-              <input name="fields[full_name]" type="text" placeholder="Jane Smith" required />
+              <input name="fields[full_name]" type="text" placeholder="Jane Smith" type="text" id="drip-full-name" name="fields[full_name]" value="" required />
             </div>
             <div class="form-field">
               <label>Email Address *</label>
-              <input name="fields[email]" type="email" placeholder="jane@yourbrand.com" required />
+              <input name="fields[email]" type="email" placeholder="jane@yourbrand.com" id="drip-email" name="fields[email]" value="" required />
             </div>
           </div>
           <div class="form-row">
             <div class="form-field">
               <label>Company</label>
-              <input name="fields[company]" type="text" placeholder="Your Brand Co." />
+              <input name="fields[company]" type="text" placeholder="Your Brand Co." id="drip-company" name="fields[company]" value="" />
             </div>
             <div class="form-field">
               <label>Current Website</label>
-              <input name="fields[current_website]" type="url" placeholder="https://yourstore.com" />
+              <input name="fields[current_website]" type="url" placeholder="https://yourstore.com" id="drip-current-website" name="fields[current_website]" value="" required />
             </div>
           </div>
           <div class="form-field">
             <label>Interested Package</label>
             <select name="fields[interested_package]">
-              <option value="">Select a plan…</option>
-              <option>Beginner – $249</option>
-              <option>Growth – $599</option>
-              <option>Level Up – $999</option>
-              <option>Pro – $1,499</option>
-              <option>Executive – $2,499</option>
-              <option>Top Tier – $4,499</option>
-              <option>Not sure yet</option>
+          <option value="Beginner - $249">Beginner - $249</option>
+          <option value="Growth - $599">Growth - $599</option>
+          <option value="Lever Up - $999">Lever Up - $999</option>
+          <option value="Pro - $1,499">Pro - $1,499</option>
+          <option value="Executive - $2,499">Executive - $2,499</option>
+          <option value="Top Tier - $4,499">Top Tier - $4,499</option>
+          <option value="Not Sure Yet">Not Sure Yet</option>
             </select>
           </div>
           <div class="form-field">
             <label>Tell us about your project *</label>
             <textarea name="fields[tell_us_about_your_project]" rows="4"
-              placeholder="Products, goals, timeline, special requirements…" required></textarea>
+              placeholder="Products, goals, timeline, special requirements…" id="drip-tell-us-about-your-project" name="fields[tell_us_about_your_project]" required></textarea>
           </div>
 
           <!-- Hidden Fields -->
-          <input type="hidden" name="fields[full_name]" value="">
-          <input type="hidden" name="fields[email]" value="">
-          <input type="hidden" name="fields[company]" value="">
-          <input type="hidden" name="fields[current_website]" value="">
-          <input type="hidden" name="fields[interested_package]" value="">
-          <input type="hidden" name="fields[tell_us_about_your_project]" value="">
+          <input type="hidden" id="hidden-source" name="fields[utm_source]" value="">
+      <input type="hidden" id="hidden-campaign" name="fields[utm_campaign]" value="">
+      <input type="hidden" id="hidden-landing-page" name="fields[landing_page]" value="">
 
           <div style="display:none;">
             <input type="text" name="website" tabindex="-1" autocomplete="off">
@@ -543,7 +539,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             data-drip-attribute="sign-up-button" />
           <p class="form-note">🔒 Your info is secure. StoreCartify is not affiliated with Shopify Inc.</p>
 
-          <input type="hidden" name="success_redirect" value="https://storecartify.com/thank-you-for-contacting-us/">
         </form>
       </div>
     </div>
@@ -591,6 +586,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
   <script src="script.js"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+
+  // UTM Fields
+  const utmSource = params.get("utm_source") || "";
+  const utmCampaign = params.get("utm_campaign") || "";
+
+  // Landing Page
+  const landingPage = window.location.href;
+
+  // Set UTM + landing page fields right away
+  document.getElementById("hidden-source").value = utmSource;
+  document.getElementById("hidden-campaign").value = utmCampaign;
+  document.getElementById("hidden-landing-page").value = landingPage;
+
+
+});
+  </script>
 </body>
 
 </html>
