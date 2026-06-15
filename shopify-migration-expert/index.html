@@ -2459,6 +2459,27 @@
         if (!isOpen) item.classList.add('open');
       });
     });
+
+     document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+
+  // UTM Fields
+  const utmSource = params.get("utm_source") || "";
+  const utmCampaign = params.get("utm_campaign") || "";
+
+  // Landing Page
+  const landingPage = window.location.href;
+
+  // Set UTM + landing page fields right away
+  document.getElementById("hidden-source").value = utmSource;
+  document.getElementById("hidden-campaign").value = utmCampaign;
+  document.getElementById("hidden-landing-page").value = landingPage;
+
+  // Also set them for the second form
+  document.getElementById("hidden-source-2").value = utmSource;
+  document.getElementById("hidden-campaign-2").value = utmCampaign;
+  document.getElementById("hidden-landing-page-2").value = landingPage;
+     });
   </script>
 </body>
 
