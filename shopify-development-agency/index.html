@@ -834,7 +834,14 @@
       overflow: hidden;
       transition: all .3s;
     }
-
+    .result-card .img-card{
+      width: 100%;
+      height: auto;
+    }
+    .result-card .img-card img{
+      width: 100%;
+      height: 100%;
+    }
     .result-card:hover {
       border-color: var(--green);
       box-shadow: 0 10px 36px rgba(0, 76, 63, .12);
@@ -1255,6 +1262,19 @@
       font-size: .9rem;
       color: var(--white);
       flex-shrink: 0;
+    }
+    .testi-avatar img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+     .testi-author .anna{
+      background-color: white;
+    }
+
+    .testi-avatar img:last-child{
+      background: transparent !important;
     }
 
     .testi-name {
@@ -2178,6 +2198,9 @@
       outcomes.</p>
     <div class="results-grid">
       <div class="result-card">
+        <div class="img-card">
+          <img src="../assets/softwarekeep.png" alt="">
+        </div>
         <div class="result-header">
           <div class="result-client">Softwarekeep · IT Software</div>
           <h4>Shopify Migration & Performance Optimization</h4>
@@ -2203,6 +2226,9 @@
         </div>
       </div>
       <div class="result-card">
+        <div class="img-card">
+          <img src="../assets/personal-comfort.png" alt="">
+        </div>
         <div class="result-header">
           <div class="result-client">Personal Comfort Bed · Retail</div>
           <h4>Magento 1.0 to Shopify Migration</h4>
@@ -2228,6 +2254,9 @@
         </div>
       </div>
       <div class="result-card">
+        <div class="img-card">
+          <img src="../assets/vanhunks.png" alt="">
+        </div>
         <div class="result-header">
           <div class="result-client">Vanhunks Outdoor · Sports</div>
           <h4>Custom Shopify Store Build</h4>
@@ -2294,61 +2323,69 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="section-tag">Client Reviews</div>
-    <h2>What Brands Say About <em>Our Agency</em></h2>
-    <p class="section-sub">Don't take our word for it — here's what store owners and brand teams say after working with
+   <section class="testimonials">
+    <div class="section-tag">Client Stories</div>
+    <h2>What Our Clients <em>Say About Us</em></h2>
+    <p class="section-sub" style="margin-bottom:48px;">Real reviews from merchants who hired Shopify developers through
       StoreCartify.</p>
     <div class="testi-grid">
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"StoreCartify is hands down the best Shopify development agency we've worked with. They
-          migrated our entire Magento store to Shopify in 6 weeks — not a single product or order was lost, and our
-          Google rankings actually improved."</p>
+        <p class="testi-text">"Nikita and team have been great in updating and solving some issues on our website. Their
+          response time and communication has been on point for the entire project. I would highly recommend working
+          with the StoreCartify team to address any site updates."</p>
         <div class="testi-author">
-          <div class="testi-avatar">MR</div>
+          <div class="testi-avatar">
+           <img src="../assets/paul.jpg" alt="Paul Grasso">
+          </div>
           <div>
-            <div class="testi-name">Michael R.</div>
-            <div class="testi-role">CEO, Personal Comfort Bed</div>
+            <div class="testi-name">Paul Grasso</div>
+            <div class="testi-role">Paul Labrecque</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"We went from a basic Shopify theme to a fully custom store in under 5 weeks. The
-          StoreCartify team understood our brand vision immediately and delivered something that genuinely looks
-          world-class. Our conversion rate went up 63%."</p>
+        <p class="testi-text">"The team and Akash have been instrumental in enhancing our website. Their unwavering
+          commitment to promptly address and solve any challenges demonstrates their exceptional problem-solving
+          capabilities."</p>
         <div class="testi-author">
-          <div class="testi-avatar">JL</div>
+          <div class="testi-avatar">
+            <img src="../assets/baily.png" alt="Bailey Beykirch">
+          </div>
           <div>
-            <div class="testi-name">Jessica L.</div>
-            <div class="testi-role">Head of eCommerce, Softwarekeep</div>
+            <div class="testi-name">Bailey Beykirch</div>
+            <div class="testi-role">Kenz</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"The Shopify app they built for us is live on the Shopify App Store and has over 2,000
-          installs. Communication was excellent throughout and the code quality was outstanding. We've extended our
-          engagement for 3 more apps."</p>
+        <p class="testi-text">"The StoreCartify Team excelled in our transition from Magento 1.0 to Shopify, ensuring
+          minimal disruption to our daily operations. Their expertise in managing complex e-commerce platform migrations
+          is exceptional."</p>
         <div class="testi-author">
-          <div class="testi-avatar">AK</div>
+          <div class="testi-avatar">
+            <img src="../assets/jack.png" alt="Jack from Personal Comfort Bed">
+          </div>
           <div>
-            <div class="testi-name">Alex K.</div>
-            <div class="testi-role">Founder, SaaS Startup</div>
+            <div class="testi-name">Jack</div>
+            <div class="testi-role">Personal Comfort Bed</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"We launched in 14 countries with multi-currency, multi-language support, and advanced
-          product filters — all in one project. StoreCartify made what felt like an impossible timeline very achievable.
-          Our mobile revenue is up 85%."</p>
+        <p class="testi-text">"I sincerely thank the entire StoreCartify team for being so easy to work with and for the
+          meticulous attention to detail throughout the project. You have made this transition such a smooth and
+          pleasant experience!"</p>
         <div class="testi-author">
-          <div class="testi-avatar">TP</div>
+          <div class="testi-avatar anna">
+            <img src="../assets/JoyViva98.png" alt="Deigh-Anna from JoyVIVA Wellness">
+          </div>
           <div>
-            <div class="testi-name">Tom P.</div>
-            <div class="testi-role">Director, Vanhunks Outdoor</div>
+            <div class="testi-name">Deigh-Anna</div>
+            <div class="testi-role">JoyVIVA Team</div>
           </div>
         </div>
       </div>
