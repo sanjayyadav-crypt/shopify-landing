@@ -2748,9 +2748,9 @@
           name="fields[message]" required></textarea>
       </div>
 
-      <input type="hidden" id="hidden-source" name="fields[utm_source]" value="">
-      <input type="hidden" id="hidden-campaign" name="fields[utm_campaign]" value="">
-      <input type="hidden" id="hidden-landing-page" name="fields[landing_page]" value="">
+      <input type="hidden" id="hidden-source-2" name="fields[utm_source]" value="">
+      <input type="hidden" id="hidden-campaign-2" name="fields[utm_campaign]" value="">
+      <input type="hidden" id="hidden-landing-page-2" name="fields[landing_page]" value="">
 
 
       <input type="submit" value="Get A Free Quote →" data-drip-attribute="sign-up-button" class="form-submit"
@@ -2809,6 +2809,27 @@
         document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
         if (!isOpen) item.classList.add('open');
       });
+    });
+
+      document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+
+  // UTM Fields
+  const utmSource = params.get("utm_source") || "";
+  const utmCampaign = params.get("utm_campaign") || "";
+
+  // Landing Page
+  const landingPage = window.location.href;
+
+  // Set UTM + landing page fields right away
+  document.getElementById("hidden-source").value = utmSource;
+  document.getElementById("hidden-campaign").value = utmCampaign;
+  document.getElementById("hidden-landing-page").value = landingPage;
+
+  // Also set them for the second form
+  document.getElementById("hidden-source-2").value = utmSource;
+  document.getElementById("hidden-campaign-2").value = utmCampaign;
+  document.getElementById("hidden-landing-page-2").value = landingPage;
     });
   </script>
 </body>
