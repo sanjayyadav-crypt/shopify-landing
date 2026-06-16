@@ -1,0 +1,2816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W9TG9P5S');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigCommerce to Shopify Migration | Expert Migration Service | StoreCartify</title>
+  <meta name="description"
+    content="Migrate from BigCommerce to Shopify with zero data loss, zero SEO impact, and zero downtime. StoreCartify has completed 150+ BigCommerce to Shopify migrations. Free audit in 24 hours.">
+    <link rel="icon" href="../assets/store-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --green: #004c3f;
+      --green-light: #006654;
+      --green-dim: rgba(0, 76, 63, 0.08);
+      --green-border: rgba(0, 76, 63, 0.25);
+      --yellow: #FFC001;
+      --yellow-dim: rgba(255, 192, 1, 0.15);
+      --dark: #1a1a1a;
+      --body-bg: #fbf7ed;
+      --white: #ffffff;
+      --text: #333333;
+      --muted: #666666;
+      --light-border: #e5e0d4;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--body-bg);
+      color: var(--text);
+      font-family: 'Nunito Sans', -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden
+    }
+
+    /* NAV */
+    nav {
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--body-bg);
+      border-bottom: 1px solid var(--light-border);
+      padding: 14px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .nav-logo {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -0.02em
+    }
+
+    .nav-logo img {
+      width: auto;
+      height: 70px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--green)
+    }
+
+    .nav-cta {
+      background: var(--green);
+      color: var(--white);
+      font-weight: 700;
+      font-size: .88rem;
+      padding: 10px 22px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      white-space: nowrap
+    }
+
+    .nav-cta:hover {
+      background: var(--green-light);
+      transform: translateY(-1px)
+    }
+
+    /* HERO */
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(1.5)
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes scrollLogo {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      padding: 40px 5vw 80px;
+      background: var(--body-bg);
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero-bg-dots {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: radial-gradient(rgba(0, 76, 63, 0.06) 1.5px, transparent 1.5px);
+      background-size: 28px 28px
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 76, 63, 0.08);
+      border: 1px solid rgba(0, 76, 63, 0.2);
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      animation: fadeUp .5s ease both
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 1.8s ease infinite
+    }
+
+    h1 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 50px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+      margin-bottom: 20px;
+      animation: fadeUp .6s .1s ease both
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--green)
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      animation: fadeUp .6s .2s ease both
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp .6s .3s ease both
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit
+    }
+
+    .btn-primary:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 76, 63, .2)
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--green);
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      border: 2px solid var(--green);
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .btn-ghost:hover {
+      background: var(--green);
+      color: var(--white)
+    }
+
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+      animation: fadeUp .6s .4s ease both
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .check-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--green);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0
+    }
+
+    .check-item span {
+      font-size: .85rem;
+      color: var(--muted);
+      font-weight: 600
+    }
+
+    /* HERO FORM */
+    .hero-form-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.13);
+      position: relative;
+      z-index: 1;
+      animation: fadeUp .7s .15s ease both
+    }
+
+    .hero-form-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 6px
+    }
+
+    .hero-form-card>p {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.6
+    }
+
+    .form-group {
+      margin-bottom: 12px
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .74rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: .03em;
+      text-transform: uppercase
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--light-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .87rem;
+      color: var(--text);
+      background: #fafaf8;
+      transition: border-color .2s;
+      outline: none;
+      appearance: none
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--green);
+      background: #fff
+    }
+
+    .form-group textarea {
+      height: 76px;
+      resize: none
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      font-family: inherit;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 13px;
+      border: none;
+      border-radius: 9rem;
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 6px
+    }
+
+    .form-submit:hover {
+      background: var(--green-light);
+      transform: translateY(-1px)
+    }
+
+    .form-note {
+      font-size: .72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 8px
+    }
+
+    /* STATS */
+    .stats-bar {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--light-border);
+      padding: 28px 5vw;
+      display: flex;
+      justify-content: center
+    }
+
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 20px;
+      border-right: 1px solid var(--light-border)
+    }
+
+    .stat-item:last-child {
+      border-right: none
+    }
+
+    .stat-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--green);
+      letter-spacing: -0.03em;
+      line-height: 1
+    }
+
+    .stat-label {
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    /* LOGO STRIP */
+    .logos-strip {
+      background: var(--green);
+      padding: 24px 0;
+      border-bottom: 1.5px solid var(--light-border);
+      overflow: hidden
+    }
+
+    .logos-strip p {
+      text-align: center;
+      font-size: .72rem;
+      font-weight: 800;
+      color: var(--muted);
+      margin-bottom: 18px
+    }
+    .logos-strip p {
+      text-align: center;
+      font-size: 45px;
+      font-weight: 800;
+      color: var(--white);
+  
+    } .logos-strip p {
+      text-align: center;
+      font-size: 45px;
+      font-weight: 800;
+      color: var(--white);
+  
+    }
+    .logos-strip img{
+      display: block;
+      margin: 0px auto;
+      width: 100%;
+    }
+    .logos-strip .mobile-img{
+      display: none;
+    }
+
+    .logo-track {
+      display: flex;
+      gap: 56px;
+      animation: scrollLogo 28s linear infinite;
+      width: max-content
+    }
+
+    .logo-track span {
+      color: var(--muted);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      white-space: nowrap;
+      opacity: .45
+    }
+
+    /* SECTION COMMONS */
+    section {
+      padding: 88px 5vw
+    }
+
+    .section-tag {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px
+    }
+
+    .section-tag::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--green);
+      border-radius: 2px
+    }
+
+    h2 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 14px
+    }
+
+    h2 em {
+      font-style: normal;
+      color: var(--green)
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 580px;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 52px
+    }
+
+    /* COMPARISON TABLE */
+    .comparison {
+      background: var(--white)
+    }
+
+    .comp-wrap {
+      overflow-x: auto
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      overflow: hidden;
+      font-size: .9rem
+    }
+
+    .comp-table thead tr {
+      background: var(--green)
+    }
+
+    .comp-table th {
+      padding: 16px 20px;
+      text-align: left;
+      font-weight: 800;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--white)
+    }
+
+    .comp-table th:first-child {
+      color: rgba(255, 255, 255, 0.65)
+    }
+
+    .comp-table th.shopify-col {
+      color: var(--white)
+    }
+
+    .comp-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--light-border);
+      vertical-align: top;
+      line-height: 1.6
+    }
+
+    .comp-table tr:last-child td {
+      border-bottom: none
+    }
+
+    .comp-table tr:nth-child(even) td {
+      background: var(--body-bg)
+    }
+
+    .feat-label {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: .9rem
+    }
+
+    .bc-val {
+      color: var(--muted);
+      font-size: .87rem
+    }
+
+    .sh-val {
+      color: var(--green);
+      font-weight: 700;
+      font-size: .87rem
+    }
+
+    .badge-good {
+      display: inline-block;
+      background: rgba(0, 76, 63, 0.1);
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px
+    }
+
+    .badge-warn {
+      display: inline-block;
+      background: rgba(255, 192, 1, 0.2);
+      color: #7a5a00;
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px
+    }
+
+    /* WHAT WE MIGRATE */
+    .what-migrate {
+      background: var(--body-bg)
+    }
+
+    .migrate-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start
+    }
+
+    .migrate-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    .mi-card {
+      background: var(--white);
+      border: 1.5px solid var(--light-border);
+      border-radius: 14px;
+      padding: 20px 18px;
+      transition: all .2s
+    }
+
+    .mi-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 18px rgba(0, 76, 63, .08);
+      transform: translateY(-2px)
+    }
+
+    .mi-icon {
+      font-size: 1.4rem;
+      margin-bottom: 10px
+    }
+
+    .mi-title {
+      font-weight: 800;
+      font-size: .9rem;
+      color: var(--dark);
+      margin-bottom: 4px
+    }
+
+    .mi-desc {
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.6
+    }
+
+    .migrate-panel {
+      background: var(--green);
+      border-radius: 20px;
+      padding: 36px 32px
+    }
+
+    .migrate-panel h3 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.3
+    }
+
+    .migrate-panel h3 em {
+      color: var(--white);
+      font-style: normal
+    }
+
+    .migrate-panel p {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 24px;
+      line-height: 1.7
+    }
+
+    .g-list {
+      list-style: none
+    }
+
+    .g-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: .88rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6
+    }
+
+    .g-list li:last-child {
+      border-bottom: none
+    }
+
+    .g-tick {
+      width: 20px;
+      height: 20px;
+      background: var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: .65rem;
+      font-weight: 900;
+      color: var(--green);
+      margin-top: 2px
+    }
+
+    .panel-cta {
+      display: block;
+      text-align: center;
+      background: var(--white);
+      color: var(--green);
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      margin-top: 24px
+    }
+
+    .panel-cta:hover {
+      background: transparent;
+      transform: translateY(-1px);
+      border: 2px solid white;
+      color: white;
+    }
+
+    /* PROCESS */
+    .process {
+      background: var(--white)
+    }
+
+    .process-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start
+    }
+
+    .proc-timeline {
+      position: relative
+    }
+
+    .proc-timeline::before {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 28px;
+      bottom: 28px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green), var(--green-light))
+    }
+
+    .proc-item {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      position: relative
+    }
+
+    .proc-item:last-child {
+      margin-bottom: 0
+    }
+
+    .proc-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 3px solid var(--white);
+      box-shadow: 0 4px 16px rgba(0, 76, 63, .2);
+      position: relative;
+      z-index: 1
+    }
+
+    .proc-body {
+      background: var(--body-bg);
+      border: 1.5px solid var(--light-border);
+      border-radius: 14px;
+      padding: 22px 26px;
+      flex: 1;
+      transition: all .2s
+    }
+
+    .proc-body:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 20px rgba(0, 76, 63, .08)
+    }
+
+    .proc-body h3 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 6px
+    }
+
+    .proc-body p {
+      font-size: .87rem;
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    .proc-tag {
+      display: inline-block;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 10px
+    }
+
+    .aside-sticky {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px
+    }
+
+    .aside-card {
+      background: var(--body-bg);
+      border: 1.5px solid var(--light-border);
+      border-radius: 18px;
+      padding: 28px 24px
+    }
+
+    .aside-card h4 {
+      font-weight: 800;
+      font-size: .95rem;
+      color: var(--dark);
+      margin-bottom: 16px
+    }
+
+    .tbar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .82rem;
+      margin-bottom: 10px
+    }
+
+    .tbar-row:last-child {
+      margin-bottom: 0
+    }
+
+    .tbar-label {
+      color: var(--muted);
+      font-weight: 600;
+      width: 110px;
+      flex-shrink: 0;
+      font-size: .8rem
+    }
+
+    .tbar-track {
+      flex: 1;
+      height: 6px;
+      background: var(--light-border);
+      border-radius: 3px;
+      overflow: hidden
+    }
+
+    .tbar-fill {
+      height: 100%;
+      background: var(--green);
+      border-radius: 3px
+    }
+
+    .tbar-val {
+      color: var(--green);
+      font-weight: 800;
+      font-size: .8rem;
+      width: 56px;
+      text-align: right
+    }
+
+    .bc-version-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .87rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--light-border)
+    }
+
+    .bc-version-row:last-child {
+      border-bottom: none
+    }
+
+    .bc-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0
+    }
+
+    .bc-ver-name {
+      font-weight: 700;
+      color: var(--dark)
+    }
+
+    .bc-ver-note {
+      font-size: .75rem;
+      color: var(--muted)
+    }
+
+    /* WHY US */
+    .why {
+      background: var(--body-bg)
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .why-card {
+      background: var(--white);
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: all .25s
+    }
+
+    .why-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 6px 24px rgba(0, 76, 63, .08);
+      transform: translateY(-3px)
+    }
+
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--yellow-dim);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      font-size: 1.3rem
+    }
+
+    .why-card h3 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 8px
+    }
+
+    .why-card p {
+      font-size: .86rem;
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    /* MID CTA */
+    .mid-cta {
+      background: var(--green);
+      padding: 80px 5vw
+    }
+
+    .mid-cta-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .mid-cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--green-light);
+      border: 1px solid rgba(0, 76, 63, 0.2);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 100px;
+      margin-bottom: 20px
+    }
+
+    .mid-cta-heading {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      margin-bottom: 16px
+    }
+
+    .mid-cta-sub {
+      font-size: .98rem;
+      color: white;
+      line-height: 1.75;
+      margin-bottom: 28px
+    }
+
+    .mid-cta-list {
+      list-style: none;
+      margin-bottom: 36px
+    }
+
+    .mid-cta-list li {
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--white);
+      padding: 9px 0;
+      border-bottom: 1px solid white;
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .mid-cta-list li:last-child {
+      border-bottom: none
+    }
+
+    .mid-tick {
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .7rem;
+      font-weight: 900;
+      flex-shrink: 0
+    }
+
+    .mid-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .mid-btn-p {
+      background: var(--white);
+      color: var(--green);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .mid-btn-p:hover {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      transform: translateY(-1px)
+    }
+
+    .mid-btn-g {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      border: 2px solid white;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+   
+
+    .mid-cta-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12)
+    }
+
+    .mid-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr)
+    }
+
+    .mid-stat {
+      text-align: center;
+      padding: 16px 8px;
+      border-right: 1px solid var(--light-border)
+    }
+
+    .mid-stat:last-child {
+      border-right: none
+    }
+
+    .mid-stat-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.9rem;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.02em
+    }
+
+    .mid-stat-label {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .mid-divider {
+      height: 1px;
+      background: var(--light-border);
+      margin: 24px 0
+    }
+
+    .mid-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .mid-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text)
+    }
+
+    .mid-trust-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green-dim);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0
+    }
+
+    /* RESULTS */
+    .results {
+      background: var(--white)
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px
+    }
+
+    .res-card {
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all .3s
+    }
+    .res-card .img-card{
+      width: 100%;
+      height: auto;
+    }
+    .res-card .img-card img{
+      width: 100%;
+      height: 100%;
+    }
+
+    .res-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 10px 36px rgba(0, 76, 63, .12);
+      transform: translateY(-4px)
+    }
+
+    .res-header {
+      padding: 28px 28px 20px;
+      background: var(--body-bg);
+      border-bottom: 1.5px solid var(--light-border)
+    }
+
+    .res-client {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 6px
+    }
+
+    .res-header h4 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 12px
+    }
+
+    .res-metrics {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .metric {
+      text-align: center
+    }
+
+    .metric-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.02em
+    }
+
+    .metric-label {
+      font-size: .65rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: .04em
+    }
+
+    .res-body {
+      padding: 20px 28px 24px
+    }
+
+    .res-body p {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 14px
+    }
+
+    .res-tag {
+      display: inline-block;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 100px
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--body-bg)
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px
+    }
+
+    .testi-card {
+      background: var(--white);
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      position: relative;
+      transition: all .25s
+    }
+
+    .testi-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 6px 24px rgba(0, 76, 63, .08)
+    }
+
+    .testi-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--green);
+      opacity: .1;
+      line-height: .8
+    }
+
+    .stars {
+      color: var(--yellow);
+      font-size: .88rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px
+    }
+
+    .testi-text {
+      font-size: .93rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 22px
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+      color: var(--white);
+      flex-shrink: 0
+    }
+
+    .testi-name {
+      font-weight: 800;
+      font-size: .88rem;
+      color: var(--dark)
+    }
+
+    .testi-role {
+      font-size: .75rem;
+      color: var(--muted)
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--white)
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start
+    }
+
+    .faq-item {
+      border-bottom: 1.5px solid var(--light-border)
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 20px 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px
+    }
+
+    .faq-q:hover {
+      color: var(--green)
+    }
+
+    .faq-icon {
+      font-size: 1.3rem;
+      color: var(--green);
+      flex-shrink: 0;
+      transition: transform .25s;
+      line-height: 1
+    }
+
+    .faq-a {
+      display: none;
+      padding-bottom: 18px;
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    .faq-item.open .faq-a {
+      display: block
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg)
+    }
+
+    .faq-cta-panel {
+      background: var(--green);
+      border-radius: 20px;
+      padding: 40px 36px;
+      position: sticky;
+      top: 100px
+    }
+
+    .faq-cta-panel h3 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.3
+    }
+
+    .faq-cta-panel h3 em {
+      font-style: normal;
+      color: var(--white)
+    }
+
+    .faq-cta-panel p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: .88rem;
+      margin-bottom: 24px;
+      line-height: 1.7
+    }
+
+    .faq-cta-panel ul {
+      list-style: none;
+      margin-bottom: 28px
+    }
+
+    .faq-cta-panel ul li {
+      font-size: .86rem;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      line-height: 1.5
+    }
+
+    .faq-cta-panel ul li::before {
+      content: '✓';
+      color: var(--white);
+      font-weight: 900;
+      flex-shrink: 0
+    }
+
+    .faq-cta-panel ul li:last-child {
+      border-bottom: none
+    }
+
+    .faq-cta-btn {
+      display: block;
+      text-align: center;
+      background: var(--white);
+      color: var(--green);
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s
+    }
+
+    .faq-cta-btn:hover {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      transform: translateY(-1px)
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--body-bg);
+      padding: 88px 5vw;
+      border-top: 1.5px solid var(--light-border)
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start
+    }
+
+    .contact-sub {
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.75;
+      margin-bottom: 32px
+    }
+
+    .contact-trust {
+      list-style: none;
+      margin-bottom: 36px
+    }
+
+    .contact-trust li {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--light-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.5
+    }
+
+    .contact-trust li:last-child {
+      border-bottom: none
+    }
+
+    .ctick {
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .72rem;
+      font-weight: 900;
+      flex-shrink: 0
+    }
+
+    .contact-stats {
+      display: flex;
+      border: 1.5px solid var(--light-border);
+      border-radius: 14px;
+      overflow: hidden
+    }
+
+    .cs-item {
+      flex: 1;
+      text-align: center;
+      padding: 18px 12px;
+      border-right: 1.5px solid var(--light-border);
+      background: var(--white)
+    }
+
+    .cs-item:last-child {
+      border-right: none
+    }
+
+    .cs-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.7rem;
+      color: var(--green);
+      letter-spacing: -0.03em;
+      line-height: 1
+    }
+
+    .cs-label {
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .cf-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px;
+      border: 1.5px solid var(--light-border);
+      box-shadow: 0 8px 40px rgba(0, 76, 63, .07)
+    }
+
+    .cf-card h4 {
+      font-size: .95rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 16px;
+      line-height: 1.5
+    }
+
+    .cf-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .cf-group {
+      margin-bottom: 10px
+    }
+
+    .cf-group label {
+      display: block;
+      font-size: .74rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: .03em;
+      text-transform: uppercase
+    }
+
+    .cf-group input,
+    .cf-group textarea,
+    .cf-group select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1.5px solid var(--light-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .87rem;
+      color: var(--text);
+      background: var(--body-bg);
+      transition: border-color .2s;
+      outline: none;
+      appearance: none
+    }
+
+    .cf-group input:focus,
+    .cf-group textarea:focus,
+    .cf-group select:focus {
+      border-color: var(--green);
+      background: var(--white)
+    }
+
+    .cf-group textarea {
+      height: 80px;
+      resize: none
+    }
+
+    .cf-submit {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      font-family: inherit;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 13px;
+      border: none;
+      border-radius: 9rem;
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 6px
+    }
+
+    .cf-submit:hover {
+      background: var(--green-light);
+      transform: translateY(-1px)
+    }
+
+    .cf-note {
+      font-size: .73rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 8px
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--green);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 60px 5vw 24px;
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 48px
+    }
+
+    .footer-logo {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 12px
+    }
+
+    .footer-logo img {
+      height: 70px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-brand p {
+      font-size: .85rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6)
+    }
+
+    .footer-col h4 {
+      font-weight: 800;
+      font-size: .85rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: .04em
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: .83rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: color .2s
+    }
+
+    .footer-col a:hover {
+      color: var(--white)
+    }
+
+    .footer-bottom {
+      background: var(--green);
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      padding: 20px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .footer-bottom p {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, 0.45)
+    }
+
+    .disclaimer {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, 0.35);
+      max-width: 480px;
+      text-align: right
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px) {
+      .nav-links{
+        display: none;
+      }
+        .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display: block;
+        width: 100%;
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+        display: none;
+      }
+      .logos-strip p{
+        text-align: left;
+        margin-left: 5%;
+        font-size: 30px;
+      }
+      .process-2col {
+        grid-template-columns: 1fr
+      }
+
+      .aside-sticky {
+        position: static
+      }
+    }
+
+    @media(max-width:900px) {
+
+      .hero,
+      .migrate-2col,
+      .mid-cta-inner,
+      .contact-inner,
+      .faq-layout {
+        grid-template-columns: 1fr
+      }
+.hero h1{
+        font-size: 30px;
+      }
+       .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display: block;
+        width: 100%;
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+        display: none;
+      }
+      .why-grid,
+      .results-grid,
+      footer {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+
+      .faq-cta-panel {
+        position: static
+      }
+
+      .cf-row {
+        grid-template-columns: 1fr
+      }
+
+      .migrate-items {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:600px) {
+      .nav-links {
+        display: none
+      }
+              .nav-logo img{
+        width: auto;
+        height: 40px;
+      }
+      .nav-cta{
+        font-size: 10px;
+      }
+
+      .stats-bar {
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--light-border);
+        padding: 12px 0;
+      }
+
+      .stat-item:last-child {
+        border-bottom: none;
+        display: none;
+      }
+      .stat-num{
+        font-size: 20px;
+      }
+      .stat-label{
+        font-size: 10px;
+      }
+      .logos-strip p{
+        font-size: 25px;
+        text-align: left;
+        margin-left: 5%;
+        line-height: 1;
+      }
+      .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display: block;
+        width: 100%;
+      }
+      .stats-bar {
+        flex-wrap: wrap
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--light-border);
+        padding: 12px 0
+      }
+
+      .stat-item:last-child {
+        border-bottom: none
+      }
+
+      .why-grid,
+      .results-grid,
+      .migrate-items {
+        grid-template-columns: 1fr
+      }
+
+      footer {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row-2,
+      .cf-row {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+   <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9TG9P5S" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://storecartify.com" class="nav-logo">
+      <img src="../assets/storecartify-logo.webp" alt="">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#why-migrate">Why Switch</a></li>
+      <li><a href="#what-we-migrate">What We Migrate</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Free Migration Audit</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-dots"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">✦ BigCommerce to Shopify Migration Experts</div>
+      <h1><em>BigCommerce to Shopify Migration</em> — Faster, Simpler, More Profitable.</h1>
+      <p class="hero-desc">StoreCartify has completed 150+ BigCommerce to Shopify migrations — moving stores of every
+        size with 100% data preserved, zero SEO ranking loss, and zero downtime. We migrate products, customers, orders,
+        reviews, and every URL — then hand you a faster, higher-converting Shopify store.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">🚀 Get a Free Migration Audit</a>
+        <a href="#process" class="btn-ghost">See How It Works</a>
+      </div>
+      <div class="trust-row">
+        <div class="check-item"><svg viewBox="0 0 16 16">
+            <polyline points="2,8 6,12 14,4" />
+          </svg><span>150+ BC Migrations</span></div>
+        <div class="check-item"><svg viewBox="0 0 16 16">
+            <polyline points="2,8 6,12 14,4" />
+          </svg><span>100% Data Guarantee</span></div>
+        <div class="check-item"><svg viewBox="0 0 16 16">
+            <polyline points="2,8 6,12 14,4" />
+          </svg><span>Zero SEO Loss</span></div>
+      </div>
+    </div>
+    <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
+      data-drip-embedded-form="330315483" id="drip-ef-330315483">
+      <h4>Book your FREE 30-minute Migration Audit today</h4>
+      <p>We'll match you with the right Shopify developer within 24 hours.</p>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="John Smith" id="drip-full-name" name="fields[full_name]" value="" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@company.com" id="drip-email" name="fields[email]" value="" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" placeholder="Your Company" id="drip-company-name" name="fields[company_name]" value="" required>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Briefly describe your project or requirements..." id="drip-message"
+          name="fields[message]" required></textarea>
+      </div>
+
+      <input type="hidden" id="hidden-source" name="fields[utm_source]" value="">
+      <input type="hidden" id="hidden-campaign" name="fields[utm_campaign]" value="">
+      <input type="hidden" id="hidden-landing-page" name="fields[landing_page]" value="">
+
+
+      <input type="submit" value="Get A Free Quote →" data-drip-attribute="sign-up-button" class="form-submit"
+        class="form-submit">
+      <p class="form-note">🔒 Your information is 100% confidential.</p>
+    </form>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">150+</div>
+      <div class="stat-label">BC Migrations Done</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Data Preserved</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0%</div>
+      <div class="stat-label">SEO Ranking Loss</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Client Satisfaction</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">30 Days</div>
+      <div class="stat-label">Post-Launch Support</div>
+    </div>
+  </div>
+
+  <!-- LOGO STRIP -->
+  <div class="logos-strip">
+    <p>BigCommerce stores we've migrated to Shopify</p>
+    <div style="overflow:hidden">
+     <img src="../assets/clients.png" class="desktop-img" alt="">
+     <img src="../assets/client-mobile.png" class="mobile-img" alt="">
+    </div>
+  </div>
+
+  <!-- WHY SWITCH -->
+  <section id="why-migrate" class="comparison">
+    <div class="section-tag">BigCommerce vs Shopify</div>
+    <h2>Why Merchants Are Leaving <em>BigCommerce for Shopify</em></h2>
+    <p class="section-sub">BigCommerce and Shopify are often compared as equals — but for growing DTC brands, Shopify
+      consistently wins on app ecosystem, checkout performance, and total cost of ownership. Here's the honest
+      comparison.</p>
+    <div class="comp-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="width:22%">Feature</th>
+            <th style="width:39%">BigCommerce</th>
+            <th class="shopify-col" style="width:39%">Shopify ✦</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feat-label">Annual Revenue Caps</td>
+            <td class="bc-val">BigCommerce Standard caps at $50K/yr revenue — you're forced to upgrade plans as you
+              grow, with sudden price jumps <span class="badge-warn">Revenue-gated</span></td>
+            <td class="sh-val">No revenue caps on any plan. Pay a flat monthly fee regardless of your revenue — scale
+              freely without platform penalties. <span class="badge-good">No caps</span></td>
+          </tr>
+          <tr>
+            <td class="feat-label">Checkout Performance</td>
+            <td class="bc-val">BigCommerce checkout has been criticised for lower mobile conversion rates —
+              customisation requires developer work and Stencil knowledge</td>
+            <td class="sh-val">Shopify's checkout converts up to 36% better than industry average. Shop Pay, one-click
+              upsells, and accelerated payments built in. <span class="badge-good">+36% CVR avg</span></td>
+          </tr>
+          <tr>
+            <td class="feat-label">App Ecosystem</td>
+            <td class="bc-val">~1,000 apps in BigCommerce App Marketplace — many core features require third-party apps
+              that lack quality control and update stability</td>
+            <td class="sh-val">8,000+ apps in the Shopify App Store. Deep ecosystem for email, subscriptions, reviews,
+              loyalty, returns, and more — all one-click installs. <span class="badge-good">8x more apps</span></td>
+          </tr>
+          <tr>
+            <td class="feat-label">Total Cost of Ownership</td>
+            <td class="bc-val">BigCommerce Enterprise can cost $60K–$150K+/year when you add hosting, custom
+              development, and enterprise-tier pricing</td>
+            <td class="sh-val">Shopify Plus starts at $2,300/month — a fraction of BigCommerce Enterprise total cost,
+              with more features included out of the box. <span class="badge-good">Lower TCO</span></td>
+          </tr>
+          <tr>
+            <td class="feat-label">Theme / Storefront Flexibility</td>
+            <td class="bc-val">Stencil framework is powerful but has a steep learning curve — most custom theme work
+              requires specialist BigCommerce developers</td>
+            <td class="sh-val">Shopify's Liquid, Dawn theme, and Online Store 2.0 give merchants a drag-and-drop editor
+              and developers a modern, well-documented framework. <span class="badge-good">Easier to build</span></td>
+          </tr>
+          <tr>
+            <td class="feat-label">Headless Commerce</td>
+            <td class="bc-val">BigCommerce has headless APIs but the developer experience and tooling is limited
+              compared to modern headless solutions</td>
+            <td class="sh-val">Shopify Hydrogen + Oxygen gives best-in-class headless commerce with React, Remix, edge
+              deployment, and tight Shopify API integration. <span class="badge-good">Hydrogen + Oxygen</span></td>
+          </tr>
+          <tr>
+            <td class="feat-label">International / Multi-Currency</td>
+            <td class="bc-val">Multi-storefront and multi-currency available — but complex to set up and requires
+              significant configuration and custom development</td>
+            <td class="sh-val">Shopify Markets handles multi-country, multi-currency, and multi-language from a single
+              admin — with localised checkout and pricing built in. <span class="badge-good">Shopify Markets</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Start My BigCommerce Migration →</a>
+      <a href="#process" class="btn-ghost">See Our Migration Process</a>
+    </div>
+  </section>
+
+  <!-- WHAT WE MIGRATE -->
+  <section id="what-we-migrate" class="what-migrate">
+    <div class="section-tag">What We Transfer</div>
+    <h2>Everything From BigCommerce. <em>Rebuilt Perfectly in Shopify.</em></h2>
+    <p class="section-sub">Our BigCommerce to Shopify migration covers every data type in your store — from products and
+      customer accounts to pricing rules, reviews, and SEO URL structure.</p>
+    <div class="migrate-2col">
+      <div class="migrate-items">
+        <div class="mi-card">
+          <div class="mi-icon">📦</div>
+          <div class="mi-title">Products & Variants</div>
+          <div class="mi-desc">All products, SKUs, configurable options, custom fields, images, and product descriptions
+            — fully migrated with variant relationships intact.</div>
+        </div>
+        <div class="mi-card">
+          <div class="mi-icon">👥</div>
+          <div class="mi-title">Customer Accounts</div>
+          <div class="mi-desc">All customer records, shipping addresses, customer groups, and store credit migrated so
+            your customers can log in immediately post-launch.</div>
+        </div>
+        <div class="mi-card">
+          <div class="mi-icon">🧾</div>
+          <div class="mi-title">Full Order History</div>
+          <div class="mi-desc">All past orders, statuses, fulfilment data, and refunds — transferred so your support
+            team has complete order context from day one.</div>
+        </div>
+        <div class="mi-card">
+          <div class="mi-icon">🔍</div>
+          <div class="mi-title">SEO URLs & Redirects</div>
+          <div class="mi-desc">Every BigCommerce product, category, and page URL mapped to Shopify with 301 redirects —
+            zero Google rankings lost on launch day.</div>
+        </div>
+        <div class="mi-card">
+          <div class="mi-icon">🗂️</div>
+          <div class="mi-title">Categories & Collections</div>
+          <div class="mi-desc">All BigCommerce category trees rebuilt as Shopify smart and custom collections — with
+            filters, sorting, and product assignments preserved.</div>
+        </div>
+        <div class="mi-card">
+          <div class="mi-icon">✍️</div>
+          <div class="mi-title">Pages, Blog & Content</div>
+          <div class="mi-desc">Static pages, blog posts, meta titles, and descriptions migrated with internal links and
+            canonical tags set correctly in Shopify.</div>
+        </div>
+        <div class="mi-card">
+          <div class="mi-icon">⭐</div>
+          <div class="mi-title">Reviews & Ratings</div>
+          <div class="mi-desc">Product reviews and star ratings migrated to your chosen Shopify reviews app — Judge.me,
+            Yotpo, Stamped, or Okendo.</div>
+        </div>
+        <div class="mi-card">
+          <div class="mi-icon">💰</div>
+          <div class="mi-title">Price Lists & Promotions</div>
+          <div class="mi-desc">BigCommerce price lists, customer group pricing, and promotions rebuilt in Shopify —
+            including B2B and wholesale price tiers.</div>
+        </div>
+      </div>
+      <div class="migrate-panel">
+        <h3>Our <em>BigCommerce Migration</em> Guarantee</h3>
+        <p>We put our guarantee in writing. Every data type verified post-migration. Every URL redirected. Any issue
+          after launch fixed immediately — at no extra cost.</p>
+        <ul class="g-list">
+          <li><span class="g-tick">✓</span>100% data integrity — every product, order, and customer account verified
+            post-migration</li>
+          <li><span class="g-tick">✓</span>Zero SEO ranking loss — every BigCommerce URL mapped and redirected before
+            go-live</li>
+          <li><span class="g-tick">✓</span>Zero downtime — your BigCommerce store stays live throughout the entire
+            migration</li>
+          <li><span class="g-tick">✓</span>Staging preview — you review and approve everything before we flip the switch
+          </li>
+          <li><span class="g-tick">✓</span>30 days of free post-launch monitoring and issue resolution</li>
+          <li><span class="g-tick">✓</span>Fixed-price quote — no hourly billing, no surprise invoices, ever</li>
+        </ul>
+        <a href="#contact" class="panel-cta">Get My Free BigCommerce Audit →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="process">
+    <div class="section-tag">Migration Process</div>
+    <h2>Our Proven <em>BigCommerce to Shopify</em> Migration Process</h2>
+    <p class="section-sub">A structured, zero-risk process refined across 150+ BigCommerce migrations — designed to
+      protect your data, preserve your SEO, and get you live on Shopify without disrupting your business for a single
+      hour.</p>
+    <div class="process-2col">
+      <div class="proc-timeline">
+        <div class="proc-item">
+          <div class="proc-num">01</div>
+          <div class="proc-body">
+            <h3>Free BigCommerce Store Audit</h3>
+            <p>We audit your BigCommerce store in full — product count, variants, custom fields, app integrations, URL
+              structure, and SEO footprint. You receive a detailed migration plan and fixed-price quote within 24 hours
+              of your request.</p>
+            <span class="proc-tag">Free · 24-hour turnaround · No obligation</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">02</div>
+          <div class="proc-body">
+            <h3>Shopify Store Setup & Theme Build</h3>
+            <p>We set up your new Shopify store — selecting or building the right theme, installing and configuring your
+              key apps, setting up navigation and collections to mirror your BigCommerce category structure.</p>
+            <span class="proc-tag">Theme setup · App config · Navigation architecture</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">03</div>
+          <div class="proc-body">
+            <h3>Full Data Migration to Staging</h3>
+            <p>All data — products, customers, orders, categories, blog posts, reviews, and price rules — migrated to a
+              staging version of your Shopify store. Your live BigCommerce store is untouched at this stage.</p>
+            <span class="proc-tag">Staging only · Zero risk · Complete dataset transfer</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">04</div>
+          <div class="proc-body">
+            <h3>SEO Redirect Mapping & Technical Audit</h3>
+            <p>Every BigCommerce URL mapped to its Shopify equivalent with 301 redirects implemented. We then run a full
+              technical SEO audit — canonicals, meta data, schema markup, XML sitemap, and robots.txt.</p>
+            <span class="proc-tag">301 redirects · Meta data · Schema · Sitemap</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">05</div>
+          <div class="proc-body">
+            <h3>QA, Testing & Your Sign-Off</h3>
+            <p>You get full access to the staging store. Review products, checkout, customer login, order history, and
+              every page. We resolve any issues before requesting your final sign-off to go live.</p>
+            <span class="proc-tag">Full QA · Your review · Sign-off required to launch</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">06</div>
+          <div class="proc-body">
+            <h3>Go Live & 30-Day Post-Launch Monitoring</h3>
+            <p>We update DNS, run a final delta data sync to catch any orders placed during review, and monitor your
+              traffic and rankings for 30 days post-launch — fixing any issues that surface at no extra cost.</p>
+            <span class="proc-tag">DNS cutover · Delta sync · 30-day free monitoring</span>
+          </div>
+        </div>
+      </div>
+      <div class="aside-sticky">
+        <div class="aside-card">
+          <h4>Typical Migration Timelines</h4>
+          <div class="tbar-row"><span class="tbar-label">Under 1K SKUs</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:28%"></div>
+            </div><span class="tbar-val">2–3 wks</span>
+          </div>
+          <div class="tbar-row"><span class="tbar-label">1K–5K SKUs</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:50%"></div>
+            </div><span class="tbar-val">3–5 wks</span>
+          </div>
+          <div class="tbar-row"><span class="tbar-label">5K–20K SKUs</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:70%"></div>
+            </div><span class="tbar-val">5–8 wks</span>
+          </div>
+          <div class="tbar-row"><span class="tbar-label">20K–50K SKUs</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:88%"></div>
+            </div><span class="tbar-val">8–12 wks</span>
+          </div>
+          <div class="tbar-row"><span class="tbar-label">50K+ SKUs</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:100%"></div>
+            </div><span class="tbar-val">12–16 wks</span>
+          </div>
+        </div>
+        <div class="aside-card">
+          <h4>BigCommerce Plans We Migrate</h4>
+          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce
+              Standard</span><span class="bc-ver-note">up to $50K revenue</span></div>
+          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce Plus</span><span
+              class="bc-ver-note">up to $180K revenue</span></div>
+          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce Pro</span><span
+              class="bc-ver-note">up to $400K revenue</span></div>
+          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce
+              Enterprise</span><span class="bc-ver-note">unlimited revenue</span></div>
+          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce B2B
+              Edition</span><span class="bc-ver-note">wholesale / trade</span></div>
+        </div>
+        <div style="background:var(--green);border-radius:16px;padding:24px 20px;text-align:center;">
+          <div
+            style="font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:1.6rem;color:var(--white);line-height:1;margin-bottom:6px;">
+            Free Audit</div>
+          <div style="font-size:.85rem;color:white;margin-bottom:16px;">Migration plan in 24 hours</div>
+          <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center; background: white; color: var(--green)">Get
+            Started →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why">
+    <div class="section-tag">Why StoreCartify</div>
+    <h2>Why Choose Us for Your <em>BigCommerce to Shopify Migration?</em></h2>
+    <p class="section-sub">Automated migration tools exist — but we've cleaned up their messes. Missed category
+      associations, broken URLs, lost customer groups, and duplicate products are all common when automation handles
+      complex BigCommerce stores. We do it right the first time.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏆</div>
+        <h3>150+ BigCommerce Migrations</h3>
+        <p>We've migrated BigCommerce stores from Standard all the way to Enterprise — including stores with 50,000+
+          SKUs, customer groups, complex price lists, and multi-currency setups.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📈</div>
+        <h3>Zero SEO Ranking Loss — Guaranteed</h3>
+        <p>We audit your full BigCommerce URL structure before we touch anything. Every product, category, and page URL
+          is mapped to Shopify and redirected. We've never had a client lose rankings after migration.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Your BigCommerce Store Stays Live</h3>
+        <p>Zero downtime throughout the entire process. We build your Shopify store in parallel — your BigCommerce store
+          serves customers right up until you say go.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔍</div>
+        <h3>Manual Data Verification</h3>
+        <p>We use migration tools but verify every data type manually — products spot-checked, orders counted, customer
+          groups confirmed — before you ever see the staging store.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🧩</div>
+        <h3>BigCommerce Integrations Rebuilt</h3>
+        <p>All your BigCommerce app integrations — Klaviyo, ShipStation, Avalara, QuickBooks, nChannel — reviewed and
+          reconnected or rebuilt in Shopify equivalents.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔁</div>
+        <h3>30-Day Free Post-Launch Support</h3>
+        <p>We monitor your site for 30 days post-launch — catching redirect gaps, integration issues, or data anomalies
+          and fixing them immediately at zero extra cost.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Get a Free Migration Audit</a>
+      <a href="#results" class="btn-ghost">See Migration Results</a>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section class="mid-cta">
+    <div class="mid-cta-inner">
+      <div>
+        <div class="mid-cta-badge">✦ BigCommerce to Shopify Experts</div>
+        <h2 class="mid-cta-heading">Ready to switch from BigCommerce to Shopify?</h2>
+        <p class="mid-cta-sub">Join 150+ merchants who've made the switch with StoreCartify. Get your free, detailed
+          migration audit — we'll tell you exactly what's involved, how long it takes, and a fixed price to do it right.
+        </p>
+        <ul class="mid-cta-list">
+          <li><span class="mid-tick">✓</span> Free BigCommerce audit and migration plan in 24 hours</li>
+          <li><span class="mid-tick">✓</span> 100% data integrity guaranteed in writing</li>
+          <li><span class="mid-tick">✓</span> Zero downtime — BigCommerce store stays live throughout</li>
+          <li><span class="mid-tick">✓</span> Fixed-price quote — no hourly billing, no surprises</li>
+        </ul>
+        <div class="mid-cta-actions">
+          <a href="#contact" class="mid-btn-p">📞 Get My Free Audit</a>
+          <a href="#results" class="mid-btn-g">See Case Studies →</a>
+        </div>
+      </div>
+      <div class="mid-cta-card">
+        <div class="mid-stat-row">
+          <div class="mid-stat">
+            <div class="mid-stat-num">150+</div>
+            <div class="mid-stat-label">BC Migrations</div>
+          </div>
+          <div class="mid-stat">
+            <div class="mid-stat-num">100%</div>
+            <div class="mid-stat-label">Data Safe</div>
+          </div>
+          <div class="mid-stat">
+            <div class="mid-stat-num">0%</div>
+            <div class="mid-stat-label">SEO Loss</div>
+          </div>
+        </div>
+        <div class="mid-divider"></div>
+        <div class="mid-trust">
+          <div class="mid-trust-item">
+            <div class="mid-trust-icon">🛡️</div><span>Data integrity guaranteed in writing</span>
+          </div>
+          <div class="mid-trust-item">
+            <div class="mid-trust-icon">📈</div><span>Full SEO redirect mapping included</span>
+          </div>
+          <div class="mid-trust-item">
+            <div class="mid-trust-icon">⚡</div><span>Migration starts within 48 hours</span>
+          </div>
+          <div class="mid-trust-item">
+            <div class="mid-trust-icon">🔁</div><span>30-day free post-launch support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="results">
+    <div class="section-tag">Client Results</div>
+    <h2>Real Results From Our <em>BigCommerce to Shopify</em> Migrations</h2>
+    <p class="section-sub">Numbers from real BigCommerce to Shopify migrations — real outcomes from real merchants who
+      made the switch with StoreCartify.</p>
+    <div class="results-grid">
+      <div class="res-card">
+                 <div class="img-card">
+          <img src="../assets/vanhunks.png" alt="">
+        </div>
+
+        <div class="res-header">
+          <div class="res-client">Vanhunks Outdoor · Sporting Goods</div>
+          <h4>BigCommerce Pro → Shopify</h4>
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">+85%</div>
+              <div class="metric-label">Mobile Revenue</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">14</div>
+              <div class="metric-label">Countries Served</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+52%</div>
+              <div class="metric-label">AOV Increase</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>Full BigCommerce to Shopify migration — including product catalog, customer accounts, order history, and
+            SEO URL structure. Custom Shopify store built with advanced product filtering and multi-currency support.
+            Mobile revenue up 85% post-launch.</p>
+          <span class="res-tag">BigCommerce Pro · Multi-Currency · 4 Weeks</span>
+        </div>
+      </div>
+      <div class="res-card">
+         <div class="img-card">
+          <img src="../assets/softwarekeep.png" alt="">
+        </div>
+        <div class="res-header">
+          <div class="result-client">Softwarekeep · IT Software
+</div>
+          <h4>Custom Platform → Shopify Migration
+          </h4>
+          
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">45K+</div>
+              <div class="metric-label">SKUs Migrated</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+41%</div>
+              <div class="metric-label">Checkout CVR</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">55%</div>
+              <div class="metric-label">Dev Cost Saved</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>BigCommerce Enterprise with 45,000+ SKUs, complex B2B price lists, customer groups, and purchase order
+            workflows — fully migrated to Shopify Plus. Custom B2B portal built. Checkout conversion up 41% in the first
+            month and annual developer costs dropped 55%.</p>
+          <span class="res-tag">BC Enterprise · B2B · Shopify Plus · 45K SKUs</span>
+        </div>
+      </div>
+      <div class="res-card">
+         <div class="img-card">
+          <img src="../assets/joy-viva.png" alt="">
+        </div>
+        <div class="res-header">
+          <div class="result-client">JoyVIVA · Health & Wellness
+</div>
+          <h4>WooCommerce → Shopify Migration
+</h4>
+           
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">8</div>
+              <div class="metric-label">Markets Merged</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+48%</div>
+              <div class="metric-label">Intl Revenue</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">3.5x</div>
+              <div class="metric-label">Faster Checkout</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>8 BigCommerce storefronts for 8 global markets consolidated into one Shopify Markets setup — single admin,
+            eight currencies and languages, localised checkout pricing. International revenue grew 48% in 6 months and
+            checkout speed improved 3.5x.</p>
+          <span class="res-tag">Multi-Storefront · Shopify Markets · 8 Countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-tag">Client Reviews</div>
+    <h2>What Merchants Say After Their <em>BigCommerce to Shopify Migration</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"We were on BigCommerce Pro and hitting the revenue cap every year — the forced plan
+          upgrades were unpredictable and expensive. StoreCartify migrated us to Shopify in 4 weeks and we've had zero
+          platform-imposed costs since. Our mobile checkout conversion is up 85% and the Shopify App Store is
+          incredible."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">TP</div>
+          <div>
+            <div class="testi-name">Tom P.</div>
+            <div class="testi-role">Director, Vanhunks Outdoor</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Our BigCommerce Enterprise setup had 45,000+ SKUs and a very complex B2B price list
+          structure. I was told by two other agencies it couldn't be done cleanly. StoreCartify did it in 12 weeks,
+          every SKU intact, every customer group preserved. Checkout CVR went up 41% in month one."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">DK</div>
+          <div>
+            <div class="testi-name">David K.</div>
+            <div class="testi-role">Head of eCommerce, Industrial Wholesaler</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"We had 8 BigCommerce storefronts for 8 countries. Managing them was a full-time job.
+          StoreCartify consolidated everything into Shopify Markets in 10 weeks. One admin. Eight currencies. One team
+          managing everything. Our international revenue grew 48% in the 6 months after launch."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">LS</div>
+          <div>
+            <div class="testi-name">Laura S.</div>
+            <div class="testi-role">Global eCommerce Director, Fashion Brand</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"What impressed me most was the staging store. Before we went live, I could see every
+          product, every page, the checkout — everything working. Nothing was hidden. When we launched, there wasn't a
+          single issue. That staging preview process is what separates StoreCartify from every other migration agency I
+          spoke to."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RJ</div>
+          <div>
+            <div class="testi-name">Rachel J.</div>
+            <div class="testi-role">Founder, Homewares & Lifestyle Brand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="section-tag">FAQ</div>
+    <h2>BigCommerce to Shopify Migration <em>— Questions Answered</em></h2>
+    <div class="faq-layout">
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q">Will I lose my Google rankings when moving from BigCommerce to Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">No — not with our process. BigCommerce and Shopify use different URL structures, so
+            redirect mapping is critical. We audit your full BigCommerce URL structure before starting — every product,
+            category, and page URL is mapped to its Shopify equivalent and 301 redirected before launch day. We also run
+            a full technical SEO audit post-migration. Our clients consistently maintain or improve their rankings.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does a BigCommerce to Shopify migration take? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Timeline depends on store size and complexity. Small stores under 1,000 SKUs typically take
+            2–3 weeks. Medium stores (1,000–5,000 SKUs) take 3–5 weeks. Larger stores take 5–12 weeks. Enterprise
+            migrations with B2B features or multi-storefront setups take 10–16 weeks. We give you an accurate timeline
+            in your free audit before you commit to anything.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will my BigCommerce store go down during the migration? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Zero downtime. Your BigCommerce store stays live and taking orders throughout the entire
+            process. We build and test the new Shopify store on a staging domain in parallel. We only update DNS once
+            you've reviewed and approved the staging store — and even then, we run a final delta sync to catch any
+            orders placed between your approval and the DNS cutover.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you migrate BigCommerce customer groups and price lists to Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Yes. BigCommerce customer groups and price lists are rebuilt in Shopify using customer tags
+            and Shopify's native price list functionality (Shopify Plus) or compatible third-party apps. For B2B use
+            cases, we typically migrate to Shopify Plus's native B2B features, which provide customer company accounts,
+            custom pricing, and payment terms natively.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What happens to my BigCommerce apps and integrations? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">We audit every BigCommerce app and integration during the free pre-migration audit. Most
+            BigCommerce apps have Shopify equivalents — often superior ones. For tools like Klaviyo, ShipStation,
+            Avalara, or Gorgias, we handle the reconnection to your Shopify store. Where no direct equivalent exists, we
+            advise on the best Shopify alternative.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you migrate from BigCommerce to Shopify Plus? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — this is our most common enterprise migration path. We frequently migrate BigCommerce
+            Enterprise and BigCommerce B2B Edition stores to Shopify Plus, including rebuilding checkout customizations,
+            company accounts, shared catalogs, and custom B2B workflows using Shopify Plus's native B2B features and
+            Functions API.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How much does a BigCommerce to Shopify migration cost? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Cost depends on store size and complexity. Simple BigCommerce Standard migrations start
+            from $800. Medium-sized stores start from $1,500. BigCommerce Pro migrations with complex pricing rules
+            start from $2,500. Enterprise migrations with B2B features or multi-storefront setups start from $4,000. We
+            always provide a fixed-price quote after your free audit — no hourly billing.</div>
+        </div>
+      </div>
+      <div class="faq-cta-panel">
+        <h3>Still unsure about your<br><em>BC migration?</em></h3>
+        <p>Book a free 30-minute call with a BigCommerce migration expert. We'll review your store, answer every
+          question, and give you an honest assessment — zero obligation to proceed.</p>
+        <ul>
+          <li>Free BigCommerce store audit</li>
+          <li>Fixed-price quote in 24 hours</li>
+          <li>Zero downtime guaranteed</li>
+          <li>SEO fully preserved</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <a href="#contact" class="faq-cta-btn">📞 Book a Free Migration Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div>
+        <div class="section-tag">Start Your Migration</div>
+        <h2>Get Your Free <em>BigCommerce to Shopify Migration Audit</em></h2>
+        <p class="contact-sub">Tell us about your BigCommerce store and we'll send you a free, detailed migration plan —
+          what data we'll transfer, how we preserve your SEO, how long it takes, and the fixed price. No obligation.</p>
+        <ul class="contact-trust">
+          <li><span class="ctick">✓</span> Free detailed BigCommerce audit within 24 hours</li>
+          <li><span class="ctick">✓</span> Fixed-price quote — no hourly billing, no surprises</li>
+          <li><span class="ctick">✓</span> 100% data integrity guaranteed in writing</li>
+          <li><span class="ctick">✓</span> Zero downtime — BigCommerce stays live throughout</li>
+          <li><span class="ctick">✓</span> SEO fully preserved — every URL mapped and redirected</li>
+          <li><span class="ctick">✓</span> 30-day free post-launch monitoring included</li>
+        </ul>
+        <div class="contact-stats">
+          <div class="cs-item">
+            <div class="cs-num">150+</div>
+            <div class="cs-label">BC Migrations</div>
+          </div>
+          <div class="cs-item">
+            <div class="cs-num">100%</div>
+            <div class="cs-label">Data Safe</div>
+          </div>
+          <div class="cs-item">
+            <div class="cs-num">24hr</div>
+            <div class="cs-label">Audit Turnaround</div>
+          </div>
+        </div>
+      </div>
+      <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
+      data-drip-embedded-form="330315483" id="drip-ef-330315483">
+      <h4>Book your FREE 30-minute Migration Audit today</h4>
+      <p>We'll match you with the right Shopify developer within 24 hours.</p>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="John Smith" id="drip-full-name" name="fields[full_name]" value="" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@company.com" id="drip-email" name="fields[email]" value="" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" placeholder="Your Company" id="drip-company-name" name="fields[company_name]" value="" required>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Briefly describe your project or requirements..." id="drip-message"
+          name="fields[message]" required></textarea>
+      </div>
+
+      <input type="hidden" id="hidden-source" name="fields[utm_source]" value="">
+      <input type="hidden" id="hidden-campaign" name="fields[utm_campaign]" value="">
+      <input type="hidden" id="hidden-landing-page" name="fields[landing_page]" value="">
+
+
+      <input type="submit" value="Get A Free Quote →" data-drip-attribute="sign-up-button" class="form-submit"
+        class="form-submit">
+      <p class="form-note">🔒 Your information is 100% confidential.</p>
+    </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="../assets/storecartify-logo.webp" alt="">
+      </div>
+      <p>Expert BigCommerce to Shopify migration service. 150+ migrations completed with 100% data preserved, zero SEO
+        loss, and zero downtime — every time.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Migration Services</h4>
+      <a href="#">BigCommerce to Shopify</a>
+      <a href="#">BigCommerce to Shopify Plus</a>
+      <a href="#">BigCommerce B2B Migration</a>
+      <a href="#">Magento to Shopify</a>
+      <a href="#">WooCommerce to Shopify</a>
+      <a href="#">PrestaShop to Shopify</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About StoreCartify</a>
+      <a href="#">Shopify Development Agency</a>
+      <a href="#">Hire Shopify Developers</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Shopify Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="#">+1 818-335-6585</a>
+      <a href="#">storecartify.com</a>
+      <a href="#">Book a Free Call</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>© 2026 StoreCartify. All rights reserved. BigCommerce to Shopify Migration Experts.</p>
+    <p class="disclaimer">StoreCartify is an independent Shopify Partner and is not affiliated with Shopify Inc. or
+      BigCommerce Pty. Ltd.</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+
+</html>
