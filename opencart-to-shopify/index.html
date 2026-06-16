@@ -14,11 +14,12 @@
     })(window, document, 'script', 'dataLayer', 'GTM-W9TG9P5S');</script>
   <!-- End Google Tag Manager -->
 
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BigCommerce to Shopify Migration | Expert Migration Service | StoreCartify</title>
+  <title>OpenCart to Shopify Migration | Expert Migration Service | StoreCartify</title>
   <meta name="description"
-    content="Migrate from BigCommerce to Shopify with zero data loss, zero SEO impact, and zero downtime. StoreCartify has completed 150+ BigCommerce to Shopify migrations. Free audit in 24 hours.">
+    content="Migrate from OpenCart to Shopify with zero data loss, zero SEO impact, and zero downtime. StoreCartify has completed 120+ OpenCart to Shopify migrations. Get a free audit in 24 hours.">
     <link rel="icon" href="../assets/store-icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
     rel="stylesheet">
@@ -35,7 +36,7 @@
       --white: #ffffff;
       --text: #333333;
       --muted: #666666;
-      --light-border: #e5e0d4;
+      --light-border: #e5e0d4
     }
 
     *,
@@ -59,7 +60,6 @@
       overflow-x: hidden
     }
 
-    /* NAV */
     nav {
       top: 0;
       left: 0;
@@ -82,7 +82,10 @@
       letter-spacing: -0.02em
     }
 
-    
+    .nav-logo img {
+      width: auto;
+      height: 70px;
+    }
 
     .nav-links {
       display: flex;
@@ -119,7 +122,6 @@
       transform: translateY(-1px)
     }
 
-    /* HERO */
     @keyframes pulse {
 
       0%,
@@ -157,10 +159,10 @@
     }
 
     .hero {
-      min-height: 92vh;
+    
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: center;
+      align-items: start;
       gap: 60px;
       padding: 40px 5vw 80px;
       background: var(--body-bg);
@@ -313,7 +315,6 @@
       font-weight: 600
     }
 
-    /* HERO FORM */
     .hero-form-card {
       background: var(--white);
       border-radius: 20px;
@@ -413,7 +414,6 @@
       margin-top: 8px
     }
 
-    /* STATS */
     .stats-bar {
       background: var(--white);
       border-bottom: 1.5px solid var(--light-border);
@@ -451,7 +451,6 @@
       letter-spacing: .05em
     }
 
-    /* LOGO STRIP */
     .logos-strip {
       background: var(--green);
       padding: 24px 0;
@@ -459,7 +458,7 @@
       overflow: hidden
     }
 
-    .logos-strip p {
+     .logos-strip p {
       text-align: center;
       font-size: .72rem;
       font-weight: 800;
@@ -504,7 +503,6 @@
       opacity: .45
     }
 
-    /* SECTION COMMONS */
     section {
       padding: 88px 5vw
     }
@@ -552,9 +550,90 @@
       margin-bottom: 52px
     }
 
+    /* OPENCART PAIN POINTS — unique 3-col cards */
+    .pain {
+      background: var(--white)
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .pain-card {
+      background: var(--body-bg);
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all .25s
+    }
+
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--light-border);
+      transition: background .25s
+    }
+
+    .pain-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 8px 28px rgba(0, 76, 63, .08);
+      transform: translateY(-3px)
+    }
+
+    .pain-card:hover::before {
+      background: var(--green)
+    }
+
+    .pain-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--yellow-dim);
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      font-size: 1.3rem
+    }
+
+    .pain-card h3 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 8px
+    }
+
+    .pain-card p {
+      font-size: .86rem;
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    .pain-solution {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: .75rem;
+      font-weight: 800;
+      color: var(--green)
+    }
+
+    .pain-solution::before {
+      content: '→';
+      font-size: .9rem
+    }
+
     /* COMPARISON TABLE */
     .comparison {
-      background: var(--white)
+      background: var(--body-bg)
     }
 
     .comp-wrap {
@@ -588,7 +667,7 @@
       color: rgba(255, 255, 255, 0.65)
     }
 
-    .comp-table th.shopify-col {
+    .comp-table th.sh-col {
       color: var(--white)
     }
 
@@ -604,7 +683,7 @@
     }
 
     .comp-table tr:nth-child(even) td {
-      background: var(--body-bg)
+      background: rgba(255, 255, 255, 0.6)
     }
 
     .feat-label {
@@ -613,7 +692,7 @@
       font-size: .9rem
     }
 
-    .bc-val {
+    .oc-val {
       color: var(--muted);
       font-size: .87rem
     }
@@ -648,7 +727,7 @@
 
     /* WHAT WE MIGRATE */
     .what-migrate {
-      background: var(--body-bg)
+      background: var(--white)
     }
 
     .migrate-2col {
@@ -665,7 +744,7 @@
     }
 
     .mi-card {
-      background: var(--white);
+      background: var(--body-bg);
       border: 1.5px solid var(--light-border);
       border-radius: 14px;
       padding: 20px 18px;
@@ -716,7 +795,7 @@
       font-style: normal
     }
 
-    .migrate-panel p {
+    .migrate-panel>p {
       font-size: .88rem;
       color: rgba(255, 255, 255, 0.7);
       margin-bottom: 24px;
@@ -772,14 +851,14 @@
 
     .panel-cta:hover {
       background: transparent;
-      transform: translateY(-1px);
-      border: 2px solid white;
       color: white;
+      border: 2px solid white;
+      transform: translateY(-1px)
     }
 
     /* PROCESS */
     .process {
-      background: var(--white)
+      background: var(--body-bg)
     }
 
     .process-2col {
@@ -828,14 +907,14 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      border: 3px solid var(--white);
+      border: 3px solid var(--body-bg);
       box-shadow: 0 4px 16px rgba(0, 76, 63, .2);
       position: relative;
       z-index: 1
     }
 
     .proc-body {
-      background: var(--body-bg);
+      background: var(--white);
       border: 1.5px solid var(--light-border);
       border-radius: 14px;
       padding: 22px 26px;
@@ -882,7 +961,7 @@
     }
 
     .aside-card {
-      background: var(--body-bg);
+      background: var(--white);
       border: 1.5px solid var(--light-border);
       border-radius: 18px;
       padding: 28px 24px
@@ -937,7 +1016,7 @@
       text-align: right
     }
 
-    .bc-version-row {
+    .ver-row {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -946,11 +1025,11 @@
       border-bottom: 1px solid var(--light-border)
     }
 
-    .bc-version-row:last-child {
+    .ver-row:last-child {
       border-bottom: none
     }
 
-    .bc-dot {
+    .ver-dot {
       width: 9px;
       height: 9px;
       border-radius: 50%;
@@ -958,19 +1037,19 @@
       flex-shrink: 0
     }
 
-    .bc-ver-name {
+    .ver-name {
       font-weight: 700;
       color: var(--dark)
     }
 
-    .bc-ver-note {
+    .ver-note {
       font-size: .75rem;
       color: var(--muted)
     }
 
     /* WHY US */
     .why {
-      background: var(--body-bg)
+      background: var(--white)
     }
 
     .why-grid {
@@ -980,7 +1059,7 @@
     }
 
     .why-card {
-      background: var(--white);
+      background: var(--body-bg);
       border: 1.5px solid var(--light-border);
       border-radius: 16px;
       padding: 28px 24px;
@@ -990,7 +1069,8 @@
     .why-card:hover {
       border-color: var(--green);
       box-shadow: 0 6px 24px rgba(0, 76, 63, .08);
-      transform: translateY(-3px)
+      transform: translateY(-3px);
+      background: var(--white)
     }
 
     .why-icon {
@@ -1121,8 +1201,8 @@
 
     .mid-btn-p:hover {
       background: transparent;
-      border: 2px solid white;
       color: white;
+      border: 2px solid white;
       transform: translateY(-1px)
     }
 
@@ -1142,7 +1222,7 @@
       gap: 8px
     }
 
-   
+    
 
     .mid-cta-card {
       background: var(--white);
@@ -1218,7 +1298,7 @@
 
     /* RESULTS */
     .results {
-      background: var(--white)
+      background: var(--body-bg)
     }
 
     .results-grid {
@@ -1231,9 +1311,10 @@
       border: 1.5px solid var(--light-border);
       border-radius: 16px;
       overflow: hidden;
-      transition: all .3s
+      transition: all .3s;
+      background: var(--white)
     }
-    .res-card .img-card{
+     .res-card .img-card{
       width: 100%;
       height: auto;
     }
@@ -1241,6 +1322,8 @@
       width: 100%;
       height: 100%;
     }
+
+    
 
     .res-card:hover {
       border-color: var(--green);
@@ -1322,7 +1405,7 @@
 
     /* TESTIMONIALS */
     .testimonials {
-      background: var(--body-bg)
+      background: var(--white)
     }
 
     .testi-grid {
@@ -1332,7 +1415,7 @@
     }
 
     .testi-card {
-      background: var(--white);
+      background: var(--body-bg);
       border: 1.5px solid var(--light-border);
       border-radius: 16px;
       padding: 32px 28px;
@@ -1406,7 +1489,7 @@
 
     /* FAQ */
     .faq {
-      background: var(--white)
+      background: var(--body-bg)
     }
 
     .faq-layout {
@@ -1536,14 +1619,14 @@
 
     .faq-cta-btn:hover {
       background: transparent;
-      color: white;
+      transform: translateY(-1px);
       border: 2px solid white;
-      transform: translateY(-1px)
+      color: white;
     }
 
     /* CONTACT */
     .contact-section {
-      background: var(--body-bg);
+      background: var(--white);
       padding: 88px 5vw;
       border-top: 1.5px solid var(--light-border)
     }
@@ -1608,7 +1691,7 @@
       text-align: center;
       padding: 18px 12px;
       border-right: 1.5px solid var(--light-border);
-      background: var(--white)
+      background: var(--body-bg)
     }
 
     .cs-item:last-child {
@@ -1634,7 +1717,7 @@
     }
 
     .cf-card {
-      background: var(--white);
+      background: var(--body-bg);
       border-radius: 20px;
       padding: 28px;
       border: 1.5px solid var(--light-border);
@@ -1679,7 +1762,7 @@
       font-family: inherit;
       font-size: .87rem;
       color: var(--text);
-      background: var(--body-bg);
+      background: var(--white);
       transition: border-color .2s;
       outline: none;
       appearance: none
@@ -1724,7 +1807,6 @@
       margin-top: 8px
     }
 
-    /* FOOTER */
     footer {
       background: var(--green);
       color: rgba(255, 255, 255, 0.8);
@@ -1741,11 +1823,14 @@
       color: var(--white);
       margin-bottom: 12px
     }
-
-    .footer-logo img {
+     .footer-logo img {
       height: 70px;
       width: auto;
       filter: brightness(0) invert(1);
+    }
+
+    .footer-logo span {
+      color: var(--yellow)
     }
 
     .footer-brand p {
@@ -1772,7 +1857,7 @@
     }
 
     .footer-col a:hover {
-      color: var(--white)
+      color: var(--yellow)
     }
 
     .footer-bottom {
@@ -1798,9 +1883,9 @@
       text-align: right
     }
 
-    /* RESPONSIVE */
     @media(max-width:1024px) {
-      .nav-links{
+  
+       .nav-links{
         display: none;
       }
         .logos-strip .desktop-img{
@@ -1837,7 +1922,7 @@
       .faq-layout {
         grid-template-columns: 1fr
       }
-.hero h1{
+      .hero h1{
         font-size: 30px;
       }
        .logos-strip .desktop-img{
@@ -1851,13 +1936,15 @@
         border-bottom: none;
         display: none;
       }
+      .pain-grid,
       .why-grid,
       .results-grid,
       footer {
         grid-template-columns: 1fr 1fr
       }
 
-      .testi-grid {
+      .testi-grid,
+      .migrate-items {
         grid-template-columns: 1fr
       }
 
@@ -1868,13 +1955,13 @@
       .cf-row {
         grid-template-columns: 1fr
       }
-
-      .migrate-items {
-        grid-template-columns: 1fr 1fr
-      }
     }
 
     @media(max-width:600px) {
+      .nav-links {
+        display: none
+      }
+
       .nav-links {
         display: none
       }
@@ -1919,6 +2006,7 @@
         display: block;
         width: 100%;
       }
+
       .stats-bar {
         flex-wrap: wrap
       }
@@ -1933,14 +2021,14 @@
         border-bottom: none
       }
 
+      .pain-grid,
       .why-grid,
-      .results-grid,
-      .migrate-items {
+      .results-grid {
         grid-template-columns: 1fr
       }
 
       footer {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr
       }
 
       .form-row-2,
@@ -1953,13 +2041,12 @@
 
 <body>
 
-   <!-- Google Tag Manager (noscript) -->
+
+  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9TG9P5S" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-
-  <!-- NAV -->
   <nav>
     <a href="https://storecartify.com" class="nav-logo">
       <img src="../assets/storecartify-logo.webp" alt="">
@@ -1978,11 +2065,11 @@
   <section class="hero">
     <div class="hero-bg-dots"></div>
     <div class="hero-inner">
-      <div class="hero-badge">✦ BigCommerce to Shopify Migration Experts</div>
-      <h1><em>BigCommerce to Shopify Migration</em> — Faster, Simpler, More Profitable.</h1>
-      <p class="hero-desc">StoreCartify has completed 150+ BigCommerce to Shopify migrations — moving stores of every
-        size with 100% data preserved, zero SEO ranking loss, and zero downtime. We migrate products, customers, orders,
-        reviews, and every URL — then hand you a faster, higher-converting Shopify store.</p>
+      <div class="hero-badge">✦ OpenCart to Shopify Migration Experts</div>
+      <h1><em>OpenCart to Shopify Migration</em> — Leave the Maintenance Behind. Keep Everything Else.</h1>
+      <p class="hero-desc">StoreCartify has completed 120+ OpenCart to Shopify migrations — transferring every product,
+        customer, order, and SEO URL while your OpenCart store stays live. We give you a faster, more secure,
+        easier-to-manage Shopify store without losing a single data point or Google ranking.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">🚀 Get a Free Migration Audit</a>
         <a href="#process" class="btn-ghost">See How It Works</a>
@@ -1990,16 +2077,16 @@
       <div class="trust-row">
         <div class="check-item"><svg viewBox="0 0 16 16">
             <polyline points="2,8 6,12 14,4" />
-          </svg><span>150+ BC Migrations</span></div>
+          </svg><span>120+ OC Migrations</span></div>
         <div class="check-item"><svg viewBox="0 0 16 16">
             <polyline points="2,8 6,12 14,4" />
           </svg><span>100% Data Guarantee</span></div>
         <div class="check-item"><svg viewBox="0 0 16 16">
             <polyline points="2,8 6,12 14,4" />
-          </svg><span>Zero SEO Loss</span></div>
+          </svg><span>Zero Downtime</span></div>
       </div>
     </div>
-    <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
+     <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
       data-drip-embedded-form="330315483" id="drip-ef-330315483">
       <h4>Book your FREE 30-minute Migration Audit today</h4>
       <p>We'll match you with the right Shopify developer within 24 hours.</p>
@@ -2037,8 +2124,8 @@
   <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stat-item">
-      <div class="stat-num">150+</div>
-      <div class="stat-label">BC Migrations Done</div>
+      <div class="stat-num">120+</div>
+      <div class="stat-label">OC Migrations Done</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">100%</div>
@@ -2060,162 +2147,216 @@
 
   <!-- LOGO STRIP -->
   <div class="logos-strip">
-    <p>BigCommerce stores we've migrated to Shopify</p>
+    <p>OpenCart Stores We've Migrated To Shopify</p>
     <div style="overflow:hidden">
      <img src="../assets/clients.png" class="desktop-img" alt="">
      <img src="../assets/client-mobile.png" class="mobile-img" alt="">
     </div>
   </div>
 
-  <!-- WHY SWITCH -->
-  <section id="why-migrate" class="comparison">
-    <div class="section-tag">BigCommerce vs Shopify</div>
-    <h2>Why Merchants Are Leaving <em>BigCommerce for Shopify</em></h2>
-    <p class="section-sub">BigCommerce and Shopify are often compared as equals — but for growing DTC brands, Shopify
-      consistently wins on app ecosystem, checkout performance, and total cost of ownership. Here's the honest
-      comparison.</p>
+  <!-- WHY LEAVE OPENCART -->
+  <section id="why-migrate" class="pain">
+    <div class="section-tag">Why Merchants Leave OpenCart</div>
+    <h2>The Real Reasons OpenCart Stores <em>Switch to Shopify</em></h2>
+    <p class="section-sub">OpenCart is a capable open-source platform — but growing it beyond a certain point becomes
+      expensive and technically demanding. Here are the pain points our clients describe most before they migrate.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">🔧</div>
+        <h3>Never-Ending Developer Dependency</h3>
+        <p>Every update, security patch, extension install, or template change on OpenCart requires developer
+          involvement. Store owners can't manage their own shop without technical help.</p>
+        <div class="pain-solution">Shopify gives merchants a fully self-managed store</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔒</div>
+        <h3>Security Risks & Manual Patching</h3>
+        <p>OpenCart stores require manual security updates. Older versions (1.x, 2.x) are especially vulnerable — and
+          without patching, they become targets for malware, card skimming, and data breaches.</p>
+        <div class="pain-solution">Shopify handles all security automatically — PCI Level 1</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🐌</div>
+        <h3>Slow Page Speeds</h3>
+        <p>OpenCart's performance depends entirely on your hosting quality and server configuration. Poorly optimised
+          stores frequently score badly on Core Web Vitals — hurting both rankings and conversions.</p>
+        <div class="pain-solution">Shopify's global CDN delivers sub-2s load times by default</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🧩</div>
+        <h3>Extension Conflicts & Instability</h3>
+        <p>OpenCart extensions from different developers frequently conflict with each other or break after updates —
+          leaving store owners with a broken checkout or admin and no clear way to fix it.</p>
+        <div class="pain-solution">Shopify's 8,000+ apps are vetted, sandboxed, and stable</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📱</div>
+        <h3>Poor Mobile Checkout Experience</h3>
+        <p>OpenCart's default checkout requires significant customisation to compete with modern mobile UX expectations
+          — and most OpenCart themes are not optimised for mobile conversion.</p>
+        <div class="pain-solution">Shopify checkout converts up to 36% better on mobile</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💸</div>
+        <h3>Hidden Total Cost of Ownership</h3>
+        <p>OpenCart is free to install — but hosting, SSL, security, developer hours, and paid extensions add up fast.
+          Most OpenCart merchants spend more than equivalent Shopify merchants annually.</p>
+        <div class="pain-solution">Shopify's predictable pricing eliminates surprise costs</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Start My OpenCart Migration →</a>
+      <a href="#process" class="btn-ghost">See Our Migration Process</a>
+    </div>
+  </section>
+
+  <!-- OPENCART VS SHOPIFY -->
+  <section class="comparison">
+    <div class="section-tag">OpenCart vs Shopify</div>
+    <h2>OpenCart vs Shopify — <em>Side by Side</em></h2>
+    <p class="section-sub">A direct comparison of what matters most to growing eCommerce businesses — platform
+      maintenance, security, performance, and scalability.</p>
     <div class="comp-wrap">
       <table class="comp-table">
         <thead>
           <tr>
             <th style="width:22%">Feature</th>
-            <th style="width:39%">BigCommerce</th>
-            <th class="shopify-col" style="width:39%">Shopify ✦</th>
+            <th style="width:39%">OpenCart</th>
+            <th class="sh-col" style="width:39%">Shopify ✦</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="feat-label">Annual Revenue Caps</td>
-            <td class="bc-val">BigCommerce Standard caps at $50K/yr revenue — you're forced to upgrade plans as you
-              grow, with sudden price jumps <span class="badge-warn">Revenue-gated</span></td>
-            <td class="sh-val">No revenue caps on any plan. Pay a flat monthly fee regardless of your revenue — scale
-              freely without platform penalties. <span class="badge-good">No caps</span></td>
+            <td class="feat-label">Hosting & Infrastructure</td>
+            <td class="oc-val">Self-hosted — you manage server, uptime, backups, and scaling. Performance varies wildly
+              by host quality and configuration. <span class="badge-warn">Self-managed</span></td>
+            <td class="sh-val">Fully managed cloud hosting. 99.99% uptime SLA. Global CDN. Auto-scaling during traffic
+              spikes. Zero server management. <span class="badge-good">Fully managed</span></td>
           </tr>
           <tr>
-            <td class="feat-label">Checkout Performance</td>
-            <td class="bc-val">BigCommerce checkout has been criticised for lower mobile conversion rates —
-              customisation requires developer work and Stencil knowledge</td>
-            <td class="sh-val">Shopify's checkout converts up to 36% better than industry average. Shop Pay, one-click
-              upsells, and accelerated payments built in. <span class="badge-good">+36% CVR avg</span></td>
+            <td class="feat-label">Security</td>
+            <td class="oc-val">Manual security patches required. Older OpenCart versions (1.x, 2.x) receive no official
+              security updates — making them active security vulnerabilities</td>
+            <td class="sh-val">Fully managed security. PCI DSS Level 1 compliant. Automatic updates. SSL included. No
+              manual patching ever required. <span class="badge-good">PCI Level 1</span></td>
           </tr>
           <tr>
-            <td class="feat-label">App Ecosystem</td>
-            <td class="bc-val">~1,000 apps in BigCommerce App Marketplace — many core features require third-party apps
-              that lack quality control and update stability</td>
-            <td class="sh-val">8,000+ apps in the Shopify App Store. Deep ecosystem for email, subscriptions, reviews,
-              loyalty, returns, and more — all one-click installs. <span class="badge-good">8x more apps</span></td>
+            <td class="feat-label">Page Speed</td>
+            <td class="oc-val">Highly variable — depends on hosting, theme, and extension count. Heavy extension stacks
+              frequently cause Core Web Vitals failures</td>
+            <td class="sh-val">Built-in Cloudflare CDN, image optimisation, and lazy loading. Shopify stores average
+              under 2s load times globally. <span class="badge-good">Sub-2s avg</span></td>
           </tr>
           <tr>
-            <td class="feat-label">Total Cost of Ownership</td>
-            <td class="bc-val">BigCommerce Enterprise can cost $60K–$150K+/year when you add hosting, custom
-              development, and enterprise-tier pricing</td>
-            <td class="sh-val">Shopify Plus starts at $2,300/month — a fraction of BigCommerce Enterprise total cost,
-              with more features included out of the box. <span class="badge-good">Lower TCO</span></td>
+            <td class="feat-label">Ease of Management</td>
+            <td class="oc-val">Most store changes require developer access. Adding products, changing layouts, or
+              installing extensions typically involves technical work</td>
+            <td class="sh-val">Merchants manage everything — products, themes, discounts, apps — without a developer.
+              Intuitive drag-and-drop store editor. <span class="badge-good">Self-service</span></td>
           </tr>
           <tr>
-            <td class="feat-label">Theme / Storefront Flexibility</td>
-            <td class="bc-val">Stencil framework is powerful but has a steep learning curve — most custom theme work
-              requires specialist BigCommerce developers</td>
-            <td class="sh-val">Shopify's Liquid, Dawn theme, and Online Store 2.0 give merchants a drag-and-drop editor
-              and developers a modern, well-documented framework. <span class="badge-good">Easier to build</span></td>
+            <td class="feat-label">App / Extension Ecosystem</td>
+            <td class="oc-val">~13,000 extensions — but quality varies hugely, many are unmaintained, and multiple
+              extensions frequently cause conflicts and instability</td>
+            <td class="sh-val">8,000+ apps. All vetted by Shopify. Sandboxed installation. No conflicts between apps.
+              Easy uninstall with no residual code. <span class="badge-good">Vetted & stable</span></td>
           </tr>
           <tr>
-            <td class="feat-label">Headless Commerce</td>
-            <td class="bc-val">BigCommerce has headless APIs but the developer experience and tooling is limited
-              compared to modern headless solutions</td>
-            <td class="sh-val">Shopify Hydrogen + Oxygen gives best-in-class headless commerce with React, Remix, edge
-              deployment, and tight Shopify API integration. <span class="badge-good">Hydrogen + Oxygen</span></td>
+            <td class="feat-label">Checkout & Payments</td>
+            <td class="oc-val">Checkout requires customisation to compete with modern standards. Payment gateway
+              integration is manual and varies by extension quality</td>
+            <td class="sh-val">Shopify Checkout is the highest-converting checkout on the internet. 100+ payment
+              gateways. Shop Pay accelerated checkout built in. <span class="badge-good">+36% CVR avg</span></td>
           </tr>
           <tr>
-            <td class="feat-label">International / Multi-Currency</td>
-            <td class="bc-val">Multi-storefront and multi-currency available — but complex to set up and requires
-              significant configuration and custom development</td>
-            <td class="sh-val">Shopify Markets handles multi-country, multi-currency, and multi-language from a single
-              admin — with localised checkout and pricing built in. <span class="badge-good">Shopify Markets</span></td>
+            <td class="feat-label">Scalability</td>
+            <td class="oc-val">Scaling OpenCart requires infrastructure investment — better hosting, CDN setup, database
+              optimisation — all requiring developer involvement</td>
+            <td class="sh-val">Scales automatically. Shopify has handled flash sales with millions of visitors per hour.
+              No infrastructure decisions needed as you grow. <span class="badge-good">Infinite scale</span></td>
           </tr>
         </tbody>
       </table>
     </div>
     <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
-      <a href="#contact" class="btn-primary">Start My BigCommerce Migration →</a>
-      <a href="#process" class="btn-ghost">See Our Migration Process</a>
+      <a href="#contact" class="btn-primary">Get a Free Migration Audit →</a>
+      <a href="#what-we-migrate" class="btn-ghost">What We Migrate</a>
     </div>
   </section>
 
   <!-- WHAT WE MIGRATE -->
   <section id="what-we-migrate" class="what-migrate">
     <div class="section-tag">What We Transfer</div>
-    <h2>Everything From BigCommerce. <em>Rebuilt Perfectly in Shopify.</em></h2>
-    <p class="section-sub">Our BigCommerce to Shopify migration covers every data type in your store — from products and
-      customer accounts to pricing rules, reviews, and SEO URL structure.</p>
+    <h2>Everything From OpenCart. <em>Nothing Left Behind.</em></h2>
+    <p class="section-sub">Our OpenCart to Shopify migration service transfers every data type in your store — with
+      manual verification of each data category before launch.</p>
     <div class="migrate-2col">
       <div class="migrate-items">
         <div class="mi-card">
           <div class="mi-icon">📦</div>
-          <div class="mi-title">Products & Variants</div>
-          <div class="mi-desc">All products, SKUs, configurable options, custom fields, images, and product descriptions
-            — fully migrated with variant relationships intact.</div>
+          <div class="mi-title">Products & Options</div>
+          <div class="mi-desc">All products, option groups, variants, SKUs, images, descriptions, meta data, and custom
+            attributes — migrated with relationships intact.</div>
         </div>
         <div class="mi-card">
           <div class="mi-icon">👥</div>
           <div class="mi-title">Customer Accounts</div>
-          <div class="mi-desc">All customer records, shipping addresses, customer groups, and store credit migrated so
-            your customers can log in immediately post-launch.</div>
+          <div class="mi-desc">All customer records, shipping addresses, customer groups, and account history migrated
+            so customers can log in from day one.</div>
         </div>
         <div class="mi-card">
           <div class="mi-icon">🧾</div>
           <div class="mi-title">Full Order History</div>
-          <div class="mi-desc">All past orders, statuses, fulfilment data, and refunds — transferred so your support
-            team has complete order context from day one.</div>
+          <div class="mi-desc">All past orders, statuses, fulfilment data, totals, and notes — transferred so your
+            support team has complete context immediately.</div>
         </div>
         <div class="mi-card">
           <div class="mi-icon">🔍</div>
           <div class="mi-title">SEO URLs & Redirects</div>
-          <div class="mi-desc">Every BigCommerce product, category, and page URL mapped to Shopify with 301 redirects —
-            zero Google rankings lost on launch day.</div>
+          <div class="mi-desc">Every OpenCart product and category URL mapped to Shopify with 301 redirects — zero
+            Google rankings lost on launch day.</div>
         </div>
         <div class="mi-card">
           <div class="mi-icon">🗂️</div>
           <div class="mi-title">Categories & Collections</div>
-          <div class="mi-desc">All BigCommerce category trees rebuilt as Shopify smart and custom collections — with
-            filters, sorting, and product assignments preserved.</div>
+          <div class="mi-desc">All OpenCart category trees rebuilt as Shopify collections — including nested categories
+            and product assignments preserved.</div>
         </div>
         <div class="mi-card">
           <div class="mi-icon">✍️</div>
-          <div class="mi-title">Pages, Blog & Content</div>
-          <div class="mi-desc">Static pages, blog posts, meta titles, and descriptions migrated with internal links and
-            canonical tags set correctly in Shopify.</div>
+          <div class="mi-title">Pages, Blog & CMS</div>
+          <div class="mi-desc">All information pages, blog articles, and CMS content migrated with meta titles,
+            descriptions, and internal links re-established.</div>
         </div>
         <div class="mi-card">
           <div class="mi-icon">⭐</div>
           <div class="mi-title">Reviews & Ratings</div>
-          <div class="mi-desc">Product reviews and star ratings migrated to your chosen Shopify reviews app — Judge.me,
-            Yotpo, Stamped, or Okendo.</div>
+          <div class="mi-desc">All product reviews migrated to your chosen Shopify reviews app — Judge.me, Yotpo,
+            Stamped, or Okendo.</div>
         </div>
         <div class="mi-card">
-          <div class="mi-icon">💰</div>
-          <div class="mi-title">Price Lists & Promotions</div>
-          <div class="mi-desc">BigCommerce price lists, customer group pricing, and promotions rebuilt in Shopify —
-            including B2B and wholesale price tiers.</div>
+          <div class="mi-icon">🏷️</div>
+          <div class="mi-title">Coupons & Discounts</div>
+          <div class="mi-desc">Existing discount codes and coupon rules rebuilt in Shopify — including percentage,
+            fixed-amount, and free-shipping discounts.</div>
         </div>
       </div>
       <div class="migrate-panel">
-        <h3>Our <em>BigCommerce Migration</em> Guarantee</h3>
-        <p>We put our guarantee in writing. Every data type verified post-migration. Every URL redirected. Any issue
-          after launch fixed immediately — at no extra cost.</p>
+        <h3>Our <em>OpenCart Migration</em> Guarantee</h3>
+        <p>Every migration comes with a written guarantee. No data left behind, no rankings dropped, no downtime. If
+          anything is missing post-launch — we fix it immediately at no cost.</p>
         <ul class="g-list">
           <li><span class="g-tick">✓</span>100% data integrity — every product, order, and customer account verified
             post-migration</li>
-          <li><span class="g-tick">✓</span>Zero SEO ranking loss — every BigCommerce URL mapped and redirected before
-            go-live</li>
-          <li><span class="g-tick">✓</span>Zero downtime — your BigCommerce store stays live throughout the entire
-            migration</li>
-          <li><span class="g-tick">✓</span>Staging preview — you review and approve everything before we flip the switch
+          <li><span class="g-tick">✓</span>Zero SEO loss — every OpenCart URL mapped and 301 redirected before launch
           </li>
-          <li><span class="g-tick">✓</span>30 days of free post-launch monitoring and issue resolution</li>
-          <li><span class="g-tick">✓</span>Fixed-price quote — no hourly billing, no surprise invoices, ever</li>
+          <li><span class="g-tick">✓</span>Zero downtime — your OpenCart store stays live throughout the entire
+            migration</li>
+          <li><span class="g-tick">✓</span>Staging preview — you review and approve everything before we go live</li>
+          <li><span class="g-tick">✓</span>30 days of free post-launch monitoring and issue fixing included</li>
+          <li><span class="g-tick">✓</span>Fixed-price quote — no hourly billing, no surprise invoices</li>
         </ul>
-        <a href="#contact" class="panel-cta">Get My Free BigCommerce Audit →</a>
+        <a href="#contact" class="panel-cta">Get My Free OpenCart Audit →</a>
       </div>
     </div>
   </section>
@@ -2223,116 +2364,118 @@
   <!-- PROCESS -->
   <section id="process" class="process">
     <div class="section-tag">Migration Process</div>
-    <h2>Our Proven <em>BigCommerce to Shopify</em> Migration Process</h2>
-    <p class="section-sub">A structured, zero-risk process refined across 150+ BigCommerce migrations — designed to
-      protect your data, preserve your SEO, and get you live on Shopify without disrupting your business for a single
-      hour.</p>
+    <h2>Our Proven <em>OpenCart to Shopify</em> Migration Process</h2>
+    <p class="section-sub">A step-by-step, risk-free process refined across 120+ OpenCart migrations — from small stores
+      with 100 products to complex setups with custom extensions, multi-store configurations, and 20,000+ SKUs.</p>
     <div class="process-2col">
       <div class="proc-timeline">
         <div class="proc-item">
           <div class="proc-num">01</div>
           <div class="proc-body">
-            <h3>Free BigCommerce Store Audit</h3>
-            <p>We audit your BigCommerce store in full — product count, variants, custom fields, app integrations, URL
-              structure, and SEO footprint. You receive a detailed migration plan and fixed-price quote within 24 hours
-              of your request.</p>
+            <h3>Free OpenCart Store Audit</h3>
+            <p>We audit your OpenCart store in full — product count, option groups, custom extensions, URL structure,
+              SEO footprint, and third-party integrations. You receive a detailed migration plan and fixed-price quote
+              within 24 hours, at no cost and no obligation.</p>
             <span class="proc-tag">Free · 24-hour turnaround · No obligation</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">02</div>
           <div class="proc-body">
-            <h3>Shopify Store Setup & Theme Build</h3>
-            <p>We set up your new Shopify store — selecting or building the right theme, installing and configuring your
-              key apps, setting up navigation and collections to mirror your BigCommerce category structure.</p>
-            <span class="proc-tag">Theme setup · App config · Navigation architecture</span>
+            <h3>Shopify Store Setup & Theme</h3>
+            <p>We set up your new Shopify store — configuring the right theme, building your navigation, setting up your
+              key apps, and structuring collections to mirror your OpenCart category hierarchy.</p>
+            <span class="proc-tag">Theme · Apps · Navigation structure</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">03</div>
           <div class="proc-body">
             <h3>Full Data Migration to Staging</h3>
-            <p>All data — products, customers, orders, categories, blog posts, reviews, and price rules — migrated to a
-              staging version of your Shopify store. Your live BigCommerce store is untouched at this stage.</p>
-            <span class="proc-tag">Staging only · Zero risk · Complete dataset transfer</span>
+            <p>All data — products, customers, orders, categories, pages, reviews, and coupons — migrated to a staging
+              Shopify store. Your live OpenCart store is completely untouched at this stage.</p>
+            <span class="proc-tag">Staging only · Zero risk · Full dataset</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">04</div>
           <div class="proc-body">
-            <h3>SEO Redirect Mapping & Technical Audit</h3>
-            <p>Every BigCommerce URL mapped to its Shopify equivalent with 301 redirects implemented. We then run a full
-              technical SEO audit — canonicals, meta data, schema markup, XML sitemap, and robots.txt.</p>
+            <h3>SEO Redirect Mapping & Audit</h3>
+            <p>Every OpenCart URL mapped to its Shopify equivalent with 301 redirects implemented and tested. Full
+              technical SEO audit run — canonicals, meta data, XML sitemap, schema, and internal links all verified.</p>
             <span class="proc-tag">301 redirects · Meta data · Schema · Sitemap</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">05</div>
           <div class="proc-body">
-            <h3>QA, Testing & Your Sign-Off</h3>
-            <p>You get full access to the staging store. Review products, checkout, customer login, order history, and
-              every page. We resolve any issues before requesting your final sign-off to go live.</p>
-            <span class="proc-tag">Full QA · Your review · Sign-off required to launch</span>
+            <h3>QA Testing & Your Sign-Off</h3>
+            <p>You get full access to the staging store — review every product, the checkout flow, customer login, order
+              history lookup, and every page. We fix any issues and only go live once you're fully satisfied and sign
+              off.</p>
+            <span class="proc-tag">Full QA · Your review · Sign-off required</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">06</div>
           <div class="proc-body">
-            <h3>Go Live & 30-Day Post-Launch Monitoring</h3>
-            <p>We update DNS, run a final delta data sync to catch any orders placed during review, and monitor your
-              traffic and rankings for 30 days post-launch — fixing any issues that surface at no extra cost.</p>
-            <span class="proc-tag">DNS cutover · Delta sync · 30-day free monitoring</span>
+            <h3>Go Live & 30-Day Monitoring</h3>
+            <p>We update DNS, run a final delta sync to catch orders placed during the review period, and monitor your
+              traffic and Google rankings for 30 days post-launch — fixing any issues that emerge at no extra cost.</p>
+            <span class="proc-tag">DNS cutover · Delta sync · 30-day monitoring</span>
           </div>
         </div>
       </div>
       <div class="aside-sticky">
         <div class="aside-card">
           <h4>Typical Migration Timelines</h4>
-          <div class="tbar-row"><span class="tbar-label">Under 1K SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">Under 500 SKUs</span>
             <div class="tbar-track">
-              <div class="tbar-fill" style="width:28%"></div>
-            </div><span class="tbar-val">2–3 wks</span>
+              <div class="tbar-fill" style="width:25%"></div>
+            </div><span class="tbar-val">1–2 wks</span>
           </div>
-          <div class="tbar-row"><span class="tbar-label">1K–5K SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">500–2K SKUs</span>
             <div class="tbar-track">
-              <div class="tbar-fill" style="width:50%"></div>
-            </div><span class="tbar-val">3–5 wks</span>
+              <div class="tbar-fill" style="width:45%"></div>
+            </div><span class="tbar-val">2–4 wks</span>
           </div>
-          <div class="tbar-row"><span class="tbar-label">5K–20K SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">2K–10K SKUs</span>
             <div class="tbar-track">
-              <div class="tbar-fill" style="width:70%"></div>
-            </div><span class="tbar-val">5–8 wks</span>
+              <div class="tbar-fill" style="width:68%"></div>
+            </div><span class="tbar-val">4–7 wks</span>
           </div>
-          <div class="tbar-row"><span class="tbar-label">20K–50K SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">10K–20K SKUs</span>
             <div class="tbar-track">
-              <div class="tbar-fill" style="width:88%"></div>
-            </div><span class="tbar-val">8–12 wks</span>
+              <div class="tbar-fill" style="width:85%"></div>
+            </div><span class="tbar-val">7–10 wks</span>
           </div>
-          <div class="tbar-row"><span class="tbar-label">50K+ SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">20K+ SKUs</span>
             <div class="tbar-track">
               <div class="tbar-fill" style="width:100%"></div>
-            </div><span class="tbar-val">12–16 wks</span>
+            </div><span class="tbar-val">10–14 wks</span>
           </div>
         </div>
         <div class="aside-card">
-          <h4>BigCommerce Plans We Migrate</h4>
-          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce
-              Standard</span><span class="bc-ver-note">up to $50K revenue</span></div>
-          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce Plus</span><span
-              class="bc-ver-note">up to $180K revenue</span></div>
-          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce Pro</span><span
-              class="bc-ver-note">up to $400K revenue</span></div>
-          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce
-              Enterprise</span><span class="bc-ver-note">unlimited revenue</span></div>
-          <div class="bc-version-row"><span class="bc-dot"></span><span class="bc-ver-name">BigCommerce B2B
-              Edition</span><span class="bc-ver-note">wholesale / trade</span></div>
+          <h4>OpenCart Versions We Migrate</h4>
+          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OpenCart 1.x</span><span
+              class="ver-note">Legacy — urgent to migrate</span></div>
+          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OpenCart 2.x</span><span
+              class="ver-note">Open Source</span></div>
+          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OpenCart 3.x</span><span
+              class="ver-note">Open Source</span></div>
+          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OpenCart 4.x</span><span
+              class="ver-note">Latest version</span></div>
+          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OC + vQmod / OCmod</span><span
+              class="ver-note">Custom extension systems</span></div>
+          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">Multi-store OpenCart</span><span
+              class="ver-note">Multiple storefronts</span></div>
         </div>
         <div style="background:var(--green);border-radius:16px;padding:24px 20px;text-align:center;">
           <div
             style="font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:1.6rem;color:var(--white);line-height:1;margin-bottom:6px;">
             Free Audit</div>
-          <div style="font-size:.85rem;color:white;margin-bottom:16px;">Migration plan in 24 hours</div>
-          <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center; background: white; color: var(--green)">Get
+          <div style="font-size:.85rem;color:white;margin-bottom:16px;">Your migration plan in 24 hours</div>
+          <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center; background:white; color:var(--green)">Get
             Started →</a>
         </div>
       </div>
@@ -2342,46 +2485,46 @@
   <!-- WHY US -->
   <section class="why">
     <div class="section-tag">Why StoreCartify</div>
-    <h2>Why Choose Us for Your <em>BigCommerce to Shopify Migration?</em></h2>
-    <p class="section-sub">Automated migration tools exist — but we've cleaned up their messes. Missed category
-      associations, broken URLs, lost customer groups, and duplicate products are all common when automation handles
-      complex BigCommerce stores. We do it right the first time.</p>
+    <h2>Why Choose Us for Your <em>OpenCart to Shopify Migration?</em></h2>
+    <p class="section-sub">Automated migration scripts handle simple stores — but OpenCart's option groups, vQmod/OCmod
+      extension system, and custom database structures require expert human handling. We've seen every OpenCart
+      configuration and we do it right the first time.</p>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">🏆</div>
-        <h3>150+ BigCommerce Migrations</h3>
-        <p>We've migrated BigCommerce stores from Standard all the way to Enterprise — including stores with 50,000+
-          SKUs, customer groups, complex price lists, and multi-currency setups.</p>
+        <h3>120+ OpenCart Migrations</h3>
+        <p>We've migrated OpenCart stores across every version — 1.x through 4.x — including complex stores with
+          vQmod/OCmod modifications, multi-store setups, and heavily customised extensions.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">📈</div>
-        <h3>Zero SEO Ranking Loss — Guaranteed</h3>
-        <p>We audit your full BigCommerce URL structure before we touch anything. Every product, category, and page URL
-          is mapped to Shopify and redirected. We've never had a client lose rankings after migration.</p>
+        <h3>Zero SEO Ranking Loss</h3>
+        <p>OpenCart and Shopify use fundamentally different URL structures. We audit every URL, build a complete
+          redirect map, and implement 301s before launch. Our clients' rankings consistently hold or improve.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">⚡</div>
-        <h3>Your BigCommerce Store Stays Live</h3>
-        <p>Zero downtime throughout the entire process. We build your Shopify store in parallel — your BigCommerce store
-          serves customers right up until you say go.</p>
+        <h3>Your OpenCart Store Stays Live</h3>
+        <p>Zero downtime throughout. We build and verify your Shopify store in parallel on a staging domain. Your
+          OpenCart store serves orders right up until DNS cutover — which takes minutes, not hours.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔧</div>
+        <h3>OpenCart Extensions Replaced</h3>
+        <p>We map every OpenCart extension to its Shopify equivalent or build custom functionality where needed. No
+          features left behind — just better, more stable Shopify alternatives.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">🔍</div>
         <h3>Manual Data Verification</h3>
-        <p>We use migration tools but verify every data type manually — products spot-checked, orders counted, customer
-          groups confirmed — before you ever see the staging store.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🧩</div>
-        <h3>BigCommerce Integrations Rebuilt</h3>
-        <p>All your BigCommerce app integrations — Klaviyo, ShipStation, Avalara, QuickBooks, nChannel — reviewed and
-          reconnected or rebuilt in Shopify equivalents.</p>
+        <p>We don't just run a migration script and call it done. Every data category is verified — products
+          spot-checked, order counts confirmed, customer groups validated — before you see the staging store.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">🔁</div>
         <h3>30-Day Free Post-Launch Support</h3>
-        <p>We monitor your site for 30 days post-launch — catching redirect gaps, integration issues, or data anomalies
-          and fixing them immediately at zero extra cost.</p>
+        <p>We monitor rankings and traffic for 30 days after go-live and fix any redirect gaps, data anomalies, or
+          integration issues that emerge — all included, no extra charge.</p>
       </div>
     </div>
     <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
@@ -2394,15 +2537,15 @@
   <section class="mid-cta">
     <div class="mid-cta-inner">
       <div>
-        <div class="mid-cta-badge">✦ BigCommerce to Shopify Experts</div>
-        <h2 class="mid-cta-heading">Ready to switch from BigCommerce to Shopify?</h2>
-        <p class="mid-cta-sub">Join 150+ merchants who've made the switch with StoreCartify. Get your free, detailed
-          migration audit — we'll tell you exactly what's involved, how long it takes, and a fixed price to do it right.
+        <div class="mid-cta-badge">✦ OpenCart to Shopify Experts</div>
+        <h2 class="mid-cta-heading">Ready to stop maintaining OpenCart and start growing on Shopify?</h2>
+        <p class="mid-cta-sub">Join 120+ merchants who've made the switch from OpenCart to Shopify with StoreCartify.
+          Get your free migration audit — we'll tell you exactly what's involved, how long it takes, and the fixed cost.
         </p>
         <ul class="mid-cta-list">
-          <li><span class="mid-tick">✓</span> Free BigCommerce audit and migration plan in 24 hours</li>
+          <li><span class="mid-tick">✓</span> Free OpenCart audit and migration plan in 24 hours</li>
           <li><span class="mid-tick">✓</span> 100% data integrity guaranteed in writing</li>
-          <li><span class="mid-tick">✓</span> Zero downtime — BigCommerce store stays live throughout</li>
+          <li><span class="mid-tick">✓</span> Zero downtime — OpenCart stays live throughout</li>
           <li><span class="mid-tick">✓</span> Fixed-price quote — no hourly billing, no surprises</li>
         </ul>
         <div class="mid-cta-actions">
@@ -2413,8 +2556,8 @@
       <div class="mid-cta-card">
         <div class="mid-stat-row">
           <div class="mid-stat">
-            <div class="mid-stat-num">150+</div>
-            <div class="mid-stat-label">BC Migrations</div>
+            <div class="mid-stat-num">120+</div>
+            <div class="mid-stat-label">OC Migrations</div>
           </div>
           <div class="mid-stat">
             <div class="mid-stat-num">100%</div>
@@ -2437,7 +2580,7 @@
             <div class="mid-trust-icon">⚡</div><span>Migration starts within 48 hours</span>
           </div>
           <div class="mid-trust-item">
-            <div class="mid-trust-icon">🔁</div><span>30-day free post-launch support</span>
+            <div class="mid-trust-icon">🔁</div><span>30-day free post-launch monitoring</span>
           </div>
         </div>
       </div>
@@ -2447,102 +2590,98 @@
   <!-- RESULTS -->
   <section id="results" class="results">
     <div class="section-tag">Client Results</div>
-    <h2>Real Results From Our <em>BigCommerce to Shopify</em> Migrations</h2>
-    <p class="section-sub">Numbers from real BigCommerce to Shopify migrations — real outcomes from real merchants who
-      made the switch with StoreCartify.</p>
+    <h2>Real Results From Our <em>OpenCart to Shopify</em> Migrations</h2>
+    <p class="section-sub">Numbers from actual OpenCart to Shopify projects — real outcomes from real merchants who
+      stopped maintaining and started growing.</p>
     <div class="results-grid">
       <div class="res-card">
-                 <div class="img-card">
-          <img src="../assets/vanhunks.png" alt="">
+         <div class="img-card">
+          <img src="../assets/German-Mattress-Brand.jpg" alt="">
         </div>
-
         <div class="res-header">
-          <div class="res-client">Vanhunks Outdoor · Sporting Goods</div>
-          <h4>BigCommerce Pro → Shopify</h4>
+          <div class="res-client">German Mattress Brand
+  </div>
+          <h4>OpenCart 2.x → Shopify</h4>
           <div class="res-metrics">
             <div class="metric">
-              <div class="metric-num">+85%</div>
-              <div class="metric-label">Mobile Revenue</div>
+              <div class="metric-num">8K+</div>
+              <div class="metric-label">Products Migrated</div>
             </div>
             <div class="metric">
-              <div class="metric-num">14</div>
-              <div class="metric-label">Countries Served</div>
+              <div class="metric-num">+47%</div>
+              <div class="metric-label">Conversion Rate</div>
             </div>
             <div class="metric">
-              <div class="metric-num">+52%</div>
-              <div class="metric-label">AOV Increase</div>
+              <div class="metric-num">3 Wks</div>
+              <div class="metric-label">Timeline</div>
             </div>
           </div>
         </div>
         <div class="res-body">
-          <p>Full BigCommerce to Shopify migration — including product catalog, customer accounts, order history, and
-            SEO URL structure. Custom Shopify store built with advanced product filtering and multi-currency support.
-            Mobile revenue up 85% post-launch.</p>
-          <span class="res-tag">BigCommerce Pro · Multi-Currency · 4 Weeks</span>
+          <p>8,000+ products with complex option groups migrated from OpenCart 2.x to Shopify in 3 weeks. Every option
+            group rebuilt as Shopify product variants. Conversion rate up 47% in the first month — driven by Shopify's
+            faster mobile checkout replacing OpenCart's slow legacy checkout.</p>
+          <span class="res-tag">OpenCart 2 · 8K Products · Complex Options</span>
         </div>
       </div>
       <div class="res-card">
          <div class="img-card">
-          <img src="../assets/softwarekeep.png" alt="">
+          <img src="../assets/Pet-Supplement-Brand.jpg" alt="">
         </div>
         <div class="res-header">
-          <div class="result-client">Softwarekeep · IT Software
-</div>
-          <h4>Custom Platform → Shopify Migration
-          </h4>
-          
+          <div class="res-client">Pet Supplement Brand
+  </div>
+          <h4>OpenCart 3.x → Shopify Plus</h4>
           <div class="res-metrics">
             <div class="metric">
-              <div class="metric-num">45K+</div>
-              <div class="metric-label">SKUs Migrated</div>
+              <div class="metric-num">+62%</div>
+              <div class="metric-label">Mobile Revenue</div>
             </div>
             <div class="metric">
-              <div class="metric-num">+41%</div>
-              <div class="metric-label">Checkout CVR</div>
+              <div class="metric-num">2.1s</div>
+              <div class="metric-label">Load Time</div>
             </div>
             <div class="metric">
-              <div class="metric-num">55%</div>
+              <div class="metric-num">70%</div>
               <div class="metric-label">Dev Cost Saved</div>
             </div>
           </div>
         </div>
         <div class="res-body">
-          <p>BigCommerce Enterprise with 45,000+ SKUs, complex B2B price lists, customer groups, and purchase order
-            workflows — fully migrated to Shopify Plus. Custom B2B portal built. Checkout conversion up 41% in the first
-            month and annual developer costs dropped 55%.</p>
-          <span class="res-tag">BC Enterprise · B2B · Shopify Plus · 45K SKUs</span>
+          <p>OpenCart 3.x store with 12 custom vQmod modifications migrated to Shopify Plus in 5 weeks. Each vQmod
+            feature replaced with a native Shopify app or custom solution. Page speed went from 8.4s to 2.1s. Monthly
+            developer maintenance costs dropped by 70%.</p>
+          <span class="res-tag">OpenCart 3 · vQmod · Shopify Plus · 5 Weeks</span>
         </div>
       </div>
       <div class="res-card">
          <div class="img-card">
-          <img src="../assets/joy-viva.png" alt="">
+          <img src="../assets/Global-Cosmetics-Brand.jpg" alt="">
         </div>
         <div class="res-header">
-          <div class="result-client">JoyVIVA · Health & Wellness
-</div>
-          <h4>WooCommerce → Shopify Migration
-</h4>
-           
+          <div class="res-client">Global Cosmetics Brand  
+  </div>
+          <h4>Multi-Store OC → Shopify Markets</h4>
           <div class="res-metrics">
             <div class="metric">
-              <div class="metric-num">8</div>
-              <div class="metric-label">Markets Merged</div>
+              <div class="metric-num">4</div>
+              <div class="metric-label">Stores Merged</div>
             </div>
             <div class="metric">
-              <div class="metric-num">+48%</div>
-              <div class="metric-label">Intl Revenue</div>
+              <div class="metric-num">+38%</div>
+              <div class="metric-label">Revenue Growth</div>
             </div>
             <div class="metric">
-              <div class="metric-num">3.5x</div>
-              <div class="metric-label">Faster Checkout</div>
+              <div class="metric-num">60%</div>
+              <div class="metric-label">Admin Time Saved</div>
             </div>
           </div>
         </div>
         <div class="res-body">
-          <p>8 BigCommerce storefronts for 8 global markets consolidated into one Shopify Markets setup — single admin,
-            eight currencies and languages, localised checkout pricing. International revenue grew 48% in 6 months and
-            checkout speed improved 3.5x.</p>
-          <span class="res-tag">Multi-Storefront · Shopify Markets · 8 Countries</span>
+          <p>Four separate OpenCart storefronts for four regional markets consolidated into a single Shopify Markets
+            setup — one admin, four currencies, four languages. Admin time managing the stores dropped 60% and revenue
+            grew 38% in the first six months post-launch.</p>
+          <span class="res-tag">Multi-Store · Shopify Markets · 4 Regions</span>
         </div>
       </div>
     </div>
@@ -2551,59 +2690,60 @@
   <!-- TESTIMONIALS -->
   <section class="testimonials">
     <div class="section-tag">Client Reviews</div>
-    <h2>What Merchants Say After Their <em>BigCommerce to Shopify Migration</em></h2>
+    <h2>What Merchants Say After Their <em>OpenCart to Shopify Migration</em></h2>
     <div class="testi-grid">
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"We were on BigCommerce Pro and hitting the revenue cap every year — the forced plan
-          upgrades were unpredictable and expensive. StoreCartify migrated us to Shopify in 4 weeks and we've had zero
-          platform-imposed costs since. Our mobile checkout conversion is up 85% and the Shopify App Store is
-          incredible."</p>
+        <p class="testi-text">"We'd been on OpenCart for 8 years and were spending more on developer maintenance every
+          year than we did in year one. StoreCartify migrated our 8,000-product store in 3 weeks. Every product, every
+          option group, every customer account — all there. Our conversion rate went up 47% in the first month on
+          Shopify checkout."</p>
         <div class="testi-author">
-          <div class="testi-avatar">TP</div>
+          <div class="testi-avatar">BK</div>
           <div>
-            <div class="testi-name">Tom P.</div>
-            <div class="testi-role">Director, Vanhunks Outdoor</div>
+            <div class="testi-name">Brian K.</div>
+            <div class="testi-role">Owner, Electronics Retailer</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"Our BigCommerce Enterprise setup had 45,000+ SKUs and a very complex B2B price list
-          structure. I was told by two other agencies it couldn't be done cleanly. StoreCartify did it in 12 weeks,
-          every SKU intact, every customer group preserved. Checkout CVR went up 41% in month one."</p>
+        <p class="testi-text">"We had 12 vQmod modifications on our OpenCart store — every other agency said it was too
+          complicated. StoreCartify audited every single one, explained what each did, and either replaced it with a
+          Shopify app or built a custom solution. We went from 8-second load times to 2.1 seconds. It changed our
+          business."</p>
         <div class="testi-author">
-          <div class="testi-avatar">DK</div>
+          <div class="testi-avatar">NF</div>
           <div>
-            <div class="testi-name">David K.</div>
-            <div class="testi-role">Head of eCommerce, Industrial Wholesaler</div>
+            <div class="testi-name">Natalie F.</div>
+            <div class="testi-role">Founder, Fashion Boutique</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"We had 8 BigCommerce storefronts for 8 countries. Managing them was a full-time job.
-          StoreCartify consolidated everything into Shopify Markets in 10 weeks. One admin. Eight currencies. One team
-          managing everything. Our international revenue grew 48% in the 6 months after launch."</p>
+        <p class="testi-text">"Managing 4 OpenCart storefronts for 4 countries was taking 3 days every week just to keep
+          in sync. After StoreCartify moved us to Shopify Markets, we run all four countries from one admin. The time
+          we've saved pays for the migration cost every single month."</p>
         <div class="testi-author">
-          <div class="testi-avatar">LS</div>
+          <div class="testi-avatar">PH</div>
           <div>
-            <div class="testi-name">Laura S.</div>
-            <div class="testi-role">Global eCommerce Director, Fashion Brand</div>
+            <div class="testi-name">Peter H.</div>
+            <div class="testi-role">Director, B2B Supplier</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"What impressed me most was the staging store. Before we went live, I could see every
-          product, every page, the checkout — everything working. Nothing was hidden. When we launched, there wasn't a
-          single issue. That staging preview process is what separates StoreCartify from every other migration agency I
-          spoke to."</p>
+        <p class="testi-text">"The staging store preview was the thing that convinced me StoreCartify was different. I
+          could log in, browse, add to cart, and checkout on the staging Shopify store before we went live. I could see
+          every single product was there. Only when I was 100% satisfied did we flip the switch. That's how it should be
+          done."</p>
         <div class="testi-author">
-          <div class="testi-avatar">RJ</div>
+          <div class="testi-avatar">AM</div>
           <div>
-            <div class="testi-name">Rachel J.</div>
-            <div class="testi-role">Founder, Homewares & Lifestyle Brand</div>
+            <div class="testi-name">Anna M.</div>
+            <div class="testi-role">CEO, Home & Garden Store</div>
           </div>
         </div>
       </div>
@@ -2612,97 +2752,68 @@
 
   <!-- FAQ -->
   <section id="faq" class="faq">
-    <div class="section-tag">FAQ</div>
-    <h2>BigCommerce to Shopify Migration <em>— Questions Answered</em></h2>
-    <div class="faq-layout">
-      <div class="faq-list">
-        <div class="faq-item open">
-          <button class="faq-q">Will I lose my Google rankings when moving from BigCommerce to Shopify? <span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">No — not with our process. BigCommerce and Shopify use different URL structures, so
-            redirect mapping is critical. We audit your full BigCommerce URL structure before starting — every product,
-            category, and page URL is mapped to its Shopify equivalent and 301 redirected before launch day. We also run
-            a full technical SEO audit post-migration. Our clients consistently maintain or improve their rankings.
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">How long does a BigCommerce to Shopify migration take? <span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Timeline depends on store size and complexity. Small stores under 1,000 SKUs typically take
-            2–3 weeks. Medium stores (1,000–5,000 SKUs) take 3–5 weeks. Larger stores take 5–12 weeks. Enterprise
-            migrations with B2B features or multi-storefront setups take 10–16 weeks. We give you an accurate timeline
-            in your free audit before you commit to anything.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Will my BigCommerce store go down during the migration? <span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Zero downtime. Your BigCommerce store stays live and taking orders throughout the entire
-            process. We build and test the new Shopify store on a staging domain in parallel. We only update DNS once
-            you've reviewed and approved the staging store — and even then, we run a final delta sync to catch any
-            orders placed between your approval and the DNS cutover.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Can you migrate BigCommerce customer groups and price lists to Shopify? <span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Yes. BigCommerce customer groups and price lists are rebuilt in Shopify using customer tags
-            and Shopify's native price list functionality (Shopify Plus) or compatible third-party apps. For B2B use
-            cases, we typically migrate to Shopify Plus's native B2B features, which provide customer company accounts,
-            custom pricing, and payment terms natively.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">What happens to my BigCommerce apps and integrations? <span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">We audit every BigCommerce app and integration during the free pre-migration audit. Most
-            BigCommerce apps have Shopify equivalents — often superior ones. For tools like Klaviyo, ShipStation,
-            Avalara, or Gorgias, we handle the reconnection to your Shopify store. Where no direct equivalent exists, we
-            advise on the best Shopify alternative.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Can you migrate from BigCommerce to Shopify Plus? <span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Yes — this is our most common enterprise migration path. We frequently migrate BigCommerce
-            Enterprise and BigCommerce B2B Edition stores to Shopify Plus, including rebuilding checkout customizations,
-            company accounts, shared catalogs, and custom B2B workflows using Shopify Plus's native B2B features and
-            Functions API.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">How much does a BigCommerce to Shopify migration cost? <span
-              class="faq-icon">+</span></button>
-          <div class="faq-a">Cost depends on store size and complexity. Simple BigCommerce Standard migrations start
-            from $800. Medium-sized stores start from $1,500. BigCommerce Pro migrations with complex pricing rules
-            start from $2,500. Enterprise migrations with B2B features or multi-storefront setups start from $4,000. We
-            always provide a fixed-price quote after your free audit — no hourly billing.</div>
-        </div>
+  <div class="section-tag">FAQ</div>
+  <h2>OpenCart to Shopify Migration <em>— Questions Answered</em></h2>
+  <div class="faq-layout">
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q">Will I lose my Google rankings when moving from OpenCart to Shopify? <span class="faq-icon">+</span></button>
+        <div class="faq-a">No — not with our process. OpenCart and Shopify use different URL structures by default, so redirect mapping is critical. Before we touch anything, we audit your full OpenCart URL structure — every product, category, and information page. Every URL is mapped to its Shopify equivalent and 301 redirected before launch. We've never had a client lose rankings after migration.</div>
       </div>
-      <div class="faq-cta-panel">
-        <h3>Still unsure about your<br><em>BC migration?</em></h3>
-        <p>Book a free 30-minute call with a BigCommerce migration expert. We'll review your store, answer every
-          question, and give you an honest assessment — zero obligation to proceed.</p>
-        <ul>
-          <li>Free BigCommerce store audit</li>
-          <li>Fixed-price quote in 24 hours</li>
-          <li>Zero downtime guaranteed</li>
-          <li>SEO fully preserved</li>
-          <li>30-day post-launch support</li>
-        </ul>
-        <a href="#contact" class="faq-cta-btn">📞 Book a Free Migration Call</a>
+      <div class="faq-item">
+        <button class="faq-q">Can you migrate OpenCart 1.x or 2.x — older versions? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes — we migrate all OpenCart versions from 1.x through 4.x. Older versions (1.x and 2.x) are actually the most urgent to migrate, since they receive no security updates and represent an active security risk to your store and customer data. We have a proven process for extracting data safely from legacy OpenCart databases.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What happens to my OpenCart extensions and vQmod/OCmod modifications? <span class="faq-icon">+</span></button>
+        <div class="faq-a">We audit every extension and modification during the free pre-migration audit. We categorise each one: (1) has a direct Shopify app equivalent, (2) can be replaced by a combination of native Shopify features, or (3) requires a custom Shopify app. We tell you the plan for every extension before you commit — nothing surprises you post-migration.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does an OpenCart to Shopify migration take? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Simple stores under 500 products typically take 1–2 weeks. Medium stores (500–2,000 products) take 2–4 weeks. Larger stores with 2,000–10,000 products take 4–7 weeks. Complex stores with many extensions, multi-store setups, or heavy customisation take 7–14 weeks. We give you a precise timeline after your free audit.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will my OpenCart store go down during the migration? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Zero downtime. Your OpenCart store stays fully live and taking orders throughout the entire process. We build and test the new Shopify store on a staging domain in parallel. We only switch DNS once you've approved the staging store — and we run a final delta sync to capture any orders placed between your approval and the cutover.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can you migrate OpenCart product options to Shopify variants? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes — this is one of the most technically demanding parts of an OpenCart migration. OpenCart's option system is more flexible than Shopify's native variant system, so we carefully map each option type: standard variants (size, colour) become Shopify variants, and more complex option combinations are handled with Shopify apps like Infinite Options where needed.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How much does an OpenCart to Shopify migration cost? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Cost depends on store size and extension complexity. Simple OpenCart migrations start from $600. Medium stores (500–2,000 products) start from $1,000. Larger stores with complex option groups or custom extensions start from $2,000. Multi-store setups start from $3,000. We provide a fixed-price quote after your free audit — no hourly billing, ever.</div>
       </div>
     </div>
+    <div class="faq-cta-panel">
+      <h3>Still unsure about<br><em>your migration?</em></h3>
+      <p>Book a free 30-minute call with an OpenCart migration expert. We'll review your store, answer every question, and give you an honest, no-obligation assessment.</p>
+      <ul>
+        <li>Free OpenCart store audit</li>
+        <li>Fixed-price quote in 24 hours</li>
+        <li>Zero downtime guaranteed</li>
+        <li>SEO fully preserved</li>
+        <li>Extensions reviewed & mapped</li>
+        <li>30-day post-launch support</li>
+      </ul>
+      <a href="#contact" class="faq-cta-btn">📞 Book a Free Migration Call</a>
+    </div>
+  </div>
   </section>
 
-  <!-- CONTACT -->
+   <!-- CONTACT -->
   <div class="contact-section" id="contact">
     <div class="contact-inner">
       <div>
         <div class="section-tag">Start Your Migration</div>
-        <h2>Get Your Free <em>BigCommerce to Shopify Migration Audit</em></h2>
-        <p class="contact-sub">Tell us about your BigCommerce store and we'll send you a free, detailed migration plan —
+        <h2>Get Your Free <em>Opencart to Shopify Migration Audit</em></h2>
+        <p class="contact-sub">Tell us about your Opencart store and we'll send you a free, detailed migration plan —
           what data we'll transfer, how we preserve your SEO, how long it takes, and the fixed price. No obligation.</p>
         <ul class="contact-trust">
-          <li><span class="ctick">✓</span> Free detailed BigCommerce audit within 24 hours</li>
+          <li><span class="ctick">✓</span> Free detailed Opencart audit within 24 hours</li>
           <li><span class="ctick">✓</span> Fixed-price quote — no hourly billing, no surprises</li>
           <li><span class="ctick">✓</span> 100% data integrity guaranteed in writing</li>
-          <li><span class="ctick">✓</span> Zero downtime — BigCommerce stays live throughout</li>
+          <li><span class="ctick">✓</span> Zero downtime — Opencart stays live throughout</li>
           <li><span class="ctick">✓</span> SEO fully preserved — every URL mapped and redirected</li>
           <li><span class="ctick">✓</span> 30-day free post-launch monitoring included</li>
         </ul>
@@ -2763,14 +2874,14 @@
       <div class="footer-logo">
         <img src="../assets/storecartify-logo.webp" alt="">
       </div>
-      <p>Expert BigCommerce to Shopify migration service. 150+ migrations completed with 100% data preserved, zero SEO
+      <p>Expert Opencart to Shopify migration service. 150+ migrations completed with 100% data preserved, zero SEO
         loss, and zero downtime — every time.</p>
     </div>
     <div class="footer-col">
       <h4>Migration Services</h4>
-      <a href="#">BigCommerce to Shopify</a>
-      <a href="#">BigCommerce to Shopify Plus</a>
-      <a href="#">BigCommerce B2B Migration</a>
+      <a href="#">Opencart to Shopify</a>
+      <a href="#">Opencart to Shopify Plus</a>
+      <a href="#">Opencart B2B Migration</a>
       <a href="#">Magento to Shopify</a>
       <a href="#">WooCommerce to Shopify</a>
       <a href="#">PrestaShop to Shopify</a>
@@ -2793,9 +2904,9 @@
     </div>
   </footer>
   <div class="footer-bottom">
-    <p>© 2026 StoreCartify. All rights reserved. BigCommerce to Shopify Migration Experts.</p>
+    <p>© 2026 StoreCartify. All rights reserved. Opencart to Shopify Migration Experts.</p>
     <p class="disclaimer">StoreCartify is an independent Shopify Partner and is not affiliated with Shopify Inc. or
-      BigCommerce Pty. Ltd.</p>
+      Opencart Pty. Ltd.</p>
   </div>
 
   <script>
@@ -2830,5 +2941,4 @@
     });
   </script>
 </body>
-
 </html>
