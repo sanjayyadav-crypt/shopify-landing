@@ -128,7 +128,7 @@
       grid-template-columns: 1fr 1fr;
       align-items: start;
       gap: 60px;
-      padding: 80px 5vw 80px;
+      padding: 40px 5vw 80px;
       background: var(--body-bg);
       position: relative;
       overflow: hidden;
@@ -202,7 +202,7 @@
     h1 {
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 900;
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-size: 50px;
       line-height: 1.1;
       letter-spacing: -0.02em;
       color: var(--dark);
@@ -1739,6 +1739,22 @@
       .nav-links{
         display: none;
       }
+       .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display: block;
+        width: 100%;
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+        display: none;
+      }
+      .logos-strip p{
+        text-align: left;
+        margin-left: 5%;
+        font-size: 30px;
+      }
       .process-2col {
         grid-template-columns: 1fr;
       }
@@ -1757,8 +1773,20 @@
       .faq-layout {
         grid-template-columns: 1fr;
       }
-    
-
+      .hero h1{
+        font-size: 30px;
+      }
+       .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display: block;
+        width: 100%;
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+        display: none;
+      }
       .why-grid,
       .results-grid,
       footer {
@@ -2366,7 +2394,7 @@
     <div class="results-grid">
       <div class="result-card">
         <div class="img-card">
-          <img src="../assets/personal-comfort-1.png" alt="">
+          <img src="../assets/personal-comfort.png" alt="">
         </div>
         <div class="result-header">
           <div class="result-client">Personal Comfort Bed · Retail</div>
@@ -2395,11 +2423,13 @@
       </div>
       <div class="result-card">
         <div class="img-card">
-          <img src="../assets/b2b.png" alt="">
+          <img src="../assets/softwarekeep.png" alt="">
         </div>
         <div class="result-header">
-          <div class="result-client">B2B Distributor · Industrial</div>
-          <h4>Magento 2 Enterprise → Shopify Plus</h4>
+          <div class="result-client">Softwarekeep · IT Software
+</div>
+          <h4>Custom Platform → Shopify Migration
+</h4>
           <div class="result-metrics">
             <div class="metric">
               <div class="metric-num">85K+</div>
@@ -2424,11 +2454,13 @@
       </div>
       <div class="result-card">
         <div class="img-card">
-          <img src="../assets/fashion-retail.png" alt="">
+          <img src="../assets/joy-viva.png" alt="">
         </div>
         <div class="result-header">
-          <div class="result-client">Fashion Retailer · Multi-store</div>
-          <h4>Magento Multi-Store → Shopify Markets</h4>
+          <div class="result-client">JoyVIVA · Health & Wellness
+</div>
+          <h4>WooCommerce → Shopify Migration
+</h4>
           <div class="result-metrics">
             <div class="metric">
               <div class="metric-num">5</div>
