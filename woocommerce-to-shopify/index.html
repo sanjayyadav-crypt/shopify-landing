@@ -2,27 +2,14 @@
 <html lang="en">
 
 <head>
-
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-W9TG9P5S');</script>
-  <!-- End Google Tag Manager -->
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenCart to Shopify Migration | Expert Migration Service | StoreCartify</title>
+  <title>WooCommerce to Shopify Migration | Expert Migration Service | StoreCartify</title>
   <meta name="description"
-    content="Migrate from OpenCart to Shopify with zero data loss, zero SEO impact, and zero downtime. StoreCartify has completed 120+ OpenCart to Shopify migrations. Get a free audit in 24 hours.">
-    <link rel="icon" href="../assets/store-icon.png">
+    content="Migrate from WooCommerce to Shopify with zero data loss, zero downtime & zero SEO impact. StoreCartify has completed 300+ WooCommerce to Shopify migrations. Free audit in 24 hours.">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
     rel="stylesheet">
+    <link rel="icon" href="../assets/store-icon.png">
   <style>
     :root {
       --green: #004c3f;
@@ -58,68 +45,6 @@
       font-size: 16px;
       line-height: 1.65;
       overflow-x: hidden
-    }
-
-    nav {
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      background: var(--body-bg);
-      border-bottom: 1px solid var(--light-border);
-      padding: 14px 5vw;
-      display: flex;
-      align-items: center;
-      justify-content: space-between
-    }
-
-    .nav-logo {
-      font-family: 'Nunito Sans', sans-serif;
-      font-weight: 900;
-      font-size: 1.4rem;
-      color: var(--green);
-      text-decoration: none;
-      letter-spacing: -0.02em
-    }
-
-    .nav-logo img {
-      width: auto;
-      height: 70px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none
-    }
-
-    .nav-links a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: .9rem;
-      font-weight: 600;
-      transition: color .2s
-    }
-
-    .nav-links a:hover {
-      color: var(--green)
-    }
-
-    .nav-cta {
-      background: var(--green);
-      color: var(--white);
-      font-weight: 700;
-      font-size: .88rem;
-      padding: 10px 22px;
-      border-radius: 9rem;
-      text-decoration: none;
-      transition: all .2s;
-      white-space: nowrap
-    }
-
-    .nav-cta:hover {
-      background: var(--green-light);
-      transform: translateY(-1px)
     }
 
     @keyframes pulse {
@@ -158,8 +83,74 @@
       }
     }
 
+    /* NAV */
+    nav {
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--body-bg);
+      border-bottom: 1px solid var(--light-border);
+      padding: 14px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .nav-logo {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -0.02em
+    }
+    .nav-logo img {
+      width: auto;
+      height: 70px;
+    }
+
+    .nav-logo span {
+      color: var(--yellow)
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--green)
+    }
+
+    .nav-cta {
+      background: var(--green);
+      color: var(--white);
+      font-weight: 700;
+      font-size: .88rem;
+      padding: 10px 22px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      white-space: nowrap
+    }
+
+    .nav-cta:hover {
+      background: var(--green-light);
+      transform: translateY(-1px)
+    }
+
+    /* HERO */
     .hero {
-    
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: start;
@@ -315,6 +306,7 @@
       font-weight: 600
     }
 
+    /* HERO FORM */
     .hero-form-card {
       background: var(--white);
       border-radius: 20px;
@@ -414,6 +406,7 @@
       margin-top: 8px
     }
 
+    /* STATS BAR */
     .stats-bar {
       background: var(--white);
       border-bottom: 1.5px solid var(--light-border);
@@ -451,7 +444,8 @@
       letter-spacing: .05em
     }
 
-    .logos-strip {
+    /* LOGO STRIP */
+  .logos-strip {
       background: var(--green);
       padding: 24px 0;
       border-bottom: 1.5px solid var(--light-border);
@@ -473,6 +467,7 @@
       display: none;
     }
 
+    /* SECTIONS */
     section {
       padding: 88px 5vw
     }
@@ -520,90 +515,9 @@
       margin-bottom: 52px
     }
 
-    /* OPENCART PAIN POINTS — unique 3-col cards */
-    .pain {
-      background: var(--white)
-    }
-
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px
-    }
-
-    .pain-card {
-      background: var(--body-bg);
-      border: 1.5px solid var(--light-border);
-      border-radius: 16px;
-      padding: 28px 24px;
-      position: relative;
-      overflow: hidden;
-      transition: all .25s
-    }
-
-    .pain-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--light-border);
-      transition: background .25s
-    }
-
-    .pain-card:hover {
-      border-color: var(--green);
-      box-shadow: 0 8px 28px rgba(0, 76, 63, .08);
-      transform: translateY(-3px)
-    }
-
-    .pain-card:hover::before {
-      background: var(--green)
-    }
-
-    .pain-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: var(--yellow-dim);
-      display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      font-size: 1.3rem
-    }
-
-    .pain-card h3 {
-      font-weight: 800;
-      font-size: 1rem;
-      color: var(--dark);
-      margin-bottom: 8px
-    }
-
-    .pain-card p {
-      font-size: .86rem;
-      color: var(--muted);
-      line-height: 1.7
-    }
-
-    .pain-solution {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 12px;
-      font-size: .75rem;
-      font-weight: 800;
-      color: var(--green)
-    }
-
-    .pain-solution::before {
-      content: '→';
-      font-size: .9rem
-    }
-
     /* COMPARISON TABLE */
     .comparison {
-      background: var(--body-bg)
+      background: var(--white)
     }
 
     .comp-wrap {
@@ -653,16 +567,16 @@
     }
 
     .comp-table tr:nth-child(even) td {
-      background: rgba(255, 255, 255, 0.6)
+      background: var(--body-bg)
     }
 
-    .feat-label {
+    .feat-lbl {
       font-weight: 700;
       color: var(--dark);
       font-size: .9rem
     }
 
-    .oc-val {
+    .woo-val {
       color: var(--muted);
       font-size: .87rem
     }
@@ -673,7 +587,7 @@
       font-size: .87rem
     }
 
-    .badge-good {
+    .badge-g {
       display: inline-block;
       background: rgba(0, 76, 63, 0.1);
       color: var(--green);
@@ -684,7 +598,7 @@
       margin-left: 6px
     }
 
-    .badge-warn {
+    .badge-w {
       display: inline-block;
       background: rgba(255, 192, 1, 0.2);
       color: #7a5a00;
@@ -697,31 +611,31 @@
 
     /* WHAT WE MIGRATE */
     .what-migrate {
-      background: var(--white)
+      background: var(--body-bg)
     }
 
-    .migrate-2col {
+    .m2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 56px;
       align-items: start
     }
 
-    .migrate-items {
+    .m-items {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px
     }
 
-    .mi-card {
-      background: var(--body-bg);
+    .mi {
+      background: var(--white);
       border: 1.5px solid var(--light-border);
       border-radius: 14px;
       padding: 20px 18px;
       transition: all .2s
     }
 
-    .mi-card:hover {
+    .mi:hover {
       border-color: var(--green);
       box-shadow: 0 4px 18px rgba(0, 76, 63, .08);
       transform: translateY(-2px)
@@ -745,13 +659,13 @@
       line-height: 1.6
     }
 
-    .migrate-panel {
+    .m-panel {
       background: var(--green);
       border-radius: 20px;
       padding: 36px 32px
     }
 
-    .migrate-panel h3 {
+    .m-panel h3 {
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 900;
       font-size: 1.3rem;
@@ -760,12 +674,12 @@
       line-height: 1.3
     }
 
-    .migrate-panel h3 em {
+    .m-panel h3 em {
       color: var(--white);
       font-style: normal
     }
 
-    .migrate-panel>p {
+    .m-panel p {
       font-size: .88rem;
       color: rgba(255, 255, 255, 0.7);
       margin-bottom: 24px;
@@ -805,7 +719,7 @@
       margin-top: 2px
     }
 
-    .panel-cta {
+    .p-cta {
       display: block;
       text-align: center;
       background: var(--white);
@@ -819,11 +733,72 @@
       margin-top: 24px
     }
 
-    .panel-cta:hover {
+    .p-cta:hover {
       background: transparent;
       color: white;
       border: 2px solid white;
       transform: translateY(-1px)
+    }
+
+    /* WOO PAIN POINTS */
+    .pain-points {
+      background: var(--white)
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .pain-card {
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      background: var(--body-bg);
+      transition: all .25s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--light-border);
+      transition: background .25s
+    }
+
+    .pain-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 6px 24px rgba(0, 76, 63, .09);
+      transform: translateY(-3px);
+      background: var(--white)
+    }
+
+    .pain-card:hover::before {
+      background: var(--green)
+    }
+
+    .pain-icon {
+      font-size: 1.5rem;
+      margin-bottom: 14px
+    }
+
+    .pain-card h3 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 8px
+    }
+
+    .pain-card p {
+      font-size: .86rem;
+      color: var(--muted);
+      line-height: 1.7
     }
 
     /* PROCESS */
@@ -831,7 +806,7 @@
       background: var(--body-bg)
     }
 
-    .process-2col {
+    .proc-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 56px;
@@ -948,7 +923,6 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: .82rem;
       margin-bottom: 10px
     }
 
@@ -986,7 +960,7 @@
       text-align: right
     }
 
-    .ver-row {
+    .plugin-row {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -995,11 +969,11 @@
       border-bottom: 1px solid var(--light-border)
     }
 
-    .ver-row:last-child {
+    .plugin-row:last-child {
       border-bottom: none
     }
 
-    .ver-dot {
+    .plugin-dot {
       width: 9px;
       height: 9px;
       border-radius: 50%;
@@ -1007,12 +981,12 @@
       flex-shrink: 0
     }
 
-    .ver-name {
+    .plugin-name {
       font-weight: 700;
       color: var(--dark)
     }
 
-    .ver-note {
+    .plugin-note {
       font-size: .75rem;
       color: var(--muted)
     }
@@ -1073,7 +1047,7 @@
       padding: 80px 5vw
     }
 
-    .mid-cta-inner {
+    .mid-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 64px;
@@ -1082,7 +1056,7 @@
       margin: 0 auto
     }
 
-    .mid-cta-badge {
+    .mid-badge {
       display: inline-flex;
       align-items: center;
       gap: 7px;
@@ -1098,7 +1072,7 @@
       margin-bottom: 20px
     }
 
-    .mid-cta-heading {
+    .mid-heading {
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 900;
       font-size: clamp(2rem, 3.5vw, 3rem);
@@ -1108,19 +1082,19 @@
       margin-bottom: 16px
     }
 
-    .mid-cta-sub {
+    .mid-sub {
       font-size: .98rem;
       color: white;
       line-height: 1.75;
       margin-bottom: 28px
     }
 
-    .mid-cta-list {
+    .mid-list {
       list-style: none;
       margin-bottom: 36px
     }
 
-    .mid-cta-list li {
+    .mid-list li {
       font-size: .92rem;
       font-weight: 600;
       color: var(--white);
@@ -1131,15 +1105,15 @@
       gap: 10px
     }
 
-    .mid-cta-list li:last-child {
+    .mid-list li:last-child {
       border-bottom: none
     }
 
     .mid-tick {
       width: 22px;
       height: 22px;
-      background: var(--green);
-      color: var(--white);
+      background: var(--white);
+      color: var(--green);
       border-radius: 50%;
       display: grid;
       place-items: center;
@@ -1148,7 +1122,7 @@
       flex-shrink: 0
     }
 
-    .mid-cta-actions {
+    .mid-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap
@@ -1192,9 +1166,8 @@
       gap: 8px
     }
 
-    
 
-    .mid-cta-card {
+    .mid-card {
       background: var(--white);
       border-radius: 20px;
       padding: 40px 36px;
@@ -1268,10 +1241,10 @@
 
     /* RESULTS */
     .results {
-      background: var(--body-bg)
+      background: var(--white)
     }
 
-    .results-grid {
+    .res-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px
@@ -1281,19 +1254,8 @@
       border: 1.5px solid var(--light-border);
       border-radius: 16px;
       overflow: hidden;
-      transition: all .3s;
-      background: var(--white)
+      transition: all .3s
     }
-     .res-card .img-card{
-      width: 100%;
-      height: auto;
-    }
-    .res-card .img-card img{
-      width: 100%;
-      height: 100%;
-    }
-
-    
 
     .res-card:hover {
       border-color: var(--green);
@@ -1375,7 +1337,7 @@
 
     /* TESTIMONIALS */
     .testimonials {
-      background: var(--white)
+      background: var(--body-bg)
     }
 
     .testi-grid {
@@ -1385,7 +1347,7 @@
     }
 
     .testi-card {
-      background: var(--body-bg);
+      background: var(--white);
       border: 1.5px solid var(--light-border);
       border-radius: 16px;
       padding: 32px 28px;
@@ -1445,19 +1407,7 @@
       color: var(--white);
       flex-shrink: 0
     }
-       .testi-avatar img{
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: contain;
-    }
-     .testi-author .anna{
-      background-color: white;
-    }
 
-    .testi-avatar img:last-child{
-      background: transparent !important;
-    }
     .testi-name {
       font-weight: 800;
       font-size: .88rem;
@@ -1471,7 +1421,7 @@
 
     /* FAQ */
     .faq {
-      background: var(--body-bg)
+      background: var(--white)
     }
 
     .faq-layout {
@@ -1601,14 +1551,14 @@
 
     .faq-cta-btn:hover {
       background: transparent;
-      transform: translateY(-1px);
-      border: 2px solid white;
       color: white;
+      border: 2px solid white;
+      transform: translateY(-1px)
     }
 
     /* CONTACT */
     .contact-section {
-      background: var(--white);
+      background: var(--body-bg);
       padding: 88px 5vw;
       border-top: 1.5px solid var(--light-border)
     }
@@ -1673,7 +1623,7 @@
       text-align: center;
       padding: 18px 12px;
       border-right: 1.5px solid var(--light-border);
-      background: var(--body-bg)
+      background: var(--white)
     }
 
     .cs-item:last-child {
@@ -1699,7 +1649,7 @@
     }
 
     .cf-card {
-      background: var(--body-bg);
+      background: var(--white);
       border-radius: 20px;
       padding: 28px;
       border: 1.5px solid var(--light-border);
@@ -1744,7 +1694,7 @@
       font-family: inherit;
       font-size: .87rem;
       color: var(--text);
-      background: var(--white);
+      background: var(--body-bg);
       transition: border-color .2s;
       outline: none;
       appearance: none
@@ -1789,6 +1739,7 @@
       margin-top: 8px
     }
 
+    /* FOOTER */
     footer {
       background: var(--green);
       color: rgba(255, 255, 255, 0.8);
@@ -1805,14 +1756,11 @@
       color: var(--white);
       margin-bottom: 12px
     }
-     .footer-logo img {
+
+      .footer-logo img {
       height: 70px;
       width: auto;
       filter: brightness(0) invert(1);
-    }
-
-    .footer-logo span {
-      color: var(--yellow)
     }
 
     .footer-brand p {
@@ -1865,8 +1813,8 @@
       text-align: right
     }
 
+    /* RESPONSIVE */
     @media(max-width:1024px) {
-  
        .nav-links{
         display: none;
       }
@@ -1886,7 +1834,7 @@
         margin-left: 5%;
         font-size: 30px;
       }
-      .process-2col {
+      .proc-2col {
         grid-template-columns: 1fr
       }
 
@@ -1898,13 +1846,13 @@
     @media(max-width:900px) {
 
       .hero,
-      .migrate-2col,
-      .mid-cta-inner,
+      .m2col,
+      .mid-inner,
       .contact-inner,
       .faq-layout {
         grid-template-columns: 1fr
       }
-      .hero h1{
+       .hero h1{
         font-size: 30px;
       }
        .logos-strip .desktop-img{
@@ -1920,14 +1868,14 @@
       }
       .pain-grid,
       .why-grid,
-      .results-grid,
+      .res-grid,
       footer {
         grid-template-columns: 1fr 1fr
       }
 
       .testi-grid,
-      .migrate-items {
-        grid-template-columns: 1fr
+      .m-items {
+        grid-template-columns: 1fr 1fr
       }
 
       .faq-cta-panel {
@@ -2005,7 +1953,9 @@
 
       .pain-grid,
       .why-grid,
-      .results-grid {
+      .res-grid,
+      .m-items,
+      .testi-grid {
         grid-template-columns: 1fr
       }
 
@@ -2023,12 +1973,7 @@
 
 <body>
 
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9TG9P5S" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
+  <!-- NAV -->
   <nav>
     <a href="https://storecartify.com" class="nav-logo">
       <img src="../assets/storecartify-logo.webp" alt="">
@@ -2047,11 +1992,12 @@
   <section class="hero">
     <div class="hero-bg-dots"></div>
     <div class="hero-inner">
-      <div class="hero-badge">✦ OpenCart to Shopify Migration Experts</div>
-      <h1><em>OpenCart to Shopify Migration</em> — Leave the Maintenance Behind. Keep Everything Else.</h1>
-      <p class="hero-desc">StoreCartify has completed 120+ OpenCart to Shopify migrations — transferring every product,
-        customer, order, and SEO URL while your OpenCart store stays live. We give you a faster, more secure,
-        easier-to-manage Shopify store without losing a single data point or Google ranking.</p>
+      <div class="hero-badge">✦ WooCommerce to Shopify Migration Experts</div>
+      <h1><em>WooCommerce to Shopify Migration</em> — Done Right. No Data Lost. No Rankings Dropped.</h1>
+      <p class="hero-desc">StoreCartify has completed 300+ WooCommerce to Shopify migrations — making it our most common
+        migration by far. We move your products, customers, orders, blog posts, WooCommerce plugins, and every URL to
+        Shopify — with 100% data integrity, zero SEO impact, and zero downtime. The #1 reason WooCommerce merchants
+        switch? Shopify just works.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">🚀 Get a Free Migration Audit</a>
         <a href="#process" class="btn-ghost">See How It Works</a>
@@ -2059,13 +2005,13 @@
       <div class="trust-row">
         <div class="check-item"><svg viewBox="0 0 16 16">
             <polyline points="2,8 6,12 14,4" />
-          </svg><span>120+ OC Migrations</span></div>
+          </svg><span>300+ WooCommerce Migrations</span></div>
         <div class="check-item"><svg viewBox="0 0 16 16">
             <polyline points="2,8 6,12 14,4" />
           </svg><span>100% Data Guarantee</span></div>
         <div class="check-item"><svg viewBox="0 0 16 16">
             <polyline points="2,8 6,12 14,4" />
-          </svg><span>Zero Downtime</span></div>
+          </svg><span>Zero SEO Ranking Loss</span></div>
       </div>
     </div>
      <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
@@ -2106,8 +2052,8 @@
   <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stat-item">
-      <div class="stat-num">120+</div>
-      <div class="stat-label">OC Migrations Done</div>
+      <div class="stat-num">300+</div>
+      <div class="stat-label">WooCommerce Migrations</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">100%</div>
@@ -2129,216 +2075,214 @@
 
   <!-- LOGO STRIP -->
   <div class="logos-strip">
-    <p>OpenCart Stores We've Migrated To Shopify</p>
+    <p>WooCommerce Stores We've Migrated to Shopify</p>
     <div style="overflow:hidden">
      <img src="../assets/clients.png" class="desktop-img" alt="">
      <img src="../assets/client-mobile.png" class="mobile-img" alt="">
     </div>
   </div>
 
-  <!-- WHY LEAVE OPENCART -->
-  <section id="why-migrate" class="pain">
-    <div class="section-tag">Why Merchants Leave OpenCart</div>
-    <h2>The Real Reasons OpenCart Stores <em>Switch to Shopify</em></h2>
-    <p class="section-sub">OpenCart is a capable open-source platform — but growing it beyond a certain point becomes
-      expensive and technically demanding. Here are the pain points our clients describe most before they migrate.</p>
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">🔧</div>
-        <h3>Never-Ending Developer Dependency</h3>
-        <p>Every update, security patch, extension install, or template change on OpenCart requires developer
-          involvement. Store owners can't manage their own shop without technical help.</p>
-        <div class="pain-solution">Shopify gives merchants a fully self-managed store</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">🔒</div>
-        <h3>Security Risks & Manual Patching</h3>
-        <p>OpenCart stores require manual security updates. Older versions (1.x, 2.x) are especially vulnerable — and
-          without patching, they become targets for malware, card skimming, and data breaches.</p>
-        <div class="pain-solution">Shopify handles all security automatically — PCI Level 1</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">🐌</div>
-        <h3>Slow Page Speeds</h3>
-        <p>OpenCart's performance depends entirely on your hosting quality and server configuration. Poorly optimised
-          stores frequently score badly on Core Web Vitals — hurting both rankings and conversions.</p>
-        <div class="pain-solution">Shopify's global CDN delivers sub-2s load times by default</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">🧩</div>
-        <h3>Extension Conflicts & Instability</h3>
-        <p>OpenCart extensions from different developers frequently conflict with each other or break after updates —
-          leaving store owners with a broken checkout or admin and no clear way to fix it.</p>
-        <div class="pain-solution">Shopify's 8,000+ apps are vetted, sandboxed, and stable</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">📱</div>
-        <h3>Poor Mobile Checkout Experience</h3>
-        <p>OpenCart's default checkout requires significant customisation to compete with modern mobile UX expectations
-          — and most OpenCart themes are not optimised for mobile conversion.</p>
-        <div class="pain-solution">Shopify checkout converts up to 36% better on mobile</div>
-      </div>
-      <div class="pain-card">
-        <div class="pain-icon">💸</div>
-        <h3>Hidden Total Cost of Ownership</h3>
-        <p>OpenCart is free to install — but hosting, SSL, security, developer hours, and paid extensions add up fast.
-          Most OpenCart merchants spend more than equivalent Shopify merchants annually.</p>
-        <div class="pain-solution">Shopify's predictable pricing eliminates surprise costs</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
-      <a href="#contact" class="btn-primary">Start My OpenCart Migration →</a>
-      <a href="#process" class="btn-ghost">See Our Migration Process</a>
-    </div>
-  </section>
-
-  <!-- OPENCART VS SHOPIFY -->
-  <section class="comparison">
-    <div class="section-tag">OpenCart vs Shopify</div>
-    <h2>OpenCart vs Shopify — <em>Side by Side</em></h2>
-    <p class="section-sub">A direct comparison of what matters most to growing eCommerce businesses — platform
-      maintenance, security, performance, and scalability.</p>
+  <!-- WHY SWITCH -->
+  <section id="why-migrate" class="comparison">
+    <div class="section-tag">WooCommerce vs Shopify</div>
+    <h2>Why Merchants Are Leaving <em>WooCommerce for Shopify</em></h2>
+    <p class="section-sub">WooCommerce is free — but running it isn't. Between hosting, security, plugin conflicts, and
+      constant maintenance, WooCommerce merchants often spend more time managing their platform than growing their
+      business. Here's the honest comparison.</p>
     <div class="comp-wrap">
       <table class="comp-table">
         <thead>
           <tr>
             <th style="width:22%">Feature</th>
-            <th style="width:39%">OpenCart</th>
+            <th style="width:39%">WooCommerce / WordPress</th>
             <th class="sh-col" style="width:39%">Shopify ✦</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="feat-label">Hosting & Infrastructure</td>
-            <td class="oc-val">Self-hosted — you manage server, uptime, backups, and scaling. Performance varies wildly
-              by host quality and configuration. <span class="badge-warn">Self-managed</span></td>
-            <td class="sh-val">Fully managed cloud hosting. 99.99% uptime SLA. Global CDN. Auto-scaling during traffic
-              spikes. Zero server management. <span class="badge-good">Fully managed</span></td>
+            <td class="feat-lbl">Hosting & Server Management</td>
+            <td class="woo-val">Self-hosted — you choose, pay for, and manage your own server. One slow host = slow
+              store, lost sales, and poor SEO scores. <span class="badge-w">Self-managed</span></td>
+            <td class="sh-val">Fully managed cloud hosting with a global CDN, automatic SSL, and 99.99% uptime SLA.
+              Shopify handles servers — you handle growth. <span class="badge-g">Fully managed</span></td>
           </tr>
           <tr>
-            <td class="feat-label">Security</td>
-            <td class="oc-val">Manual security patches required. Older OpenCart versions (1.x, 2.x) receive no official
-              security updates — making them active security vulnerabilities</td>
-            <td class="sh-val">Fully managed security. PCI DSS Level 1 compliant. Automatic updates. SSL included. No
-              manual patching ever required. <span class="badge-good">PCI Level 1</span></td>
+            <td class="feat-lbl">Plugin Conflicts & Updates</td>
+            <td class="woo-val">WooCommerce stores run dozens of plugins that regularly conflict, break after WordPress
+              updates, and require ongoing developer time to maintain</td>
+            <td class="sh-val">8,000+ Shopify apps with version-controlled compatibility. One-click install and
+              uninstall — no code conflicts, no broken checkout after an update. <span class="badge-g">8,000+
+                apps</span></td>
           </tr>
           <tr>
-            <td class="feat-label">Page Speed</td>
-            <td class="oc-val">Highly variable — depends on hosting, theme, and extension count. Heavy extension stacks
-              frequently cause Core Web Vitals failures</td>
-            <td class="sh-val">Built-in Cloudflare CDN, image optimisation, and lazy loading. Shopify stores average
-              under 2s load times globally. <span class="badge-good">Sub-2s avg</span></td>
+            <td class="feat-lbl">Security & Compliance</td>
+            <td class="woo-val">You're responsible for WordPress security patches, plugin vulnerabilities, and PCI
+              compliance setup — a significant ongoing burden</td>
+            <td class="sh-val">Level 1 PCI DSS compliant out of the box. Automatic security patches. Shopify manages
+              everything — you're covered from day one. <span class="badge-g">PCI Level 1</span></td>
           </tr>
           <tr>
-            <td class="feat-label">Ease of Management</td>
-            <td class="oc-val">Most store changes require developer access. Adding products, changing layouts, or
-              installing extensions typically involves technical work</td>
-            <td class="sh-val">Merchants manage everything — products, themes, discounts, apps — without a developer.
-              Intuitive drag-and-drop store editor. <span class="badge-good">Self-service</span></td>
+            <td class="feat-lbl">Checkout & Mobile Conversion</td>
+            <td class="woo-val">WooCommerce checkout CVR is heavily dependent on theme, plugins, and hosting speed —
+              huge variance across stores, often underperforming on mobile</td>
+            <td class="sh-val">Shopify's checkout converts 36% better than industry average. Shop Pay, Apple Pay, Google
+              Pay, and buy-now-pay-later all built in natively. <span class="badge-g">+36% CVR avg</span></td>
           </tr>
           <tr>
-            <td class="feat-label">App / Extension Ecosystem</td>
-            <td class="oc-val">~13,000 extensions — but quality varies hugely, many are unmaintained, and multiple
-              extensions frequently cause conflicts and instability</td>
-            <td class="sh-val">8,000+ apps. All vetted by Shopify. Sandboxed installation. No conflicts between apps.
-              Easy uninstall with no residual code. <span class="badge-good">Vetted & stable</span></td>
+            <td class="feat-lbl">Page Speed & Core Web Vitals</td>
+            <td class="woo-val">WooCommerce + WordPress page speed degrades heavily with plugins, themes, and budget
+              hosting — many stores fail Core Web Vitals</td>
+            <td class="sh-val">Shopify's built-in CDN and performance-first themes deliver consistently fast load times.
+              Better Core Web Vitals = better rankings and CVR. <span class="badge-g">Faster by default</span></td>
           </tr>
           <tr>
-            <td class="feat-label">Checkout & Payments</td>
-            <td class="oc-val">Checkout requires customisation to compete with modern standards. Payment gateway
-              integration is manual and varies by extension quality</td>
-            <td class="sh-val">Shopify Checkout is the highest-converting checkout on the internet. 100+ payment
-              gateways. Shop Pay accelerated checkout built in. <span class="badge-good">+36% CVR avg</span></td>
+            <td class="feat-lbl">Scalability</td>
+            <td class="woo-val">Traffic spikes — Black Friday, viral moments — regularly crash or slow WooCommerce
+              stores without expensive server infrastructure pre-provisioned</td>
+            <td class="sh-val">Shopify auto-scales with your traffic. Handles Black Friday spikes without any
+              intervention, serving millions of requests per minute. <span class="badge-g">Auto-scales</span></td>
           </tr>
           <tr>
-            <td class="feat-label">Scalability</td>
-            <td class="oc-val">Scaling OpenCart requires infrastructure investment — better hosting, CDN setup, database
-              optimisation — all requiring developer involvement</td>
-            <td class="sh-val">Scales automatically. Shopify has handled flash sales with millions of visitors per hour.
-              No infrastructure decisions needed as you grow. <span class="badge-good">Infinite scale</span></td>
+            <td class="feat-lbl">Total Cost of Ownership</td>
+            <td class="woo-val">WordPress + WooCommerce is "free" — but hosting, SSL, premium plugins, security, and
+              developer maintenance add $3,000–$15,000+/year</td>
+            <td class="sh-val">Predictable flat monthly fee covering hosting, SSL, security, and support. Most mid-sized
+              merchants save money switching to Shopify within 12 months. <span class="badge-g">Lower TCO</span></td>
           </tr>
         </tbody>
       </table>
     </div>
     <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
-      <a href="#contact" class="btn-primary">Get a Free Migration Audit →</a>
-      <a href="#what-we-migrate" class="btn-ghost">What We Migrate</a>
+      <a href="#contact" class="btn-primary">Start My WooCommerce Migration →</a>
+      <a href="#process" class="btn-ghost">See Our Migration Process</a>
     </div>
   </section>
 
   <!-- WHAT WE MIGRATE -->
   <section id="what-we-migrate" class="what-migrate">
     <div class="section-tag">What We Transfer</div>
-    <h2>Everything From OpenCart. <em>Nothing Left Behind.</em></h2>
-    <p class="section-sub">Our OpenCart to Shopify migration service transfers every data type in your store — with
-      manual verification of each data category before launch.</p>
-    <div class="migrate-2col">
-      <div class="migrate-items">
-        <div class="mi-card">
+    <h2>Everything From WooCommerce. <em>Rebuilt Perfectly in Shopify.</em></h2>
+    <p class="section-sub">Our WooCommerce to Shopify migration covers every data type — including WooCommerce-specific
+      data like subscription records, variable product structures, custom fields (ACF), and WooCommerce plugin
+      functionality rebuilt as Shopify apps.</p>
+    <div class="m2col">
+      <div class="m-items">
+        <div class="mi">
           <div class="mi-icon">📦</div>
-          <div class="mi-title">Products & Options</div>
-          <div class="mi-desc">All products, option groups, variants, SKUs, images, descriptions, meta data, and custom
-            attributes — migrated with relationships intact.</div>
+          <div class="mi-title">Products & Variations</div>
+          <div class="mi-desc">All simple, variable, and grouped products — with variations, SKUs, images, galleries,
+            custom fields, and ACF meta data migrated with relationships intact.</div>
         </div>
-        <div class="mi-card">
+        <div class="mi">
           <div class="mi-icon">👥</div>
           <div class="mi-title">Customer Accounts</div>
-          <div class="mi-desc">All customer records, shipping addresses, customer groups, and account history migrated
-            so customers can log in from day one.</div>
+          <div class="mi-desc">All customer records, billing and shipping addresses, and WooCommerce customer roles
+            migrated so buyers can log in immediately on launch day.</div>
         </div>
-        <div class="mi-card">
+        <div class="mi">
           <div class="mi-icon">🧾</div>
           <div class="mi-title">Full Order History</div>
-          <div class="mi-desc">All past orders, statuses, fulfilment data, totals, and notes — transferred so your
-            support team has complete context immediately.</div>
+          <div class="mi-desc">All past WooCommerce orders — statuses, line items, fulfilment data, and notes — migrated
+            so your support team has complete context from day one.</div>
         </div>
-        <div class="mi-card">
+        <div class="mi">
           <div class="mi-icon">🔍</div>
           <div class="mi-title">SEO URLs & Redirects</div>
-          <div class="mi-desc">Every OpenCart product and category URL mapped to Shopify with 301 redirects — zero
-            Google rankings lost on launch day.</div>
+          <div class="mi-desc">Every WooCommerce product, category, and WordPress page URL mapped to Shopify with 301
+            redirects — zero Google rankings lost on launch.</div>
         </div>
-        <div class="mi-card">
+        <div class="mi">
           <div class="mi-icon">🗂️</div>
           <div class="mi-title">Categories & Collections</div>
-          <div class="mi-desc">All OpenCart category trees rebuilt as Shopify collections — including nested categories
-            and product assignments preserved.</div>
+          <div class="mi-desc">All WooCommerce product categories and subcategories rebuilt as Shopify smart and custom
+            collections — with tags, filters, and product assignments preserved.</div>
         </div>
-        <div class="mi-card">
+        <div class="mi">
           <div class="mi-icon">✍️</div>
-          <div class="mi-title">Pages, Blog & CMS</div>
-          <div class="mi-desc">All information pages, blog articles, and CMS content migrated with meta titles,
-            descriptions, and internal links re-established.</div>
+          <div class="mi-title">Blog Posts & Pages</div>
+          <div class="mi-desc">All WordPress blog posts, pages, Yoast SEO meta titles and descriptions migrated to
+            Shopify — with images re-uploaded and internal links re-mapped.</div>
         </div>
-        <div class="mi-card">
+        <div class="mi">
+          <div class="mi-icon">🔄</div>
+          <div class="mi-title">Subscriptions & Recurring</div>
+          <div class="mi-desc">WooCommerce Subscriptions data migrated to ReCharge, Bold Subscriptions, or Shopify's
+            native subscription features — with active subscriber records transferred.</div>
+        </div>
+        <div class="mi">
           <div class="mi-icon">⭐</div>
           <div class="mi-title">Reviews & Ratings</div>
-          <div class="mi-desc">All product reviews migrated to your chosen Shopify reviews app — Judge.me, Yotpo,
-            Stamped, or Okendo.</div>
-        </div>
-        <div class="mi-card">
-          <div class="mi-icon">🏷️</div>
-          <div class="mi-title">Coupons & Discounts</div>
-          <div class="mi-desc">Existing discount codes and coupon rules rebuilt in Shopify — including percentage,
-            fixed-amount, and free-shipping discounts.</div>
+          <div class="mi-desc">All WooCommerce product reviews and star ratings migrated to Judge.me, Yotpo, Stamped, or
+            your preferred Shopify reviews app.</div>
         </div>
       </div>
-      <div class="migrate-panel">
-        <h3>Our <em>OpenCart Migration</em> Guarantee</h3>
-        <p>Every migration comes with a written guarantee. No data left behind, no rankings dropped, no downtime. If
-          anything is missing post-launch — we fix it immediately at no cost.</p>
+      <div class="m-panel">
+        <h3>Our <em>WooCommerce Migration</em> Guarantee</h3>
+        <p>We put our guarantee in writing before we start. Every product, order, and customer account verified
+          post-migration. Any issue fixed immediately — at no extra cost.</p>
         <ul class="g-list">
           <li><span class="g-tick">✓</span>100% data integrity — every product, order, and customer account verified
-            post-migration</li>
-          <li><span class="g-tick">✓</span>Zero SEO loss — every OpenCart URL mapped and 301 redirected before launch
-          </li>
-          <li><span class="g-tick">✓</span>Zero downtime — your OpenCart store stays live throughout the entire
+            after migration</li>
+          <li><span class="g-tick">✓</span>Zero SEO ranking loss — every WooCommerce URL mapped and 301 redirected
+            before go-live</li>
+          <li><span class="g-tick">✓</span>Zero downtime — your WooCommerce store stays live and selling throughout the
             migration</li>
-          <li><span class="g-tick">✓</span>Staging preview — you review and approve everything before we go live</li>
-          <li><span class="g-tick">✓</span>30 days of free post-launch monitoring and issue fixing included</li>
-          <li><span class="g-tick">✓</span>Fixed-price quote — no hourly billing, no surprise invoices</li>
+          <li><span class="g-tick">✓</span>Staging store — you review and approve everything before we flip the switch
+          </li>
+          <li><span class="g-tick">✓</span>WooCommerce plugin functionality rebuilt in Shopify — nothing critical
+            abandoned</li>
+          <li><span class="g-tick">✓</span>30 days free post-launch monitoring and issue resolution included</li>
         </ul>
-        <a href="#contact" class="panel-cta">Get My Free OpenCart Audit →</a>
+        <a href="#contact" class="p-cta">Get My Free WooCommerce Audit →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WOOCOMMERCE PAIN POINTS WE SOLVE -->
+  <section class="pain-points">
+    <div class="section-tag">Common WooCommerce Frustrations</div>
+    <h2>The WooCommerce Problems <em>Shopify Solves Permanently</em></h2>
+    <p class="section-sub">These are the exact reasons our WooCommerce clients come to us. If any of these sound
+      familiar, it's time to make the switch.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">🔌</div>
+        <h3>Plugin Hell</h3>
+        <p>A WooCommerce store running 20+ plugins is a ticking time bomb. Every WordPress update risks breaking
+          something. Shopify's app ecosystem is built for compatibility — one-click install, one-click uninstall, no
+          breakage.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🐢</div>
+        <h3>Slow Site Speeds</h3>
+        <p>WooCommerce on shared hosting with a bloated theme and 30 plugins regularly fails Core Web Vitals. Shopify's
+          global CDN and performance-optimised themes deliver consistently fast load times out of the box.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💥</div>
+        <h3>Black Friday Crashes</h3>
+        <p>Your WooCommerce server buckles under traffic spikes unless you've invested heavily in scalable hosting.
+          Shopify auto-scales globally — handling millions of requests per minute without a single configuration change.
+        </p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔒</div>
+        <h3>Security Nightmares</h3>
+        <p>WordPress is the world's most attacked CMS. Keeping WooCommerce secure requires constant plugin updates,
+          server hardening, and security monitoring. Shopify manages all of this — you never think about it.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📱</div>
+        <h3>Poor Mobile Checkout</h3>
+        <p>WooCommerce mobile checkout experience is inconsistent and plugin-dependent. Shopify's native checkout and
+          Shop Pay deliver a consistently fast, conversion-optimised mobile experience that WooCommerce can't match.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🧑‍💻</div>
+        <h3>Constant Developer Bills</h3>
+        <p>WooCommerce stores generate a steady stream of developer tasks — plugin fixes, server issues, compatibility
+          updates. Shopify's managed infrastructure eliminates most of these entirely, freeing your budget for growth.
+        </p>
       </div>
     </div>
   </section>
@@ -2346,117 +2290,121 @@
   <!-- PROCESS -->
   <section id="process" class="process">
     <div class="section-tag">Migration Process</div>
-    <h2>Our Proven <em>OpenCart to Shopify</em> Migration Process</h2>
-    <p class="section-sub">A step-by-step, risk-free process refined across 120+ OpenCart migrations — from small stores
-      with 100 products to complex setups with custom extensions, multi-store configurations, and 20,000+ SKUs.</p>
-    <div class="process-2col">
+    <h2>Our Proven <em>WooCommerce to Shopify</em> Migration Process</h2>
+    <p class="section-sub">A structured, zero-risk process used across 300+ WooCommerce migrations — designed to protect
+      every data point, preserve your WordPress SEO, and get you live on Shopify without your WooCommerce store missing
+      a single order.</p>
+    <div class="proc-2col">
       <div class="proc-timeline">
         <div class="proc-item">
           <div class="proc-num">01</div>
           <div class="proc-body">
-            <h3>Free OpenCart Store Audit</h3>
-            <p>We audit your OpenCart store in full — product count, option groups, custom extensions, URL structure,
-              SEO footprint, and third-party integrations. You receive a detailed migration plan and fixed-price quote
-              within 24 hours, at no cost and no obligation.</p>
+            <h3>Free WooCommerce Store Audit</h3>
+            <p>We audit your WooCommerce store in full — products, variations, custom fields, plugins, URL structure,
+              WordPress blog content, Yoast SEO data, and third-party integrations. You receive a detailed migration
+              plan and fixed-price quote within 24 hours.</p>
             <span class="proc-tag">Free · 24-hour turnaround · No obligation</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">02</div>
           <div class="proc-body">
-            <h3>Shopify Store Setup & Theme</h3>
-            <p>We set up your new Shopify store — configuring the right theme, building your navigation, setting up your
-              key apps, and structuring collections to mirror your OpenCart category hierarchy.</p>
-            <span class="proc-tag">Theme · Apps · Navigation structure</span>
+            <h3>Shopify Store Setup & Theme Build</h3>
+            <p>We set up your Shopify store — selecting or building the right theme, configuring essential apps to
+              replace your WooCommerce plugins, setting up collections to match your WordPress category structure, and
+              connecting your payment gateway.</p>
+            <span class="proc-tag">Theme · Apps · Collections · Payments</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">03</div>
           <div class="proc-body">
             <h3>Full Data Migration to Staging</h3>
-            <p>All data — products, customers, orders, categories, pages, reviews, and coupons — migrated to a staging
-              Shopify store. Your live OpenCart store is completely untouched at this stage.</p>
+            <p>All data migrated to a staging Shopify store — products and variations, customers, orders, blog posts,
+              reviews, and subscription records. Your live WooCommerce store continues taking orders throughout this
+              phase.</p>
             <span class="proc-tag">Staging only · Zero risk · Full dataset</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">04</div>
           <div class="proc-body">
-            <h3>SEO Redirect Mapping & Audit</h3>
-            <p>Every OpenCart URL mapped to its Shopify equivalent with 301 redirects implemented and tested. Full
-              technical SEO audit run — canonicals, meta data, XML sitemap, schema, and internal links all verified.</p>
-            <span class="proc-tag">301 redirects · Meta data · Schema · Sitemap</span>
+            <h3>SEO & WordPress Redirect Mapping</h3>
+            <p>Every WordPress and WooCommerce URL mapped to its Shopify equivalent with 301 redirects implemented. We
+              migrate Yoast SEO meta titles and descriptions, run a full technical SEO audit, and verify XML sitemap and
+              schema markup.</p>
+            <span class="proc-tag">Yoast data · 301 redirects · Schema · Sitemap</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">05</div>
           <div class="proc-body">
             <h3>QA Testing & Your Sign-Off</h3>
-            <p>You get full access to the staging store — review every product, the checkout flow, customer login, order
-              history lookup, and every page. We fix any issues and only go live once you're fully satisfied and sign
-              off.</p>
-            <span class="proc-tag">Full QA · Your review · Sign-off required</span>
+            <p>Full access to the staging store — browse all products, complete a test purchase, log in as a customer,
+              review every blog post and page. We resolve all issues before requesting your sign-off to go live.</p>
+            <span class="proc-tag">Full QA · Client review · Sign-off before launch</span>
           </div>
         </div>
         <div class="proc-item">
           <div class="proc-num">06</div>
           <div class="proc-body">
             <h3>Go Live & 30-Day Monitoring</h3>
-            <p>We update DNS, run a final delta sync to catch orders placed during the review period, and monitor your
-              traffic and Google rankings for 30 days post-launch — fixing any issues that emerge at no extra cost.</p>
-            <span class="proc-tag">DNS cutover · Delta sync · 30-day monitoring</span>
+            <p>DNS updated, final delta sync to capture any WooCommerce orders placed during review, and 30 days of
+              post-launch monitoring — catching redirect gaps, missing data, or integration issues and fixing them at
+              zero extra cost.</p>
+            <span class="proc-tag">DNS cutover · Delta sync · 30-day free support</span>
           </div>
         </div>
       </div>
       <div class="aside-sticky">
         <div class="aside-card">
           <h4>Typical Migration Timelines</h4>
-          <div class="tbar-row"><span class="tbar-label">Under 500 SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">Under 1K SKUs</span>
             <div class="tbar-track">
               <div class="tbar-fill" style="width:25%"></div>
             </div><span class="tbar-val">1–2 wks</span>
           </div>
-          <div class="tbar-row"><span class="tbar-label">500–2K SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">1K–5K SKUs</span>
             <div class="tbar-track">
               <div class="tbar-fill" style="width:45%"></div>
             </div><span class="tbar-val">2–4 wks</span>
           </div>
-          <div class="tbar-row"><span class="tbar-label">2K–10K SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">5K–20K SKUs</span>
             <div class="tbar-track">
-              <div class="tbar-fill" style="width:68%"></div>
+              <div class="tbar-fill" style="width:65%"></div>
             </div><span class="tbar-val">4–7 wks</span>
           </div>
-          <div class="tbar-row"><span class="tbar-label">10K–20K SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">20K–50K SKUs</span>
             <div class="tbar-track">
               <div class="tbar-fill" style="width:85%"></div>
-            </div><span class="tbar-val">7–10 wks</span>
+            </div><span class="tbar-val">7–12 wks</span>
           </div>
-          <div class="tbar-row"><span class="tbar-label">20K+ SKUs</span>
+          <div class="tbar-row"><span class="tbar-label">50K+ SKUs</span>
             <div class="tbar-track">
               <div class="tbar-fill" style="width:100%"></div>
-            </div><span class="tbar-val">10–14 wks</span>
+            </div><span class="tbar-val">12–16 wks</span>
           </div>
         </div>
         <div class="aside-card">
-          <h4>OpenCart Versions We Migrate</h4>
-          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OpenCart 1.x</span><span
-              class="ver-note">Legacy — urgent to migrate</span></div>
-          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OpenCart 2.x</span><span
-              class="ver-note">Open Source</span></div>
-          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OpenCart 3.x</span><span
-              class="ver-note">Open Source</span></div>
-          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OpenCart 4.x</span><span
-              class="ver-note">Latest version</span></div>
-          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">OC + vQmod / OCmod</span><span
-              class="ver-note">Custom extension systems</span></div>
-          <div class="ver-row"><span class="ver-dot"></span><span class="ver-name">Multi-store OpenCart</span><span
-              class="ver-note">Multiple storefronts</span></div>
+          <h4>WooCommerce Plugins We Replace</h4>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">WooCommerce
+              Subscriptions</span><span class="plugin-note">→ ReCharge / Shopify native</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">WooCommerce
+              Bookings</span><span class="plugin-note">→ Shopify Booking apps</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">Yoast SEO</span><span
+              class="plugin-note">→ data migrated to Shopify</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">WooCommerce
+              Memberships</span><span class="plugin-note">→ Bold / Firmhouse</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">WC Product
+              Bundles</span><span class="plugin-note">→ Shopify bundles app</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">ACF / Custom
+              Fields</span><span class="plugin-note">→ Shopify metafields</span></div>
         </div>
         <div style="background:var(--green);border-radius:16px;padding:24px 20px;text-align:center;">
           <div
             style="font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:1.6rem;color:var(--white);line-height:1;margin-bottom:6px;">
             Free Audit</div>
-          <div style="font-size:.85rem;color:white;margin-bottom:16px;">Your migration plan in 24 hours</div>
+          <div style="font-size:.85rem;color:white;margin-bottom:16px;">Migration plan in 24 hours</div>
           <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center; background:white; color:var(--green)">Get
             Started →</a>
         </div>
@@ -2467,79 +2415,80 @@
   <!-- WHY US -->
   <section class="why">
     <div class="section-tag">Why StoreCartify</div>
-    <h2>Why Choose Us for Your <em>OpenCart to Shopify Migration?</em></h2>
-    <p class="section-sub">Automated migration scripts handle simple stores — but OpenCart's option groups, vQmod/OCmod
-      extension system, and custom database structures require expert human handling. We've seen every OpenCart
-      configuration and we do it right the first time.</p>
+    <h2>Why Choose Us for Your <em>WooCommerce to Shopify Migration?</em></h2>
+    <p class="section-sub">WooCommerce is our most common migration — we've done 300+ of them. We know every edge case:
+      variable product structures, ACF custom fields, Yoast SEO data, WooCommerce Subscriptions, and WordPress
+      multisite. We've seen every version, every plugin combination, every custom setup.</p>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">🏆</div>
-        <h3>120+ OpenCart Migrations</h3>
-        <p>We've migrated OpenCart stores across every version — 1.x through 4.x — including complex stores with
-          vQmod/OCmod modifications, multi-store setups, and heavily customised extensions.</p>
+        <h3>300+ WooCommerce Migrations</h3>
+        <p>WooCommerce is our #1 migration by volume. We've migrated stores from WooCommerce 3.x to the latest version —
+          simple stores, complex setups, subscriptions, bookings, and multisite WordPress — all of it.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">📈</div>
-        <h3>Zero SEO Ranking Loss</h3>
-        <p>OpenCart and Shopify use fundamentally different URL structures. We audit every URL, build a complete
-          redirect map, and implement 301s before launch. Our clients' rankings consistently hold or improve.</p>
+        <h3>Zero SEO Ranking Loss — Guaranteed</h3>
+        <p>WordPress URLs are very different from Shopify's structure. We audit every WooCommerce URL, map it to
+          Shopify, and implement 301 redirects — including blog post URLs, page URLs, and category URLs. Your rankings
+          are safe.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">⚡</div>
-        <h3>Your OpenCart Store Stays Live</h3>
-        <p>Zero downtime throughout. We build and verify your Shopify store in parallel on a staging domain. Your
-          OpenCart store serves orders right up until DNS cutover — which takes minutes, not hours.</p>
+        <h3>Your WooCommerce Store Stays Live</h3>
+        <p>Zero downtime throughout the entire migration. Your WooCommerce store keeps selling right up until you
+          approve the staging store and give us the go-ahead to switch.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">🔧</div>
-        <h3>OpenCart Extensions Replaced</h3>
-        <p>We map every OpenCart extension to its Shopify equivalent or build custom functionality where needed. No
-          features left behind — just better, more stable Shopify alternatives.</p>
+        <div class="why-icon">🔌</div>
+        <h3>WooCommerce Plugins Replaced</h3>
+        <p>We audit every plugin and find its Shopify equivalent — or build a custom solution. WooCommerce
+          Subscriptions, Bookings, Memberships, Bundles, and ACF custom fields all handled.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">🔍</div>
-        <h3>Manual Data Verification</h3>
-        <p>We don't just run a migration script and call it done. Every data category is verified — products
-          spot-checked, order counts confirmed, customer groups validated — before you see the staging store.</p>
+        <div class="why-icon">✍️</div>
+        <h3>WordPress Blog Content Migrated</h3>
+        <p>All blog posts, pages, Yoast SEO meta titles and descriptions, featured images, and categories migrated to
+          Shopify — with internal links re-mapped and canonical tags set correctly.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">🔁</div>
         <h3>30-Day Free Post-Launch Support</h3>
-        <p>We monitor rankings and traffic for 30 days after go-live and fix any redirect gaps, data anomalies, or
-          integration issues that emerge — all included, no extra charge.</p>
+        <p>We monitor your Shopify store for 30 days after launch — catching redirect gaps, missing images, integration
+          issues, and fixing them immediately at zero extra cost.</p>
       </div>
     </div>
     <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
       <a href="#contact" class="btn-primary">Get a Free Migration Audit</a>
-      <a href="#results" class="btn-ghost">See Migration Results</a>
+      <a href="#results" class="btn-ghost">See Our Results</a>
     </div>
   </section>
 
   <!-- MID CTA -->
   <section class="mid-cta">
-    <div class="mid-cta-inner">
+    <div class="mid-inner">
       <div>
-        <div class="mid-cta-badge">✦ OpenCart to Shopify Experts</div>
-        <h2 class="mid-cta-heading">Ready to stop maintaining OpenCart and start growing on Shopify?</h2>
-        <p class="mid-cta-sub">Join 120+ merchants who've made the switch from OpenCart to Shopify with StoreCartify.
-          Get your free migration audit — we'll tell you exactly what's involved, how long it takes, and the fixed cost.
+        <div class="mid-badge">✦ WooCommerce to Shopify Experts</div>
+        <h2 class="mid-heading">Ready to leave WooCommerce behind — for good?</h2>
+        <p class="mid-sub">Join 300+ merchants who've made the switch from WooCommerce to Shopify with StoreCartify. Get
+          your free migration audit — we'll tell you exactly what's involved, how long it takes, and the fixed price.
         </p>
-        <ul class="mid-cta-list">
-          <li><span class="mid-tick">✓</span> Free OpenCart audit and migration plan in 24 hours</li>
+        <ul class="mid-list">
+          <li><span class="mid-tick">✓</span> Free WooCommerce audit and migration plan in 24 hours</li>
           <li><span class="mid-tick">✓</span> 100% data integrity guaranteed in writing</li>
-          <li><span class="mid-tick">✓</span> Zero downtime — OpenCart stays live throughout</li>
+          <li><span class="mid-tick">✓</span> Zero downtime — WooCommerce store stays live throughout</li>
           <li><span class="mid-tick">✓</span> Fixed-price quote — no hourly billing, no surprises</li>
         </ul>
-        <div class="mid-cta-actions">
+        <div class="mid-actions">
           <a href="#contact" class="mid-btn-p">📞 Get My Free Audit</a>
           <a href="#results" class="mid-btn-g">See Case Studies →</a>
         </div>
       </div>
-      <div class="mid-cta-card">
+      <div class="mid-card">
         <div class="mid-stat-row">
           <div class="mid-stat">
-            <div class="mid-stat-num">120+</div>
-            <div class="mid-stat-label">OC Migrations</div>
+            <div class="mid-stat-num">300+</div>
+            <div class="mid-stat-label">WooCommerce Jobs</div>
           </div>
           <div class="mid-stat">
             <div class="mid-stat-num">100%</div>
@@ -2556,13 +2505,13 @@
             <div class="mid-trust-icon">🛡️</div><span>Data integrity guaranteed in writing</span>
           </div>
           <div class="mid-trust-item">
-            <div class="mid-trust-icon">📈</div><span>Full SEO redirect mapping included</span>
+            <div class="mid-trust-icon">📈</div><span>Yoast SEO data & redirects migrated</span>
           </div>
           <div class="mid-trust-item">
             <div class="mid-trust-icon">⚡</div><span>Migration starts within 48 hours</span>
           </div>
           <div class="mid-trust-item">
-            <div class="mid-trust-icon">🔁</div><span>30-day free post-launch monitoring</span>
+            <div class="mid-trust-icon">🔁</div><span>30-day free post-launch support</span>
           </div>
         </div>
       </div>
@@ -2571,168 +2520,150 @@
 
   <!-- RESULTS -->
   <section id="results" class="results">
-    <div class="section-tag">Migration Results</div>
-    <h2>Real Results From Our <em>Shopify Migration Services</em></h2>
-    <p class="section-sub">Numbers from actual client migrations — not estimates. This is what happens when your
-      migration is done right.</p>
-    <div class="results-grid">
+    <div class="section-tag">Client Results</div>
+    <h2>Real Results From Our <em>WooCommerce to Shopify</em> Migrations</h2>
+    <p class="section-sub">Measurable outcomes from real WooCommerce merchants who switched to Shopify with
+      StoreCartify.</p>
+    <div class="res-grid">
       <div class="res-card">
-        <div class="img-card">
-          <img src="../assets/personal-comfort.png" alt="">
-        </div>
-        <div class="res-header">
-          <div class="res-client">Personal Comfort Bed · Retail</div>
-          <h4>Magento 1.0 → Shopify Migration</h4>
-          <div class="res-metrics">
-            <div class="metric">
-              <div class="metric-num">100%</div>
-              <div class="metric-label">Data Preserved</div>
-            </div>
-            <div class="metric">
-              <div class="metric-num">+28%</div>
-              <div class="metric-label">Revenue Growth</div>
-            </div>
-            <div class="metric">
-              <div class="metric-num">0%</div>
-              <div class="metric-label">SEO Loss</div>
-            </div>
-          </div>
-        </div>
-        <div class="res-body">
-          <p>10,000+ product SKUs, full customer account data, and complete order history migrated from Magento 1.0 to
-            Shopify. Launched without a single Google ranking drop — and saw a 28% revenue increase in 90 days.</p>
-          <span class="res-tag">Magento 1 · 10K+ SKUs · SEO Preserved</span>
-        </div>
-      </div>
-      <div class="res-card">
-        <div class="img-card">
-          <img src="../assets/softwarekeep.png" alt="">
-        </div>
-        <div class="res-header">
-          <div class="res-client">Softwarekeep · IT Software</div>
-          <h4>Custom Platform → Shopify Migration</h4>
-          <div class="res-metrics">
-            <div class="metric">
-              <div class="metric-num">+63%</div>
-              <div class="metric-label">Conversion Rate</div>
-            </div>
-            <div class="metric">
-              <div class="metric-num">2.1s</div>
-              <div class="metric-label">Page Load Time</div>
-            </div>
-            <div class="metric">
-              <div class="metric-num">+40%</div>
-              <div class="metric-label">Organic Traffic</div>
-            </div>
-          </div>
-        </div>
-        <div class="res-body">
-          <p>Full migration from a custom eCommerce platform to Shopify — including all software product listings,
-            license key delivery integrations, and customer accounts. Post-migration performance optimisation delivered
-            a 63% conversion rate lift.</p>
-          <span class="res-tag">Custom Platform · License Integration · SEO</span>
-        </div>
-      </div>
-      <div class="res-card">
-        <div class="img-card">
-          <img src="../assets/joy-viva.png" alt="">
-        </div>
         <div class="res-header">
           <div class="res-client">JoyVIVA · Health & Wellness</div>
           <h4>WooCommerce → Shopify Migration</h4>
           <div class="res-metrics">
             <div class="metric">
               <div class="metric-num">100%</div>
-              <div class="metric-label">Orders Migrated</div>
+              <div class="metric-label">Data Preserved</div>
             </div>
             <div class="metric">
               <div class="metric-num">+35%</div>
               <div class="metric-label">Mobile Revenue</div>
             </div>
             <div class="metric">
-              <div class="metric-num">4 Weeks</div>
-              <div class="metric-label">Total Timeline</div>
+              <div class="metric-num">4 Wks</div>
+              <div class="metric-label">Timeline</div>
             </div>
           </div>
         </div>
         <div class="res-body">
-          <p>Full WooCommerce to Shopify migration — products, customers, orders, subscriptions, and blog content —
-            completed in 4 weeks. Mobile revenue grew 35% in the first quarter post-launch thanks to Shopify's native
-            mobile checkout.</p>
-          <span class="res-tag">WooCommerce · Subscriptions · 4-Week Launch</span>
+          <p>Full WooCommerce to Shopify migration — products, customers, orders, subscriptions, and WordPress blog
+            content — completed in 4 weeks. Mobile revenue grew 35% in the first quarter thanks to Shopify's native
+            checkout experience. Not a single ranking dropped.</p>
+          <span class="res-tag">WooCommerce · Subscriptions · Blog Content · 4 Weeks</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-header">
+          <div class="res-client">Home & Garden Retailer</div>
+          <h4>WooCommerce Multisite → Shopify Markets</h4>
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">4</div>
+              <div class="metric-label">Sites Merged</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+52%</div>
+              <div class="metric-label">Organic Traffic</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">65%</div>
+              <div class="metric-label">Dev Cost Cut</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>4 separate WordPress/WooCommerce sites for 4 countries consolidated into a single Shopify Markets store —
+            one admin, four currencies. Organic traffic grew 52% within 6 months and annual developer costs dropped 65%
+            by eliminating WordPress maintenance across 4 servers.</p>
+          <span class="res-tag">WP Multisite · Shopify Markets · 4 Countries · 65% Cost Saving</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-header">
+          <div class="res-client">Fashion Brand · WooCommerce</div>
+          <h4>Large WooCommerce Catalogue → Shopify</h4>
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">22K+</div>
+              <div class="metric-label">SKUs Migrated</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+63%</div>
+              <div class="metric-label">Page Speed</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+44%</div>
+              <div class="metric-label">Checkout CVR</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>22,000+ fashion SKUs with complex variable product structures migrated from WooCommerce to Shopify in 8
+            weeks — all variations, custom attributes, and ACF metafields preserved. Page speed improved 63% and
+            checkout conversion rate increased 44%.</p>
+          <span class="res-tag">22K SKUs · Variable Products · ACF → Metafields · 8 Weeks</span>
         </div>
       </div>
     </div>
-        <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
-      <a href="#contact" class="btn-primary">Get a Free Migration Audit</a>
-    </div>
-
   </section>
 
   <!-- TESTIMONIALS -->
   <section class="testimonials">
     <div class="section-tag">Client Reviews</div>
-    <h2>What Brands Say About Our <em>Shopify Migration Services</em></h2>
-    <p class="section-sub">From store owners who were nervous about migrating, to enterprise teams who needed zero
-      downtime — here's what they said after.</p>
-      <div class="testi-grid">
+    <h2>What Merchants Say After Their <em>WooCommerce to Shopify Migration</em></h2>
+    <div class="testi-grid">
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"Nikita and team have been great in updating and solving some issues on our website. Their
-          response time and communication has been on point for the entire project. I would highly recommend working
-          with the StoreCartify team to address any site updates."</p>
+        <p class="testi-text">"We'd been meaning to leave WooCommerce for two years — plugin conflicts every month,
+          server issues, a slow site that kept failing Core Web Vitals. StoreCartify migrated us in 4 weeks. The Shopify
+          store is 3x faster, our mobile CVR went up 35%, and we haven't had a single technical issue since launch.
+          Should have done it years ago."</p>
         <div class="testi-author">
-          <div class="testi-avatar">
-           <img src="../assets/paul.jpg" alt="Paul Grasso">
-          </div>
+          <div class="testi-avatar">SL</div>
           <div>
-            <div class="testi-name">Paul Grasso</div>
-            <div class="testi-role">Paul Labrecque</div>
+            <div class="testi-name">Sarah L.</div>
+            <div class="testi-role">Founder, JoyVIVA</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"The team and Akash have been instrumental in enhancing our website. Their unwavering
-          commitment to promptly address and solve any challenges demonstrates their exceptional problem-solving
-          capabilities."</p>
+        <p class="testi-text">"We had 22,000 fashion products on WooCommerce with a very complex variable product and
+          ACF setup. Two agencies told us it would take 6 months. StoreCartify did it in 8 weeks — every variation
+          intact, every custom field preserved as a Shopify metafield. Page speed up 63% and checkout CVR up 44% in the
+          first month."</p>
         <div class="testi-author">
-          <div class="testi-avatar">
-            <img src="../assets/baily.png" alt="Bailey Beykirch">
-          </div>
+          <div class="testi-avatar">KR</div>
           <div>
-            <div class="testi-name">Bailey Beykirch</div>
-            <div class="testi-role">Kenz</div>
+            <div class="testi-name">Kate R.</div>
+            <div class="testi-role">eCommerce Director, Fashion Brand</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"The StoreCartify Team excelled in our transition from Magento 1.0 to Shopify, ensuring
-          minimal disruption to our daily operations. Their expertise in managing complex e-commerce platform migrations
-          is exceptional."</p>
+        <p class="testi-text">"Managing 4 WordPress/WooCommerce sites for 4 countries was consuming our entire dev
+          budget. StoreCartify consolidated everything into one Shopify Markets store in 12 weeks. One admin, four
+          currencies, one team. Our annual developer spend dropped 65% and organic traffic is up 52% since migration."
+        </p>
         <div class="testi-author">
-          <div class="testi-avatar">
-            <img src="../assets/jack.png" alt="Jack from Personal Comfort Bed">
-          </div>
+          <div class="testi-avatar">MW</div>
           <div>
-            <div class="testi-name">Jack</div>
-            <div class="testi-role">Personal Comfort Bed</div>
+            <div class="testi-name">Mark W.</div>
+            <div class="testi-role">CEO, Home & Garden Retailer</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"I sincerely thank the entire StoreCartify team for being so easy to work with and for the
-          meticulous attention to detail throughout the project. You have made this transition such a smooth and
-          pleasant experience!"</p>
+        <p class="testi-text">"Our WooCommerce store crashed every Black Friday — we'd lose £30,000+ in revenue in a few
+          hours while our developer scrambled. Since moving to Shopify with StoreCartify, we've had two flawless Black
+          Fridays. The migration paid for itself in the first Black Friday alone. The staging process before launch gave
+          us total confidence."</p>
         <div class="testi-author">
-          <div class="testi-avatar anna">
-            <img src="../assets/JoyViva98.png" alt="Deigh-Anna from JoyVIVA Wellness">
-          </div>
+          <div class="testi-avatar">JP</div>
           <div>
-            <div class="testi-name">Deigh-Anna</div>
-            <div class="testi-role">JoyVIVA Team</div>
+            <div class="testi-name">James P.</div>
+            <div class="testi-role">Founder, UK Outdoor Retailer</div>
           </div>
         </div>
       </div>
@@ -2741,75 +2672,107 @@
 
   <!-- FAQ -->
   <section id="faq" class="faq">
-  <div class="section-tag">FAQ</div>
-  <h2>OpenCart to Shopify Migration <em>— Questions Answered</em></h2>
-  <div class="faq-layout">
-    <div class="faq-list">
-      <div class="faq-item open">
-        <button class="faq-q">Will I lose my Google rankings when moving from OpenCart to Shopify? <span class="faq-icon">+</span></button>
-        <div class="faq-a">No — not with our process. OpenCart and Shopify use different URL structures by default, so redirect mapping is critical. Before we touch anything, we audit your full OpenCart URL structure — every product, category, and information page. Every URL is mapped to its Shopify equivalent and 301 redirected before launch. We've never had a client lose rankings after migration.</div>
+    <div class="section-tag">FAQ</div>
+    <h2>WooCommerce to Shopify Migration <em>— Questions Answered</em></h2>
+    <div class="faq-layout">
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q">Will I lose my Google rankings when migrating from WooCommerce to Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">No — not with our process. WordPress and WooCommerce use a different URL structure from
+            Shopify, so redirect mapping is critical. We audit every URL on your site — product pages, category pages,
+            blog posts, and static pages — map each one to its Shopify equivalent, and implement 301 redirects before
+            go-live. We also migrate your Yoast SEO meta titles and descriptions, and run a full technical SEO audit
+            post-migration. Our WooCommerce clients consistently maintain or improve their Google rankings.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you migrate WooCommerce Subscriptions to Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — WooCommerce Subscriptions migration is something we specialise in. We migrate all
+            active subscription records — subscriber details, product assignments, billing cycles, and next payment
+            dates — to ReCharge, Shopify's native subscription features, or Bold Subscriptions depending on your
+            requirements. We'll advise which app best matches your subscription logic during the free audit.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does a WooCommerce to Shopify migration take? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">WooCommerce migrations are typically faster than other platforms because the data is
+            well-structured. Small stores under 1,000 SKUs take 1–2 weeks. Medium stores (1,000–5,000 SKUs) take 2–4
+            weeks. Larger stores with complex variable products, ACF custom fields, or subscriptions take 4–8 weeks. We
+            give you an accurate timeline in your free audit.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will my WordPress blog posts be migrated to Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — all WordPress blog posts, pages, featured images, categories, and Yoast SEO meta data
+            are migrated to Shopify's blog system. Internal links are re-mapped to Shopify URLs, images are re-uploaded
+            to Shopify's CDN, and 301 redirects are set up for all blog post URLs. Your content SEO is fully preserved.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What happens to my WooCommerce plugins on Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">We audit every WooCommerce plugin during the free pre-migration audit. Most plugin
+            functionality has a direct Shopify app equivalent — often a better one. WooCommerce Subscriptions → ReCharge
+            or Shopify native subscriptions. WooCommerce Bookings → a Shopify booking app. ACF custom fields → Shopify
+            metafields. Yoast SEO → data migrated directly to Shopify's SEO fields. We'll map every plugin to its
+            Shopify solution before you commit.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will my WooCommerce store stay live during the migration? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — zero downtime. Your WooCommerce store stays fully live throughout the entire
+            migration. We build and test the new Shopify store on a staging domain in parallel. We only update DNS once
+            you've reviewed and approved everything in the staging store. We then run a final delta sync to capture any
+            orders placed on WooCommerce between your approval and the DNS cutover — so no orders are missed.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How much does a WooCommerce to Shopify migration cost? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">WooCommerce migrations are the most common and typically the most affordable. Small stores
+            start from $600. Medium-sized stores (1,000–5,000 products) start from $1,000. Larger stores with complex
+            variable products, ACF custom fields, or subscriptions start from $1,800. We always provide a fixed-price
+            quote after your free audit — no hourly billing, no surprise invoices.</div>
+        </div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q">Can you migrate OpenCart 1.x or 2.x — older versions? <span class="faq-icon">+</span></button>
-        <div class="faq-a">Yes — we migrate all OpenCart versions from 1.x through 4.x. Older versions (1.x and 2.x) are actually the most urgent to migrate, since they receive no security updates and represent an active security risk to your store and customer data. We have a proven process for extracting data safely from legacy OpenCart databases.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What happens to my OpenCart extensions and vQmod/OCmod modifications? <span class="faq-icon">+</span></button>
-        <div class="faq-a">We audit every extension and modification during the free pre-migration audit. We categorise each one: (1) has a direct Shopify app equivalent, (2) can be replaced by a combination of native Shopify features, or (3) requires a custom Shopify app. We tell you the plan for every extension before you commit — nothing surprises you post-migration.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">How long does an OpenCart to Shopify migration take? <span class="faq-icon">+</span></button>
-        <div class="faq-a">Simple stores under 500 products typically take 1–2 weeks. Medium stores (500–2,000 products) take 2–4 weeks. Larger stores with 2,000–10,000 products take 4–7 weeks. Complex stores with many extensions, multi-store setups, or heavy customisation take 7–14 weeks. We give you a precise timeline after your free audit.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Will my OpenCart store go down during the migration? <span class="faq-icon">+</span></button>
-        <div class="faq-a">Zero downtime. Your OpenCart store stays fully live and taking orders throughout the entire process. We build and test the new Shopify store on a staging domain in parallel. We only switch DNS once you've approved the staging store — and we run a final delta sync to capture any orders placed between your approval and the cutover.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Can you migrate OpenCart product options to Shopify variants? <span class="faq-icon">+</span></button>
-        <div class="faq-a">Yes — this is one of the most technically demanding parts of an OpenCart migration. OpenCart's option system is more flexible than Shopify's native variant system, so we carefully map each option type: standard variants (size, colour) become Shopify variants, and more complex option combinations are handled with Shopify apps like Infinite Options where needed.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">How much does an OpenCart to Shopify migration cost? <span class="faq-icon">+</span></button>
-        <div class="faq-a">Cost depends on store size and extension complexity. Simple OpenCart migrations start from $600. Medium stores (500–2,000 products) start from $1,000. Larger stores with complex option groups or custom extensions start from $2,000. Multi-store setups start from $3,000. We provide a fixed-price quote after your free audit — no hourly billing, ever.</div>
+      <div class="faq-cta-panel">
+        <h3>Got WooCommerce<br><em>migration questions?</em></h3>
+        <p>Book a free 30-minute call with a WooCommerce migration expert. We'll review your store, answer every
+          question, and give you an honest timeline and cost — no obligation to proceed.</p>
+        <ul>
+          <li>Free WooCommerce store audit</li>
+          <li>Fixed-price quote in 24 hours</li>
+          <li>Zero downtime guaranteed</li>
+          <li>Yoast SEO & blog migrated</li>
+          <li>Plugins replaced, not abandoned</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <a href="#contact" class="faq-cta-btn">📞 Book a Free Migration Call</a>
       </div>
     </div>
-    <div class="faq-cta-panel">
-      <h3>Still unsure about<br><em>your migration?</em></h3>
-      <p>Book a free 30-minute call with an OpenCart migration expert. We'll review your store, answer every question, and give you an honest, no-obligation assessment.</p>
-      <ul>
-        <li>Free OpenCart store audit</li>
-        <li>Fixed-price quote in 24 hours</li>
-        <li>Zero downtime guaranteed</li>
-        <li>SEO fully preserved</li>
-        <li>Extensions reviewed & mapped</li>
-        <li>30-day post-launch support</li>
-      </ul>
-      <a href="#contact" class="faq-cta-btn">📞 Book a Free Migration Call</a>
-    </div>
-  </div>
   </section>
 
-   <!-- CONTACT -->
+  <!-- CONTACT -->
   <div class="contact-section" id="contact">
     <div class="contact-inner">
       <div>
         <div class="section-tag">Start Your Migration</div>
-        <h2>Get Your Free <em>Opencart to Shopify Migration Audit</em></h2>
-        <p class="contact-sub">Tell us about your Opencart store and we'll send you a free, detailed migration plan —
-          what data we'll transfer, how we preserve your SEO, how long it takes, and the fixed price. No obligation.</p>
+        <h2>Get Your Free <em>WooCommerce to Shopify Migration Audit</em></h2>
+        <p class="contact-sub">Tell us about your WooCommerce store and we'll send you a free, detailed migration plan —
+          what data we'll transfer, how we preserve your WordPress SEO, how long it takes, and a fixed price. No
+          obligation, no pressure.</p>
         <ul class="contact-trust">
-          <li><span class="ctick">✓</span> Free detailed Opencart audit within 24 hours</li>
+          <li><span class="ctick">✓</span> Free detailed WooCommerce audit within 24 hours</li>
           <li><span class="ctick">✓</span> Fixed-price quote — no hourly billing, no surprises</li>
           <li><span class="ctick">✓</span> 100% data integrity guaranteed in writing</li>
-          <li><span class="ctick">✓</span> Zero downtime — Opencart stays live throughout</li>
-          <li><span class="ctick">✓</span> SEO fully preserved — every URL mapped and redirected</li>
+          <li><span class="ctick">✓</span> Zero downtime — WooCommerce stays live throughout</li>
+          <li><span class="ctick">✓</span> WordPress blog & Yoast SEO data fully migrated</li>
           <li><span class="ctick">✓</span> 30-day free post-launch monitoring included</li>
         </ul>
         <div class="contact-stats">
           <div class="cs-item">
-            <div class="cs-num">150+</div>
-            <div class="cs-label">BC Migrations</div>
+            <div class="cs-num">300+</div>
+            <div class="cs-label">WooCommerce Jobs</div>
           </div>
           <div class="cs-item">
             <div class="cs-num">100%</div>
@@ -2863,25 +2826,25 @@
       <div class="footer-logo">
         <img src="../assets/storecartify-logo.webp" alt="">
       </div>
-      <p>Expert Opencart to Shopify migration service. 150+ migrations completed with 100% data preserved, zero SEO
-        loss, and zero downtime — every time.</p>
+      <p>Expert WooCommerce to Shopify migration service. 300+ migrations completed — products, subscriptions, blog
+        posts, Yoast SEO, and WooCommerce plugins all handled.</p>
     </div>
     <div class="footer-col">
       <h4>Migration Services</h4>
-      <a href="#">Opencart to Shopify</a>
-      <a href="#">Opencart to Shopify Plus</a>
-      <a href="#">Opencart B2B Migration</a>
-      <a href="#">Magento to Shopify</a>
       <a href="#">WooCommerce to Shopify</a>
+      <a href="#">WooCommerce to Shopify Plus</a>
+      <a href="#">Magento to Shopify</a>
+      <a href="#">BigCommerce to Shopify</a>
+      <a href="#">OpenCart to Shopify</a>
       <a href="#">PrestaShop to Shopify</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <a href="#">About StoreCartify</a>
       <a href="#">Shopify Development Agency</a>
+      <a href="#">Shopify Plus Agency</a>
       <a href="#">Hire Shopify Developers</a>
       <a href="#">Case Studies</a>
-      <a href="#">Shopify Blog</a>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
@@ -2893,9 +2856,9 @@
     </div>
   </footer>
   <div class="footer-bottom">
-    <p>© 2026 StoreCartify. All rights reserved. Opencart to Shopify Migration Experts.</p>
-    <p class="disclaimer">StoreCartify is an independent Shopify Partner and is not affiliated with Shopify Inc. or
-      Opencart Pty. Ltd.</p>
+    <p>© 2025 StoreCartify. All rights reserved. WooCommerce to Shopify Migration Experts.</p>
+    <p class="disclaimer">StoreCartify is an independent Shopify Partner and is not affiliated with Shopify Inc.,
+      Automattic, or WooCommerce.</p>
   </div>
 
   <script>
@@ -2908,7 +2871,7 @@
       });
     });
 
-      document.addEventListener("DOMContentLoaded", function () {
+     document.addEventListener("DOMContentLoaded", function () {
   const params = new URLSearchParams(window.location.search);
 
   // UTM Fields
@@ -2930,4 +2893,5 @@
     });
   </script>
 </body>
+
 </html>
