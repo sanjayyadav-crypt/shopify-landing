@@ -509,7 +509,6 @@
 
     .section-sub {
       color: var(--muted);
-      max-width: 580px;
       font-size: 1rem;
       line-height: 1.75;
       margin-bottom: 52px
@@ -1256,6 +1255,15 @@
       overflow: hidden;
       transition: all .3s
     }
+      .res-card .img-card{
+      width: 100%;
+      height: auto;
+    }
+    .res-card .img-card img{
+      width: 100%;
+      height: 100%;
+    }
+
 
     .res-card:hover {
       border-color: var(--green);
@@ -1406,6 +1414,19 @@
       font-size: .9rem;
       color: var(--white);
       flex-shrink: 0
+    }
+      .testi-avatar img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+     .testi-author .anna{
+      background-color: white;
+    }
+
+    .testi-avatar img:last-child{
+      background: transparent !important;
     }
 
     .testi-name {
@@ -2520,150 +2541,168 @@
 
   <!-- RESULTS -->
   <section id="results" class="results">
-    <div class="section-tag">Client Results</div>
-    <h2>Real Results From Our <em>WooCommerce to Shopify</em> Migrations</h2>
-    <p class="section-sub">Measurable outcomes from real WooCommerce merchants who switched to Shopify with
-      StoreCartify.</p>
+    <div class="section-tag">Migration Results</div>
+    <h2>Real Results From Our <em>Shopify Migration Services</em></h2>
+    <p class="section-sub">Numbers from actual client migrations — not estimates. This is what happens when your
+      migration is done right.</p>
     <div class="res-grid">
       <div class="res-card">
+        <div class="img-card">
+          <img src="../assets/personal-comfort.png" alt="">
+        </div>
         <div class="res-header">
-          <div class="res-client">JoyVIVA · Health & Wellness</div>
-          <h4>WooCommerce → Shopify Migration</h4>
+          <div class="res-client">Personal Comfort Bed · Retail</div>
+          <h4>Magento 1.0 → Shopify Migration</h4>
           <div class="res-metrics">
             <div class="metric">
               <div class="metric-num">100%</div>
               <div class="metric-label">Data Preserved</div>
             </div>
             <div class="metric">
+              <div class="metric-num">+28%</div>
+              <div class="metric-label">Revenue Growth</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">0%</div>
+              <div class="metric-label">SEO Loss</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>10,000+ product SKUs, full customer account data, and complete order history migrated from Magento 1.0 to
+            Shopify. Launched without a single Google ranking drop — and saw a 28% revenue increase in 90 days.</p>
+          <span class="res-tag">Magento 1 · 10K+ SKUs · SEO Preserved</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="img-card">
+          <img src="../assets/softwarekeep.png" alt="">
+        </div>
+        <div class="res-header">
+          <div class="res-client">Softwarekeep · IT Software</div>
+          <h4>Custom Platform → Shopify Migration</h4>
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">+63%</div>
+              <div class="metric-label">Conversion Rate</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">2.1s</div>
+              <div class="metric-label">Page Load Time</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+40%</div>
+              <div class="metric-label">Organic Traffic</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>Full migration from a custom eCommerce platform to Shopify — including all software product listings,
+            license key delivery integrations, and customer accounts. Post-migration performance optimisation delivered
+            a 63% conversion rate lift.</p>
+          <span class="res-tag">Custom Platform · License Integration · SEO</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="img-card">
+          <img src="../assets/joy-viva.png" alt="">
+        </div>
+        <div class="res-header">
+          <div class="res-client">JoyVIVA · Health & Wellness</div>
+          <h4>WooCommerce → Shopify Migration</h4>
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">100%</div>
+              <div class="metric-label">Orders Migrated</div>
+            </div>
+            <div class="metric">
               <div class="metric-num">+35%</div>
               <div class="metric-label">Mobile Revenue</div>
             </div>
             <div class="metric">
-              <div class="metric-num">4 Wks</div>
-              <div class="metric-label">Timeline</div>
+              <div class="metric-num">4 Weeks</div>
+              <div class="metric-label">Total Timeline</div>
             </div>
           </div>
         </div>
         <div class="res-body">
-          <p>Full WooCommerce to Shopify migration — products, customers, orders, subscriptions, and WordPress blog
-            content — completed in 4 weeks. Mobile revenue grew 35% in the first quarter thanks to Shopify's native
-            checkout experience. Not a single ranking dropped.</p>
-          <span class="res-tag">WooCommerce · Subscriptions · Blog Content · 4 Weeks</span>
-        </div>
-      </div>
-      <div class="res-card">
-        <div class="res-header">
-          <div class="res-client">Home & Garden Retailer</div>
-          <h4>WooCommerce Multisite → Shopify Markets</h4>
-          <div class="res-metrics">
-            <div class="metric">
-              <div class="metric-num">4</div>
-              <div class="metric-label">Sites Merged</div>
-            </div>
-            <div class="metric">
-              <div class="metric-num">+52%</div>
-              <div class="metric-label">Organic Traffic</div>
-            </div>
-            <div class="metric">
-              <div class="metric-num">65%</div>
-              <div class="metric-label">Dev Cost Cut</div>
-            </div>
-          </div>
-        </div>
-        <div class="res-body">
-          <p>4 separate WordPress/WooCommerce sites for 4 countries consolidated into a single Shopify Markets store —
-            one admin, four currencies. Organic traffic grew 52% within 6 months and annual developer costs dropped 65%
-            by eliminating WordPress maintenance across 4 servers.</p>
-          <span class="res-tag">WP Multisite · Shopify Markets · 4 Countries · 65% Cost Saving</span>
-        </div>
-      </div>
-      <div class="res-card">
-        <div class="res-header">
-          <div class="res-client">Fashion Brand · WooCommerce</div>
-          <h4>Large WooCommerce Catalogue → Shopify</h4>
-          <div class="res-metrics">
-            <div class="metric">
-              <div class="metric-num">22K+</div>
-              <div class="metric-label">SKUs Migrated</div>
-            </div>
-            <div class="metric">
-              <div class="metric-num">+63%</div>
-              <div class="metric-label">Page Speed</div>
-            </div>
-            <div class="metric">
-              <div class="metric-num">+44%</div>
-              <div class="metric-label">Checkout CVR</div>
-            </div>
-          </div>
-        </div>
-        <div class="res-body">
-          <p>22,000+ fashion SKUs with complex variable product structures migrated from WooCommerce to Shopify in 8
-            weeks — all variations, custom attributes, and ACF metafields preserved. Page speed improved 63% and
-            checkout conversion rate increased 44%.</p>
-          <span class="res-tag">22K SKUs · Variable Products · ACF → Metafields · 8 Weeks</span>
+          <p>Full WooCommerce to Shopify migration — products, customers, orders, subscriptions, and blog content —
+            completed in 4 weeks. Mobile revenue grew 35% in the first quarter post-launch thanks to Shopify's native
+            mobile checkout.</p>
+          <span class="res-tag">WooCommerce · Subscriptions · 4-Week Launch</span>
         </div>
       </div>
     </div>
+        <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Get a Free Migration Audit</a>
+    </div>
+
   </section>
 
   <!-- TESTIMONIALS -->
   <section class="testimonials">
     <div class="section-tag">Client Reviews</div>
-    <h2>What Merchants Say After Their <em>WooCommerce to Shopify Migration</em></h2>
-    <div class="testi-grid">
+    <h2>What Brands Say About Our <em>Shopify Migration Services</em></h2>
+    <p class="section-sub">From store owners who were nervous about migrating, to enterprise teams who needed zero
+      downtime — here's what they said after.</p>
+      <div class="testi-grid">
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"We'd been meaning to leave WooCommerce for two years — plugin conflicts every month,
-          server issues, a slow site that kept failing Core Web Vitals. StoreCartify migrated us in 4 weeks. The Shopify
-          store is 3x faster, our mobile CVR went up 35%, and we haven't had a single technical issue since launch.
-          Should have done it years ago."</p>
+        <p class="testi-text">"Nikita and team have been great in updating and solving some issues on our website. Their
+          response time and communication has been on point for the entire project. I would highly recommend working
+          with the StoreCartify team to address any site updates."</p>
         <div class="testi-author">
-          <div class="testi-avatar">SL</div>
+          <div class="testi-avatar">
+           <img src="../assets/paul.jpg" alt="Paul Grasso">
+          </div>
           <div>
-            <div class="testi-name">Sarah L.</div>
-            <div class="testi-role">Founder, JoyVIVA</div>
+            <div class="testi-name">Paul Grasso</div>
+            <div class="testi-role">Paul Labrecque</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"We had 22,000 fashion products on WooCommerce with a very complex variable product and
-          ACF setup. Two agencies told us it would take 6 months. StoreCartify did it in 8 weeks — every variation
-          intact, every custom field preserved as a Shopify metafield. Page speed up 63% and checkout CVR up 44% in the
-          first month."</p>
+        <p class="testi-text">"The team and Akash have been instrumental in enhancing our website. Their unwavering
+          commitment to promptly address and solve any challenges demonstrates their exceptional problem-solving
+          capabilities."</p>
         <div class="testi-author">
-          <div class="testi-avatar">KR</div>
+          <div class="testi-avatar">
+            <img src="../assets/baily.png" alt="Bailey Beykirch">
+          </div>
           <div>
-            <div class="testi-name">Kate R.</div>
-            <div class="testi-role">eCommerce Director, Fashion Brand</div>
+            <div class="testi-name">Bailey Beykirch</div>
+            <div class="testi-role">Kenz</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"Managing 4 WordPress/WooCommerce sites for 4 countries was consuming our entire dev
-          budget. StoreCartify consolidated everything into one Shopify Markets store in 12 weeks. One admin, four
-          currencies, one team. Our annual developer spend dropped 65% and organic traffic is up 52% since migration."
-        </p>
+        <p class="testi-text">"The StoreCartify Team excelled in our transition from Magento 1.0 to Shopify, ensuring
+          minimal disruption to our daily operations. Their expertise in managing complex e-commerce platform migrations
+          is exceptional."</p>
         <div class="testi-author">
-          <div class="testi-avatar">MW</div>
+          <div class="testi-avatar">
+            <img src="../assets/jack.png" alt="Jack from Personal Comfort Bed">
+          </div>
           <div>
-            <div class="testi-name">Mark W.</div>
-            <div class="testi-role">CEO, Home & Garden Retailer</div>
+            <div class="testi-name">Jack</div>
+            <div class="testi-role">Personal Comfort Bed</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"Our WooCommerce store crashed every Black Friday — we'd lose £30,000+ in revenue in a few
-          hours while our developer scrambled. Since moving to Shopify with StoreCartify, we've had two flawless Black
-          Fridays. The migration paid for itself in the first Black Friday alone. The staging process before launch gave
-          us total confidence."</p>
+        <p class="testi-text">"I sincerely thank the entire StoreCartify team for being so easy to work with and for the
+          meticulous attention to detail throughout the project. You have made this transition such a smooth and
+          pleasant experience!"</p>
         <div class="testi-author">
-          <div class="testi-avatar">JP</div>
+          <div class="testi-avatar anna">
+            <img src="../assets/JoyViva98.png" alt="Deigh-Anna from JoyVIVA Wellness">
+          </div>
           <div>
-            <div class="testi-name">James P.</div>
-            <div class="testi-role">Founder, UK Outdoor Retailer</div>
+            <div class="testi-name">Deigh-Anna</div>
+            <div class="testi-role">JoyVIVA Team</div>
           </div>
         </div>
       </div>
