@@ -16,12 +16,12 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magento to Shopify Migration | Expert Migration Service | StoreCartify</title>
+  <title>Magento to Shopify Migration Service | Expert Agency | StoreCartify</title>
   <meta name="description"
-    content="Migrate from Magento to Shopify with zero data loss, zero SEO impact, and zero downtime. StoreCartify has completed 200+ Magento to Shopify migrations. Get a free audit today.">
-  <link rel="icon" href="../assets/store-icon.png">
+    content="StoreCartify is a certified Magento to Shopify migration service. 200+ migrations completed — Magento 1, Magento 2 & Adobe Commerce. Zero data loss, zero SEO impact, zero downtime. Free audit.">
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
     rel="stylesheet">
+  <link rel="icon" href="../assets/store-icon.png">
   <style>
     :root {
       --green: #004c3f;
@@ -60,7 +60,7 @@
     }
 
     /* NAV */
-    nav {
+       nav {
       top: 0;
       left: 0;
       width: 100%;
@@ -72,6 +72,7 @@
       align-items: center;
       justify-content: space-between;
     }
+
 
     .nav-logo {
       font-family: 'Nunito Sans', sans-serif;
@@ -199,7 +200,7 @@
       animation: pulse 1.8s ease infinite;
     }
 
-    h1 {
+   h1 {
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 900;
       font-size: 50px;
@@ -444,7 +445,7 @@
     }
 
     /* LOGO STRIP */
-    .logos-strip {
+     .logos-strip {
       background: var(--green);
       padding: 24px 0;
       border-bottom: 1.5px solid var(--light-border);
@@ -674,7 +675,10 @@
       line-height: 1.3;
     }
 
-  
+    .migrate-panel h3 em {
+      color: var(--white);
+      font-style: normal;
+    }
 
     .migrate-panel p {
       font-size: .88rem;
@@ -712,7 +716,7 @@
       flex-shrink: 0;
       font-size: .65rem;
       font-weight: 900;
-      color: var(--dark);
+      color: var(--green);
       margin-top: 2px;
     }
 
@@ -732,8 +736,9 @@
 
     .panel-cta:hover {
       background: transparent;
-      color: white;
       border: 2px solid white;
+      color: white;
+      transform: translateY(-1px);
     }
 
     /* PROCESS */
@@ -962,9 +967,9 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: var(--green-light);
+      background: rgba(0, 76, 63, 0.1);
       border: 1px solid rgba(0, 76, 63, 0.2);
-      color: var(--white);
+      color: var(--green-light);
       font-size: .75rem;
       font-weight: 800;
       letter-spacing: .08em;
@@ -1001,7 +1006,7 @@
       font-weight: 600;
       color: var(--white);
       padding: 9px 0;
-      border-bottom: 1px solid var(--white);
+      border-bottom: 1px solid white;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -1014,8 +1019,8 @@
     .mid-cta-tick {
       width: 22px;
       height: 22px;
-      background: var(--green);
-      color: var(--white);
+      background: var(--white);
+      color: var(--green);
       border-radius: 50%;
       display: grid;
       place-items: center;
@@ -1047,9 +1052,9 @@
 
     .mid-cta-btn-primary:hover {
       background: transparent;
-      transform: translateY(-1px);
-      color: white;
       border: 2px solid white;
+      color: white;
+      transform: translateY(-1px);
     }
 
     .mid-cta-btn-ghost {
@@ -1067,6 +1072,8 @@
       align-items: center;
       gap: 8px;
     }
+
+    
 
     .mid-cta-card {
       background: var(--white);
@@ -1316,7 +1323,6 @@
       color: var(--white);
       flex-shrink: 0;
     }
-
          .testi-avatar img{
       width: 100%;
       height: 100%;
@@ -1330,6 +1336,7 @@
     .testi-avatar img:last-child{
       background: transparent !important;
     }
+
 
     .testi-name {
       font-weight: 800;
@@ -1473,10 +1480,8 @@
     }
 
     .faq-cta-btn:hover {
-      background: transparent;
+      background:whitesmoke;
       transform: translateY(-1px);
-      border: 2px solid white;
-      color: white;
     }
 
     /* CONTACT */
@@ -1679,10 +1684,10 @@
       color: var(--white);
       margin-bottom: 12px;
     }
-    .footer-logo img{
-      width:auto;
-      height: 70px;
+
+    .footer-logo img {
       filter: brightness(0) invert(1);
+      width: 200px;
     }
 
     .footer-brand p {
@@ -1736,7 +1741,6 @@
     }
 
     /* RESPONSIVE */
-    
     @media (max-width: 1024px) {
       .nav-links{
         display: none;
@@ -1764,6 +1768,7 @@
       .process-aside {
         position: static;
       }
+
     }
 
     @media (max-width: 900px) {
@@ -1816,9 +1821,9 @@
       .nav-links {
         display: none;
       }
-        .nav-logo img{
+     .nav-logo img{
         width: auto;
-        height: 40px;
+        height: 30px;
       }
       .nav-cta{
         font-size: 10px;
@@ -1857,7 +1862,10 @@
         display: block;
         width: 100%;
       }
-
+      .panel-cta{
+        font-size: 13px;
+      }
+     
       .why-grid,
       .results-grid,
       .migrate-grid-items {
@@ -1865,7 +1873,7 @@
       }
 
       footer {
-        grid-template-columns: 1fr ;
+        grid-template-columns: 1fr;
       }
 
       .form-row-2,
@@ -1873,15 +1881,35 @@
         grid-template-columns: 1fr;
       }
     }
+    @media (max-width:400px){
+       .mid-cta{
+        overflow-wrap: anywhere;
+      }
+      .contact-section{
+        max-width: 90%;
+        overflow-wrap: anywhere;
+      }
+      .contact-section h2{
+        font-size: 20px;
+        width: 90%;
+      }
+      .contact-section .contact-stats,
+      .contact-section .contact-sub,
+      .contact-section .contact-trust,
+      .contact-section .section-tag,
+      .contact-section .contact-inner div{
+        width: 90%;
+      }
+      .contact-section .hero-form-card{
+        padding: 20px;
+        margin: 0px;
+        max-width: 90%;
+      }
+    }
   </style>
 </head>
 
 <body>
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9TG9P5S" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <!-- NAV -->
   <nav>
@@ -1895,20 +1923,21 @@
       <li><a href="#results">Results</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Get a Free Migration Audit</a>
+    <a href="#contact" class="nav-cta">Get Migration Service Quote</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg-dots"></div>
     <div class="hero-inner">
-      <div class="hero-badge">✦ Magento to Shopify Migration Experts</div>
-      <h1><em>Magento to Shopify Migration</em> — Zero Data Loss. Zero SEO Impact.</h1>
-      <p class="hero-desc">Thinking of migrating from Magento to Shopify? StoreCartify has completed 200+ Magento to
-        Shopify migrations — including complex Magento 1 and Magento 2 stores with 100,000+ SKUs, multi-store setups,
-        and custom integrations. We guarantee 100% data integrity and zero ranking drops.</p>
+      <div class="hero-badge">✦ Certified Magento to Shopify Migration Service</div>
+      <h1><em>Magento to Shopify Migration Service</em> — Zero Data Loss. Zero SEO Impact. Zero Downtime.</h1>
+      <p class="hero-desc">StoreCartify is a certified Magento to Shopify migration service trusted by 200+ brands
+        worldwide. We migrate Magento 1, Magento 2, and Adobe Commerce stores to Shopify — with 100% data integrity,
+        zero SEO ranking loss, and zero downtime. From 100 SKUs to 500,000 SKUs, our migration service has handled it
+        all.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">🚀 Get a Free Migration Audit</a>
+        <a href="#contact" class="btn-primary">🚀 Get a Free Service Quote</a>
         <a href="#process" class="btn-ghost">See How It Works</a>
       </div>
       <div class="trust-row">
@@ -1923,9 +1952,9 @@
           </svg><span>Zero Downtime</span></div>
       </div>
     </div>
-     <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
+    <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
       data-drip-embedded-form="330315483" id="drip-ef-330315483">
-      <h4>Book your FREE 30-minute Migration Audit today</h4>
+      <h4>Get a Free Magento to Shopify Migration Service Quote</h4>
       <p>We'll match you with the right Shopify developer within 24 hours.</p>
       <div class="form-row-2">
         <div class="form-group">
@@ -1962,7 +1991,7 @@
   <div class="stats-bar">
     <div class="stat-item">
       <div class="stat-num">200+</div>
-      <div class="stat-label">Magento Migrations</div>
+      <div class="stat-label">Migration Services Done</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">100%</div>
@@ -1994,10 +2023,10 @@
   <!-- COMPARISON: MAGENTO VS SHOPIFY -->
   <section id="why-migrate" class="comparison">
     <div class="section-tag">Magento vs Shopify</div>
-    <h2>Why Merchants Are Leaving <em>Magento for Shopify</em></h2>
-    <p class="section-sub">Magento is powerful — but it's expensive to maintain, slow to update, and requires dedicated
-      developer resources just to keep it running. Here's how the two platforms compare on what matters most to growing
-      businesses.</p>
+    <h2>Why Merchants Choose Our <em>Magento to Shopify Migration Service</em></h2>
+    <p class="section-sub">Magento is powerful — but expensive to host, slow to update, and requires dedicated developer
+      resources just to keep it running. Our migration service moves you to a platform that works harder for less.
+      Here's the honest comparison.</p>
     <div class="comp-table-wrap">
       <table class="comp-table">
         <thead>
@@ -2067,10 +2096,10 @@
 
   <!-- WHAT WE MIGRATE -->
   <section id="what-we-migrate" class="what-migrate">
-    <div class="section-tag">What We Transfer</div>
-    <h2>Everything From Magento. <em>Rebuilt Perfectly in Shopify.</em></h2>
+    <div class="section-tag">What Our Migration Service Transfers</div>
+    <h2>Everything From Magento. <em>Our Migration Service Rebuilds It Perfectly in Shopify.</em></h2>
     <p class="section-sub">Our Magento to Shopify migration service covers every data type — from simple products to
-      complex B2B pricing, custom attributes, and multi-store configurations.</p>
+      complex B2B pricing, custom attributes, and multi-store configurations. Nothing gets left behind.</p>
     <div class="migrate-2col">
       <div class="migrate-grid-items">
         <div class="migrate-item-card">
@@ -2123,9 +2152,9 @@
         </div>
       </div>
       <div class="migrate-panel">
-        <h3>Our <em>Magento Migration</em> Guarantee</h3>
-        <p>We put our guarantee in writing. If any data is missing or incorrect after the migration, we fix it
-          immediately — at no extra cost. Here's exactly what we promise:</p>
+        <h3>Our <em>Migration Service</em> Guarantee</h3>
+        <p>Every Magento to Shopify migration service engagement comes with our written guarantee. If anything is
+          missing or incorrect post-migration, we fix it immediately at no cost.</p>
         <ul class="guarantee-list">
           <li><span class="g-tick">✓</span>100% data integrity — every product, order, and customer account verified
             post-migration</li>
@@ -2143,10 +2172,10 @@
 
   <!-- PROCESS -->
   <section id="process" class="process">
-    <div class="section-tag">Migration Process</div>
-    <h2>Our Proven <em>Magento to Shopify</em> Migration Process</h2>
-    <p class="section-sub">A structured, risk-free process used across 200+ Magento migrations — designed to minimise
-      risk, preserve every data point, and get you live on Shopify without impacting your business.</p>
+    <div class="section-tag">Our Migration Service Process</div>
+    <h2>How Our <em>Magento to Shopify Migration Service</em> Works</h2>
+    <p class="section-sub">A proven 6-step migration service process used across 200+ Magento projects — designed to
+      minimise risk, preserve every data point, and get you live on Shopify without impacting your business.</p>
     <div class="process-2col">
       <div class="process-timeline">
         <div class="proc-item">
@@ -2273,9 +2302,9 @@
           <div
             style="font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:1.6rem;color:var(--white);line-height:1;margin-bottom:6px;">
             Free Audit</div>
-          <div style="font-size:.85rem;color:white;margin-bottom:16px;">Get your migration plan in 24 hours
+          <div style="font-size:.85rem;color:rgba(0,0,0,0.65);margin-bottom:16px; color: white;">Get your migration plan in 24 hours
           </div>
-          <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center; background:white; color:var(--green)">Start
+          <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center; background: white; color:var(--green)">Start
             Now →</a>
         </div>
       </div>
@@ -2284,11 +2313,11 @@
 
   <!-- WHY US -->
   <section class="why">
-    <div class="section-tag">Why StoreCartify</div>
-    <h2>Why Choose Us for Your <em>Magento to Shopify Migration?</em></h2>
+    <div class="section-tag">Why Choose Our Migration Service</div>
+    <h2>Why StoreCartify is the Right <em>Magento to Shopify Migration Service</em></h2>
     <p class="section-sub">There are plugins that claim to automate Magento migration. We've seen what happens when
-      they're used — missed data, broken URLs, lost rankings. We do it right, manually verified, with a human expert on
-      your project from day one.</p>
+      they're used — missed data, broken URLs, lost rankings. Our migration service does it right, manually verified,
+      with a dedicated expert on your project from day one.</p>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">🏆</div>
@@ -2337,11 +2366,11 @@
   <section class="mid-cta">
     <div class="mid-cta-inner">
       <div>
-        <div class="mid-cta-badge">✦ Magento to Shopify Experts</div>
-        <h2 class="mid-cta-heading">Ready to leave Magento behind — for good?</h2>
-        <p class="mid-cta-sub">Join 200+ merchants who've made the switch from Magento to Shopify with StoreCartify. Get
-          your free, detailed migration audit — we'll tell you exactly what's involved, how long it takes, and the fixed
-          price to do it right.</p>
+        <div class="mid-cta-badge">✦ Magento to Shopify Migration Service</div>
+        <h2 class="mid-cta-heading">Ready to use a migration service that gets it right?</h2>
+        <p class="mid-cta-sub">Join 200+ brands who've used StoreCartify's Magento to Shopify migration service. Get
+          your free audit — we'll tell you exactly what's involved, how long it takes, and the fixed price for your
+          specific project.</p>
         <ul class="mid-cta-list">
           <li><span class="mid-cta-tick">✓</span> Free Magento audit and migration plan in 24 hours</li>
           <li><span class="mid-cta-tick">✓</span> 100% data integrity — guaranteed in writing</li>
@@ -2488,6 +2517,7 @@
     </div>
   </section>
 
+
   <!-- TESTIMONIALS -->
   <section class="testimonials">
     <div class="section-tag">Client Reviews</div>
@@ -2556,10 +2586,11 @@
     </div>
   </section>
 
+
   <!-- FAQ -->
   <section id="faq" class="faq">
     <div class="section-tag">FAQ</div>
-    <h2>Magento to Shopify Migration <em>— Your Questions Answered</em></h2>
+    <h2>Magento to Shopify Migration Service <em>— Questions Answered</em></h2>
     <div class="faq-layout">
       <div class="faq-list">
         <div class="faq-item open">
@@ -2619,9 +2650,9 @@
         </div>
       </div>
       <div class="faq-cta-panel">
-        <h3>Still unsure about<br><em>your migration?</em></h3>
-        <p>Book a free 30-minute call with a Magento migration expert. We'll look at your store, answer every question,
-          and give you an honest assessment — no sales pressure, no obligation to proceed.</p>
+        <h3>Questions about our<br><em>migration service?</em></h3>
+        <p>Book a free 30-minute call with a Magento migration service expert. We'll review your store, answer every
+          question, and give you an honest timeline and cost estimate — no obligation to proceed.</p>
         <ul>
           <li>Free Magento store audit</li>
           <li>Fixed-price quote within 24 hours</li>
@@ -2638,11 +2669,11 @@
   <div class="contact-section" id="contact">
     <div class="contact-inner">
       <div>
-        <div class="section-tag">Start Your Migration</div>
-        <h2>Get Your Free <em>Magento to Shopify Migration Audit</em></h2>
-        <p class="contact-sub">Tell us about your Magento store and we'll send you a free, detailed migration plan —
-          including what data we'll transfer, how we'll preserve your SEO, how long it'll take, and the fixed price. No
-          obligation, no pressure.</p>
+        <div class="section-tag">Start Your Migration Service</div>
+        <h2>Get a Free Quote for Our <em>Magento to Shopify Migration Service</em></h2>
+        <p class="contact-sub">Tell us about your Magento store and we'll send you a free, detailed migration service
+          plan — including what data we'll transfer, how we'll preserve your SEO, how long it'll take, and the fixed
+          price. No obligation, no pressure.</p>
         <ul class="contact-trust">
           <li><span class="ctick">✓</span> Free detailed Magento audit within 24 hours</li>
           <li><span class="ctick">✓</span> Fixed-price quote — no hourly billing, no surprises</li>
@@ -2668,7 +2699,7 @@
       </div>
       <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
       data-drip-embedded-form="330315483" id="drip-ef-330315483">
-      <h4>Book your FREE 30-minute Migration Audit today</h4>
+      <h4>Tell Us About Your Magento Migration Service Needs</h4>
       <p>We'll match you with the right Shopify developer within 24 hours.</p>
       <div class="form-row-2">
         <div class="form-group">
@@ -2695,7 +2726,7 @@
       <input type="hidden" id="hidden-landing-page-2" name="fields[landing_page]" value="">
 
 
-      <input type="submit" value="Get A Free Quote →" data-drip-attribute="sign-up-button" class="form-submit"
+      <input type="submit" value="Request My Migration Service Quote →" data-drip-attribute="sign-up-button" class="form-submit"
         class="form-submit">
       <p class="form-note">🔒 Your information is 100% confidential.</p>
     </form>
@@ -2708,8 +2739,8 @@
       <div class="footer-logo">
         <img src="../assets/storecartify-logo.webp" alt="">
       </div>
-      <p>Expert Magento to Shopify migration service. 200+ migrations completed. 100% data preserved, zero SEO loss,
-        zero downtime — guaranteed in writing.</p>
+      <p>Certified Magento to Shopify migration service. 200+ migrations completed with 100% data preserved, zero SEO
+        loss, and zero downtime — Magento 1, 2 & Adobe Commerce all supported.</p>
     </div>
     <div class="footer-col">
       <h4>Migration Services</h4>
@@ -2738,7 +2769,7 @@
     </div>
   </footer>
   <div class="footer-bottom">
-    <p>© 2026 StoreCartify. All rights reserved. Magento to Shopify Migration Experts.</p>
+    <p>© 2025 StoreCartify. All rights reserved. Certified Magento to Shopify Migration Service.</p>
     <p class="disclaimer">StoreCartify is an independent Shopify Partner agency and is not affiliated with Shopify Inc.
       or Adobe / Magento Inc.</p>
   </div>
