@@ -1,0 +1,2923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W9TG9P5S');</script>
+  <!-- End Google Tag Manager -->
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordPress to Shopify Migration | Expert Migration Service | StoreCartify</title>
+  <meta name="description"
+    content="Migrate from WordPress to Shopify with zero data loss, zero downtime & zero SEO impact. StoreCartify has completed 250+ WordPress to Shopify migrations. Free audit in 24 hours.">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+      <link rel="icon" href="../assets/store-icon.png">
+
+  <style>
+    :root {
+      --green: #004c3f;
+      --green-light: #006654;
+      --green-dim: rgba(0, 76, 63, 0.08);
+      --green-border: rgba(0, 76, 63, 0.25);
+      --yellow: #FFC001;
+      --yellow-dim: rgba(255, 192, 1, 0.15);
+      --dark: #1a1a1a;
+      --body-bg: #fbf7ed;
+      --white: #ffffff;
+      --text: #333333;
+      --muted: #666666;
+      --light-border: #e5e0d4
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--body-bg);
+      color: var(--text);
+      font-family: 'Nunito Sans', -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(1.5)
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes scrollLogo {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* NAV */
+    nav {
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--body-bg);
+      border-bottom: 1px solid var(--light-border);
+      padding: 14px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .logo {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .logo img {
+      width: auto;
+      height: 70px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+      transition: color .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--green)
+    }
+
+    .nav-cta {
+      background: var(--green);
+      color: var(--white);
+      font-weight: 700;
+      font-size: .88rem;
+      padding: 10px 22px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      white-space: nowrap
+    }
+
+    .nav-cta:hover {
+      background: var(--green-light);
+      transform: translateY(-1px)
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      padding: 80 5vw 80px;
+      background: var(--body-bg);
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero-bg-dots {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: radial-gradient(rgba(0, 76, 63, 0.06) 1.5px, transparent 1.5px);
+      background-size: 28px 28px
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 76, 63, 0.08);
+      border: 1px solid rgba(0, 76, 63, 0.2);
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      animation: fadeUp .5s ease both
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 1.8s ease infinite
+    }
+
+    h1 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+      margin-bottom: 20px;
+      animation: fadeUp .6s .1s ease both
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--green)
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      animation: fadeUp .6s .2s ease both
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fadeUp .6s .3s ease both
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit
+    }
+
+    .btn-primary:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 76, 63, .2)
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--green);
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      border: 2px solid var(--green);
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .btn-ghost:hover {
+      background: var(--green);
+      color: var(--white)
+    }
+
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+      animation: fadeUp .6s .4s ease both
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .check-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--green);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0
+    }
+
+    .check-item span {
+      font-size: .85rem;
+      color: var(--muted);
+      font-weight: 600
+    }
+
+    /* HERO FORM */
+    .hero-form-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 1;
+      animation: fadeUp .7s .15s ease both;
+      height: 500px;
+    }
+
+    .hero-form-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .hero-form-card>p {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .74rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: .03em;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1.5px solid var(--light-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .87rem;
+      color: var(--text);
+      background: #fafaf8;
+      transition: border-color .2s;
+      outline: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--green);
+      background: #fff;
+    }
+
+    .form-group textarea {
+      height: 80px;
+      resize: none;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      font-family: inherit;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 13px;
+      border: none;
+      border-radius: 9rem;
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 4px;
+    }
+
+    .form-submit:hover {
+      background: var(--green-light);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      font-size: .72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--light-border);
+      padding: 28px 5vw;
+      display: flex;
+      justify-content: center
+    }
+
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 20px;
+      border-right: 1px solid var(--light-border)
+    }
+
+    .stat-item:last-child {
+      border-right: none
+    }
+
+    .stat-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--green);
+      letter-spacing: -0.03em;
+      line-height: 1
+    }
+
+    .stat-label {
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+   /* LOGO STRIP */
+    .logos-strip {
+      background: var(--green);
+      padding: 28px 0;
+      border-bottom: 1.5px solid var(--light-border);
+      overflow: hidden;
+    }
+
+    .logos-strip p {
+      text-align: center;
+      font-size: 45px;
+      font-weight: 800;
+    
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .logos-strip img{
+      display: block;
+      margin: 0px auto;
+      width: 80%;
+    }
+    .logos-strip .mobile-img{
+      display: none;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 88px 5vw
+    }
+
+    .section-tag {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px
+    }
+
+    .section-tag::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--green);
+      border-radius: 2px
+    }
+
+    h2 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 14px
+    }
+
+    h2 em {
+      font-style: normal;
+      color: var(--green)
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 580px;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 52px
+    }
+
+    /* COMPARISON TABLE */
+    .comparison {
+      background: var(--white)
+    }
+
+    .comp-wrap {
+      overflow-x: auto
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      overflow: hidden;
+      font-size: .9rem
+    }
+
+    .comp-table thead tr {
+      background: var(--green)
+    }
+
+    .comp-table th {
+      padding: 16px 20px;
+      text-align: left;
+      font-weight: 800;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--white)
+    }
+
+    .comp-table th:first-child {
+      color: rgba(255, 255, 255, 0.65)
+    }
+
+    .comp-table th.sh-col {
+      color: var(--yellow)
+    }
+
+    .comp-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--light-border);
+      vertical-align: top;
+      line-height: 1.6
+    }
+
+    .comp-table tr:last-child td {
+      border-bottom: none
+    }
+
+    .comp-table tr:nth-child(even) td {
+      background: var(--body-bg)
+    }
+
+    .feat-lbl {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: .9rem
+    }
+
+    .wp-val {
+      color: var(--muted);
+      font-size: .87rem
+    }
+
+    .sh-val {
+      color: var(--green);
+      font-weight: 700;
+      font-size: .87rem
+    }
+
+    .badge-g {
+      display: inline-block;
+      background: rgba(0, 76, 63, 0.1);
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px
+    }
+
+    .badge-w {
+      display: inline-block;
+      background: rgba(255, 192, 1, 0.2);
+      color: #7a5a00;
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px
+    }
+
+    /* WHAT WE MIGRATE */
+    .what-migrate {
+      background: var(--body-bg)
+    }
+
+    .m2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start
+    }
+
+    .m-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px
+    }
+
+    .mi {
+      background: var(--white);
+      border: 1.5px solid var(--light-border);
+      border-radius: 14px;
+      padding: 20px 18px;
+      transition: all .2s
+    }
+
+    .mi:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 18px rgba(0, 76, 63, .08);
+      transform: translateY(-2px)
+    }
+
+    .mi-icon {
+      font-size: 1.4rem;
+      margin-bottom: 10px
+    }
+
+    .mi-title {
+      font-weight: 800;
+      font-size: .9rem;
+      color: var(--dark);
+      margin-bottom: 4px
+    }
+
+    .mi-desc {
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.6
+    }
+
+    .m-panel {
+      background: var(--green);
+      border-radius: 20px;
+      padding: 36px 32px
+    }
+
+    .m-panel h3 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.3
+    }
+
+    .m-panel h3 em {
+      color: var(--white);
+      font-style: normal
+    }
+
+    .m-panel p {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 24px;
+      line-height: 1.7
+    }
+
+    .g-list {
+      list-style: none
+    }
+
+    .g-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: .88rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6
+    }
+
+    .g-list li:last-child {
+      border-bottom: none
+    }
+
+    .g-tick {
+      width: 20px;
+      height: 20px;
+      background: var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: .65rem;
+      font-weight: 900;
+      color: var(--dark);
+      margin-top: 2px
+    }
+
+    .p-cta {
+      display: block;
+      text-align: center;
+      background: var(--white);
+      color: var(--green);
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      margin-top: 24px
+    }
+
+    .p-cta:hover {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      transform: translateY(-1px)
+    }
+
+    /* PAIN POINTS */
+    .pain-points {
+      background: var(--white)
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .pain-card {
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      background: var(--body-bg);
+      transition: all .25s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--light-border);
+      transition: background .25s
+    }
+
+    .pain-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 6px 24px rgba(0, 76, 63, .09);
+      transform: translateY(-3px);
+      background: var(--white)
+    }
+
+    .pain-card:hover::before {
+      background: var(--green)
+    }
+
+    .pain-icon {
+      font-size: 1.5rem;
+      margin-bottom: 14px
+    }
+
+    .pain-card h3 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 8px
+    }
+
+    .pain-card p {
+      font-size: .86rem;
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    /* PROCESS */
+    .process {
+      background: var(--body-bg)
+    }
+
+    .proc-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start
+    }
+
+    .proc-timeline {
+      position: relative
+    }
+
+    .proc-timeline::before {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 28px;
+      bottom: 28px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green), var(--green-light))
+    }
+
+    .proc-item {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      position: relative
+    }
+
+    .proc-item:last-child {
+      margin-bottom: 0
+    }
+
+    .proc-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 3px solid var(--body-bg);
+      box-shadow: 0 4px 16px rgba(0, 76, 63, .2);
+      position: relative;
+      z-index: 1
+    }
+
+    .proc-body {
+      background: var(--white);
+      border: 1.5px solid var(--light-border);
+      border-radius: 14px;
+      padding: 22px 26px;
+      flex: 1;
+      transition: all .2s
+    }
+
+    .proc-body:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 20px rgba(0, 76, 63, .08)
+    }
+
+    .proc-body h3 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 6px
+    }
+
+    .proc-body p {
+      font-size: .87rem;
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    .proc-tag {
+      display: inline-block;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 10px
+    }
+
+    .aside-sticky {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px
+    }
+
+    .aside-card {
+      background: var(--white);
+      border: 1.5px solid var(--light-border);
+      border-radius: 18px;
+      padding: 28px 24px
+    }
+
+    .aside-card h4 {
+      font-weight: 800;
+      font-size: .95rem;
+      color: var(--dark);
+      margin-bottom: 16px
+    }
+
+    .tbar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px
+    }
+
+    .tbar-row:last-child {
+      margin-bottom: 0
+    }
+
+    .tbar-label {
+      color: var(--muted);
+      font-weight: 600;
+      width: 110px;
+      flex-shrink: 0;
+      font-size: .8rem
+    }
+
+    .tbar-track {
+      flex: 1;
+      height: 6px;
+      background: var(--light-border);
+      border-radius: 3px;
+      overflow: hidden
+    }
+
+    .tbar-fill {
+      height: 100%;
+      background: var(--green);
+      border-radius: 3px
+    }
+
+    .tbar-val {
+      color: var(--green);
+      font-weight: 800;
+      font-size: .8rem;
+      width: 56px;
+      text-align: right
+    }
+
+    .plugin-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .87rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--light-border)
+    }
+
+    .plugin-row:last-child {
+      border-bottom: none
+    }
+
+    .plugin-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0
+    }
+
+    .plugin-name {
+      font-weight: 700;
+      color: var(--dark)
+    }
+
+    .plugin-note {
+      font-size: .75rem;
+      color: var(--muted)
+    }
+
+    /* WHY US */
+    .why {
+      background: var(--white)
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .why-card {
+      background: var(--body-bg);
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: all .25s
+    }
+
+    .why-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 6px 24px rgba(0, 76, 63, .08);
+      transform: translateY(-3px);
+      background: var(--white)
+    }
+
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--yellow-dim);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      font-size: 1.3rem
+    }
+
+    .why-card h3 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 8px
+    }
+
+    .why-card p {
+      font-size: .86rem;
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    /* MID CTA */
+    .mid-cta {
+      background: var(--green);
+      padding: 80px 5vw
+    }
+
+    .mid-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .mid-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(0, 76, 63, 0.1);
+      border: 1px solid rgba(0, 76, 63, 0.2);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 100px;
+      margin-bottom: 20px
+    }
+
+    .mid-heading {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      margin-bottom: 16px
+    }
+
+    .mid-sub {
+      font-size: .98rem;
+      color: white;
+      line-height: 1.75;
+      margin-bottom: 28px
+    }
+
+    .mid-list {
+      list-style: none;
+      margin-bottom: 36px
+    }
+
+    .mid-list li {
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--white);
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .mid-list li:last-child {
+      border-bottom: none
+    }
+
+    .mid-tick {
+      width: 22px;
+      height: 22px;
+      background: var(--white);
+      color: var(--green);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .7rem;
+      font-weight: 900;
+      flex-shrink: 0
+    }
+
+    .mid-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .mid-btn-p {
+      background: var(--white);
+      color: var(--green);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .mid-btn-p:hover {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      transform: translateY(-1px)
+    }
+
+    .mid-btn-g {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 28px;
+      border-radius: 9rem;
+      text-decoration: none;
+      border: 2px solid white;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+
+    .mid-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12)
+    }
+
+    .mid-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr)
+    }
+
+    .mid-stat {
+      text-align: center;
+      padding: 16px 8px;
+      border-right: 1px solid var(--light-border)
+    }
+
+    .mid-stat:last-child {
+      border-right: none
+    }
+
+    .mid-stat-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.9rem;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.02em
+    }
+
+    .mid-stat-label {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .mid-divider {
+      height: 1px;
+      background: var(--light-border);
+      margin: 24px 0
+    }
+
+    .mid-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .mid-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text)
+    }
+
+    .mid-trust-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green-dim);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0
+    }
+
+    /* RESULTS */
+    .results {
+      background: var(--body-bg)
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px
+    }
+
+    .res-card {
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all .3s;
+      background: var(--white)
+    }
+     .res-card .img-card{
+      width: 100%;
+      height: auto;
+    }
+    .res-card .img-card img{
+      width: 100%;
+      height: 100%;
+    }
+
+    
+
+    .res-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 10px 36px rgba(0, 76, 63, .12);
+      transform: translateY(-4px)
+    }
+
+    .res-header {
+      padding: 28px 28px 20px;
+      background: var(--body-bg);
+      border-bottom: 1.5px solid var(--light-border)
+    }
+
+    .res-client {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 6px
+    }
+
+    .res-header h4 {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 12px
+    }
+
+    .res-metrics {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .metric {
+      text-align: center
+    }
+
+    .metric-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.02em
+    }
+
+    .metric-label {
+      font-size: .65rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: .04em
+    }
+
+    .res-body {
+      padding: 20px 28px 24px
+    }
+
+    .res-body p {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 14px
+    }
+
+    .res-tag {
+      display: inline-block;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 100px
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--body-bg);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .testi-card {
+      background: var(--white);
+      border: 1.5px solid var(--light-border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      position: relative;
+      transition: all .25s;
+    }
+
+    .testi-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 6px 24px rgba(0, 76, 63, .08);
+    }
+
+    .testi-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--green);
+      opacity: .1;
+      line-height: .8;
+    }
+
+    .stars {
+      color: var(--yellow);
+      font-size: .85rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .testi-text {
+      font-size: .93rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 22px;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .9rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+       .testi-avatar img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+     .testi-author .anna{
+      background-color: white;
+    }
+
+    .testi-avatar img:last-child{
+      background: transparent !important;
+    }
+
+    .testi-name {
+      font-weight: 800;
+      font-size: .88rem;
+      color: var(--dark);
+    }
+
+    .testi-role {
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--white)
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start
+    }
+
+    .faq-item {
+      border-bottom: 1.5px solid var(--light-border)
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 20px 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px
+    }
+
+    .faq-q:hover {
+      color: var(--green)
+    }
+
+    .faq-icon {
+      font-size: 1.3rem;
+      color: var(--green);
+      flex-shrink: 0;
+      transition: transform .25s;
+      line-height: 1
+    }
+
+    .faq-a {
+      display: none;
+      padding-bottom: 18px;
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    .faq-item.open .faq-a {
+      display: block
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg)
+    }
+
+    .faq-cta-panel {
+      background: var(--green);
+      border-radius: 20px;
+      padding: 40px 36px;
+      position: sticky;
+      top: 100px
+    }
+
+    .faq-cta-panel h3 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.3
+    }
+
+    .faq-cta-panel h3 em {
+      font-style: normal;
+      color: var(--white)
+    }
+
+    .faq-cta-panel p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: .88rem;
+      margin-bottom: 24px;
+      line-height: 1.7
+    }
+
+    .faq-cta-panel ul {
+      list-style: none;
+      margin-bottom: 28px
+    }
+
+    .faq-cta-panel ul li {
+      font-size: .86rem;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      line-height: 1.5
+    }
+
+    .faq-cta-panel ul li::before {
+      content: '✓';
+      color: var(--white);
+      font-weight: 900;
+      flex-shrink: 0
+    }
+
+    .faq-cta-panel ul li:last-child {
+      border-bottom: none
+    }
+
+    .faq-cta-btn {
+      display: block;
+      text-align: center;
+      background: var(--white);
+      color: var(--dark);
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 14px;
+      border-radius: 9rem;
+      text-decoration: none;
+      transition: all .2s
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--body-bg);
+      padding: 88px 5vw;
+      border-top: 1.5px solid var(--light-border)
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start
+    }
+
+    .contact-sub {
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.75;
+      margin-bottom: 32px
+    }
+
+    .contact-trust {
+      list-style: none;
+      margin-bottom: 36px
+    }
+
+    .contact-trust li {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--light-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.5
+    }
+
+    .contact-trust li:last-child {
+      border-bottom: none
+    }
+
+    .ctick {
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .72rem;
+      font-weight: 900;
+      flex-shrink: 0
+    }
+
+    .contact-stats {
+      display: flex;
+      border: 1.5px solid var(--light-border);
+      border-radius: 14px;
+      overflow: hidden
+    }
+
+    .cs-item {
+      flex: 1;
+      text-align: center;
+      padding: 18px 12px;
+      border-right: 1.5px solid var(--light-border);
+      background: var(--white)
+    }
+
+    .cs-item:last-child {
+      border-right: none
+    }
+
+    .cs-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.7rem;
+      color: var(--green);
+      letter-spacing: -0.03em;
+      line-height: 1
+    }
+
+    .cs-label {
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    .cf-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px;
+      border: 1.5px solid var(--light-border);
+      box-shadow: 0 8px 40px rgba(0, 76, 63, .07)
+    }
+
+    .cf-card h4 {
+      font-size: .95rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 16px;
+      line-height: 1.5
+    }
+
+    .cf-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .cf-group {
+      margin-bottom: 10px
+    }
+
+    .cf-group label {
+      display: block;
+      font-size: .74rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: .03em;
+      text-transform: uppercase
+    }
+
+    .cf-group input,
+    .cf-group textarea,
+    .cf-group select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1.5px solid var(--light-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .87rem;
+      color: var(--text);
+      background: var(--body-bg);
+      transition: border-color .2s;
+      outline: none;
+      appearance: none
+    }
+
+    .cf-group input:focus,
+    .cf-group textarea:focus,
+    .cf-group select:focus {
+      border-color: var(--green);
+      background: var(--white)
+    }
+
+    .cf-group textarea {
+      height: 80px;
+      resize: none
+    }
+
+    .cf-submit {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      font-family: inherit;
+      font-weight: 800;
+      font-size: .95rem;
+      padding: 13px;
+      border: none;
+      border-radius: 9rem;
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 6px
+    }
+
+    .cf-submit:hover {
+      background: var(--green-light);
+      transform: translateY(-1px)
+    }
+
+    .cf-note {
+      font-size: .73rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 8px
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--green);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 60px 5vw 24px;
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 48px
+    }
+
+    .footer-logo img{
+      filter: brightness(0) invert(1) ;
+    }
+
+    .footer-brand p {
+      font-size: .85rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6)
+    }
+
+    .footer-col h4 {
+      font-weight: 800;
+      font-size: .85rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: .04em
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: .83rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: color .2s
+    }
+
+    .footer-col a:hover {
+      color: var(--white)
+    }
+
+    .footer-bottom {
+      background: var(--green);
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      padding: 20px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .footer-bottom p {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, 0.45)
+    }
+
+    .disclaimer {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, 0.35);
+      max-width: 480px;
+      text-align: right
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px) {
+      .proc-2col {
+        grid-template-columns: 1fr
+      }
+      .logos-strip p{
+        font-size: 30px !important;
+        line-height: 1;
+        text-align: left;
+        margin: 0px;
+        margin-left: 60px !important;
+      }
+
+      .aside-sticky {
+        position: static
+      }
+    }
+
+    @media(max-width:900px) {
+
+      nav .logo img{
+        width: 200px;
+        height: auto;
+      }
+      .hero,
+      .m2col,
+      .mid-inner,
+      .contact-inner,
+      .faq-layout {
+        grid-template-columns: 1fr
+      }
+
+      .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display: block;
+        margin: 0px auto;
+        width: 100%;
+      }
+      .stats-bar {
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--light-border);
+        padding: 12px 0;
+        width: 100%;
+      }
+        .nav-cta{
+        font-size: 10px;
+        padding: 5px 10px;
+        text-align: center;
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+        display: none;
+      }
+      .stat-item .stat-num{
+        font-size: 25px;
+      }
+      .stat-item .stat-label{
+        font-size: 10px;
+      }
+      .logos-strip p{
+        font-size: 25px;
+        line-height: 1;
+        text-align: left;
+        margin: 10px;
+      }
+
+      .pain-grid,
+      .why-grid,
+      .res-grid,
+      footer {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .testi-grid,
+      .m-items {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .faq-cta-panel {
+        position: static
+      }
+
+      .cf-row {
+        grid-template-columns: 1fr
+      }
+      .platforms-grid,
+      .why-grid,
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      footer {
+        grid-template-columns: 1fr ;
+      }
+    }
+
+    @media(max-width:600px) {
+      .nav-links {
+        display: none
+      }
+
+      .stats-bar {
+        flex-wrap: wrap
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--light-border);
+        padding: 12px 0
+      }
+
+      .stat-item:last-child {
+        border-bottom: none
+      }
+
+      .pain-grid,
+      .why-grid,
+      .res-grid,
+      .m-items,
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+
+      footer {
+        grid-template-columns: 1fr 
+      }
+
+      .form-row-2,
+      .cf-row {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+<a href="https://storecartify.com" class="logo">
+      <img src="../assets/storecartify-logo.webp" alt="">
+    </a>    <ul class="nav-links">
+      <li><a href="#why-migrate">Why Switch</a></li>
+      <li><a href="#what-we-migrate">What We Migrate</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Free Migration Audit</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-dots"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">✦ WordPress to Shopify Migration Experts</div>
+      <h1><em>WordPress to Shopify Migration</em> — Your Content, Products & SEO. All Moved Safely.</h1>
+      <p class="hero-desc">StoreCartify has completed 250+ WordPress to Shopify migrations — moving stores, blogs, and
+        eCommerce sites of every size with 100% data integrity, zero SEO ranking loss, and zero downtime. We migrate
+        your products, pages, blog posts, customers, orders, and every URL — then hand you a faster, more scalable
+        Shopify store built to grow.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">🚀 Get a Free Migration Audit</a>
+        <a href="#process" class="btn-ghost">See How It Works</a>
+      </div>
+      <div class="trust-row">
+        <div class="check-item"><svg viewBox="0 0 16 16">
+            <polyline points="2,8 6,12 14,4" />
+          </svg><span>250+ WordPress Migrations</span></div>
+        <div class="check-item"><svg viewBox="0 0 16 16">
+            <polyline points="2,8 6,12 14,4" />
+          </svg><span>100% Data Guarantee</span></div>
+        <div class="check-item"><svg viewBox="0 0 16 16">
+            <polyline points="2,8 6,12 14,4" />
+          </svg><span>Zero SEO Ranking Loss</span></div>
+      </div>
+    </div>
+    <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
+      data-drip-embedded-form="330315483" id="drip-ef-330315483">
+      <h4>Book your FREE 30-minute Migration Audit today</h4>
+      <p>We'll match you with the right Shopify developer within 24 hours.</p>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="John Smith" id="drip-full-name" name="fields[full_name]" value="" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@company.com" id="drip-email" name="fields[email]" value="" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" placeholder="Your Company" id="drip-company-name" name="fields[company_name]" value="" required>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Briefly describe your project or requirements..." id="drip-message"
+          name="fields[message]" required></textarea>
+      </div>
+
+      <input type="hidden" id="hidden-source" name="fields[utm_source]" value="">
+      <input type="hidden" id="hidden-campaign" name="fields[utm_campaign]" value="">
+      <input type="hidden" id="hidden-landing-page" name="fields[landing_page]" value="">
+
+
+      <input type="submit" value="Get A Free Quote →" data-drip-attribute="sign-up-button" class="form-submit"
+        class="form-submit">
+      <p class="form-note">🔒 Your information is 100% confidential.</p>
+    </form>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">250+</div>
+      <div class="stat-label">WP Migrations Done</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Data Preserved</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0%</div>
+      <div class="stat-label">SEO Ranking Loss</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Client Satisfaction</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">30 Days</div>
+      <div class="stat-label">Post-Launch Support</div>
+    </div>
+  </div>
+<div class="logos-strip">
+    <p>Brands We've Migrated To Shopify</p>
+    <div style="overflow:hidden">
+      <img src="../assets/clients.png" class="desktop-img" alt="">
+      <img src="../assets/client-mobile.png" class="mobile-img" alt="">
+    </div>
+  </div>
+  <!-- WHY SWITCH -->
+  <section id="why-migrate" class="comparison">
+    <div class="section-tag">WordPress vs Shopify</div>
+    <h2>Why Merchants Are Leaving <em>WordPress for Shopify</em></h2>
+    <p class="section-sub">WordPress is the world's most popular CMS — but for running an online store, it carries
+      significant hidden costs in hosting, security, plugin management, and developer time. Here's the honest comparison
+      for eCommerce and content-led businesses.</p>
+    <div class="comp-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="width:22%">Feature</th>
+            <th style="width:39%">WordPress</th>
+            <th class="sh-col" style="width:39%; color:white">Shopify ✦</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feat-lbl">Hosting & Server Management</td>
+            <td class="wp-val">Self-hosted — you choose, configure, and manage your own server. A misconfigured host
+              means a slow site, downtime, and lost Google rankings. <span class="badge-w">Self-managed</span></td>
+            <td class="sh-val">Fully managed global hosting with a built-in CDN, automatic SSL, and 99.99% uptime SLA.
+              No server management — ever. <span class="badge-g">Fully managed</span></td>
+          </tr>
+          <tr>
+            <td class="feat-lbl">Security & Updates</td>
+            <td class="wp-val">WordPress is the most targeted CMS in the world. Core updates, plugin updates, and theme
+              updates must all be managed — missing one can expose your site to attack</td>
+            <td class="sh-val">Shopify is PCI Level 1 compliant. All security patches are applied automatically. You
+              never worry about WordPress vulnerabilities again. <span class="badge-g">PCI Level 1</span></td>
+          </tr>
+          <tr>
+            <td class="feat-lbl">eCommerce Performance</td>
+            <td class="wp-val">WooCommerce on WordPress is capable — but checkout performance depends heavily on theme,
+              hosting, and plugin stack. Mobile CVR typically lags behind native eCommerce platforms</td>
+            <td class="sh-val">Shopify was built exclusively for eCommerce. Native checkout converts 36% better than
+              average. Shop Pay, Apple Pay, and Buy Now Pay Later all built in. <span class="badge-g">+36% CVR
+                avg</span></td>
+          </tr>
+          <tr>
+            <td class="feat-lbl">Page Speed & Core Web Vitals</td>
+            <td class="wp-val">WordPress page speed depends entirely on your host, theme, and plugins. Many WordPress
+              stores fail Core Web Vitals — hurting SEO and conversions</td>
+            <td class="sh-val">Shopify's global CDN, performance-optimised themes, and lazy loading deliver fast load
+              times by default. Better Core Web Vitals = better rankings. <span class="badge-g">Faster default</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="feat-lbl">Plugin & Theme Conflicts</td>
+            <td class="wp-val">WordPress sites regularly break after plugin updates — especially sites running 20+
+              plugins. Diagnosing and fixing conflicts requires ongoing developer time and cost</td>
+            <td class="sh-val">8,000+ Shopify apps with managed compatibility. Install or uninstall with one click — no
+              code conflicts, no broken sites after an update. <span class="badge-g">8,000+ apps</span></td>
+          </tr>
+          <tr>
+            <td class="feat-lbl">Scalability</td>
+            <td class="wp-val">WordPress/WooCommerce infrastructure requires expensive upgrades and careful
+              configuration to handle traffic spikes. Many sites crash during peak events</td>
+            <td class="sh-val">Shopify autoscales globally — handling Black Friday spikes, viral social traffic, or
+              sustained high volume without any infrastructure changes on your part. <span
+                class="badge-g">Auto-scales</span></td>
+          </tr>
+          <tr>
+            <td class="feat-lbl">Blog & Content Features</td>
+            <td class="wp-val">WordPress is the gold standard for blogging — Gutenberg editor, categories, tags,
+              authors, and a vast ecosystem of content plugins. It's genuinely excellent for content</td>
+            <td class="sh-val">Shopify's blog is capable — posts, tags, authors, and comments — with your Yoast SEO data
+              migrated. For content-heavy sites, we use a headless approach if needed. <span class="badge-g">Yoast
+                migrated</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Start My WordPress Migration →</a>
+      <a href="#process" class="btn-ghost">See Our Migration Process</a>
+    </div>
+  </section>
+
+  <!-- WHAT WE MIGRATE -->
+  <section id="what-we-migrate" class="what-migrate">
+    <div class="section-tag">What We Transfer</div>
+    <h2>Everything From WordPress. <em>Rebuilt Perfectly in Shopify.</em></h2>
+    <p class="section-sub">Our WordPress to Shopify migration covers every data type — from WooCommerce products and
+      customer accounts to WordPress blog posts, Yoast SEO meta data, custom post types, ACF fields, and plugin
+      functionality rebuilt as Shopify apps.</p>
+    <div class="m2col">
+      <div class="m-items">
+        <div class="mi">
+          <div class="mi-icon">📦</div>
+          <div class="mi-title">Products & Variations</div>
+          <div class="mi-desc">All WooCommerce products, variable products, SKUs, product images, and custom attribute
+            data — migrated with variation structures intact in Shopify.</div>
+        </div>
+        <div class="mi">
+          <div class="mi-icon">✍️</div>
+          <div class="mi-title">Blog Posts & Pages</div>
+          <div class="mi-desc">All WordPress posts, pages, featured images, categories, tags, and author data migrated
+            to Shopify — with images re-uploaded to Shopify's CDN.</div>
+        </div>
+        <div class="mi">
+          <div class="mi-icon">🔍</div>
+          <div class="mi-title">Yoast SEO Data</div>
+          <div class="mi-desc">All Yoast SEO meta titles, meta descriptions, and canonical tags migrated to Shopify's
+            native SEO fields — preserving every ranking signal on every page.</div>
+        </div>
+        <div class="mi">
+          <div class="mi-icon">🔗</div>
+          <div class="mi-title">URL Structure & Redirects</div>
+          <div class="mi-desc">Every WordPress URL — posts, products, categories, pages — mapped to Shopify with 301
+            redirects. Your Google rankings are protected from day one.</div>
+        </div>
+        <div class="mi">
+          <div class="mi-icon">👥</div>
+          <div class="mi-title">Customer Accounts</div>
+          <div class="mi-desc">All WooCommerce customer accounts, addresses, and order history migrated so your
+            customers can log in and browse their history immediately post-launch.</div>
+        </div>
+        <div class="mi">
+          <div class="mi-icon">🧾</div>
+          <div class="mi-title">Orders & Transactions</div>
+          <div class="mi-desc">Complete WooCommerce order history — statuses, line items, fulfilment data, and notes —
+            migrated for full support team visibility from launch day.</div>
+        </div>
+        <div class="mi">
+          <div class="mi-icon">🗃️</div>
+          <div class="mi-title">Custom Post Types & ACF</div>
+          <div class="mi-desc">WordPress custom post types and Advanced Custom Fields data restructured as Shopify
+            metafields and metaobjects — preserving your custom content architecture.</div>
+        </div>
+        <div class="mi">
+          <div class="mi-icon">⭐</div>
+          <div class="mi-title">Reviews & Comments</div>
+          <div class="mi-desc">WooCommerce product reviews migrated to your chosen Shopify reviews app. WordPress blog
+            comments can be migrated to Disqus or a Shopify comments equivalent.</div>
+        </div>
+      </div>
+      <div class="m-panel">
+        <h3>Our <em>WordPress Migration</em> Guarantee</h3>
+        <p>We put our guarantee in writing before we start. Every page, product, and post verified. Every URL
+          redirected. Any issue after launch fixed immediately — at no extra cost.</p>
+        <ul class="g-list">
+          <li><span class="g-tick">✓</span>100% data integrity — every post, product, order, and customer account
+            verified post-migration</li>
+          <li><span class="g-tick">✓</span>Zero SEO ranking loss — every WordPress URL mapped and 301 redirected before
+            go-live</li>
+          <li><span class="g-tick">✓</span>Yoast SEO meta data fully migrated to Shopify's native SEO fields</li>
+          <li><span class="g-tick">✓</span>Zero downtime — your WordPress site stays live throughout the entire
+            migration</li>
+          <li><span class="g-tick">✓</span>Staging store — you review and approve everything before we go live</li>
+          <li><span class="g-tick">✓</span>30 days free post-launch monitoring and issue resolution included</li>
+        </ul>
+        <a href="#contact" class="p-cta">Get My Free WordPress Audit →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORDPRESS PAIN POINTS -->
+  <section class="pain-points">
+    <div class="section-tag">Common WordPress Frustrations</div>
+    <h2>The WordPress Problems <em>Shopify Solves Permanently</em></h2>
+    <p class="section-sub">These are the exact reasons our WordPress clients come to us. If any of these sound familiar,
+      Shopify is almost certainly the right move.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">🛡️</div>
+        <h3>Constant Security Threats</h3>
+        <p>WordPress powers 43% of the web — making it the world's most attacked CMS. Every unpatched plugin is a
+          vulnerability. Shopify's fully managed infrastructure means you never think about security again.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔌</div>
+        <h3>Plugin Update Roulette</h3>
+        <p>Updating a WordPress plugin can break your checkout, your homepage, or your contact form — without warning.
+          Shopify's app ecosystem is built for compatibility. Update anything, break nothing.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💥</div>
+        <h3>Traffic Spike Crashes</h3>
+        <p>A featured press mention, viral post, or Black Friday sale crashes a WordPress site on shared hosting in
+          minutes. Shopify scales automatically — no configuration, no expensive server upgrades.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🐢</div>
+        <h3>Bloated Slow Sites</h3>
+        <p>WordPress sites accumulate plugin bloat over time — each one adding HTTP requests and database queries.
+          Shopify's lean architecture and CDN deliver consistently fast load times that WordPress rarely achieves
+          without significant optimization work.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📱</div>
+        <h3>Poor Mobile Checkout</h3>
+        <p>WooCommerce mobile checkout experience varies widely by theme and plugin combination. Shopify's native
+          checkout and Shop Pay deliver a consistently high-converting mobile experience — proven across millions of
+          stores.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🧑‍💻</div>
+        <h3>Never-Ending Dev Tasks</h3>
+        <p>WordPress generates a constant stream of developer tasks — plugin conflicts, server tuning, theme updates,
+          security patches. Shopify's managed platform eliminates most of this overhead, freeing your budget for
+          marketing and growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="process">
+    <div class="section-tag">Migration Process</div>
+    <h2>Our Proven <em>WordPress to Shopify</em> Migration Process</h2>
+    <p class="section-sub">A structured, zero-risk process used across 250+ WordPress migrations — designed to protect
+      every post, product, and page, preserve your SEO rankings, and get you live on Shopify without your WordPress site
+      missing a single visitor.</p>
+    <div class="proc-2col">
+      <div class="proc-timeline">
+        <div class="proc-item">
+          <div class="proc-num">01</div>
+          <div class="proc-body">
+            <h3>Free WordPress Site Audit</h3>
+            <p>We audit your WordPress site in full — posts, pages, products, custom post types, ACF fields, plugins,
+              URL structure, Yoast SEO data, and any WooCommerce setup. You receive a detailed migration plan and
+              fixed-price quote within 24 hours.</p>
+            <span class="proc-tag">Free · 24-hour turnaround · No obligation</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">02</div>
+          <div class="proc-body">
+            <h3>Shopify Store Setup & Theme</h3>
+            <p>We set up your new Shopify store — choosing or building the right theme, configuring essential apps to
+              replace your WordPress plugins, setting up your collection structure, and connecting your payment gateway.
+            </p>
+            <span class="proc-tag">Theme · Apps · Collections · Payment setup</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">03</div>
+          <div class="proc-body">
+            <h3>Full Content & Data Migration</h3>
+            <p>All data migrated to a staging Shopify store — products, customers, orders, blog posts, pages, ACF custom
+              fields, reviews, and Yoast SEO meta data. Your live WordPress site is completely untouched throughout this
+              phase.</p>
+            <span class="proc-tag">Staging only · Zero risk · Complete dataset</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">04</div>
+          <div class="proc-body">
+            <h3>SEO Redirect Mapping & Yoast Migration</h3>
+            <p>Every WordPress URL — posts, products, categories, pages, and tag archives — mapped to its Shopify
+              equivalent with 301 redirects. All Yoast meta titles and descriptions migrated to Shopify's SEO fields.
+              Full technical SEO audit run before launch.</p>
+            <span class="proc-tag">Yoast data · 301 redirects · Schema · Sitemap</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">05</div>
+          <div class="proc-body">
+            <h3>QA Testing & Your Sign-Off</h3>
+            <p>You get full access to the staging Shopify store — browse all products, read every blog post, test
+              checkout, log in as a customer, and review every page. We fix all issues before requesting your sign-off
+              to go live.</p>
+            <span class="proc-tag">Full QA · Client review · Sign-off before launch</span>
+          </div>
+        </div>
+        <div class="proc-item">
+          <div class="proc-num">06</div>
+          <div class="proc-body">
+            <h3>Go Live & 30-Day Monitoring</h3>
+            <p>DNS updated, final delta sync to capture content or orders added during the review period, then 30 days
+              of post-launch monitoring — catching redirect gaps, missing images, or integration issues at zero extra
+              cost.</p>
+            <span class="proc-tag">DNS cutover · Delta sync · 30-day free support</span>
+          </div>
+        </div>
+      </div>
+      <div class="aside-sticky">
+        <div class="aside-card">
+          <h4>Typical Migration Timelines</h4>
+          <div class="tbar-row"><span class="tbar-label">Small site</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:20%"></div>
+            </div><span class="tbar-val">1–2 wks</span>
+          </div>
+          <div class="tbar-row"><span class="tbar-label">Medium site</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:42%"></div>
+            </div><span class="tbar-val">2–4 wks</span>
+          </div>
+          <div class="tbar-row"><span class="tbar-label">Large catalogue</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:65%"></div>
+            </div><span class="tbar-val">4–8 wks</span>
+          </div>
+          <div class="tbar-row"><span class="tbar-label">Content-heavy</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:72%"></div>
+            </div><span class="tbar-val">4–8 wks</span>
+          </div>
+          <div class="tbar-row"><span class="tbar-label">Multisite / complex</span>
+            <div class="tbar-track">
+              <div class="tbar-fill" style="width:90%"></div>
+            </div><span class="tbar-val">8–14 wks</span>
+          </div>
+        </div>
+        <div class="aside-card">
+          <h4>WordPress Plugins We Replace</h4>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">Yoast SEO</span><span
+              class="plugin-note">→ data migrated to Shopify</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">WooCommerce</span><span
+              class="plugin-note">→ Shopify native commerce</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">ACF / Custom
+              Fields</span><span class="plugin-note">→ Shopify metafields</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">MemberPress</span><span
+              class="plugin-note">→ Bold / Firmhouse / native</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">Gravity Forms</span><span
+              class="plugin-note">→ Shopify form apps</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">WP Rocket /
+              Cache</span><span class="plugin-note">→ Shopify CDN (built-in)</span></div>
+          <div class="plugin-row"><span class="plugin-dot"></span><span class="plugin-name">Wordfence
+              Security</span><span class="plugin-note">→ Shopify managed security</span></div>
+        </div>
+        <div style="background:var(--green);border-radius:16px;padding:24px 20px;text-align:center;">
+          <div
+            style="font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:1.6rem;color:var(--white);line-height:1;margin-bottom:6px;">
+            Free Audit</div>
+          <div style="font-size:.85rem;color:white;margin-bottom:16px; ">Migration plan in 24 hours</div>
+          <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center; background:white; color:var(--green)">Get
+            Started →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why">
+    <div class="section-tag">Why StoreCartify</div>
+    <h2>Why Choose Us for Your <em>WordPress to Shopify Migration?</em></h2>
+    <p class="section-sub">WordPress migrations are nuanced — blog URLs, Yoast meta data, ACF custom fields, WooCommerce
+      product structures, and custom post types all require specialist handling. We've done 250+ of these and know every
+      edge case.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏆</div>
+        <h3>250+ WordPress Migrations</h3>
+        <p>WordPress is our second most common migration. We've moved simple WordPress blogs, full WooCommerce stores,
+          content-heavy media sites, membership sites, and complex multisite networks — all to Shopify.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📈</div>
+        <h3>Yoast SEO Fully Migrated — Guaranteed</h3>
+        <p>WordPress URL structures and Yoast meta data require specialist handling. We migrate every meta title, meta
+          description, and canonical tag, and 301 redirect every WordPress URL — your rankings are fully protected.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Your WordPress Site Stays Live</h3>
+        <p>Zero downtime throughout. Your WordPress site keeps serving visitors right up until you approve the staging
+          store and say go. Even then, a final sync catches any content published during the review period.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✍️</div>
+        <h3>Blog & Content Fully Preserved</h3>
+        <p>Every WordPress post, page, featured image, category, and tag migrated to Shopify — with internal links
+          re-mapped, images re-uploaded to Shopify's CDN, and all URLs redirected.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔌</div>
+        <h3>Plugins Replaced, Not Abandoned</h3>
+        <p>We audit every WordPress plugin and map it to a Shopify equivalent or rebuild the functionality natively.
+          Nothing critical gets left behind — Yoast, ACF, MemberPress, WooCommerce Subscriptions and more all handled.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔁</div>
+        <h3>30-Day Free Post-Launch Support</h3>
+        <p>We monitor your Shopify store for 30 days after launch — catching redirect gaps, missing images, or
+          integration issues and fixing them immediately at zero extra cost.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Get a Free Migration Audit</a>
+      <a href="#results" class="btn-ghost">See Our Results</a>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section class="mid-cta">
+    <div class="mid-inner">
+      <div>
+        <div class="mid-badge">✦ WordPress to Shopify Experts</div>
+        <h2 class="mid-heading">Ready to leave WordPress behind — for good?</h2>
+        <p class="mid-sub">Join 250+ merchants and content creators who've made the switch from WordPress to Shopify
+          with StoreCartify. Get your free migration audit — we'll tell you exactly what's involved, how long it takes,
+          and the fixed price.</p>
+        <ul class="mid-list">
+          <li><span class="mid-tick">✓</span> Free WordPress audit and migration plan in 24 hours</li>
+          <li><span class="mid-tick">✓</span> 100% data integrity guaranteed in writing</li>
+          <li><span class="mid-tick">✓</span> Zero downtime — WordPress stays live throughout</li>
+          <li><span class="mid-tick">✓</span> Fixed-price quote — no hourly billing, no surprises</li>
+        </ul>
+        <div class="mid-actions">
+          <a href="#contact" class="mid-btn-p">📞 Get My Free Audit</a>
+          <a href="#results" class="mid-btn-g">See Case Studies →</a>
+        </div>
+      </div>
+      <div class="mid-card">
+        <div class="mid-stat-row">
+          <div class="mid-stat">
+            <div class="mid-stat-num">250+</div>
+            <div class="mid-stat-label">WP Migrations</div>
+          </div>
+          <div class="mid-stat">
+            <div class="mid-stat-num">100%</div>
+            <div class="mid-stat-label">Data Safe</div>
+          </div>
+          <div class="mid-stat">
+            <div class="mid-stat-num">0%</div>
+            <div class="mid-stat-label">SEO Loss</div>
+          </div>
+        </div>
+        <div class="mid-divider"></div>
+        <div class="mid-trust">
+          <div class="mid-trust-item">
+            <div class="mid-trust-icon">🛡️</div><span>Data integrity guaranteed in writing</span>
+          </div>
+          <div class="mid-trust-item">
+            <div class="mid-trust-icon">📈</div><span>Yoast SEO & all redirects migrated</span>
+          </div>
+          <div class="mid-trust-item">
+            <div class="mid-trust-icon">⚡</div><span>Migration starts within 48 hours</span>
+          </div>
+          <div class="mid-trust-item">
+            <div class="mid-trust-icon">🔁</div><span>30-day free post-launch support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="results">
+    <div class="section-tag">Migration Results</div>
+    <h2>Real Results From Our <em>Shopify Migration Services</em></h2>
+    <p class="section-sub">Numbers from actual client migrations — not estimates. This is what happens when your
+      migration is done right.</p>
+    <div class="results-grid">
+      <div class="res-card">
+        <div class="img-card">
+          <img src="../assets/personal-comfort.png" alt="">
+        </div>
+        <div class="res-header">
+          <div class="res-client">Personal Comfort Bed · Retail</div>
+          <h4>Magento 1.0 → Shopify Migration</h4>
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">100%</div>
+              <div class="metric-label">Data Preserved</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+28%</div>
+              <div class="metric-label">Revenue Growth</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">0%</div>
+              <div class="metric-label">SEO Loss</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>10,000+ product SKUs, full customer account data, and complete order history migrated from Magento 1.0 to
+            Shopify. Launched without a single Google ranking drop — and saw a 28% revenue increase in 90 days.</p>
+          <span class="res-tag">Magento 1 · 10K+ SKUs · SEO Preserved</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="img-card">
+          <img src="../assets/softwarekeep.png" alt="">
+        </div>
+        <div class="res-header">
+          <div class="res-client">Softwarekeep · IT Software</div>
+          <h4>Custom Platform → Shopify Migration</h4>
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">+63%</div>
+              <div class="metric-label">Conversion Rate</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">2.1s</div>
+              <div class="metric-label">Page Load Time</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+40%</div>
+              <div class="metric-label">Organic Traffic</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>Full migration from a custom eCommerce platform to Shopify — including all software product listings,
+            license key delivery integrations, and customer accounts. Post-migration performance optimisation delivered
+            a 63% conversion rate lift.</p>
+          <span class="res-tag">Custom Platform · License Integration · SEO</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="img-card">
+          <img src="../assets/joy-viva.png" alt="">
+        </div>
+        <div class="res-header">
+          <div class="res-client">JoyVIVA · Health & Wellness</div>
+          <h4>WooCommerce → Shopify Migration</h4>
+          <div class="res-metrics">
+            <div class="metric">
+              <div class="metric-num">100%</div>
+              <div class="metric-label">Orders Migrated</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+35%</div>
+              <div class="metric-label">Mobile Revenue</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">4 Weeks</div>
+              <div class="metric-label">Total Timeline</div>
+            </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>Full WooCommerce to Shopify migration — products, customers, orders, subscriptions, and blog content —
+            completed in 4 weeks. Mobile revenue grew 35% in the first quarter post-launch thanks to Shopify's native
+            mobile checkout.</p>
+          <span class="res-tag">WooCommerce · Subscriptions · 4-Week Launch</span>
+        </div>
+      </div>
+    </div>
+        <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Get a Free Migration Audit</a>
+    </div>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-tag">Client Reviews</div>
+    <h2>What Brands Say About Our <em>Shopify Migration Services</em></h2>
+    <p class="section-sub">From store owners who were nervous about migrating, to enterprise teams who needed zero
+      downtime — here's what they said after.</p>
+      <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Nikita and team have been great in updating and solving some issues on our website. Their
+          response time and communication has been on point for the entire project. I would highly recommend working
+          with the StoreCartify team to address any site updates."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">
+           <img src="../assets/paul.jpg" alt="Paul Grasso">
+          </div>
+          <div>
+            <div class="testi-name">Paul Grasso</div>
+            <div class="testi-role">Paul Labrecque</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"The team and Akash have been instrumental in enhancing our website. Their unwavering
+          commitment to promptly address and solve any challenges demonstrates their exceptional problem-solving
+          capabilities."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">
+            <img src="../assets/baily.png" alt="Bailey Beykirch">
+          </div>
+          <div>
+            <div class="testi-name">Bailey Beykirch</div>
+            <div class="testi-role">Kenz</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"The StoreCartify Team excelled in our transition from Magento 1.0 to Shopify, ensuring
+          minimal disruption to our daily operations. Their expertise in managing complex e-commerce platform migrations
+          is exceptional."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">
+            <img src="../assets/jack.png" alt="Jack from Personal Comfort Bed">
+          </div>
+          <div>
+            <div class="testi-name">Jack</div>
+            <div class="testi-role">Personal Comfort Bed</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"I sincerely thank the entire StoreCartify team for being so easy to work with and for the
+          meticulous attention to detail throughout the project. You have made this transition such a smooth and
+          pleasant experience!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar anna">
+            <img src="../assets/JoyViva98.png" alt="Deigh-Anna from JoyVIVA Wellness">
+          </div>
+          <div>
+            <div class="testi-name">Deigh-Anna</div>
+            <div class="testi-role">JoyVIVA Team</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="section-tag">FAQ</div>
+    <h2>WordPress to Shopify Migration <em>— Questions Answered</em></h2>
+    <div class="faq-layout">
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q">Will I lose my Google rankings when migrating from WordPress to Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">No — not with our process. WordPress uses a different URL structure from Shopify, so
+            redirect mapping is critical. We audit every URL on your WordPress site — product pages, blog posts,
+            category pages, and static pages — map each one to its Shopify equivalent, and implement 301 redirects
+            before go-live. We also migrate all Yoast SEO meta titles and descriptions to Shopify's native SEO fields,
+            and run a full technical SEO audit post-migration. Our WordPress clients consistently maintain or improve
+            their Google rankings.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will my WordPress blog posts be migrated to Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — all WordPress blog posts are migrated to Shopify's blog system, including post
+            content, featured images, categories, tags, author data, and Yoast SEO meta titles and descriptions. Images
+            are re-uploaded to Shopify's CDN, internal links are re-mapped to Shopify URLs, and 301 redirects are
+            implemented for all blog post URLs. Whether you have 50 posts or 10,000, we handle the full migration.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you migrate my Yoast SEO data to Shopify? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — Yoast SEO data migration is a core part of our WordPress to Shopify service. We
+            extract all Yoast meta titles and meta descriptions for every post, page, and product, and populate
+            Shopify's native SEO title and description fields with this data. This ensures your existing meta data —
+            which contributes to your Google rankings — is preserved precisely on the new Shopify store.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does a WordPress to Shopify migration take? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Timeline depends on site size and complexity. Small WordPress sites (under 100
+            products/posts) typically take 1–2 weeks. Medium sites take 2–4 weeks. Content-heavy sites with thousands of
+            blog posts or large WooCommerce catalogues take 4–8 weeks. WordPress multisite networks or sites with
+            complex custom post type structures take 8–14 weeks. We give you an accurate timeline in your free audit.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What happens to my WordPress plugins on Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">We audit every WordPress plugin during the free pre-migration audit. Most plugin
+            functionality has a direct Shopify app equivalent — often a better one. Yoast SEO data is migrated directly.
+            WooCommerce becomes Shopify's native commerce. ACF custom fields become Shopify metafields. MemberPress
+            becomes a Shopify membership app. WP Rocket / caching becomes Shopify's built-in CDN. Wordfence becomes
+            Shopify's managed security. We map every plugin before you commit.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you migrate a WordPress multisite network to Shopify? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — WordPress multisite migrations are one of our specialities. We either consolidate
+            your multisite network into a single Shopify Markets store (one admin, multiple currencies and languages) or
+            set up separate Shopify stores depending on your needs. All content and product data is migrated from each
+            WordPress site, and SEO redirects are implemented for all domains.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How much does a WordPress to Shopify migration cost? <span
+              class="faq-icon">+</span></button>
+          <div class="faq-a">Cost depends on site size and complexity. Small WordPress sites start from $500. Medium
+            sites with WooCommerce and a blog start from $900. Content-heavy sites with thousands of posts or complex
+            WooCommerce setups start from $1,500. WordPress multisite migrations start from $2,500. We always provide a
+            fixed-price quote after your free audit — no hourly billing, no surprise invoices.</div>
+        </div>
+      </div>
+      <div class="faq-cta-panel">
+        <h3>Got WordPress migration<br><em>questions?</em></h3>
+        <p>Book a free 30-minute call with a WordPress migration expert. We'll review your site, answer every question,
+          and give you an honest timeline and cost estimate — no obligation to proceed.</p>
+        <ul>
+          <li>Free WordPress site audit</li>
+          <li>Fixed-price quote in 24 hours</li>
+          <li>Zero downtime guaranteed</li>
+          <li>Yoast SEO & blog fully migrated</li>
+          <li>All plugins replaced</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <a href="#contact" class="faq-cta-btn">📞 Book a Free Migration Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div>
+        <div class="section-tag">Start Your Migration</div>
+        <h2>Get Your Free <em>WordPress to Shopify Migration Audit</em></h2>
+        <p class="contact-sub">Tell us about your WordPress site and we'll send you a free, detailed migration plan —
+          what data we'll transfer, how we preserve your Yoast SEO, how long it takes, and a fixed price. No obligation,
+          no pressure.</p>
+        <ul class="contact-trust">
+          <li><span class="ctick">✓</span> Free detailed WordPress audit within 24 hours</li>
+          <li><span class="ctick">✓</span> Fixed-price quote — no hourly billing, no surprises</li>
+          <li><span class="ctick">✓</span> 100% data integrity guaranteed in writing</li>
+          <li><span class="ctick">✓</span> Zero downtime — WordPress stays live throughout</li>
+          <li><span class="ctick">✓</span> Yoast SEO meta data & blog posts fully migrated</li>
+          <li><span class="ctick">✓</span> 30-day free post-launch monitoring included</li>
+        </ul>
+        <div class="contact-stats">
+          <div class="cs-item">
+            <div class="cs-num">250+</div>
+            <div class="cs-label">WP Migrations</div>
+          </div>
+          <div class="cs-item">
+            <div class="cs-num">100%</div>
+            <div class="cs-label">Data Safe</div>
+          </div>
+          <div class="cs-item">
+            <div class="cs-num">24hr</div>
+            <div class="cs-label">Audit Turnaround</div>
+          </div>
+        </div>
+      </div>
+       <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
+      data-drip-embedded-form="330315483" id="drip-ef-330315483">
+      <h4>Book your FREE 30-minute Migration Audit today</h4>
+      <p>We'll match you with the right Shopify developer within 24 hours.</p>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="John Smith" id="drip-full-name" name="fields[full_name]" value="" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@company.com" id="drip-email" name="fields[email]" value="" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" placeholder="Your Company" id="drip-company-name" name="fields[company_name]" value="" required>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Briefly describe your project or requirements..." id="drip-message"
+          name="fields[message]" required></textarea>
+      </div>
+
+      <input type="hidden" id="hidden-source-2" name="fields[utm_source]" value="">
+      <input type="hidden" id="hidden-campaign-2" name="fields[utm_campaign]" value="">
+      <input type="hidden" id="hidden-landing-page-2" name="fields[landing_page]" value="">
+
+
+      <input type="submit" value="Get A Free Quote →" data-drip-attribute="sign-up-button" class="form-submit"
+        class="form-submit">
+      <p class="form-note">🔒 Your information is 100% confidential.</p>
+    </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <div class="footer-logo logo">
+        <img src="../assets/storecartify-logo.webp" alt="">
+      </div>
+      <p>Expert WordPress to Shopify migration service. 250+ migrations completed — blog posts, Yoast SEO, WooCommerce
+        products, ACF fields, and WordPress plugins all handled.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Migration Services</h4>
+      <a href="#">WordPress to Shopify</a>
+      <a href="#">WooCommerce to Shopify</a>
+      <a href="#">Magento to Shopify</a>
+      <a href="#">BigCommerce to Shopify</a>
+      <a href="#">OpenCart to Shopify</a>
+      <a href="#">PrestaShop to Shopify</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About StoreCartify</a>
+      <a href="#">Shopify Development Agency</a>
+      <a href="#">Shopify Plus Agency</a>
+      <a href="#">Hire Shopify Developers</a>
+      <a href="#">Case Studies</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+12137291257">+1 2137 291 257</a>
+      <a href="#">storecartify.com</a>
+      <a href="#">Book a Free Call</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>© 2026 StoreCartify. All rights reserved. WordPress to Shopify Migration Experts.</p>
+    <p class="disclaimer">StoreCartify is an independent Shopify Partner and is not affiliated with Shopify Inc. or
+      Automattic / WordPress.org.</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+
+  // UTM Fields
+  const utmSource = params.get("utm_source") || "";
+  const utmCampaign = params.get("utm_campaign") || "";
+
+  // Landing Page
+  const landingPage = window.location.href;
+
+  // Set UTM + landing page fields right away
+  document.getElementById("hidden-source").value = utmSource;
+  document.getElementById("hidden-campaign").value = utmCampaign;
+  document.getElementById("hidden-landing-page").value = landingPage;
+
+  // Also set them for the second form
+  document.getElementById("hidden-source-2").value = utmSource;
+  document.getElementById("hidden-campaign-2").value = utmCampaign;
+  document.getElementById("hidden-landing-page-2").value = landingPage;
+     });
+  </script>
+</body>
+
+</html>
