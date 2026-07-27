@@ -165,7 +165,8 @@
       padding: 80px 5vw 80px;
       background: var(--body-bg);
       position: relative;
-      overflow: hidden
+      overflow: hidden;
+      align-items: start;
     }
 
     .hero-bg-dots {
@@ -322,7 +323,7 @@
       position: relative;
       z-index: 1;
       animation: fadeUp .7s .15s ease both;
-      height: 500px;
+      
     }
 
     .hero-form-card h4 {
@@ -449,22 +450,29 @@
       letter-spacing: .05em
     }
 
-    .logos-strip {
-      background: var(--white);
+    /* LOGO STRIP */
+  .logos-strip {
+      background: var(--green);
       padding: 24px 0;
       border-bottom: 1.5px solid var(--light-border);
       overflow: hidden
     }
-
-    .logos-strip p {
+   .logos-strip p {
       text-align: center;
-      font-size: .72rem;
+      font-size: 45px;
       font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 18px
+      color: var(--white);
+  
     }
+    .logos-strip img{
+      display: block;
+      margin: 0px auto;
+      width: 80%;
+    }
+    .logos-strip .mobile-img{
+      display: none;
+    }
+
 
     .logo-track {
       display: flex;
@@ -1047,7 +1055,7 @@
     }
 
     .mid-cta {
-      background: var(--yellow);
+      background: var(--green);
       padding: 80px 5vw
     }
 
@@ -1066,7 +1074,7 @@
       gap: 7px;
       background: rgba(0, 76, 63, 0.1);
       border: 1px solid rgba(0, 76, 63, 0.2);
-      color: var(--green);
+      color: var(--white);
       font-size: .75rem;
       font-weight: 800;
       letter-spacing: .08em;
@@ -1082,13 +1090,13 @@
       font-size: clamp(2rem, 3.5vw, 3rem);
       line-height: 1.1;
       letter-spacing: -0.025em;
-      color: var(--dark);
+      color: var(--white);
       margin-bottom: 16px
     }
 
     .mid-sub {
       font-size: .98rem;
-      color: rgba(0, 0, 0, 0.65);
+      color: white;
       line-height: 1.75;
       margin-bottom: 28px
     }
@@ -1101,7 +1109,7 @@
     .mid-list li {
       font-size: .92rem;
       font-weight: 600;
-      color: var(--dark);
+      color: var(--white);
       padding: 9px 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       display: flex;
@@ -1133,8 +1141,8 @@
     }
 
     .mid-btn-p {
-      background: var(--green);
-      color: var(--white);
+      background: var(--white);
+      color: var(--green);
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 800;
       font-size: .95rem;
@@ -1148,29 +1156,24 @@
     }
 
     .mid-btn-p:hover {
-      background: var(--green-light);
+      background: whitesmoke;
       transform: translateY(-1px)
     }
 
     .mid-btn-g {
       background: transparent;
-      color: var(--dark);
+      color: var(--white);
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 700;
       font-size: .95rem;
       padding: 14px 28px;
       border-radius: 9rem;
       text-decoration: none;
-      border: 2px solid rgba(0, 0, 0, 0.25);
+      border: 2px solid white;
       transition: all .2s;
       display: inline-flex;
       align-items: center;
       gap: 8px
-    }
-
-    .mid-btn-g:hover {
-      border-color: var(--dark);
-      background: rgba(0, 0, 0, 0.05)
     }
 
     .mid-card {
@@ -1245,6 +1248,7 @@
       flex-shrink: 0
     }
 
+     /* RESULTS */
     .results {
       background: var(--white)
     }
@@ -1261,6 +1265,15 @@
       overflow: hidden;
       transition: all .3s
     }
+      .res-card .img-card{
+      width: 100%;
+      height: auto;
+    }
+    .res-card .img-card img{
+      width: 100%;
+      height: 100%;
+    }
+
 
     .res-card:hover {
       border-color: var(--green);
@@ -1339,7 +1352,7 @@
       padding: 3px 10px;
       border-radius: 100px
     }
-
+    /* TESTIMONIALS */
     .testimonials {
       background: var(--body-bg)
     }
@@ -1410,6 +1423,19 @@
       font-size: .9rem;
       color: var(--white);
       flex-shrink: 0
+    }
+      .testi-avatar img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+     .testi-author .anna{
+      background-color: white;
+    }
+
+    .testi-avatar img:last-child{
+      background: transparent !important;
     }
 
     .testi-name {
@@ -1502,7 +1528,7 @@
 
     .faq-cta-panel h3 em {
       font-style: normal;
-      color: var(--yellow)
+      color: var(--white)
     }
 
     .faq-cta-panel p {
@@ -1530,7 +1556,7 @@
 
     .faq-cta-panel ul li::before {
       content: '✓';
-      color: var(--yellow);
+      color: var(--white);
       font-weight: 900;
       flex-shrink: 0
     }
@@ -1542,7 +1568,7 @@
     .faq-cta-btn {
       display: block;
       text-align: center;
-      background: var(--yellow);
+      background: var(--white);
       color: var(--dark);
       font-weight: 800;
       font-size: .95rem;
@@ -1553,7 +1579,7 @@
     }
 
     .faq-cta-btn:hover {
-      background: #ffcc33;
+      background: whitesmoke;
       transform: translateY(-1px)
     }
 
@@ -1756,8 +1782,10 @@
       margin-bottom: 12px
     }
 
-    .footer-logo span {
-      color: var(--yellow)
+      .footer-logo img {
+      height: 70px;
+      width: auto;
+      filter: brightness(0) invert(1);
     }
 
     .footer-brand p {
@@ -1784,7 +1812,7 @@
     }
 
     .footer-col a:hover {
-      color: var(--yellow)
+      color: var(--white)
     }
 
     .footer-bottom {
@@ -1811,6 +1839,25 @@
     }
 
     @media(max-width:1024px) {
+      .nav-links{
+        display: none;
+      }
+        .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display: block;
+        width: 100%;
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+        display: none;
+      }
+      .logos-strip p{
+        text-align: left;
+        margin-left: 5%;
+        font-size: 30px;
+      }
       .proc-2col {
         grid-template-columns: 1fr
       }
@@ -1828,6 +1875,20 @@
       .contact-inner,
       .faq-layout {
         grid-template-columns: 1fr
+      }
+      .hero h1{
+        font-size: 30px;
+      }
+       .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display: block;
+        width: 100%;
+      }
+      .stat-item:last-child {
+        border-bottom: none;
+        display: none;
       }
 
       .pain-grid,
@@ -1851,9 +1912,54 @@
       }
     }
 
-    @media(max-width:600px) {
+     @media(max-width:600px) {
       .nav-links {
         display: none
+      }
+
+      .nav-links {
+        display: none
+      }
+              .nav-logo img{
+        width: auto;
+        height: 40px;
+      }
+      .nav-cta{
+        font-size: 10px;
+      }
+
+      .stats-bar {
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--light-border);
+        padding: 12px 0;
+      }
+
+      .stat-item:last-child {
+        border-bottom: none;
+        display: none;
+      }
+      .stat-num{
+        font-size: 20px;
+      }
+      .stat-label{
+        font-size: 10px;
+      }
+      .logos-strip p{
+        font-size: 25px;
+        text-align: left;
+        margin-left: 5%;
+        line-height: 1;
+      }
+      .logos-strip .desktop-img{
+        display: none;
+      }
+      .logos-strip .mobile-img{
+        display: block;
+        width: 100%;
       }
 
       .stats-bar {
@@ -1992,16 +2098,10 @@
 
   <!-- LOGO STRIP -->
   <div class="logos-strip">
-    <p>Volusion stores we've migrated to Shopify</p>
+    <p>WooCommerce Stores We've Migrated to Shopify</p>
     <div style="overflow:hidden">
-      <div class="logo-track">
-        <span>Volusion Personal → Shopify</span><span>Volusion Pro → Shopify</span><span>Volusion Business → Shopify
-          Plus</span><span>Volusion Prime → Shopify Plus</span><span>10K+ SKU Volusion → Shopify</span><span>Volusion V1
-          → Shopify</span><span>Volusion Custom Templates → Shopify</span><span>Volusion Subscriptions → Shopify</span>
-        <span>Volusion Personal → Shopify</span><span>Volusion Pro → Shopify</span><span>Volusion Business → Shopify
-          Plus</span><span>Volusion Prime → Shopify Plus</span><span>10K+ SKU Volusion → Shopify</span><span>Volusion V1
-          → Shopify</span><span>Volusion Custom Templates → Shopify</span><span>Volusion Subscriptions → Shopify</span>
-      </div>
+     <img src="../assets/clients.png" class="desktop-img" alt="">
+     <img src="../assets/client-mobile.png" class="mobile-img" alt="">
     </div>
   </div>
 
@@ -2336,8 +2436,8 @@
           <div
             style="font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:1.6rem;color:var(--white);line-height:1;margin-bottom:6px;">
             Free Audit</div>
-          <div style="font-size:.85rem;color:rgba(0,0,0,0.65);margin-bottom:16px;">Migration plan in 24 hours</div>
-          <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center;">Get
+          <div style="font-size:.85rem;color:white;margin-bottom:16px;">Migration plan in 24 hours</div>
+          <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center; background:white; color:var(--green)">Get
             Started →</a>
         </div>
       </div>
@@ -2452,148 +2552,169 @@
 
   <!-- RESULTS -->
   <section id="results" class="results">
-    <div class="section-tag">Client Results</div>
-    <h2>Real Results From Our <em>Volusion to Shopify</em> Migrations</h2>
-    <p class="section-sub">Measurable outcomes from real Volusion merchants who made the switch to Shopify with
-      StoreCartify.</p>
+    <div class="section-tag">Migration Results</div>
+    <h2>Real Results From Our <em>Shopify Migration Services</em></h2>
+    <p class="section-sub">Numbers from actual client migrations — not estimates. This is what happens when your
+      migration is done right.</p>
     <div class="res-grid">
       <div class="res-card">
+        <div class="img-card">
+          <img src="../assets/personal-comfort.png" alt="">
+        </div>
         <div class="res-header">
-          <div class="res-client">Outdoor & Sports Retailer · Volusion Pro</div>
-          <h4>Volusion Professional → Shopify</h4>
+          <div class="res-client">Personal Comfort Bed · Retail</div>
+          <h4>Magento 1.0 → Shopify Migration</h4>
           <div class="res-metrics">
             <div class="metric">
-              <div class="metric-num">+58%</div>
-              <div class="metric-label">Mobile CVR</div>
+              <div class="metric-num">100%</div>
+              <div class="metric-label">Data Preserved</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+28%</div>
+              <div class="metric-label">Revenue Growth</div>
             </div>
             <div class="metric">
               <div class="metric-num">0%</div>
               <div class="metric-label">SEO Loss</div>
             </div>
-            <div class="metric">
-              <div class="metric-num">3 Wks</div>
-              <div class="metric-label">Timeline</div>
-            </div>
           </div>
         </div>
         <div class="res-body">
-          <p>Full Volusion Professional to Shopify migration — 1,800 products with complex option sets, customer
-            accounts, 4 years of order history, and all SEO URLs redirected in 3 weeks. Mobile checkout conversion
-            jumped 58% thanks to Shopify's native checkout and Shop Pay.</p>
-          <span class="res-tag">Volusion Pro · 1,800 Products · Complex Options · 3 Weeks</span>
+          <p>10,000+ product SKUs, full customer account data, and complete order history migrated from Magento 1.0 to
+            Shopify. Launched without a single Google ranking drop — and saw a 28% revenue increase in 90 days.</p>
+          <span class="res-tag">Magento 1 · 10K+ SKUs · SEO Preserved</span>
         </div>
       </div>
       <div class="res-card">
+        <div class="img-card">
+          <img src="../assets/softwarekeep.png" alt="">
+        </div>
         <div class="res-header">
-          <div class="res-client">Home Goods Brand · Volusion Business</div>
-          <h4>Volusion Business → Shopify Plus</h4>
+          <div class="res-client">Softwarekeep · IT Software</div>
+          <h4>Custom Platform → Shopify Migration</h4>
           <div class="res-metrics">
             <div class="metric">
-              <div class="metric-num">12K+</div>
-              <div class="metric-label">SKUs Migrated</div>
+              <div class="metric-num">+63%</div>
+              <div class="metric-label">Conversion Rate</div>
             </div>
             <div class="metric">
-              <div class="metric-num">+44%</div>
-              <div class="metric-label">Revenue Growth</div>
+              <div class="metric-num">2.1s</div>
+              <div class="metric-label">Page Load Time</div>
             </div>
             <div class="metric">
-              <div class="metric-num">65%</div>
-              <div class="metric-label">Page Speed Up</div>
-            </div>
-          </div>
-        </div>
-        <div class="res-body">
-          <p>12,000+ home goods SKUs migrated from Volusion Business to Shopify Plus in 8 weeks — including gift
-            certificate balances, active coupon codes, customer accounts, and full order history. Revenue grew 44% in
-            the first 6 months post-migration as Shopify's CDN improved page speed 65%.</p>
-          <span class="res-tag">Volusion Business · 12K SKUs · Gift Certs · Shopify Plus</span>
-        </div>
-      </div>
-      <div class="res-card">
-        <div class="res-header">
-          <div class="res-client">Beauty Brand · Volusion Personal</div>
-          <h4>Volusion Personal → Shopify</h4>
-          <div class="res-metrics">
-            <div class="metric">
-              <div class="metric-num">+72%</div>
-              <div class="metric-label">Checkout CVR</div>
-            </div>
-            <div class="metric">
-              <div class="metric-num">+31%</div>
+              <div class="metric-num">+40%</div>
               <div class="metric-label">Organic Traffic</div>
             </div>
+          </div>
+        </div>
+        <div class="res-body">
+          <p>Full migration from a custom eCommerce platform to Shopify — including all software product listings,
+            license key delivery integrations, and customer accounts. Post-migration performance optimisation delivered
+            a 63% conversion rate lift.</p>
+          <span class="res-tag">Custom Platform · License Integration · SEO</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="img-card">
+          <img src="../assets/joy-viva.png" alt="">
+        </div>
+        <div class="res-header">
+          <div class="res-client">JoyVIVA · Health & Wellness</div>
+          <h4>WooCommerce → Shopify Migration</h4>
+          <div class="res-metrics">
             <div class="metric">
-              <div class="metric-num">2 Wks</div>
-              <div class="metric-label">Timeline</div>
+              <div class="metric-num">100%</div>
+              <div class="metric-label">Orders Migrated</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">+35%</div>
+              <div class="metric-label">Mobile Revenue</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">4 Weeks</div>
+              <div class="metric-label">Total Timeline</div>
             </div>
           </div>
         </div>
         <div class="res-body">
-          <p>Small Volusion Personal store migrated to Shopify in just 2 weeks — 350 beauty products, full customer
-            data, and all SEO URLs redirected. Checkout CVR increased 72% with Shopify's modern checkout and Shop Pay,
-            and organic traffic grew 31% as Core Web Vitals scores improved dramatically.</p>
-          <span class="res-tag">Volusion Personal · 350 Products · Shop Pay · 2 Weeks</span>
+          <p>Full WooCommerce to Shopify migration — products, customers, orders, subscriptions, and blog content —
+            completed in 4 weeks. Mobile revenue grew 35% in the first quarter post-launch thanks to Shopify's native
+            mobile checkout.</p>
+          <span class="res-tag">WooCommerce · Subscriptions · 4-Week Launch</span>
         </div>
       </div>
     </div>
+        <div style="display:flex;gap:14px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Get a Free Migration Audit</a>
+    </div>
+
   </section>
+
 
   <!-- TESTIMONIALS -->
   <section class="testimonials">
     <div class="section-tag">Client Reviews</div>
-    <h2>What Merchants Say After Their <em>Volusion to Shopify Migration</em></h2>
-    <div class="testi-grid">
+    <h2>What Brands Say About Our <em>Shopify Migration Services</em></h2>
+    <p class="section-sub">From store owners who were nervous about migrating, to enterprise teams who needed zero
+      downtime — here's what they said after.</p>
+      <div class="testi-grid">
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"After Volusion's bankruptcy I knew I needed to get off the platform — I just didn't know
-          how. StoreCartify made it completely painless. 1,800 products, complex options, years of orders — all migrated
-          in 3 weeks. Our mobile CVR went up 58% in the first month. Wish I'd done it years earlier."</p>
+        <p class="testi-text">"Nikita and team have been great in updating and solving some issues on our website. Their
+          response time and communication has been on point for the entire project. I would highly recommend working
+          with the StoreCartify team to address any site updates."</p>
         <div class="testi-author">
-          <div class="testi-avatar">DM</div>
+          <div class="testi-avatar">
+           <img src="../assets/paul.jpg" alt="Paul Grasso">
+          </div>
           <div>
-            <div class="testi-name">David M.</div>
-            <div class="testi-role">Owner, Outdoor & Sports Retailer</div>
+            <div class="testi-name">Paul Grasso</div>
+            <div class="testi-role">Paul Labrecque</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"We had 12,000 SKUs on Volusion Business and I was convinced migrating was going to be a
-          6-month nightmare. StoreCartify did it in 8 weeks — every SKU, every customer, every order, even our gift
-          certificate balances. Page speed is 65% faster and revenue is up 44% in the first 6 months. Phenomenal."</p>
+        <p class="testi-text">"The team and Akash have been instrumental in enhancing our website. Their unwavering
+          commitment to promptly address and solve any challenges demonstrates their exceptional problem-solving
+          capabilities."</p>
         <div class="testi-author">
-          <div class="testi-avatar">KP</div>
+          <div class="testi-avatar">
+            <img src="../assets/baily.png" alt="Bailey Beykirch">
+          </div>
           <div>
-            <div class="testi-name">Karen P.</div>
-            <div class="testi-role">Director, Home Goods Brand</div>
+            <div class="testi-name">Bailey Beykirch</div>
+            <div class="testi-role">Kenz</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"I was on Volusion Personal and paying for a platform that felt 10 years out of date.
-          StoreCartify moved me over in 2 weeks. The staging store meant I could see everything before we went live —
-          total confidence on launch day. Checkout CVR up 72%, organic traffic up 31%. I genuinely can't believe the
-          difference."</p>
+        <p class="testi-text">"The StoreCartify Team excelled in our transition from Magento 1.0 to Shopify, ensuring
+          minimal disruption to our daily operations. Their expertise in managing complex e-commerce platform migrations
+          is exceptional."</p>
         <div class="testi-author">
-          <div class="testi-avatar">AL</div>
+          <div class="testi-avatar">
+            <img src="../assets/jack.png" alt="Jack from Personal Comfort Bed">
+          </div>
           <div>
-            <div class="testi-name">Amy L.</div>
-            <div class="testi-role">Founder, Beauty Brand</div>
+            <div class="testi-name">Jack</div>
+            <div class="testi-role">Personal Comfort Bed</div>
           </div>
         </div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-text">"I'd been putting off leaving Volusion for years because migration felt too risky.
-          StoreCartify gave me a free audit, a fixed price, and a clear timeline. The staging preview before go-live was
-          the game changer — I could see everything working before we switched. Not a single ranking dropped. Not a
-          single order lost. Perfect."</p>
+        <p class="testi-text">"I sincerely thank the entire StoreCartify team for being so easy to work with and for the
+          meticulous attention to detail throughout the project. You have made this transition such a smooth and
+          pleasant experience!"</p>
         <div class="testi-author">
-          <div class="testi-avatar">RJ</div>
+          <div class="testi-avatar anna">
+            <img src="../assets/JoyViva98.png" alt="Deigh-Anna from JoyVIVA Wellness">
+          </div>
           <div>
-            <div class="testi-name">Richard J.</div>
-            <div class="testi-role">CEO, Electronics Accessories Brand</div>
+            <div class="testi-name">Deigh-Anna</div>
+            <div class="testi-role">JoyVIVA Team</div>
           </div>
         </div>
       </div>
@@ -2717,59 +2838,47 @@
           </div>
         </div>
       </div>
-      <div class="cf-card">
-        <h4>📋 Tell Us About Your Volusion Store</h4>
-        <div class="cf-row">
-          <div class="cf-group"><label>First Name</label><input type="text" placeholder="John"></div>
-          <div class="cf-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+      <form class="hero-form-card" action="https://www.getdrip.com/forms/330315483/submissions" method="post"
+      data-drip-embedded-form="330315483" id="drip-ef-330315483">
+      <h4>Book your FREE 30-minute Migration Audit today</h4>
+      <p>We'll match you with the right Shopify developer within 24 hours.</p>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="John Smith" id="drip-full-name" name="fields[full_name]" value="" required>
         </div>
-        <div class="cf-group"><label>Business Email</label><input type="email" placeholder="john@yourstore.com"></div>
-        <div class="cf-group"><label>Phone Number</label><input type="tel" placeholder="+1 (555) 000-0000"></div>
-        <div class="cf-group"><label>Volusion Store URL</label><input type="url" placeholder="https://yourstore.com">
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@company.com" id="drip-email" name="fields[email]" value="" required>
         </div>
-        <div class="cf-group">
-          <label>Volusion Plan</label>
-          <select>
-            <option value="">Select your plan...</option>
-            <option>Volusion Personal</option>
-            <option>Volusion Professional</option>
-            <option>Volusion Business</option>
-            <option>Volusion Prime</option>
-            <option>Not sure</option>
-          </select>
-        </div>
-        <div class="cf-group">
-          <label>Approx. Number of Products</label>
-          <select>
-            <option value="">Select range...</option>
-            <option>Under 500</option>
-            <option>500 – 2,000</option>
-            <option>2,000 – 10,000</option>
-            <option>10,000 – 50,000</option>
-            <option>50,000+</option>
-          </select>
-        </div>
-        <div class="cf-group">
-          <label>Target Platform</label>
-          <select>
-            <option value="">Select target...</option>
-            <option>Shopify (Standard)</option>
-            <option>Shopify Plus</option>
-            <option>Not sure — advise me</option>
-          </select>
-        </div>
-        <div class="cf-group"><label>Key Concerns / Notes</label><textarea
-            placeholder="SEO rankings, product options, gift certificates, coupon codes, order history, timeline..."></textarea>
-        </div>
-        <button class="cf-submit">Send My Volusion Migration Brief →</button>
-        <p class="cf-note">🔒 100% confidential. Free audit. No obligation to proceed.</p>
       </div>
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" placeholder="Your Company" id="drip-company-name" name="fields[company_name]" value="" required>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Briefly describe your project or requirements..." id="drip-message"
+          name="fields[message]" required></textarea>
+      </div>
+
+      <input type="hidden" id="hidden-source" name="fields[utm_source]" value="">
+      <input type="hidden" id="hidden-campaign" name="fields[utm_campaign]" value="">
+      <input type="hidden" id="hidden-landing-page" name="fields[landing_page]" value="">
+
+
+      <input type="submit" value="Get A Free Quote →" data-drip-attribute="sign-up-button" class="form-submit"
+        class="form-submit">
+      <p class="form-note">🔒 Your information is 100% confidential.</p>
+    </form>
     </div>
   </div>
 
   <footer>
     <div class="footer-brand">
-      <div class="footer-logo">Store<span>Cartify</span></div>
+      <div class="footer-logo">
+        <img src="../assets/storecartify-logo.webp" alt="">
+      </div>
       <p>Expert Volusion to Shopify migration service. 80+ migrations completed — products, orders, gift certificates,
         coupon codes, and SEO URLs all handled.</p>
     </div>
@@ -2792,7 +2901,7 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <a href="#">+1 818-335-6585</a>
+      <a href="tel:+12137291257">+1 2137 291 257</a>
       <a href="#">storecartify.com</a>
       <a href="#">Book a Free Call</a>
       <a href="#">Privacy Policy</a>
@@ -2800,7 +2909,7 @@
     </div>
   </footer>
   <div class="footer-bottom">
-    <p>© 2025 StoreCartify. All rights reserved. Volusion to Shopify Migration Experts.</p>
+    <p>© 2026 StoreCartify. All rights reserved. Volusion to Shopify Migration Experts.</p>
     <p class="disclaimer">StoreCartify is an independent Shopify Partner and is not affiliated with Shopify Inc. or
       Volusion LLC.</p>
   </div>
