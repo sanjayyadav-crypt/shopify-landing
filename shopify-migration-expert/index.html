@@ -1586,27 +1586,30 @@
       color: var(--white);
     }
 
-    .footer-bottom {
+   .footer-bottom {
       background: var(--green);
       border-top: 1px solid rgba(255, 255, 255, .12);
       padding: 20px 5vw;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 8px
     }
 
     .footer-bottom p {
       font-size: .78rem;
-      color: rgba(255, 255, 255, 0.45);
+      color: rgba(255, 255, 255, 0.45)
     }
 
     .disclaimer {
-      font-size: .72rem;
+      font-size: .92rem;
       color: rgba(255, 255, 255, 0.35);
-      max-width: 480px;
-      text-align: right;
+      text-align: right
+    }
+    .disclaimer a{
+      color: rgba(255, 255, 255, 0.35);
     }
 
     /* RESPONSIVE */
@@ -2479,9 +2482,10 @@
     </div>
   </footer>
   <div class="footer-bottom">
-    <p>© 2026 StoreCartify. All rights reserved. Certified Shopify Migration Experts.</p>
-    <p class="disclaimer">StoreCartify is an independent Shopify Partner agency and is not affiliated with or endorsed
-      by Shopify Inc.</p>
+    <p>© 2026 StoreCartify. All rights reserved. Volusion to Shopify Migration Experts.</p>
+    <p class="disclaimer">Copyright © 2026 StoreCartify (A Brand of EbizON) . All rights reserved. <a href="" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });">
+  Return to top
+</a></p>
   </div>
 
   <script>
