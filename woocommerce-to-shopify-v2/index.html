@@ -38,7 +38,7 @@
       --body-bg: #fbf7ed;
       --white: #ffffff;
       --text: #333333;
-      --muted: #666666;
+      --muted: #222222;
       --light-border: #e5e0d4
     }
 
@@ -57,9 +57,9 @@
     body {
       background: var(--body-bg);
       color: var(--text);
-      font-family: 'Nunito Sans', -apple-system, sans-serif;
-      font-size: 16px;
-      line-height: 1.65;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 18px;
+      line-height: 1.618;
       overflow-x: hidden
     }
 
@@ -107,7 +107,8 @@
       z-index: 100;
       background: var(--body-bg);
       border-bottom: 1px solid var(--light-border);
-      padding: 14px 5vw;
+      min-height: 100px;
+      padding: 0 max(4vw, calc((100% - 1200px) / 2));
       display: flex;
       align-items: center;
       justify-content: space-between
@@ -124,7 +125,8 @@
 
     .nav-logo img {
       width: auto;
-      height: 70px;
+      height: 75.6px;
+      display: block;
     }
 
     .nav-logo span {
@@ -133,14 +135,23 @@
 
     .nav-links {
       display: flex;
+      height: 100px;
+      align-items: center;
       gap: 28px;
       list-style: none
+    }
+
+    .nav-links-cta {
+      display: flex;
+      align-items: center;
+      gap: 28px;
     }
 
     .nav-links a {
       color: var(--text);
       text-decoration: none;
-      font-size: .9rem;
+      font-size: 14px;
+      line-height: 22.652px;
       font-weight: 600;
       transition: color .2s
     }
@@ -153,8 +164,10 @@
       background: var(--green);
       color: var(--white);
       font-weight: 700;
-      font-size: .88rem;
-      padding: 10px 22px;
+      font-size: 14px;
+      padding: 0px 10px;
+      height: 2.36em;
+      line-height: 2.36em;
       border-radius: 9rem;
       text-decoration: none;
       transition: all .2s;
@@ -172,7 +185,9 @@
       grid-template-columns: 1fr 1fr;
       align-items: start;
       gap: 60px;
-      padding: 40px 5vw 80px;
+      max-width: 1200px;
+      padding: 60px 20px;
+      margin: auto;
       background: var(--body-bg);
       position: relative;
       overflow: hidden
@@ -219,10 +234,10 @@
 
     h1 {
       font-family: 'Nunito Sans', sans-serif;
-      font-weight: 900;
-      font-size: 50px;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 1.235;
+      letter-spacing: normal;
       color: var(--dark);
       margin-bottom: 20px;
       animation: fadeUp .6s .1s ease both
@@ -234,9 +249,9 @@
     }
 
     .hero-desc {
-      font-size: 1.05rem;
+      font-size: 18px;
       color: var(--muted);
-      line-height: 1.75;
+      line-height: 1.618;
       margin-bottom: 36px;
       animation: fadeUp .6s .2s ease both
     }
@@ -328,7 +343,7 @@
       background: var(--white);
       border-radius: 20px;
       padding: 32px 28px;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.13);
+      box-shadow: 0 24px 10px rgba(0, 0, 0, 0.13);
       position: relative;
       z-index: 1;
       animation: fadeUp .7s .15s ease both
@@ -427,7 +442,7 @@
     .stats-bar {
       background: var(--white);
       border-bottom: 1.5px solid var(--light-border);
-      padding: 28px 5vw;
+      padding: 40px 230px;
       display: flex;
       justify-content: center
     }
@@ -445,15 +460,16 @@
 
     .stat-num {
       font-family: 'Nunito Sans', sans-serif;
-      font-weight: 900;
-      font-size: 2.2rem;
-      color: var(--green);
+      font-weight: 700;
+      font-size: 35px;
+      color: var(--g reen);
       letter-spacing: -0.03em;
-      line-height: 1
+      line-height: 1;
+      margin-bottom: 14px;
     }
 
     .stat-label {
-      font-size: .8rem;
+      font-size: 15px;
       font-weight: 700;
       color: var(--muted);
       margin-top: 4px;
@@ -480,7 +496,7 @@
     .logos-strip img {
       display: block;
       margin: 0px auto;
-      width: 80%;
+      width: 100%;
     }
 
     .logos-strip .mobile-img {
@@ -489,7 +505,8 @@
 
     /* SECTIONS */
     section {
-      padding: 88px 5vw
+      width: 100%;
+      padding: 96px 6vw
     }
 
     .section-tag {
@@ -514,10 +531,10 @@
 
     h2 {
       font-family: 'Nunito Sans', sans-serif;
-      font-weight: 900;
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      letter-spacing: -0.025em;
-      line-height: 1.15;
+      font-weight: 700;
+      font-size: 40px;
+      letter-spacing: normal;
+      line-height: 1.236;
       color: var(--dark);
       margin-bottom: 14px
     }
@@ -530,13 +547,14 @@
     .section-sub {
       color: var(--muted);
       font-size: 1rem;
-      line-height: 1.75;
+      line-height: 1.618;
       margin-bottom: 52px
     }
 
     /* COMPARISON TABLE */
     .comparison {
-      background: var(--white)
+      background: var(--white);
+      padding: 40px 230px;
     }
 
     .comp-wrap {
@@ -630,7 +648,8 @@
 
     /* WHAT WE MIGRATE */
     .what-migrate {
-      background: var(--body-bg)
+      background: var(--body-bg);
+      padding: 40px 230px;
     }
 
     .m2col {
@@ -761,7 +780,8 @@
 
     /* WOO PAIN POINTS */
     .pain-points {
-      background: var(--white)
+      background: var(--white);
+      padding: 40px 230px;
     }
 
     .pain-grid {
@@ -822,7 +842,8 @@
 
     /* PROCESS */
     .process {
-      background: var(--body-bg)
+      background: var(--body-bg);
+      padding: 40px 230px;
     }
 
     .proc-2col {
@@ -1012,7 +1033,8 @@
 
     /* WHY US */
     .why {
-      background: var(--white)
+      background: var(--white);
+      padding: 40px 230px;
     }
 
     .why-grid {
@@ -1260,7 +1282,8 @@
 
     /* RESULTS */
     .results {
-      background: var(--white)
+      background: var(--white);
+      padding: 40px 230px;
     }
 
     .res-grid {
@@ -1367,7 +1390,8 @@
 
     /* TESTIMONIALS */
     .testimonials {
-      background: var(--body-bg)
+      background: var(--body-bg);
+      padding: 40px 230px;
     }
 
     .testi-grid {
@@ -1466,7 +1490,8 @@
 
     /* FAQ */
     .faq {
-      background: var(--white)
+      background: var(--white);
+      padding: 40px 230px;
     }
 
     .faq-layout {
@@ -1604,7 +1629,7 @@
     /* CONTACT */
     .contact-section {
       background: var(--body-bg);
-      padding: 88px 5vw;
+      padding: 40px 230px;
       border-top: 1.5px solid var(--light-border)
     }
 
@@ -1788,7 +1813,7 @@
     footer {
       background: var(--green);
       color: rgba(255, 255, 255, 0.8);
-      padding: 60px 5vw 24px;
+      padding: 40px 230px;
       display: grid;
       grid-template-columns: 1.8fr 1fr 1fr 1fr;
       gap: 48px
@@ -1954,7 +1979,7 @@
       .why-grid,
       .res-grid,
       footer {
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr
       }
 
       .testi-grid,
@@ -2051,12 +2076,222 @@
       }
 
       footer {
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr
       }
 
       .form-row-2,
       .cf-row {
         grid-template-columns: 1fr
+      }
+    }
+
+    /* RESPONSIVE LAYOUT OVERRIDES */
+    @media (max-width: 1199px) {
+      nav {
+        padding-inline: clamp(24px, 6vw, 72px);
+      }
+
+      .hero {
+        width: 100%;
+        max-width: none;
+        padding: 48px clamp(32px, 6vw, 60px) 64px;
+      }
+
+      .stats-bar,
+      .comparison,
+      footer,
+      .what-migrate,
+      .pain-points,
+      .process,
+      .why,
+      .results,
+      .testimonials,
+      .faq,
+      .contact-section {
+        padding-inline: clamp(24px, 6vw, 72px);
+      }
+
+      section {
+        padding-inline: clamp(24px, 6vw, 72px);
+      }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+      .hero h1 {
+        font-size: 50px;
+        line-height: 1.1;
+      }
+
+      .stats-bar,
+      .comparison,
+      .what-migrate,
+      .pain-points,
+      .process,
+      .why,
+      .results,
+      .testimonials,
+      .faq,
+      .contact-section,
+      footer {
+        padding-inline: 6vw;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        gap: 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.25rem, 6vw, 3.375rem);
+      }
+
+      .stats-bar {
+        padding-block: 28px;
+      }
+
+      .stat-item {
+        padding-inline: 12px;
+      }
+
+      section,
+      .comparison {
+        padding-block: 64px;
+      }
+
+      .section-sub {
+        margin-bottom: 32px;
+      }
+
+      .mid-cta {
+        padding: 64px clamp(24px, 6vw, 60px);
+      }
+
+      footer {
+        padding-block: 48px 24px;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        min-height: 76px;
+        padding-inline: 20px;
+      }
+
+      .nav-logo img {
+        height: 48px;
+      }
+
+      .nav-links-cta {
+        gap: 0;
+      }
+
+      .nav-cta {
+        height: auto;
+        padding: 8px 12px;
+        font-size: 11px;
+        line-height: 1.35;
+        text-align: center;
+        white-space: normal;
+        max-width: 142px;
+      }
+
+      .hero {
+        gap: 32px;
+        padding: 32px 20px 48px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+        line-height: 1.2;
+      }
+
+      .hero-desc {
+        font-size: .95rem;
+      }
+
+      .hero-actions,
+      .mid-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-ghost,
+      .mid-btn-p,
+      .mid-btn-g {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-form-card,
+      .mid-card {
+        padding: 24px 20px;
+      }
+
+      .stats-bar,
+      .comparison,
+      section,
+      .mid-cta,
+      footer,
+      .what-migrate,
+      .pain-points,
+      .process,
+      .why,
+      .results,
+      .testimonials,
+      .faq,
+      .contact-section {
+        padding-inline: 20px;
+      }
+
+      .stats-bar {
+        padding-block: 20px;
+      }
+
+      .stat-item {
+        flex-basis: 50%;
+        padding-inline: 8px;
+      }
+
+      h2 {
+        font-size: 30px;
+        line-height: 1.2;
+      }
+
+      .section-sub {
+        font-size: .95rem;
+        margin-bottom: 28px;
+      }
+
+      .comp-wrap {
+        margin-inline: -4px;
+      }
+
+      .comp-table {
+        min-width: 620px;
+      }
+
+      .logos-strip p {
+        font-size: 25px;
+      }
+
+      footer {
+        gap: 28px;
+      }
+
+      .footer-logo {
+        width: min(300px, 100%);
+      }
+
+      .footer-bottom {
+        padding-inline: 20px;
+        text-align: center;
+      }
+
+      .disclaimer {
+        text-align: center;
       }
     }
   </style>
@@ -2074,14 +2309,16 @@
     <a href="https://storecartify.com" class="nav-logo">
       <img src="../assets/storecartify-logo.webp" alt="">
     </a>
-    <ul class="nav-links">
-      <li><a href="#why-migrate">Why Switch</a></li>
-      <li><a href="#what-we-migrate">What We Migrate</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Get a Free Migration Audit</a>
+    <div class="nav-links-cta">
+      <ul class="nav-links">
+        <li><a href="#why-migrate">Why Switch</a></li>
+        <li><a href="#what-we-migrate">What We Migrate</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Get a Free Migration Audit</a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -2169,7 +2406,7 @@
   <!-- LOGO STRIP -->
   <div class="logos-strip">
     <p>Our Successful Clients</p>
-    <div style="overflow:hidden">
+    <div style="overflow:hidden; max-width: 1200px; margin: 20px auto;">
       <img src="../assets/clients.png" class="desktop-img" alt="">
       <img src="../assets/client-mobile.png" class="mobile-img" alt="">
     </div>
@@ -2392,7 +2629,7 @@
   </section>
 
   <!-- PROCESS -->
-   <section id="process" class="process">
+  <section id="process" class="process">
     <div class="section-tag">Migration Process</div>
     <h2>Our Proven <em>WooCommerce to Shopify</em> Migration Process</h2>
     <p class="section-sub">A structured, risk-free process refined across 300+ WooCommerce migrations. Every step is
@@ -2510,7 +2747,8 @@
             style="font-family:'Nunito Sans',sans-serif;font-weight:900;font-size:1.6rem;color:var(--white);line-height:1;margin-bottom:6px;">
             Free Audit</div>
           <div style="font-size:.85rem;color:white;margin-bottom:16px;">Migration plan in 24 hours</div>
-          <a href="#contact" class="btn-primary" style="display:block;text-align:center;justify-content:center; background:white; color:var(--green)">Get
+          <a href="#contact" class="btn-primary"
+            style="display:block;text-align:center;justify-content:center; background:white; color:var(--green)">Get
             Started →</a>
         </div>
       </div>
