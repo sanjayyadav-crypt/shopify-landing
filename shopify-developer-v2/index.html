@@ -2861,7 +2861,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-     <form class="hero-form-card" id="adsdash-form-frm_6c6b1c8f25507b87">
+     <form class="hero-form-card" id="adsdash-form-frm_5a98933b8bea1899">
       <h4>Tell us what you need</h4>
       <p>We'll match you with the right Shopify developer within 24 hours.</p>
       <div class="form-row-2">
@@ -2999,120 +2999,103 @@ Social media links
   </script>
 
 
-  <script>
-(function () {
-
-  var forms = document.querySelectorAll('#adsdash-form-frm_6c6b1c8f25507b87');
-
-  forms.forEach(function (form) {
-
-    var renderedAt = Date.now();
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var btn = form.querySelector('button[type="submit"]');
-      var msg = form.querySelector('.adsdash-message'); // adjust selector if needed
-
-      var data = {};
-      new FormData(form).forEach(function (v, k) {
-        data[k] = v;
-      });
-
-      data._ts = renderedAt;
-      data.pageUrl = window.location.href;
-
-      var origLabel = btn.textContent;
-
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-
-      fetch('https://adsdash.ebizondigital.com/api/leads/submit/frm_6c6b1c8f25507b87', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(function (r) {
-        return r.json().then(function (d) {
-          return { ok: r.ok, d: d };
+<script>
+  (function () {
+    var forms = document.querySelectorAll('#adsdash-form-frm_5a98933b8bea1899');
+    var thankYouUrl = 'https://storecartify.com/thank-you-shopify-expert/';
+    forms.forEach(function (form) {
+      var renderedAt = Date.now();
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        var msg = form.querySelector('.adsdash-message'); // adjust selector if needed
+        var data = {};
+        new FormData(form).forEach(function (v, k) {
+          data[k] = v;
         });
-      })
-      .then(function (res) {
-
-        if (res.ok) {
-
-          if (
-            typeof window.gtag === 'function' &&
-            res.d.gtagConversionId &&
-            res.d.gtagConversionLabel
-          ) {
-            if (res.d.enhancedConversions) {
-              gtag('set', 'user_data', {
-                email: data.email || undefined,
-                phone_number: data.phone || undefined
+        data._ts = renderedAt;
+        data.pageUrl = window.location.href;
+        var origLabel = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        fetch('https://adsdash.ebizondigital.com/api/leads/submit/frm_5a98933b8bea1899', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(function (r) {
+          return r.json().then(function (d) {
+            return { ok: r.ok, d: d };
+          });
+        })
+        .then(function (res) {
+          if (res.ok) {
+            if (
+              typeof window.gtag === 'function' &&
+              res.d.gtagConversionId &&
+              res.d.gtagConversionLabel
+            ) {
+              if (res.d.enhancedConversions) {
+                gtag('set', 'user_data', {
+                  email: data.email || undefined,
+                  phone_number: data.phone || undefined
+                });
+              }
+              gtag('event', 'conversion', {
+                send_to: res.d.gtagConversionId + '/' + res.d.gtagConversionLabel
               });
             }
-
-            gtag('event', 'conversion', {
-              send_to: res.d.gtagConversionId + '/' + res.d.gtagConversionLabel
-            });
-          }
-
-          if (res.d.redirectUrl) {
-            window.location.href = res.d.redirectUrl;
-            return;
-          }
-
-          form.querySelectorAll('input, textarea').forEach(function (el) {
-            if (el.name !== '_hp') {
-              el.style.display = 'none';
+            var destination = new URL(thankYouUrl);
+            if (data.name) {
+            destination.searchParams.set('fullname', data.name);
             }
-          });
-
-          form.querySelectorAll('label').forEach(function (el) {
-            el.style.display = 'none';
-          });
-
-          btn.style.display = 'none';
-
-          if (msg) {
-            msg.style.display = 'block';
-            msg.style.color = '#16a34a';
-            msg.textContent = res.d.message || 'Thanks!';
+            ['company', 'email'].forEach(function (key) {
+              if (data[key]) {
+                destination.searchParams.set(key, data[key]);
+              }
+            });
+            window.location.assign(destination.href);
+            return;
+            form.querySelectorAll('input, textarea').forEach(function (el) {
+              if (el.name !== '_hp') {
+                el.style.display = 'none';
+              }
+            });
+            form.querySelectorAll('label').forEach(function (el) {
+              el.style.display = 'none';
+            });
+            btn.style.display = 'none';
+            if (msg) {
+              msg.style.display = 'block';
+              msg.style.color = '#16a34a';
+              msg.textContent = res.d.message || 'Thanks!';
+            }
+          } else {
+            if (msg) {
+              msg.style.display = 'block';
+              msg.style.color = '#dc2626';
+              msg.textContent =
+                res.d.error || 'Something went wrong. Please try again.';
+            }
+            btn.disabled = false;
+            btn.textContent = origLabel;
           }
-
-        } else {
-
+        })
+        .catch(function () {
           if (msg) {
             msg.style.display = 'block';
             msg.style.color = '#dc2626';
-            msg.textContent =
-              res.d.error || 'Something went wrong. Please try again.';
+            msg.textContent = 'Network error. Please try again.';
           }
-
           btn.disabled = false;
           btn.textContent = origLabel;
-        }
-      })
-      .catch(function () {
-
-        if (msg) {
-          msg.style.display = 'block';
-          msg.style.color = '#dc2626';
-          msg.textContent = 'Network error. Please try again.';
-        }
-
-        btn.disabled = false;
-        btn.textContent = origLabel;
+        });
       });
     });
-
-  });
-
-})();
-</script>
+  })();
+  </script>
 </body>
 
 </html>
